@@ -45,7 +45,8 @@ public class Clown
         {
             CurrentHealth = 0.0f;
             alive = false;
-        }           
+        }
+        Debug.Log("Clown " + Name + " has " + CurrentHealth + " health");
     }
 
     public bool IsAlive()
