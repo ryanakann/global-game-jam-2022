@@ -18,6 +18,7 @@ public class Clown
     float maxHealth;
     public float CurrentHealth { get; private set; }
 
+    public ClownPersonality Personality { get; private set; }
     public HashSet<ClownTrait> Traits { get; private set; }
 
     public Clown(ClownProfile profile)
@@ -26,6 +27,7 @@ public class Clown
         Name = ClownManager.getClownName();
         maxHealth = profile.health;
         CurrentHealth = profile.health;
+        Personality = profile.personality;
         Traits = new HashSet<ClownTrait>(profile.traits);
     }
 

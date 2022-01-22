@@ -47,7 +47,13 @@ public class ClownManager : MonoBehaviour
             if (!clownsByTrait.ContainsKey(trait))
                 clownsByTrait[trait] = new List<Clown>();
             clownsByTrait[trait].Add(newClown);
+
         }
+
+        if (!clownsByPersonality.ContainsKey(newClown.Personality))
+            clownsByPersonality[newClown.Personality] = new List<Clown>();
+        clownsByPersonality[newClown.Personality].Add(newClown);
+
     }
 
     public static Clown getClownWithId(int id)
