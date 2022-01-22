@@ -70,4 +70,10 @@ public class Event : MonoBehaviour
         print("WE HAVE NOT IMPLEMENTED PEANUTS YOU FOOL");
     }
 
+    public void LoseEarwax(int waxAmount)
+    {
+        print("You lose " + waxAmount + " wax");
+        print("WE HAVE NOT IMPLEMENTED WAX YOU FOOL");
+    }
+
 }

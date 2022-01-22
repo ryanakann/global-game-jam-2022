@@ -344,7 +344,7 @@ PrefabInstance:
     - target: {fileID: 4642519744322312776, guid: 4bbafa4cf8bea8641b27b25042799570, type: 3}
       propertyPath: debugEventPrefab
       value: 
-      objectReference: {fileID: 5511309030003516924, guid: 6dbab4869f6ce334bad5a88d5e15c3ae, type: 3}
+      objectReference: {fileID: 692262705457539685, guid: a08336eb5d6e0284dab2e0a2e674eb5c, type: 3}
     - target: {fileID: 4642519744322312777, guid: 4bbafa4cf8bea8641b27b25042799570, type: 3}
       propertyPath: m_Name
       value: EventManager
@@ -416,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
       propertyPath: debugClownProfiles.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
       propertyPath: debugClownProfiles.Array.data[0]
@@ -434,6 +434,10 @@ PrefabInstance:
       propertyPath: debugClownProfiles.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: bc93c69ff8d782b47982cd5545500d86, type: 2}
+    - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
+      propertyPath: debugClownProfiles.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: cdafed035063c2447adf81e75b3394eb, type: 2}
     - target: {fileID: 8968258754175564043, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
       propertyPath: m_RootOrder
       value: 3
