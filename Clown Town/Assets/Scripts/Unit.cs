@@ -22,6 +22,7 @@ public class Unit : MonoBehaviour {
         GetComponent<Health>().Die();
     }
     private void Start() {
-        //GetComponent<SpriteRenderer>().sprite = sprite;
+        GetComponent<Health>().maxHealth = health;
+        GetComponent<Health>().SetHealth(health);
     }
 }

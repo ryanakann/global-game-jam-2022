@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour {
+    [HideInInspector]
     public float maxHealth;
     private float health { get; set; }
-    void Start() {
-        SetHealth(maxHealth);
-    }
     public void SetHealth(float amount) {
         health = amount;
         if (health > maxHealth) {
