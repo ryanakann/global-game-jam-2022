@@ -72,6 +72,16 @@ public class Dialogue : MonoBehaviour
         schlimazel.Harm(schlimazel.CurrentHealth * healthFactor);
     }
 
+    public void RemoveClownTrait(int clownId, ClownTrait trait)
+    {
+        ClownManager.RemoveClownTrait(clownId, trait);
+    }
+
+    public void AddClownTrait(int clownId, ClownTrait trait)
+    {
+        ClownManager.AddClownTrait(clownId, trait);
+    }
+
     public void GainPeanuts(int peanutsAmount)
     {
         print("You gain " + peanutsAmount + " peanuts");

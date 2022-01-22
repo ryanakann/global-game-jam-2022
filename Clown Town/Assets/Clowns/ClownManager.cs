@@ -124,4 +124,19 @@ public class ClownManager : MonoBehaviour
             clowns.Remove(clownId);
         }
     }
+
+    public static void RemoveClownTrait(int clownId, ClownTrait trait)
+    {
+        if (clownsByTrait[trait].Contains(getClownWithId(clownId))) {
+            clownsByTrait[trait].Remove(getClownWithId(clownId));
+        }
+    }
+
+    public static void AddClownTrait(int clownId, ClownTrait trait)
+    {
+        if (!clownsByTrait[trait].Contains(getClownWithId(clownId)))
+        {
+            clownsByTrait[trait].Add(getClownWithId(clownId));
+        }
+    }
 }
