@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: ChefClown
   m_EditorClassIdentifier: 
   health: 5
-  traits: 02000000
+  personality: 4
+  traits: 0300000000000000
+  happyQuips: []
+  sadQuips: []
+  angryQuips: []
+  getHurtQuips: []
+  getKilledQuips: []
+  anotherHurtQuips: []
+  anotherKilledQuips: []

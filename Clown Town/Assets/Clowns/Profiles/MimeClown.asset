@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: MimeClown
   m_EditorClassIdentifier: 
   health: 3
-  traits: 01000000
+  personality: 3
+  traits: 020000000500000003000000
+  happyQuips: []
+  sadQuips: []
+  angryQuips: []
+  getHurtQuips: []
+  getKilledQuips: []
+  anotherHurtQuips: []
+  anotherKilledQuips: []

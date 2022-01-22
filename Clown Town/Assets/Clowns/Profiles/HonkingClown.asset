@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: HonkingClown
   m_EditorClassIdentifier: 
   health: 7
-  traits: 03000000
+  personality: 5
+  traits: 0300000001000000
+  happyQuips: []
+  sadQuips: []
+  angryQuips: []
+  getHurtQuips: []
+  getKilledQuips: []
+  anotherHurtQuips: []
+  anotherKilledQuips: []

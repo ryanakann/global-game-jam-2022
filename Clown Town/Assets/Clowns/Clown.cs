@@ -23,12 +23,16 @@ public class Clown
 
     public Clown(ClownProfile profile)
     {
+        Debug.Log("Creating Clown" + nextId);
         Id = nextId++;
         Name = ClownManager.getClownName();
         maxHealth = profile.health;
         CurrentHealth = profile.health;
         Personality = profile.personality;
         Traits = new HashSet<ClownTrait>(profile.traits);
+
+        Debug.Log("\t Name: " + Name);
+        Debug.Log("\t Personality: " + Personality);
     }
 
     public void Heal(float healAmount)

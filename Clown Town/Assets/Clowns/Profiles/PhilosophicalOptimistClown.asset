@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: PhilosophicalOptimistClown
   m_EditorClassIdentifier: 
   health: 0
-  personality: 0
-  traits: 
+  personality: 6
+  traits: 0100000004000000
+  happyQuips: []
+  sadQuips: []
+  angryQuips: []
   getHurtQuips: []
-  attackQuips: []
-  gratefulQuips: []
+  getKilledQuips: []
+  anotherHurtQuips: []
+  anotherKilledQuips: []

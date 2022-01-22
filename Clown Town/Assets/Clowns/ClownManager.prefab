@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  debugClownProfiles:
+  clownProfiles:
+  - {fileID: 11400000, guid: e8d98af6b1534a34e950bac72be94602, type: 2}
   - {fileID: 11400000, guid: 6e8ac928a740d8144b11b34b7d24a2d8, type: 2}
   - {fileID: 11400000, guid: 6f0f076dde73c41419dc539340365586, type: 2}
   - {fileID: 11400000, guid: 788cd75445b9adc42a263824ddc5f070, type: 2}

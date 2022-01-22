@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: VeteranClown
   m_EditorClassIdentifier: 
   health: 10
-  traits: 00000000
+  personality: 1
+  traits: 0000000004000000
+  happyQuips: []
+  sadQuips: []
+  angryQuips: []
+  getHurtQuips: []
+  getKilledQuips: []
+  anotherHurtQuips: []
+  anotherKilledQuips: []

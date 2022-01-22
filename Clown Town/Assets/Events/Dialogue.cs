@@ -13,12 +13,19 @@ public class Dialogue : MonoBehaviour
     protected Flowchart flowchart;
 
     [SerializeField]
-    public ClownTrait[] requiredTraits;
+    ClownPersonality[] requiredPersonalities;
+
+    [SerializeField]
+    ClownTrait[] requiredTraits;
 
     public DialogueReturn Return;
 
     public void Begin()
     {
+        if (!IsExecutable())
+        {
+            throw new System.Exception("Trying to Begin Dialogue without all trait or personality requirements being met");
+        }
         flowchart.ExecuteBlock("Begin");
     }
 
@@ -26,6 +33,29 @@ public class Dialogue : MonoBehaviour
     {
         Return?.Invoke(this);
     }
+
+    public bool IsExecutable()
+    {
+        bool executable = true;
+        foreach (ClownPersonality personality in requiredPersonalities)
+        {
+            bool hasPersonality = ClownManager.HasClownWithPersonality(personality);
+            if (!hasPersonality)
+                print("ClownManager does not have personality " + personality);
+            executable = executable && hasPersonality;
+        }
+
+        foreach (ClownTrait trait in requiredTraits)
+        {
+            bool hasTrait = ClownManager.HasClownWithTrait(trait);
+            if (!hasTrait)
+                print("ClownManager does not have trait " + trait);
+            executable = executable && hasTrait;
+        }
+
+        return executable;
+    }
+
 
     /**
      * If a Clown with the given id exists, harm it by the given amount.
@@ -117,9 +147,9 @@ public class Dialogue : MonoBehaviour
         return 1000;
     }
 
-    public string GetClownResponseToEvent(int id, EventType eventType)
+    public string GetQuipForClownForEvent(int id, EventTypes eventType)
     {
-        return "ugga";
+        return ClownManager.GetQuipForClownForEvent(id, eventType);
     }
 
 }
