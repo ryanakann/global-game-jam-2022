@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 6662388394423397502}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
@@ -87,6 +87,14 @@ PrefabInstance:
       propertyPath: selectedBlocks.Array.data[0]
       value: 
       objectReference: {fileID: 2951961337218942262}
+    - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: selectedBlocks.Array.data[1]
+      value: 
+      objectReference: {fileID: 6919759532719421004}
+    - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: selectedBlocks.Array.data[2]
+      value: 
+      objectReference: {fileID: 8571876827499588351}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 

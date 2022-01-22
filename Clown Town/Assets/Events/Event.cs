@@ -81,4 +81,10 @@ public class Event : MonoBehaviour
         ClownManager.KillClown(clownId);
     }
 
+    public void GainEarwax(int waxAmount)
+    {
+        print("You gain " + waxAmount + " wax");
+        print("WE HAVE NOT IMPLEMENTED WAX YOU FOOL");
+    }
+
 }
