@@ -7,7 +7,6 @@ public class Unit : MonoBehaviour {
     public float speed;
     public float health;
     public int cost;
-    public Sprite sprite;
     public List<string> tags;
 
     protected virtual void OnPlace(Lane lane) {

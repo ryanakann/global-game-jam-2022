@@ -25,7 +25,7 @@ public class PopulateShopItems : UnityEditor.AssetModificationProcessor {
             name = prefab.name,
             cost = prefab.GetComponent<Unit>().cost,
             prefab = prefab,
-            icon = prefab.GetComponent<Unit>().sprite,
+            icon = prefab.GetComponent<SpriteRenderer>().sprite,
         };
     }
 }
