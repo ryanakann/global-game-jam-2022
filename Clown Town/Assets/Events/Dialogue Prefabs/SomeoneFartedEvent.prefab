@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 6662388394423397502}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 2951961337218942262}
+      objectReference: {fileID: 6919759532719421004}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[1]
       value: 
@@ -130,10 +130,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 5895375159818085075}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: harmClownWithId
   targetMethodText: 'harmClownWithId (Int32, Single): Boolean'
   methodParameters:
@@ -262,10 +262,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 5895375159818085075}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: getRandomClownIdExcludingAnother
   targetMethodText: 'getRandomClownIdExcludingAnother (Int32): Int32'
   methodParameters:
@@ -305,8 +305,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 618.25
-    y: 479
+    x: 619.25
+    y: 478
     width: 79
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -387,10 +387,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 5895375159818085075}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: getClownIdWithTrait
   targetMethodText: 'getClownIdWithTrait (ClownTrait): Int32'
   methodParameters:
@@ -481,10 +481,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 5895375159818085075}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: getClownName
   targetMethodText: 'getClownName (Int32): String'
   methodParameters:
@@ -560,8 +560,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 811.25
-    y: 479
+    x: 812.25
+    y: 478
     width: 83
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -661,10 +661,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 5895375159818085075}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: getClownName
   targetMethodText: 'getClownName (Int32): String'
   methodParameters:
@@ -704,8 +704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 414.25
-    y: 481
+    x: 415.25
+    y: 480
     width: 82
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}

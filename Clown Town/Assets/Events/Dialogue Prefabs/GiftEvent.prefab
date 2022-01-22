@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 4554575585366404267}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 4575546583700617946}
+      objectReference: {fileID: 7483746250174863841}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[1]
       value: 
@@ -147,17 +147,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2419875372901692225, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
   m_PrefabInstance: {fileID: 4673178583062125365}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4575546583700617946 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
-  m_PrefabInstance: {fileID: 4673178583062125365}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7011938583995279476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7483746250174863841 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
@@ -277,10 +266,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 5511309030003516924}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: getClownIdWithTrait
   targetMethodText: 'getClownIdWithTrait (ClownTrait): Int32'
   methodParameters:
@@ -385,10 +374,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 5511309030003516924}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: getClownName
   targetMethodText: 'getClownName (Int32): String'
   methodParameters:
@@ -472,10 +461,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 5511309030003516924}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: GainPeanuts
   targetMethodText: 'GainPeanuts (Int32): Void'
   methodParameters:

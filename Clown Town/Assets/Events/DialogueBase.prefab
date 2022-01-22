@@ -104,8 +104,10 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 2810787922737103572}
+  selectedCommands:
+  - {fileID: 872003966159600688}
   variables: []
   description: 
   stepPause: 0
@@ -186,10 +188,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 911536326881492681}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: Finish
   targetMethodText: 'Finish (): Void'
   methodParameters: []
