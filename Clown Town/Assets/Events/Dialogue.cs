@@ -56,6 +56,11 @@ public class Dialogue : MonoBehaviour
         return ClownManager.getClownIdWithTrait(queryTrait);
     }
 
+    public int GetClownIdWithPersonality(ClownPersonality queryPersonality)
+    {
+        return ClownManager.GetClownIdWithPersonality(queryPersonality);
+    }
+
     public string getClownName(int queryId)
     {
         return ClownManager.getClownWithId(queryId).Name;
@@ -100,6 +105,11 @@ public class Dialogue : MonoBehaviour
     {
         print("WE HAVE NOT IMPLEMENTED PEANUTS YOU FOOL");
         return 1000;
+    }
+
+    public string GetClownResponseToEvent(int id, EventType eventType)
+    {
+        return "ugga";
     }
 
 }
