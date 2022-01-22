@@ -45,7 +45,7 @@ public class GamblingDen : Event
             "Party",
             "Gamble",
             "Waste and Want",
-            "Fritter",
+            "Fritter and Forget",
             "Hope and Mourn",
             "Lose. Badly."
         };
