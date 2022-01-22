@@ -44,7 +44,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  debugClownProfiles: []
+  debugClownProfiles:
+  - {fileID: 11400000, guid: 6e8ac928a740d8144b11b34b7d24a2d8, type: 2}
+  - {fileID: 11400000, guid: 6f0f076dde73c41419dc539340365586, type: 2}
+  - {fileID: 11400000, guid: 788cd75445b9adc42a263824ddc5f070, type: 2}
+  - {fileID: 11400000, guid: cdafed035063c2447adf81e75b3394eb, type: 2}
+  - {fileID: 11400000, guid: 688fe720ebff20543b656f461b35f69c, type: 2}
+  - {fileID: 11400000, guid: bb147ea106f27b041ba7ab357b3f3f64, type: 2}
+  - {fileID: 11400000, guid: bc93c69ff8d782b47982cd5545500d86, type: 2}
+  - {fileID: 11400000, guid: 65a55127827875641ac3b552e69723f0, type: 2}
+  - {fileID: 11400000, guid: 62be4a1454d87184fa8a341f2d3fb70f, type: 2}
+  - {fileID: 11400000, guid: ded852da66cb5ae4aa24976b20d1ead4, type: 2}
+  - {fileID: 11400000, guid: 2d19a59f5109c6d4185e49f340c21e40, type: 2}
   clownFirstNames:
   - Squiggle
   - Squash
