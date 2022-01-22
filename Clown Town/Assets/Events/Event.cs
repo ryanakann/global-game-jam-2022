@@ -64,4 +64,10 @@ public class Event : MonoBehaviour
         schlimazel.Harm(schlimazel.CurrentHealth * healthFactor);
     }
 
+    public void GainPeanuts(int peanutsAmount)
+    {
+        print("You gain " + peanutsAmount + " peanuts");
+        print("WE HAVE NOT IMPLEMENTED PEANUTS YOU FOOL");
+    }
+
 }
