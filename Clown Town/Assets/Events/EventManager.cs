@@ -2,6 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EventTypes {
+    ClownHappy,
+    ClownSad,
+    ClownHurt,
+    ClownDying,
+    ClownDeath,
+    LevelFinish,
+    InTransit,
+    CarStop,
+    MusicClose,
+}
+
 public class EventManager : MonoBehaviour
 {
     [SerializeField]

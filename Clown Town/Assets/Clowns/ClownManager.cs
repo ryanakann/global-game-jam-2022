@@ -19,6 +19,8 @@ public class ClownManager : MonoBehaviour
 
     private static Dictionary<int, Clown> clowns = new Dictionary<int, Clown>();
     private static Dictionary<ClownTrait, List<Clown>> clownsByTrait = new Dictionary<ClownTrait, List<Clown>>();
+    private static Dictionary<ClownPersonality, List<Clown>> clownsByPersonality = new Dictionary<ClownPersonality, List<Clown>>();
+
 
     private void Awake()
     {
@@ -75,6 +77,18 @@ public class ClownManager : MonoBehaviour
             foundId = getRandomClownId();
         }
         return foundId;
+    }
+
+    public static int GetClownIdWithPersonality(ClownPersonality queryPersonality)
+    {
+        if (clownsByPersonality.ContainsKey(queryPersonality) && clownsByPersonality[queryPersonality].Count > 0)
+        {
+            return clownsByPersonality[queryPersonality].ElementAt(Random.Range(0, clownsByPersonality[queryPersonality].Count)).Id;
+        }
+        else
+        {
+            throw new System.Exception("No Clowns with the trait " + queryPersonality);
+        }
     }
 
     public static int getClownIdWithTrait(ClownTrait queryTrait)
