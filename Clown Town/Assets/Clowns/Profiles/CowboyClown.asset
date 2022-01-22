@@ -26,6 +26,6 @@ MonoBehaviour:
   getKilledQuips:
   - '"Time for one last ride... into the sunset..."'
   anotherHurtQuips:
-  - '"Partner, I you''d better get that looked at..."'
+  - '"Partner, I think you''d better get that looked at..."'
   anotherKilledQuips:
   - '"Take that one out behind the barn - doesn''t quite look finished yet..."'
