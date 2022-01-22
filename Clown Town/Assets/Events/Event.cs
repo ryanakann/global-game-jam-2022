@@ -70,6 +70,12 @@ public class Event : MonoBehaviour
         print("WE HAVE NOT IMPLEMENTED PEANUTS YOU FOOL");
     }
 
+    public void GainEarwax(int waxAmount)
+    {
+        print("You gain " + waxAmount + " wax");
+        print("WE HAVE NOT IMPLEMENTED WAX YOU FOOL");
+    }
+
     public void LoseEarwax(int waxAmount)
     {
         print("You lose " + waxAmount + " wax");
@@ -79,6 +85,18 @@ public class Event : MonoBehaviour
     public void KillClown(int clownId)
     {
         ClownManager.KillClown(clownId);
+    }
+
+    public int GetCurrentWax()
+    {
+        print("WE HAVE NOT IMPLEMENTED WAX YOU FOOL");
+        return 100;
+    }
+
+    public int GetCurrentPeanuts()
+    {
+        print("WE HAVE NOT IMPLEMENTED PEANUTS YOU FOOL");
+        return 1000;
     }
 
 }
