@@ -86,6 +86,11 @@ public class Dialogue : MonoBehaviour
         return ClownManager.getClownIdWithTrait(queryTrait);
     }
 
+    public int getClownIdWithTraitExcludingAnother(int excludeId, ClownTrait queryTrait)
+    {
+        return ClownManager.getClownIdWithTraitExcludingAnother(excludeId, queryTrait);
+    }
+
     public int GetClownIdWithPersonality(ClownPersonality queryPersonality)
     {
         return ClownManager.GetClownIdWithPersonality(queryPersonality);

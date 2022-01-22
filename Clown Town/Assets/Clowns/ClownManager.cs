@@ -128,6 +128,29 @@ public class ClownManager : MonoBehaviour
         
     }
 
+    public static int getClownIdWithTraitExcludingAnother(int excludeId, ClownTrait queryTrait)
+    {
+        if (clowns.Count <= 1 || (clownsByTrait[queryTrait].Count == 1 && clownsByTrait[queryTrait].ElementAt(0).Id == excludeId))
+        {
+            throw new System.Exception("Not enough Clowns to sample and exclude.");
+        }
+
+        int foundId = excludeId;
+        while (foundId == excludeId)
+        {
+            if (clownsByTrait.ContainsKey(queryTrait) && clownsByTrait[queryTrait].Count > 0)
+            {
+                foundId = clownsByTrait[queryTrait].ElementAt(Random.Range(0, clownsByTrait[queryTrait].Count)).Id;
+            }
+            else
+            {
+                throw new System.Exception("No Clowns with the trait " + queryTrait);
+            }
+        }
+
+        return foundId;
+    }
+
     public static string getClownName()
     {
         string firstName = instance.clownFirstNames[Random.Range(0, instance.clownFirstNames.Length)];

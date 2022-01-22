@@ -113,12 +113,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 6338171538407411055}
+      objectReference: {fileID: 4240795308505400113}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 83
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6106615107159959229, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: Name
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 82
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: commandList.Array.size
@@ -211,6 +211,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Gambling Den
   flowchart: {fileID: 7536675096728061771}
+  requiredPersonalities: 
+  requiredTraits: 
 --- !u!114 &254316813320027516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,8 +306,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 738
-    y: 411
-    width: 75
+    y: 410
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -470,7 +472,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 867
     y: 412
-    width: 103
+    width: 63
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
