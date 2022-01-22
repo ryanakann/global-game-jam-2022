@@ -76,4 +76,9 @@ public class Event : MonoBehaviour
         print("WE HAVE NOT IMPLEMENTED WAX YOU FOOL");
     }
 
+    public void KillClown(int clownId)
+    {
+        ClownManager.KillClown(clownId);
+    }
+
 }

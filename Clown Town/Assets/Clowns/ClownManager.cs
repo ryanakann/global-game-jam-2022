@@ -96,4 +96,18 @@ public class ClownManager : MonoBehaviour
         string lastName = instance.clownLastNames[Random.Range(0, instance.clownLastNames.Length)];
         return firstName + " " + lastName;
     }
+
+    public static void KillClown(int clownId)
+    {
+        if (clowns.ContainsKey(clownId))
+        {
+            Clown theClown = clowns[clownId];
+            foreach (ClownTrait trait in theClown.Traits)
+            {
+                clownsByTrait[trait].Remove(theClown);
+            }
+            theClown.Kill();
+            clowns.Remove(clownId);
+        }
+    }
 }

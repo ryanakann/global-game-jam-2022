@@ -49,6 +49,12 @@ public class Clown
         Debug.Log("Clown " + Name + " has " + CurrentHealth + " health");
     }
 
+    public void Kill()
+    {
+        CurrentHealth = 0;
+        alive = false;
+    }
+
     public bool IsAlive()
     {
         return alive;
