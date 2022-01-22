@@ -7,7 +7,7 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     bool debug;
     [SerializeField]
-    GameObject debugEventPrefab;
+    GameObject debugDialoguePrefab;
 
     public static EventManager instance;
 
@@ -23,21 +23,21 @@ public class EventManager : MonoBehaviour
     {
         if (debug)
         {
-            GameObject debugEventObj = Instantiate(debugEventPrefab);
-            Event debugEvent = debugEventObj.GetComponent<Event>();
-            debugEvent.Begin();
+            GameObject debugDialogueObj = Instantiate(debugDialoguePrefab);
+            Dialogue debugDialogue = debugDialogueObj.GetComponent<Dialogue>();
+            debugDialogue.Begin();
         }
     }
 
-    void BeginEvent(Event eventToBegin)
+    void BeginDialogue(Dialogue dialogueToBegin)
     {
-        eventToBegin.Return += FinishEvent;
-        eventToBegin.Begin();
+        dialogueToBegin.Return += FinishEvent;
+        dialogueToBegin.Begin();
     }
 
-    void FinishEvent(Event eventFinished)
+    void FinishEvent(Dialogue dialogueFinished)
     {
-        Debug.Log("Finished Event: " + eventFinished.Name);
+        Debug.Log("Finished Dialogue: " + dialogueFinished.Name);
     }
 
 }

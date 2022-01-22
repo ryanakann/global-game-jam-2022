@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GamblingDen : Event
+public class GamblingDen : Dialogue
 {
     public string GetGamblingDenName()
     {

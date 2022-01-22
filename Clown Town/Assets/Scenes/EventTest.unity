@@ -344,7 +344,7 @@ PrefabInstance:
     - target: {fileID: 4642519744322312776, guid: 4bbafa4cf8bea8641b27b25042799570, type: 3}
       propertyPath: debugEventPrefab
       value: 
-      objectReference: {fileID: 1053314269149339998, guid: cbc758d562ab86e43a3554c454908a7c, type: 3}
+      objectReference: {fileID: 8958280480966668658, guid: 982f6e501c6c8de49bdd61a50e78448b, type: 3}
     - target: {fileID: 4642519744322312777, guid: 4bbafa4cf8bea8641b27b25042799570, type: 3}
       propertyPath: m_Name
       value: EventManager

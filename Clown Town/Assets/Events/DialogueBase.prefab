@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 714748582091885516}
   - component: {fileID: 6106615107159959229}
   m_Layer: 0
-  m_Name: EventBase
+  m_Name: DialogueBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e902b8a723a05046a75a9cb5925e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: BaseEvent
+  Name: DialogueBase
   flowchart: {fileID: 1757529505774536944}
 --- !u!1 &2419875372901692225
 GameObject:

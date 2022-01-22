@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 
-public delegate void EventReturn(Event _event);
+public delegate void DialogueReturn(Dialogue _dialogue);
 
-public class Event : MonoBehaviour
+public class Dialogue : MonoBehaviour
 {
     public string Name;
 
     [SerializeField]
     protected Flowchart flowchart;
 
-    public EventReturn Return;
+    public DialogueReturn Return;
 
     public void Begin()
     {
