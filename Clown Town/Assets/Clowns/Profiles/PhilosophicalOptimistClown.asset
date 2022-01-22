@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19987c96c5b85d4da8448e5406cb84b, type: 3}
-  m_Name: HappyClown
+  m_Name: PhilosophicalOptimistClown
   m_EditorClassIdentifier: 
-  health: 3
-  traits: 01000000
+  health: 0
+  personality: 0
+  traits: 
+  getHurtQuips: []
+  attackQuips: []
+  gratefulQuips: []

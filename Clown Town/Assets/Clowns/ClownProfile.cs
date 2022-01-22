@@ -21,6 +21,8 @@ public enum ClownTrait {
     Happy,
     Sad,
     Clumsy,
+    Stoic,
+    Anxious,
 }
 
 [CreateAssetMenu(menuName = "CLOWN/ClownProfile", fileName = "new ClownProfile")]
@@ -30,7 +32,8 @@ public class ClownProfile : ScriptableObject
     public ClownPersonality personality;
     public List<ClownTrait> traits;
 
-    public string[] getHurtDialogue;
-    public string[] attackDialogue;
-    public string[] gratefulDialogue;
+    public string[] getHurtQuips;
+    public string[] attackQuips;
+    public string[] gratefulQuips;
+
 }

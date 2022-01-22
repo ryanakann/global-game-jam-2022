@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19987c96c5b85d4da8448e5406cb84b, type: 3}
-  m_Name: VeteranClown
+  m_Name: BadJokesClown
   m_EditorClassIdentifier: 
-  health: 10
-  traits: 00000000
+  health: 0
+  personality: 0
+  traits: 
+  getHurtQuips: []
+  attackQuips: []
+  gratefulQuips: []

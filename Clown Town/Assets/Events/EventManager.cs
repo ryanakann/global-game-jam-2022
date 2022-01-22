@@ -7,7 +7,7 @@ public enum EventTypes {
     ClownSad,
     ClownHurt,
     ClownDying,
-    ClownDeath,
+    AnotherClownDied,
     LevelFinish,
     InTransit,
     CarStop,
