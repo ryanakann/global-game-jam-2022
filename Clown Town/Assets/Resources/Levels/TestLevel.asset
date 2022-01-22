@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0e1ab7cfe37c34c8407026ea316579, type: 3}
+  m_Name: TestLevel
+  m_EditorClassIdentifier: 
+  scene:
+    m_Handle: 0
+  details: {fileID: 11400000, guid: a3c37c6532780a84e9c00bf69f3e4b10, type: 2}
+  laneCount: 7
+  laneLength: 10

@@ -12,8 +12,17 @@ public class LevelManager : PersistentSingleton<LevelManager>
     public UnityEvent<LevelStatus> OnEndLevel;
     #endregion
 
+    public void Start()
+    {
+        if (Constants.debug)
+        {
+            LoadLevel();
+        }
+    }
+
     public void LoadLevel()
     {
+        currentLevel.GenerateLanes();
         OnLoadLevel?.Invoke();
     }
 
@@ -28,5 +37,13 @@ public class LevelManager : PersistentSingleton<LevelManager>
         Defeat,
         Retreat,
         Draw
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (Constants.debug)
+        {
+            Gizmos.DrawCube(currentLevel.levelArea.center, currentLevel.levelArea.size);
+        }
     }
 }
