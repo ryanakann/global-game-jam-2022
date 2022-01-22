@@ -12,6 +12,9 @@ public class Dialogue : MonoBehaviour
     [SerializeField]
     protected Flowchart flowchart;
 
+    [SerializeField]
+    public ClownTrait[] requiredTraits;
+
     public DialogueReturn Return;
 
     public void Begin()
