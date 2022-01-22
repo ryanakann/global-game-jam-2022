@@ -45,9 +45,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   debugClownProfiles: []
-  clownNames:
-  - Bobo
+  clownFirstNames:
+  - Squiggle
+  - Squash
+  - Giggleburt
   - Bozo
-  - Pagliacci
-  - UngusBungus
-  - u lol
+  - Krusty
+  - Rusty
+  - Violent J
+  - Garfield
+  - Smiles
+  - Funny
+  - Lucas
+  - Ronald
+  - Big
+  - Clownald
+  - Clownseph
+  - Clownard
+  - Hahward
+  - Lonely
+  - Old
+  - Clownton
+  - Clownser
+  - Ol'
+  - Honkald
+  - Pale
+  - Happy
+  - BONUS
+  - Howie
+  - Tricky
+  - Clywn
+  - Clunch
+  - Death
+  - Thomas
+  - Boffo
+  - Zappy
+  - Dippin
+  - Golfo
+  clownLastNames:
+  - Squiggle
+  - Squash
+  - Juggalo
+  - Hoohah
+  - Carnal
+  - Carnie
+  - Canary
+  - Ball
+  - Smiles
+  - Funny
+  - Fungi
+  - MacDonald
+  - Smalls
+  - Trapeze
+  - Honk
+  - Clownsworth
+  - Clowny
+  - Hyde
+  - Clownington
+  - Circus
+  - Jumpy
+  - Big Nose
+  - Noseworth
+  - Rubber
+  - Laughalot
+  - Honkington
+  - Honksworth
+  - Clownish
+  - Heehah
+  - Laughter
+  - CLOWN
+  - Dread
+  - Hamhead
+  - Balloon
+  - Explodie
+  - Tricky
+  - Scammer
+  - Dystopia
+  - Worble
+  - Juggler
+  - Foolery
+  - Schloop
+  - Stiltson
+  - Dots
+  - Gobsmack

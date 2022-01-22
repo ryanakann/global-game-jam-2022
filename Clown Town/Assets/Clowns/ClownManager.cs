@@ -9,8 +9,11 @@ public class ClownManager : MonoBehaviour
     bool debug;
     [SerializeField]
     List<ClownProfile> debugClownProfiles;
+
     [SerializeField]
-    string[] clownNames;
+    string[] clownFirstNames;
+    [SerializeField]
+    string[] clownLastNames;
 
     public static ClownManager instance;
 
@@ -89,6 +92,8 @@ public class ClownManager : MonoBehaviour
 
     public static string getClownName()
     {
-        return instance.clownNames[Random.Range(0, instance.clownNames.Length)];
+        string firstName = instance.clownFirstNames[Random.Range(0, instance.clownFirstNames.Length)];
+        string lastName = instance.clownLastNames[Random.Range(0, instance.clownLastNames.Length)];
+        return firstName + " " + lastName;
     }
 }
