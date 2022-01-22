@@ -12,7 +12,8 @@ public enum ClownPersonality {
     PhilosophicalPessimist,
     BadJokes,
     Hypochondriac,
-    Bully
+    Bully,
+    Vociferous,
 }
 
 public enum ClownTrait {
