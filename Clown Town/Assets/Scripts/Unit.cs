@@ -24,5 +24,6 @@ public class Unit : MonoBehaviour {
     private void Start() {
         GetComponent<Health>().maxHealth = health;
         GetComponent<Health>().SetHealth(health);
+        //OnPlace();
     }
 }
