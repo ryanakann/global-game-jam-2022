@@ -40,5 +40,6 @@ public class Unit : MonoBehaviour {
     {
         GetComponent<Health>().maxHealth = health;
         GetComponent<Health>().SetHealth(health);
+        //OnPlace();
     }
 }

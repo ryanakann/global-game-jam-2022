@@ -18,15 +18,21 @@ public class Clown
     float maxHealth;
     public float CurrentHealth { get; private set; }
 
+    public ClownPersonality Personality { get; private set; }
     public HashSet<ClownTrait> Traits { get; private set; }
 
     public Clown(ClownProfile profile)
     {
+        Debug.Log("Creating Clown" + nextId);
         Id = nextId++;
         Name = ClownManager.getClownName();
         maxHealth = profile.health;
         CurrentHealth = profile.health;
+        Personality = profile.personality;
         Traits = new HashSet<ClownTrait>(profile.traits);
+
+        Debug.Log("\t Name: " + Name);
+        Debug.Log("\t Personality: " + Personality);
     }
 
     public void Heal(float healAmount)
@@ -47,6 +53,12 @@ public class Clown
             alive = false;
         }
         Debug.Log("Clown " + Name + " has " + CurrentHealth + " health");
+    }
+
+    public void Kill()
+    {
+        CurrentHealth = 0;
+        alive = false;
     }
 
     public bool IsAlive()

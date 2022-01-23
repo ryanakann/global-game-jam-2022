@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19987c96c5b85d4da8448e5406cb84b, type: 3}
+  m_Name: CowboyClown
+  m_EditorClassIdentifier: 
+  health: 4
+  personality: 2
+  traits: 04000000
+  happyQuips:
+  - '"Well, ain''t that the finest sight you ever did see..."'
+  sadQuips:
+  - '"Cowpokes, I gotta admit this is a rough one..."'
+  angryQuips:
+  - '"What a gottdam no-good worthless piece of nothin..."'
+  getHurtQuips:
+  - '*Aieee*'
+  getKilledQuips:
+  - '"Time for one last ride... into the sunset..."'
+  anotherHurtQuips:
+  - '"Partner, I think you''d better get that looked at..."'
+  anotherKilledQuips:
+  - '"Take that one out behind the barn - doesn''t quite look finished yet..."'

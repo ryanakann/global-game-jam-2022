@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19987c96c5b85d4da8448e5406cb84b, type: 3}
+  m_Name: DEFAULT
+  m_EditorClassIdentifier: 
+  health: 5
+  personality: 0
+  traits: 
+  happyQuips:
+  - '"This is the greatest day!"'
+  - '"I have never been so happy in my life or afterlife!"'
+  - '*a single tear of joy rolls down their cheek*'
+  - '"Isn''t this wonderful!"'
+  - '"How delightful!"'
+  sadQuips:
+  - '"Oh..."'
+  - '"Well isn''t that a shame..."'
+  - '"Buhuhoo..." *sniff* *sniff*'
+  - '*sniff* "Buhoo..." *sniff*'
+  - '"The light has gone out of this world..."'
+  angryQuips:
+  - '"Why I oughta..."'
+  - '"Hey, buddy, you better watch it!"'
+  - '*Incoherent rabid screaming*'
+  - '"Oooh! Grrrr! I''m mad!"'
+  - '*Stares wide-eyed and trembling into the middle distance*'
+  getHurtQuips:
+  - '"OOF!"'
+  - '"Yeouch!"'
+  - '*Incoherent wailing*'
+  getKilledQuips:
+  - '*Clutches dramatically at the sky, and is still*'
+  - '"Tell... tell the others I went out pieing..."'
+  - '"Bury me... in the ball pit..."'
+  anotherHurtQuips:
+  - '*Winces in sympathy*'
+  - '"Yikes! That''s gotta hurt!"'
+  anotherKilledQuips:
+  - '*Stares in shock and horror*'
+  - '"Oh NO!"'

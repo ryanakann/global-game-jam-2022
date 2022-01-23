@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19987c96c5b85d4da8448e5406cb84b, type: 3}
   m_Name: VeteranClown
   m_EditorClassIdentifier: 
-  health: 7
-  traits: 03000000
+  health: 10
+  personality: 1
+  traits: 0000000004000000
+  happyQuips: []
+  sadQuips: []
+  angryQuips: []
+  getHurtQuips: []
+  getKilledQuips: []
+  anotherHurtQuips: []
+  anotherKilledQuips: []
