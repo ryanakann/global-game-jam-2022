@@ -93,11 +93,11 @@ PrefabInstance:
       objectReference: {fileID: 4461989027907148555}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 4796132032839377615}
+      objectReference: {fileID: 6165410028936643775}
     - target: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.x
       value: 979
@@ -314,6 +314,7 @@ MonoBehaviour:
   - {fileID: 8905042172616084636}
   - {fileID: 5979435717924498037}
   - {fileID: 9043817399984435396}
+  - {fileID: 6165410028936643775}
   - {fileID: 4367497630876499402}
   - {fileID: 4796132032839377615}
   - {fileID: 8529224446102982565}
@@ -575,6 +576,27 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &8529224446102982565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086316175939676602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 14
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 7260739838424143919}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
 --- !u!114 &8836507143348959341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,7 +701,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &8529224446102982565
+--- !u!114 &6165410028936643775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -688,15 +710,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 7086316175939676602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 14
+  itemId: 15
   indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 7260739838424143919}
-  startLabel:
-    stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
+  description: 
+  targetObject: {fileID: 5720932333223863346}
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Dialogue
+  targetMethod: TestInterrupt
+  targetMethodText: 'TestInterrupt (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
   callMode: 0

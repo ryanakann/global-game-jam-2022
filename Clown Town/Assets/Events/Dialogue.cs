@@ -20,6 +20,9 @@ public class Dialogue : MonoBehaviour
 
     public DialogueReturn Return;
 
+    Block lastBlock;
+    int lastCommandIndex;
+
     public void Begin()
     {
         if (!IsExecutable())
@@ -32,6 +35,11 @@ public class Dialogue : MonoBehaviour
     public void Finish()
     {
         Return?.Invoke(this);
+    }
+
+    public void TestInterrupt()
+    {
+        EventManager.TestDialogueInterrupt(this);
     }
 
     public bool IsExecutable()
@@ -56,6 +64,17 @@ public class Dialogue : MonoBehaviour
         return executable;
     }
 
+    public void Pause()
+    {
+        lastBlock = flowchart.GetExecutingBlocks()[0];
+        lastCommandIndex = lastBlock.ActiveCommand.CommandIndex;
+        flowchart.StopAllBlocks();
+    }
+
+    public void Resume()
+    {
+        flowchart.ExecuteBlock(lastBlock, lastCommandIndex + 1);
+    }
 
     /**
      * If a Clown with the given id exists, harm it by the given amount.

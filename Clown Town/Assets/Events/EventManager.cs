@@ -24,6 +24,10 @@ public class EventManager : MonoBehaviour
     bool debug;
     [SerializeField]
     GameObject debugDialoguePrefab;
+    [SerializeField]
+    GameObject debugInterruptDialoguePrefab;
+
+    static Dialogue interruptedDialogue;
 
     public static EventManager instance;
 
@@ -41,19 +45,37 @@ public class EventManager : MonoBehaviour
         {
             GameObject debugDialogueObj = Instantiate(debugDialoguePrefab);
             Dialogue debugDialogue = debugDialogueObj.GetComponent<Dialogue>();
-            debugDialogue.Begin();
+            BeginDialogue(debugDialogue);
         }
     }
 
     void BeginDialogue(Dialogue dialogueToBegin)
     {
-        dialogueToBegin.Return += FinishEvent;
+        dialogueToBegin.Return += FinishDialogue;
         dialogueToBegin.Begin();
     }
 
-    void FinishEvent(Dialogue dialogueFinished)
+    void FinishDialogue(Dialogue dialogueFinished)
     {
         Debug.Log("Finished Dialogue: " + dialogueFinished.Name);
     }
 
+    public static void TestDialogueInterrupt(Dialogue dialogueToInterrupt)
+    {
+        interruptedDialogue = dialogueToInterrupt;
+        interruptedDialogue.Pause();
+        interruptedDialogue.gameObject.SetActive(false);
+
+        GameObject interruptingDialogueObj = Instantiate(instance.debugInterruptDialoguePrefab);
+        Dialogue interruptingDialogue = interruptingDialogueObj.GetComponent<Dialogue>();
+        interruptingDialogue.Return += FinishInterruptingDialogue;
+        interruptingDialogue.Begin();
+    }
+
+    static void FinishInterruptingDialogue(Dialogue dialogueFinished)
+    {
+        Debug.Log("Finished Dialogue: " + dialogueFinished.Name);
+        interruptedDialogue.gameObject.SetActive(true);
+        interruptedDialogue.Resume();
+    }
 }
