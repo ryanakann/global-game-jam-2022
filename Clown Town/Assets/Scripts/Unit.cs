@@ -1,27 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Health), typeof(SpriteRenderer), typeof(UnitMovement))]
 public class Unit : MonoBehaviour {
+    public Lane lane;
+
     public float speed;
     public float health;
     public int cost;
     public List<string> tags;
 
-    protected virtual void OnPlace(Lane lane) {
+    public UnityEvent<Lane> OnPlace;
+    public UnityEvent OnAttack;
+    public UnityEvent OnDie;
+    public UnityEvent<float> OnTakeDamage;
 
+    public virtual void Place(Lane lane) 
+    {
+        this.lane = lane;
+        OnPlace?.Invoke(lane);
     }
-    protected virtual void OnAttack() {
+    public virtual void Attack() 
+    {
         print(gameObject.name + " is attacking!");
+        OnAttack?.Invoke();
     }
-    protected virtual void OnTakeDamage(float amount) {
-
+    public virtual void TakeDamage(float amount)
+    {
+        OnTakeDamage?.Invoke(amount);
     }
-    protected virtual void OnDie() {
+    public virtual void Die() 
+    {
         GetComponent<Health>().Die();
+        OnDie?.Invoke();
     }
-    private void Start() {
+    private void Start() 
+    {
         GetComponent<Health>().maxHealth = health;
         GetComponent<Health>().SetHealth(health);
     }

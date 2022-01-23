@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd0e1ab7cfe37c34c8407026ea316579, type: 3}
+  m_Script: {fileID: 11500000, guid: 417526c1d3e956d428e4b5ab7bd64bc2, type: 3}
   m_Name: TestLevel
   m_EditorClassIdentifier: 
+  laneCount: 7
+  cellCountPerLane: 7
   scene:
     m_Handle: 0
-  details: {fileID: 11400000, guid: a3c37c6532780a84e9c00bf69f3e4b10, type: 2}
-  laneCount: 7
-  laneLength: 10
+  details: {fileID: 11400000, guid: d0fa67159edc17449aae9bb93c0bfa42, type: 2}
