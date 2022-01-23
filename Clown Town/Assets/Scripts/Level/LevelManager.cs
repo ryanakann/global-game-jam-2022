@@ -29,7 +29,7 @@ public class LevelManager : PersistentSingleton<LevelManager>
         {
             if (Input.GetMouseButtonDown(0))
             {
-                PlaceUnit(Resources.Load<GameObject>("Prefabs/Units/Cow"));
+                PlaceUnit(Resources.LoadAll<GameObject>("Prefabs/Units").OrderBy(x => Random.value).First());
             }
             else if (Input.GetMouseButtonDown(1))
             {
@@ -83,7 +83,48 @@ public class LevelManager : PersistentSingleton<LevelManager>
     public void LoadLevel()
     {
         GenerateLanes();
+        StartLevel();
         OnLoadLevel?.Invoke();
+    }
+
+    public void StartLevel()
+    {
+        StartCoroutine(WaveCR());
+    }
+
+    private IEnumerator WaveCR()
+    {
+        float duration = currentLevelInfo.waveDuration;
+        AnimationCurve speedCurve = currentLevelInfo.waveCurve;
+        Queue<GameObject> enemiesToSpawn = new Queue<GameObject>(currentLevelInfo.enemies);
+
+        float levelTime = 0f;
+        const float offset = 0.1f;
+        float threshold = 1f + Random.Range(-offset, offset);
+        float t = threshold;
+
+        yield return new WaitForSeconds(currentLevelInfo.initialWaitTime);
+
+        while (enemiesToSpawn.Count > 0)
+        {
+            if (t >= threshold)
+            {
+                Debug.Log("SPAWN ENEMY");
+
+                GameObject enemyPrefab = enemiesToSpawn.Dequeue();
+                Lane lane = lanes[Random.Range(0, lanes.Count)];
+                lane.AddUnit(enemyPrefab, -1);
+
+                t -= threshold;
+                threshold = 1f + Random.Range(-offset, offset);
+            }
+
+            float delta = Time.deltaTime;
+            levelTime += delta;
+            t += speedCurve.Evaluate(levelTime / duration) * delta;
+            yield return new WaitForEndOfFrame();
+        }
+        Debug.Log("Spawning complete!");
     }
 
     public void EndLevel(LevelStatus status)

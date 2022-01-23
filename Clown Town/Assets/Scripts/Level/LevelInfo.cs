@@ -13,4 +13,10 @@ public class LevelInfo : ScriptableObject
 
     public Scene scene;
     public LevelSkin details;
+
+    public float initialWaitTime = 20f;
+    public float waveDuration;
+    public AnimationCurve waveCurve;
+
+    public List<GameObject> enemies;
 }

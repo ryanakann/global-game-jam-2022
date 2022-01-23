@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9019ff194f448e2be34b1f4d74f46c, type: 3}
   m_Name: All Shop Items
   m_EditorClassIdentifier: 
-  shopItems: []
+  shopItems:
+  - name: Egg
+    cost: 15
+    prefab: {fileID: 3748767426357614230, guid: 7bcd33905f9234e248911c8dea9196f3, type: 3}
+    icon: {fileID: 21300000, guid: 7b801fff2ab734053b05dfeadec0f1ce, type: 3}
+  - name: Monkey
+    cost: 20
+    prefab: {fileID: 6639771591379664911, guid: a71c044d4a9054923888e7386760e52b, type: 3}
+    icon: {fileID: 21300000, guid: 4a24f73f59bf7461198fa5a414962e2e, type: 3}

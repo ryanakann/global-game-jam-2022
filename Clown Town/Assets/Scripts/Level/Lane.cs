@@ -8,6 +8,11 @@ public class Lane : MonoBehaviour {
 
     public Vector2 start;
     public Vector2 end;
+
+    float laneLength;
+    float laneWidth;
+    float cellWidth;
+
     protected List<GameObject> objects { get; }//indexed by grid position within lane
 
     public GameObject cellPrefab;
@@ -20,9 +25,9 @@ public class Lane : MonoBehaviour {
     {
         index = laneIndex;
 
-        float laneLength = levelInfo.details.playArea.size.x;
-        float laneWidth = levelInfo.details.playArea.size.y / levelInfo.laneCount;
-        float cellWidth = laneLength / levelInfo.cellCountPerLane;
+        laneLength = levelInfo.details.playArea.size.x;
+        laneWidth = levelInfo.details.playArea.size.y / levelInfo.laneCount;
+        cellWidth = laneLength / levelInfo.cellCountPerLane;
 
         Bounds playArea = levelInfo.details.playArea;
 
@@ -44,14 +49,28 @@ public class Lane : MonoBehaviour {
 
     public void AddUnit(GameObject unit, int cellIndex)
     {
-        Cell cell = cells[cellIndex];
-        if (cellIndex < 0 || cellIndex >= cells.Count)
+        if (cellIndex >= cells.Count)
         {
             Debug.LogError($"Provided cellIndex ({cellIndex}) must be within range ({0}, {cells.Count})");
             return;
         }
 
-        cell.AddUnit(unit);
+        // Enemy spawn off the screen
+        if (cellIndex < 0)
+        {
+            Unit instance = Instantiate(unit).GetComponent<Unit>();
+
+            instance.transform.SetParent(transform);
+            instance.transform.position = end + Vector2.right * cellWidth;
+
+            instance.Place(this);
+        }
+        else
+        {
+            Cell cell = cells[cellIndex];
+            cell.AddUnit(unit);
+        }
+
     }
 
     public void RemoveUnit(int cellIndex)

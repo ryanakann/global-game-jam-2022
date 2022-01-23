@@ -17,6 +17,16 @@ public class Unit : MonoBehaviour {
     public UnityEvent OnDie;
     public UnityEvent<float> OnTakeDamage;
 
+    private bool _isEnemy;
+    public bool IsEnemy {
+        get => _isEnemy;
+        set
+        {
+            _isEnemy = value;
+            GetComponent<SpriteRenderer>().flipX = value;
+        } 
+    }
+
     public virtual void Place(Lane lane) 
     {
         this.lane = lane;
@@ -36,10 +46,9 @@ public class Unit : MonoBehaviour {
         GetComponent<Health>().Die();
         OnDie?.Invoke();
     }
-    private void Start() 
+    protected virtual void Start() 
     {
         GetComponent<Health>().maxHealth = health;
         GetComponent<Health>().SetHealth(health);
-        //OnPlace();
     }
 }

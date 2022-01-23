@@ -17,3 +17,33 @@ MonoBehaviour:
   scene:
     m_Handle: 0
   details: {fileID: 11400000, guid: d0fa67159edc17449aae9bb93c0bfa42, type: 2}
+  initialWaitTime: 20
+  waveDuration: 30
+  waveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  enemies:
+  - {fileID: 854175824849388688, guid: e2fad451102a643c8b6b55abb7f57267, type: 3}
+  - {fileID: 6403238340744970354, guid: 824f05a5e6dab4a6db71548e0788e739, type: 3}
+  - {fileID: 7725753264043365328, guid: 841668c3a8029443685d365942a2b186, type: 3}
