@@ -47,7 +47,7 @@ public class Lane : MonoBehaviour {
         }
     }
 
-    public void AddUnit(GameObject unit, int cellIndex)
+    public void AddUnit(GameObject unit, int cellIndex, bool isInstance)
     {
         if (cellIndex >= cells.Count)
         {
@@ -58,7 +58,7 @@ public class Lane : MonoBehaviour {
         // Enemy spawn off the screen
         if (cellIndex < 0)
         {
-            Unit instance = Instantiate(unit).GetComponent<Unit>();
+            Unit instance = isInstance ? unit.GetComponent<Unit>() : Instantiate(unit).GetComponent<Unit>();
 
             instance.transform.SetParent(transform);
             instance.transform.position = end + Vector2.right * cellWidth;
@@ -68,7 +68,7 @@ public class Lane : MonoBehaviour {
         else
         {
             Cell cell = cells[cellIndex];
-            cell.AddUnit(unit);
+            cell.AddUnit(unit, isInstance);
         }
 
     }

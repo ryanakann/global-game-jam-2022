@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class Unit : MonoBehaviour {
     public Lane lane;
 
+    public bool active;
+
     public float speed;
     public float health;
     public int cost;
@@ -30,6 +32,7 @@ public class Unit : MonoBehaviour {
     public virtual void Place(Lane lane) 
     {
         this.lane = lane;
+        active = true;
         OnPlace?.Invoke(lane);
     }
     public virtual void Attack() 
@@ -48,6 +51,7 @@ public class Unit : MonoBehaviour {
     }
     protected virtual void Start() 
     {
+        active = false;
         GetComponent<Health>().maxHealth = health;
         GetComponent<Health>().SetHealth(health);
     }

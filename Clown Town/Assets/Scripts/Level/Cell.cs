@@ -24,7 +24,7 @@ public class Cell : MonoBehaviour
         spriteRenderer.color = (cellIndex + lane.index % 2) % 2 == 0 ? Color.white : Color.black;
     }
 
-    public void AddUnit(GameObject unit)
+    public void AddUnit(GameObject unit, bool isInstance)
     {
         if (this.unit != null)
         {
@@ -32,7 +32,8 @@ public class Cell : MonoBehaviour
             return;
         }
 
-        Unit instance = Instantiate(unit).GetComponent<Unit>();
+
+        Unit instance = isInstance ? unit.GetComponent<Unit>() : Instantiate(unit).GetComponent<Unit>();
 
         instance.transform.SetParent(transform);
         instance.transform.position = transform.position;

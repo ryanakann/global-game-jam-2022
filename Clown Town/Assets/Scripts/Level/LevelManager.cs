@@ -29,7 +29,7 @@ public class LevelManager : PersistentSingleton<LevelManager>
         {
             if (Input.GetMouseButtonDown(0))
             {
-                PlaceUnit(Resources.LoadAll<GameObject>("Prefabs/Units").OrderBy(x => Random.value).First());
+                PlaceUnit(Resources.LoadAll<GameObject>("Prefabs/Units").OrderBy(x => Random.value).First(), false);
             }
             else if (Input.GetMouseButtonDown(1))
             {
@@ -38,7 +38,7 @@ public class LevelManager : PersistentSingleton<LevelManager>
         }
     }
 
-    public void PlaceUnit(GameObject unit)
+    public void PlaceUnit(GameObject unit, bool isInstance)
     {
         if (unit.GetComponent<Unit>() == null)
         {
@@ -47,9 +47,13 @@ public class LevelManager : PersistentSingleton<LevelManager>
         }
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Lane lane = lanes.OrderBy(l => Vector3.Distance(l.transform.position, mousePosition)).First();
-        int cellIndex = lane.cells.IndexOf(lane.cells.OrderBy(c => Vector3.Distance(c.transform.position, mousePosition)).First());
-        lane.AddUnit(unit, cellIndex);
+
+        if (currentLevelInfo.details.playArea.Contains(new Vector3(mousePosition.x, mousePosition.y)))
+        {
+            Lane lane = lanes.OrderBy(l => Vector3.Distance(l.transform.position, mousePosition)).First();
+            int cellIndex = lane.cells.IndexOf(lane.cells.OrderBy(c => Vector3.Distance(c.transform.position, mousePosition)).First());
+            lane.AddUnit(unit, cellIndex, isInstance);
+        }
     }
 
     public void RemoveUnit()
@@ -113,7 +117,7 @@ public class LevelManager : PersistentSingleton<LevelManager>
 
                 GameObject enemyPrefab = enemiesToSpawn.Dequeue();
                 Lane lane = lanes[Random.Range(0, lanes.Count)];
-                lane.AddUnit(enemyPrefab, -1);
+                lane.AddUnit(enemyPrefab, -1, false);
 
                 t -= threshold;
                 threshold = 1f + Random.Range(-offset, offset);
