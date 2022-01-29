@@ -16,19 +16,18 @@ MonoBehaviour:
   personality: 10
   traits: 00000000
   clickQuip:
-  - Poke me ONE MORE TIME and see what happens, chum
+  - '"Poke me ONE MORE TIME and see what happens, chum"'
   happyQuips:
-  - This is almost as great as pantsing a nerd
+  - '"This is almost as great as pantsing a nerd"'
   sadQuips:
-  - It's gonna take a lot of pie-ing the innocent to put a smile back on my face
+  - '"It''s gonna take a lot of pie-ing the innocent to cheer me up"'
   angryQuips:
-  - 
+  - '"That''s it, now I''m MAD!"'
   getHurtQuips:
-  - WHY I OUGHTA!
-  - Sleep with one eye open, chum!
+  - '"Sleep with one eye open, chum!"'
   getKilledQuips:
-  - Deep down, I just wanted to be loved
+  - '"Deep down, I just wanted to be loved"'
   anotherHurtQuips:
-  - HAHAHA! Stinks for you, chum!
+  - '"HAHAHA! Stinks for you, chum!"'
   anotherKilledQuips:
-  - I'm gonna miss having him around -- who am I gonna pie now?
+  - '"I''m gonna miss having him around -- who am I gonna pie now?"'

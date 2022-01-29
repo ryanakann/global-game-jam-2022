@@ -16,19 +16,19 @@ MonoBehaviour:
   personality: 8
   traits: 03000000
   clickQuip:
-  - Try taking me out to dinner first! Ha-cha-cha!
+  - '"Try taking me out to dinner first! Ha-cha-cha!"'
   happyQuips:
-  - I'm so happy I could ~pie~!
+  - '"I''m so happy I could ~pie~!"'
   sadQuips:
-  - This stinks worse than my ex-wife! Honkahonka!
+  - '"This stinks worse than my ex-wife! Honkahonka!"'
   angryQuips:
-  - I'm so mad I could be a hatter!
-  - I am absolutely pie-rate!
+  - '"I''m so mad I could be a hatter!"'
+  - '"I am absolutely pie-rate!"'
   getHurtQuips:
-  - That was more painful then sitting through my standup routine!
+  - '"That was more painful then sitting through my standup routine!"'
   getKilledQuips:
-  - See ya later, aligator *death rattle*
+  - '"See ya later, aligator" *death rattle*'
   anotherHurtQuips:
-  - That's gonna leave a Mark!  Or maybe it'll leave a Matt!
+  - '"That''s gonna leave a Mark!  Or maybe it''ll leave a Matt!"'
   anotherKilledQuips:
-  - He's gone to a better place -- Miami, baby!
+  - '"He''s gone to a better place -- Miami, baby!"'

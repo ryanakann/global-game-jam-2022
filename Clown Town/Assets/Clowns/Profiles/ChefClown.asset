@@ -15,10 +15,19 @@ MonoBehaviour:
   health: 5
   personality: 4
   traits: 0300000000000000
-  happyQuips: []
-  sadQuips: []
-  angryQuips: []
-  getHurtQuips: []
-  getKilledQuips: []
-  anotherHurtQuips: []
-  anotherKilledQuips: []
+  clickQuip:
+  - I've got to get back to baking my pies!
+  happyQuips:
+  - This is better than my nonna's spaghetti!
+  sadQuips:
+  - I'm not crying, I was just uh cutting onions
+  angryQuips:
+  - Where's the sous-chef? I need someone to take out my rage on
+  getHurtQuips:
+  - Ouch!  I didn't order the knuckle sandwich!
+  getKilledQuips:
+  - I guess I won't be getting my last meal
+  anotherHurtQuips:
+  - Looks like he got his just desserts
+  anotherKilledQuips:
+  - He's off to the great pie in the sky
