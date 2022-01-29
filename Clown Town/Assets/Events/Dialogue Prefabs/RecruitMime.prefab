@@ -21,15 +21,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: nodeRect.x
-      value: 802.134
+      value: 798.0102
       objectReference: {fileID: 0}
     - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: nodeRect.y
-      value: 413.15457
+      value: 414.1855
       objectReference: {fileID: 0}
     - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: commandList.Array.size
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: commandList.Array.data[0]
@@ -86,11 +86,11 @@ PrefabInstance:
     - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: commandList.Array.data[13]
       value: 
-      objectReference: {fileID: 2112211093547710924}
+      objectReference: {fileID: 694913139508914537}
     - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: commandList.Array.data[14]
       value: 
-      objectReference: {fileID: 694913139508914537}
+      objectReference: {fileID: 2041842682633937400}
     - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: commandList.Array.data[15]
       value: 
@@ -206,7 +206,7 @@ PrefabInstance:
     - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 9115760906871475853}
+      objectReference: {fileID: 694913139508914537}
     - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: targetMethod
       value: GenerateClownWithPersonality
@@ -382,34 +382,6 @@ MonoBehaviour:
   itemId: 22
   indentLevel: 0
   storyText: '{$clownName}: Aha!  Found it!'
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &2112211093547710924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8196472413493116620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 18
-  indentLevel: 0
-  storyText: '{$clownName}: Yup, just what I suspected.  He boxed himself in.  Pretty
-    standard mime stuff'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}

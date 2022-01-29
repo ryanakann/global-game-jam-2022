@@ -119,6 +119,14 @@ PrefabInstance:
       propertyPath: nodeRect.width
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 6106615107159959229, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: requiredPersonalities.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106615107159959229, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: requiredPersonalities.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.x
       value: 594
@@ -408,7 +416,7 @@ MonoBehaviour:
       typeFullname: System.Single
       intValue: 0
       boolValue: 0
-      floatValue: 75
+      floatValue: 5
       stringValue: 
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
