@@ -81,3 +81,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2fad451102a643c8b6b55abb7f57267, type: 3}
+--- !u!1 &3819914984154963885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 854175824849388688, guid: e2fad451102a643c8b6b55abb7f57267, type: 3}
+  m_PrefabInstance: {fileID: 4528848895628827453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1193881216942116361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819914984154963885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1e1cc2f25da4897a5edb4316892a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  active: 0
+  health: 50
+  speed: 1
+  range: 0.5
+  attackSpeed: 0.5
+  attackDamage: 5
+  cost: 0
+  tags: []
+  OnPlace:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  state: 0
