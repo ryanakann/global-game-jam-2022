@@ -29,8 +29,15 @@ public class LevelManager : PersistentSingleton<LevelManager>
         {
             if (Input.GetMouseButtonDown(0))
             {
-                //PlaceUnit(Resources.LoadAll<GameObject>("Prefabs/Units").OrderBy(x => Random.value).First(), false);
-                PlaceUnit(Resources.Load<GameObject>("Prefabs/Units/Monkey"), false);
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    PlaceUnit(Resources.Load<GameObject>("Prefabs/Units/Giraffe"), false);
+
+                }
+                else
+                {
+                    PlaceUnit(Resources.Load<GameObject>("Prefabs/Units/Monkey"), false);
+                }
             }
             else if (Input.GetMouseButtonDown(1))
             {

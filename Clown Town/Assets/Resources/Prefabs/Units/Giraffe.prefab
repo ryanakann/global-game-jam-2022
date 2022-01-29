@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 854175824849388688, guid: e2fad451102a643c8b6b55abb7f57267, type: 3}
       propertyPath: m_Name
-      value: Monkey
+      value: Giraffe
       objectReference: {fileID: 0}
     - target: {fileID: 854175824849388692, guid: e2fad451102a643c8b6b55abb7f57267, type: 3}
       propertyPath: m_RootOrder
@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 854175824849388693, guid: e2fad451102a643c8b6b55abb7f57267, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4a24f73f59bf7461198fa5a414962e2e, type: 3}
+      objectReference: {fileID: 21300000, guid: 934765fce78b1bf4dabd5ada793fe71f, type: 3}
     - target: {fileID: 854175824849388693, guid: e2fad451102a643c8b6b55abb7f57267, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -74,7 +74,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 854175824849388688, guid: e2fad451102a643c8b6b55abb7f57267, type: 3}
   m_PrefabInstance: {fileID: 6340946737463919775}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4606012766324417385
+--- !u!114 &7279009329141250104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,19 +83,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6639771591379664911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4984fd04e488f6049a82a7689227722a, type: 3}
+  m_Script: {fileID: 11500000, guid: a6b8d37d5b184204ba6620fde03873b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   active: 0
-  health: 10
+  health: 50
   speed: 1
-  _attackRange: 16
-  attackSpeed: 1
-  attackDamage: 3
-  attackType: 1
-  projectile: {fileID: 8092034810002743473, guid: e1f695080f7cf5746980fc3d0244d38b, type: 3}
-  cost: 30
+  _attackRange: 2
+  attackSpeed: 0.5
+  attackDamage: 6
+  attackType: 0
+  projectile: {fileID: 0}
+  cost: 100
   tags: []
   OnPlace:
     m_PersistentCalls:
