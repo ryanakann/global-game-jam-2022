@@ -19,6 +19,7 @@ public class ToggleShopVisibility : MonoBehaviour {
         open = false;
         locked = false;
         target = Vector2.zero;
+        Toggle();
     }
 
     public void Toggle() {

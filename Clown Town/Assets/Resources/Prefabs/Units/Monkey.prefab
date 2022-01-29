@@ -85,7 +85,7 @@ MonoBehaviour:
   _attackRange: 0.5
   attackSpeed: 1
   attackDamage: 3
-  cost: 0
+  cost: 15
   tags: []
   OnPlace:
     m_PersistentCalls:
