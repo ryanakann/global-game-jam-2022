@@ -360,6 +360,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2776,6 +2777,119 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      kidpix-spritesheet-4_69: -7405210957022741386
+      kidpix-spritesheet-4_37: 5776135995152798050
+      kidpix-spritesheet-4_28: -1319910515969537211
+      kidpix-spritesheet-4_56: -3367752963811647659
+      kidpix-spritesheet-4_66: -2820064482146653465
+      kidpix-spritesheet-4_35: 1694551906979360982
+      kidpix-spritesheet-4_4: 5519898232369069306
+      kidpix-spritesheet-4_86: -1710718001651859853
+      kidpix-spritesheet-4_9: 3627008450374337558
+      kidpix-spritesheet-4_12: 1550340129304857212
+      kidpix-spritesheet-4_88: -3675048206585011780
+      kidpix-spritesheet-4_36: -639133948947081727
+      kidpix-spritesheet-4_101: 6216174845033365634
+      kidpix-spritesheet-4_10: -6271846230365272465
+      Hotdog: -1544440208669166577
+      kidpix-spritesheet-4_57: 8145894880596597056
+      kidpix-spritesheet-4_47: -764560492024825421
+      kidpix-spritesheet-4_100: -2126053299607318876
+      kidpix-spritesheet-4_51: 312905071999496619
+      kidpix-spritesheet-4_41: 5319923620278321689
+      kidpix-spritesheet-4_58: -9149483554183261079
+      kidpix-spritesheet-4_77: -4337819923760313668
+      kidpix-spritesheet-4_61: -2903886303197023858
+      Piano: -4735817145293679494
+      kidpix-spritesheet-4_73: 1341556094332067359
+      kidpix-spritesheet-4_55: -8968190007247409253
+      kidpix-spritesheet-4_74: 7334851669461566318
+      kidpix-spritesheet-4_24: 4272200589678181112
+      kidpix-spritesheet-4_45: -3582085682968553445
+      kidpix-spritesheet-4_33: 5734384291759881391
+      kidpix-spritesheet-4_63: 5056430625212397562
+      kidpix-spritesheet-4_20: -981101919638460993
+      kidpix-spritesheet-4_83: -4794777017640518123
+      kidpix-spritesheet-4_85: -389499195877256031
+      kidpix-spritesheet-4_6: -7248206760649045171
+      Eagle: 5914874583138614897
+      kidpix-spritesheet-4_40: -7974110102127202322
+      kidpix-spritesheet-4_103: 2150286221343193723
+      kidpix-spritesheet-4_2: 5850875827248536209
+      kidpix-spritesheet-4_39: -3019608666797704150
+      kidpix-spritesheet-4_53: 3841987104274591560
+      kidpix-spritesheet-4_80: -9124270481164904801
+      Squid: -7296265024754517553
+      kidpix-spritesheet-4_62: -4029832891166179751
+      Guitar: 7253224265162144225
+      kidpix-spritesheet-4_11: -7397360338633291736
+      kidpix-spritesheet-4_19: -237713447316097060
+      kidpix-spritesheet-4_30: 8430936353906159340
+      kidpix-spritesheet-4_49: -1167685523472690947
+      kidpix-spritesheet-4_64: 5487863404890036380
+      kidpix-spritesheet-4_60: -7349839453121968056
+      Icecream: -7156858403669007118
+      kidpix-spritesheet-4_44: 8245742081639087216
+      kidpix-spritesheet-4_110: 1595710161536741216
+      kidpix-spritesheet-4_46: -2993002769907316874
+      kidpix-spritesheet-4_98: -2721857291623968551
+      kidpix-spritesheet-4_105: -2552927018440048346
+      kidpix-spritesheet-4_96: 5264690461364430331
+      Burger: 5197242255833403219
+      kidpix-spritesheet-4_31: -6104113037614614696
+      kidpix-spritesheet-4_50: 5784072769683356679
+      kidpix-spritesheet-4_99: 6795289777593426299
+      Chicken: 7555621601480068197
+      kidpix-spritesheet-4_23: -6514442504987424716
+      kidpix-spritesheet-4_97: 6226634658352516329
+      kidpix-spritesheet-4_34: -4246020737068885861
+      kidpix-spritesheet-4_89: -8162597013707910952
+      kidpix-spritesheet-4_108: 2115348235740248480
+      kidpix-spritesheet-4_78: -8660370254428104351
+      kidpix-spritesheet-4_27: -4471680513194276614
+      kidpix-spritesheet-4_68: -7085713187896147043
+      kidpix-spritesheet-4_76: 8576784450643054301
+      kidpix-spritesheet-4_106: -7986638058260330245
+      kidpix-spritesheet-4_72: 3296913565582966421
+      kidpix-spritesheet-4_84: 5308290641219184110
+      kidpix-spritesheet-4_38: 5215526608276879314
+      kidpix-spritesheet-4_1: -7439265700696968046
+      kidpix-spritesheet-4_102: -8404103309894250682
+      kidpix-spritesheet-4_8: -7346009552470618952
+      kidpix-spritesheet-4_111: -121587213170210416
+      kidpix-spritesheet-4_79: 7934057726490114310
+      kidpix-spritesheet-4_82: 1746108735804122939
+      kidpix-spritesheet-4_75: 2615999390201949886
+      kidpix-spritesheet-4_87: -5394243753589886625
+      kidpix-spritesheet-4_26: 3166337766831869046
+      kidpix-spritesheet-4_107: -5304907223284406301
+      kidpix-spritesheet-4_0: -5735330987648013613
+      Cake: -4328698873899633145
+      kidpix-spritesheet-4_90: -9130946943900487635
+      kidpix-spritesheet-4_7: -7237429281272330757
+      kidpix-spritesheet-4_13: -8601483706556870801
+      kidpix-spritesheet-4_14: -1371401731840632183
+      kidpix-spritesheet-4_22: 4579728664389977306
+      kidpix-spritesheet-4_48: -8841676255819242052
+      kidpix-spritesheet-4_32: -6328966750595435021
+      kidpix-spritesheet-4_70: -7324768929389988120
+      kidpix-spritesheet-4_95: -2082357439963306701
+      kidpix-spritesheet-4_94: 1154640899429297660
+      Violin: 8903384466145241349
+      kidpix-spritesheet-4_104: 5452385968444415919
+      kidpix-spritesheet-4_81: -880219791742394041
+      kidpix-spritesheet-4_65: -370084700907933518
+      kidpix-spritesheet-4_43: -3240759782434220083
+      kidpix-spritesheet-4_59: -9156067882529013450
+      kidpix-spritesheet-4_25: 8514562375854525961
+      kidpix-spritesheet-4_71: 2197384775872235875
+      kidpix-spritesheet-4_29: 6976002535086996414
+      kidpix-spritesheet-4_54: -4267743072863174894
+      Tuba: 917309820503198598
+      kidpix-spritesheet-4_67: -741072728526991467
+      kidpix-spritesheet-4_52: 5020994545941956570
+      kidpix-spritesheet-4_3: -4938993721854292408
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
