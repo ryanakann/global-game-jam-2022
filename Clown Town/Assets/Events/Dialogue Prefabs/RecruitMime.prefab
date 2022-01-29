@@ -1,0 +1,693 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4122563483051532592
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1637342151863815506, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: nodeRect.x
+      value: 609.96906
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637342151863815506, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: nodeRect.y
+      value: 413.06183
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441640358996855296, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: recruitEvent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: nodeRect.x
+      value: 802.134
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: nodeRect.y
+      value: 413.15457
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[0]
+      value: 
+      objectReference: {fileID: 4116900915371053709}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[1]
+      value: 
+      objectReference: {fileID: 7801257341682017742}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[2]
+      value: 
+      objectReference: {fileID: 4767027024240278891}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 7671363985801728005}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 5073723181327014130}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 272175989340709045}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[6]
+      value: 
+      objectReference: {fileID: 2176524228886022917}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 5325361651708345873}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[8]
+      value: 
+      objectReference: {fileID: 9115760906871475853}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[9]
+      value: 
+      objectReference: {fileID: 1884995440146449823}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[10]
+      value: 
+      objectReference: {fileID: 3077561410624896551}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[11]
+      value: 
+      objectReference: {fileID: 6011736904259971906}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[12]
+      value: 
+      objectReference: {fileID: 6476330086835808433}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[13]
+      value: 
+      objectReference: {fileID: 2112211093547710924}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[14]
+      value: 
+      objectReference: {fileID: 694913139508914537}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[15]
+      value: 
+      objectReference: {fileID: 2041842682633937400}
+    - target: {fileID: 5198156170108047146, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: commandList.Array.data[16]
+      value: 
+      objectReference: {fileID: 2041842682633937400}
+    - target: {fileID: 5628658353626574441, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: nodeRect.x
+      value: 1022.3194
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628658353626574441, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: nodeRect.y
+      value: 412.24744
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998901647389454645, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: returnValueVariableKey
+      value: mimeName
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998901647389454645, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: methodParameters.Array.data[0].variableKey
+      value: mimeId
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326332199787951391, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: key
+      value: clownId
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987231769276409713, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330315654062723700, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: m_Name
+      value: RecruitMime
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: zoom
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: scrollPos.x
+      value: 47.195858
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: scrollPos.y
+      value: 6.525767
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: blockViewHeight
+      value: 651
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: variables.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: variables.Array.data[2]
+      value: 
+      objectReference: {fileID: 7770687010534239325}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: variables.Array.data[3]
+      value: 
+      objectReference: {fileID: 4345315842423371843}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: selectedBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: selectedCommands.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: selectedCommands.Array.data[0]
+      value: 
+      objectReference: {fileID: 9115760906871475853}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: targetMethod
+      value: GenerateClownWithPersonality
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: showInherited
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: returnValueType
+      value: System.Int32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: saveReturnValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: targetMethodText
+      value: 'GenerateClownWithPersonality (ClownPersonality): Int32'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: returnValueVariableKey
+      value: mimeId
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: methodParameters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: methodParameters.Array.data[0].objValue.intValue
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: methodParameters.Array.data[0].objValue.typeFullname
+      value: ClownPersonality
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: methodParameters.Array.data[0].objValue.typeAssemblyname
+      value: ClownPersonality, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178113936092953026, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: storyText
+      value: You come across a clown struggling.  He appears trapped, but you see
+        no bars.
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4614828908174614946, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+    - {fileID: 7683462751643085354, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+    - {fileID: 5313707189493550320, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+    - {fileID: 6149977745381590430, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+--- !u!1 &6668927913832510276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7330315654062723700, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+  m_PrefabInstance: {fileID: 4122563483051532592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8196472413493116620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5226974507654389756, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+  m_PrefabInstance: {fileID: 4122563483051532592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2041842682633937400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2693254553832833224, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+  m_PrefabInstance: {fileID: 4122563483051532592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7671363985801728005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998901647389454645, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+  m_PrefabInstance: {fileID: 4122563483051532592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4767027024240278891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8868054370823953499, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+  m_PrefabInstance: {fileID: 4122563483051532592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5073723181327014130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9178113936092953026, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+  m_PrefabInstance: {fileID: 4122563483051532592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &272175989340709045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 13
+  indentLevel: 0
+  storyText: It's mime business
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &694913139508914537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 25
+  indentLevel: 0
+  storyText: '{$mimeName} has joined the party!'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1884995440146449823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 22
+  indentLevel: 0
+  storyText: '{$clownName}: Aha!  Found it!'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2112211093547710924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 18
+  indentLevel: 0
+  storyText: '{$clownName}: Yup, just what I suspected.  He boxed himself in.  Pretty
+    standard mime stuff'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2176524228886022917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 17
+  indentLevel: 0
+  storyText: The clown is gesticulating frantically.  {$clownName} comes up beside
+    you.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &3077561410624896551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 21
+  indentLevel: 0
+  storyText: '*click*'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &4116900915371053709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 15
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 6668927913832510276}
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Dialogue
+  targetMethod: getRandomClownId
+  targetMethodText: 'getRandomClownId (): Int32'
+  methodParameters: []
+  saveReturnValue: 1
+  returnValueVariableKey: clownId
+  returnValueType: System.Int32
+  showInherited: 0
+  callMode: 0
+--- !u!114 &4345315842423371843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: mimeName
+  value: 
+--- !u!114 &5325361651708345873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 14
+  indentLevel: 0
+  storyText: '{$clownName}: I don''t speak mime, but I can understand a little. 
+    Says his name''s "{$mimeName}" and he needs our help.  Should be a key around
+    here somewhere'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &6011736904259971906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 23
+  indentLevel: 0
+  storyText: '{$mimeName}: ... ........ ...!'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &6476330086835808433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 24
+  indentLevel: 0
+  storyText: '{$clownName}: That''s great!  He says he''s grateful and that he''ll
+    join us for our performance'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7770687010534239325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: mimeId
+  value: 0
+--- !u!114 &7801257341682017742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 16
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 6668927913832510276}
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Dialogue
+  targetMethod: getClownName
+  targetMethodText: 'getClownName (Int32): String'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: clownId
+  saveReturnValue: 1
+  returnValueVariableKey: clownName
+  returnValueType: System.String
+  showInherited: 0
+  callMode: 0
+--- !u!114 &9115760906871475853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 20
+  indentLevel: 0
+  storyText: '{$clownName} feels around on the ground and appears to grasp at something'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}

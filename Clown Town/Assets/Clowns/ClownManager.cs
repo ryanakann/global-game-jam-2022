@@ -70,13 +70,18 @@ public class ClownManager : MonoBehaviour
         clownsByPersonality[newClown.Personality].Add(newClown);
     }
 
-    public static void GenerateClownWithPersonality(ClownPersonality personality)
+    public static int GenerateClownWithPersonality(ClownPersonality personality)
     {
         if (clownProfilesByPersonality.ContainsKey(personality))
         {
             ClownProfile profile = clownProfilesByPersonality[personality];
             Clown newClown = new Clown(profile);
             addClown(newClown);
+            return newClown.Id;
+        }
+        else
+        {
+            throw new System.Exception("No Clowns with the trait " + personality);
         }
     }
 
