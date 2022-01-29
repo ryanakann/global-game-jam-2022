@@ -176,4 +176,9 @@ public class Dialogue : MonoBehaviour
         return ClownManager.GetQuipForClownForEvent(id, eventType);
     }
 
+    public string GetClownPersonalityName(int clownId)
+    {
+        return ClownManager.getClownWithId(clownId).Personality.ToString();
+    }
+
 }

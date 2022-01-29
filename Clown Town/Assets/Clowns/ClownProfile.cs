@@ -33,6 +33,8 @@ public class ClownProfile : ScriptableObject
     public ClownPersonality personality;
     public List<ClownTrait> traits;
 
+    public string[] clickQuip;
+
     public string[] happyQuips;
     public string[] sadQuips;
     public string[] angryQuips;
