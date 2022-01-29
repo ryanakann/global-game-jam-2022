@@ -10,6 +10,9 @@ public class Dialogue : MonoBehaviour
     public string Name;
 
     [SerializeField]
+    protected bool recruitEvent;
+
+    [SerializeField]
     protected Flowchart flowchart;
 
     [SerializeField]
@@ -174,6 +177,13 @@ public class Dialogue : MonoBehaviour
     public string GetQuipForClownForEvent(int id, EventTypes eventType)
     {
         return ClownManager.GetQuipForClownForEvent(id, eventType);
+    }
+
+    public int GenerateClownWithPersonality(ClownPersonality personality)
+    {
+        int x = ClownManager.GenerateClownWithPersonality(personality);
+        print(x);
+        return x;
     }
 
 }
