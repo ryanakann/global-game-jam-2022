@@ -13,12 +13,13 @@ public class Unit : MonoBehaviour {
 
     [Range(0f, 100f)]
     public float health = 50f;
+    [SerializeField]
     private float currentHealth;
 
     [Range(0f, 10f)]
     public float speed = 1f;
     
-    [Range(0f, 10f)]
+    [Range(0f, 16f)]
     [SerializeField]
     protected float _attackRange = 0.5f;
     public float attackRange 
@@ -34,11 +35,19 @@ public class Unit : MonoBehaviour {
     }
     [Range(0.01f, 10f)]
     public float attackSpeed = 0.5f;
-    [Range(0f, 10f)]
+    [Range(0f, 100f)]
     public float attackDamage = 5f;
     private float timeSinceLastAttack;
 
-    [Range(0f, 100f)]
+    public enum AttackType
+    {
+        Melee,
+        Ranged
+    }
+    public AttackType attackType;
+    public GameObject projectile;
+
+    [Range(0f, 1000f)]
     public int cost;
     public List<string> tags;
 

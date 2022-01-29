@@ -19,11 +19,13 @@ public class ShopDisplay : MonoBehaviour {
     GameObject FillUIForShopItem(ShopItem item) {
         GameObject itemUI = Instantiate(ShopItemUI, transform.FindDeepChild("Content"));
         itemUI.GetComponent<Button>().onClick.AddListener(delegate {
+            print("trying to buy a " + item.prefab.name);
+            //TODO: attempt to buy the item
             //BuildController.instance.onClickShopButton(item);
         });
         itemUI.GetComponent<Image>().sprite = item.icon;
         itemUI.transform.Find("ItemName").GetComponent<TextMeshProUGUI>().text = item.name.ToUpper();
-        itemUI.transform.Find("Cost").GetComponent<TextMeshProUGUI>().text = "COST: " + item.cost;
+        itemUI.transform.Find("Cost").GetComponent<TextMeshProUGUI>().text = "" + item.cost;
         return itemUI;
     }
 }

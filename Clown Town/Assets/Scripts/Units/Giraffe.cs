@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Monkey : Unit
+public class Giraffe : Unit
 {
     public override Unit SelectTarget()
     {
@@ -42,10 +42,7 @@ public class Monkey : Unit
     {
         base.AttackExecute();
 
-        if (projectile != null)
-        {
-            GameObject poop = Instantiate(projectile);
-            poop.GetComponent<Projectile>().Throw(transform.position, true, target.transform, attackDamage);
-        }
+        Debug.Log($"{name} attacked {target.name}!");
+        target.TakeDamage(attackDamage);
     }
 }
