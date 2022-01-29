@@ -22,6 +22,7 @@ public class ClownManager : MonoBehaviour
     private static Dictionary<ClownPersonality, List<Clown>> clownsByPersonality = new Dictionary<ClownPersonality, List<Clown>>();
 
     private static Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>> eventQuips = new Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>>();
+    private static Dictionary<ClownPersonality, ClownProfile> clownProfilesByPersonality = new Dictionary<ClownPersonality, ClownProfile>();
 
     private void Awake()
     {
@@ -30,16 +31,21 @@ public class ClownManager : MonoBehaviour
         else
             Destroy(gameObject);
 
+        foreach (ClownProfile profile in clownProfiles)
+        {
+            clownProfilesByPersonality[profile.personality] = profile;
+
+            if (!eventQuips.ContainsKey(profile.personality))
+                eventQuips[profile.personality] = new Dictionary<EventTypes, List<string>>();
+            profile.loadQuips(eventQuips[profile.personality]);
+        }
+
+
         if (debug)
         {
             foreach (ClownProfile profile in clownProfiles)
             {
-                Clown newClown = new Clown(profile);
-                addClown(newClown);
-
-                if (!eventQuips.ContainsKey(profile.personality))
-                    eventQuips[profile.personality] = new Dictionary<EventTypes, List<string>>();
-                profile.loadQuips(eventQuips[profile.personality]);
+                GenerateClownWithPersonality(profile.personality);
             }
         }
     }
@@ -62,6 +68,16 @@ public class ClownManager : MonoBehaviour
             clownsByPersonality[newClown.Personality] = new List<Clown>();
         }
         clownsByPersonality[newClown.Personality].Add(newClown);
+    }
+
+    public static void GenerateClownWithPersonality(ClownPersonality personality)
+    {
+        if (clownProfilesByPersonality.ContainsKey(personality))
+        {
+            ClownProfile profile = clownProfilesByPersonality[personality];
+            Clown newClown = new Clown(profile);
+            addClown(newClown);
+        }
     }
 
     public static bool HasClownWithPersonality(ClownPersonality personality)
