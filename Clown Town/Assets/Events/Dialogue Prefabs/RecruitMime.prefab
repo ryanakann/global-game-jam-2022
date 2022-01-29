@@ -173,11 +173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: scrollPos.x
-      value: 47.195858
+      value: -151.7732
       objectReference: {fileID: 0}
     - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: scrollPos.y
-      value: 6.525767
+      value: -84.195885
       objectReference: {fileID: 0}
     - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: blockViewHeight
@@ -197,12 +197,16 @@ PrefabInstance:
       objectReference: {fileID: 4345315842423371843}
     - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: selectedCommands.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 8587039947833921369}
     - target: {fileID: 8178274742557729869, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
@@ -269,6 +273,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5226974507654389756, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
   m_PrefabInstance: {fileID: 4122563483051532592}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8587039947833921369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5628658353626574441, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+  m_PrefabInstance: {fileID: 4122563483051532592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196472413493116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2041842682633937400 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2693254553832833224, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
