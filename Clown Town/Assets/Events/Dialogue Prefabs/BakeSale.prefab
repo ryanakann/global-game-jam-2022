@@ -61,11 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: scrollPos.x
-      value: 459.3041
+      value: 244.8712
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: scrollPos.y
-      value: 65.773186
+      value: -133.19595
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: blockViewHeight
@@ -113,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 1676396611722652173}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
@@ -122,7 +122,7 @@ PrefabInstance:
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 7823316909431286057}
+      objectReference: {fileID: 46102293701888428}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
@@ -192,8 +192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -18
-    y: 388
+    x: -16.969072
+    y: 375.6289
     width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -604,7 +604,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 294.86578
-    y: 483.34006
+    y: 484.37097
     width: 78.04124
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1463,6 +1463,51 @@ MonoBehaviour:
   saveReturnValue: 1
   returnValueVariableKey: ClownName2
   returnValueType: System.String
+  showInherited: 0
+  callMode: 0
+--- !u!114 &3375988470135013004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5437556267049269737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 97
+  indentLevel: 1
+  description: 
+  targetObject: {fileID: 7369408775805760609}
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Dialogue
+  targetMethod: LoseEarwax
+  targetMethodText: 'LoseEarwax (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: BrowniePrice
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
   showInherited: 0
   callMode: 0
 --- !u!114 &3616762924390037935
@@ -2888,7 +2933,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 291
-    y: 362
+    y: 363.0309
     width: 83.19588
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2936,7 +2981,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 283.11874
-    y: 222.47447
+    y: 223.5054
     width: 89.38144
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3017,6 +3062,51 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &8373929980275909787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5437556267049269737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 98
+  indentLevel: 1
+  description: 
+  targetObject: {fileID: 7369408775805760609}
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Dialogue
+  targetMethod: LoseEarwax
+  targetMethodText: 'LoseEarwax (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CookiePrice
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &8425845092139750986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3133,95 +3223,5 @@ MonoBehaviour:
   saveReturnValue: 1
   returnValueVariableKey: Quip2
   returnValueType: System.String
-  showInherited: 0
-  callMode: 0
---- !u!114 &3375988470135013004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5437556267049269737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 97
-  indentLevel: 1
-  description: 
-  targetObject: {fileID: 7369408775805760609}
-  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Dialogue
-  targetMethod: LoseEarwax
-  targetMethodText: 'LoseEarwax (Int32): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Int32
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: BrowniePrice
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &8373929980275909787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5437556267049269737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 98
-  indentLevel: 1
-  description: 
-  targetObject: {fileID: 7369408775805760609}
-  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Dialogue
-  targetMethod: LoseEarwax
-  targetMethodText: 'LoseEarwax (Int32): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Int32
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: CookiePrice
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
   showInherited: 0
   callMode: 0
