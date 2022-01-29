@@ -192,4 +192,14 @@ public class Dialogue : MonoBehaviour
         return x;
     }
 
+    public bool DoesClownHaveTrait(int clownId, ClownTrait clownTrait)
+    {
+        return ClownManager.getClownWithId(clownId).HasTrait(clownTrait);
+    }
+
+    public bool DoesClownHavePersonality(int clownId, ClownPersonality clownPersonality)
+    {
+        return ClownManager.getClownWithId(clownId).Personality == clownPersonality;
+    }
+
 }
