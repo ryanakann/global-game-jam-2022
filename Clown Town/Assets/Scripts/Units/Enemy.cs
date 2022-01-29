@@ -1,12 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Enemy : Unit
 {
-    protected override void Start()
+    public override Unit SelectTarget()
     {
-        base.Start();
-        GetComponent<SpriteRenderer>().flipX = true;
+        Unit tempTarget = null;
+        foreach (var ally in lane.allies)
+        {
+            if (ally.transform.position.x > transform.position.x) continue;
+            float distance = Vector3.Distance(ally.transform.position, transform.position);
+            if (distance < range)
+            {
+                tempTarget = ally;
+                break;
+            }
+        }
+        target = tempTarget;
+        return target;
+    }
+
+    protected override void IdleUpdate()
+    {
+        base.IdleUpdate();
+        MoveStart();
+    }
+
+    protected override void MoveUpdate()
+    {
+        // Behavior
+        base.MoveUpdate();
+        transform.position += Vector3.left * speed * Time.deltaTime;
+
+        // Transitions
+        if (SelectTarget() != null) AttackStart();
+    }
+
+    protected override void AttackUpdate()
+    {
+        // Behavior
+        base.AttackUpdate();
+
+        // Transition
+        if (SelectTarget() == null) MoveStart();
+    }
+
+    protected override void AttackExecute()
+    {
+        base.AttackExecute();
+        target.TakeDamage(attackDamage);
     }
 }

@@ -7,27 +7,41 @@ public class Monkey : Unit
 {
     public override Unit SelectTarget()
     {
-        base.SelectTarget();
-
-        var target = lane.enemies.OrderBy(unit => Vector3.Distance(unit.transform.position, transform.position)).FirstOrDefault();
+        Unit tempTarget = null;
+        float minDist = float.MaxValue;
+        foreach (var enemy in lane.enemies)
+        {
+            if (enemy.transform.position.x < transform.position.x) continue;
+            float distance = Vector3.Distance(enemy.transform.position, transform.position);
+            if (distance < minDist)
+            {
+                tempTarget = enemy;
+                minDist = distance;
+            }
+        }
+        target = tempTarget;
         return target;
     }
 
     protected override void IdleUpdate()
     {
         base.IdleUpdate();
-
-        var target = lane.enemies.OrderBy(unit => Vector3.Distance(unit.transform.position, transform.position)).FirstOrDefault();
-        if (target != null) return;
-
-        this.target = target;
-        state = State.Attack;
+        if (SelectTarget() == null) return;
+        AttackStart();
     }
 
     protected override void AttackUpdate()
     {
         base.AttackUpdate();
 
+        if (SelectTarget() == null) IdleStart();
+    }
 
+    protected override void AttackExecute()
+    {
+        base.AttackExecute();
+
+        Debug.Log($"{name} attacked {target.name}!");
+        target.TakeDamage(attackDamage);
     }
 }

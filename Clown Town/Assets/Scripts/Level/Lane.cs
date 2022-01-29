@@ -67,7 +67,6 @@ public class Lane : MonoBehaviour {
             instance.transform.position = end + Vector2.right * cellWidth;
 
             instance.Place(this);
-
             enemies.Add(instance);
             instance.OnDie.AddListener(() => enemies.Remove(instance));
         }

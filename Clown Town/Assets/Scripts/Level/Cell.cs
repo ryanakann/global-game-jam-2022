@@ -21,7 +21,7 @@ public class Cell : MonoBehaviour
         transform.SetParent(lane.transform);
 
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = (cellIndex + lane.index % 2) % 2 == 0 ? Color.white : Color.black;
+        spriteRenderer.color = (cellIndex + lane.index % 2) % 2 == 0 ? Color.white : Color.clear;
     }
 
     public void AddUnit(GameObject unit, bool isInstance)

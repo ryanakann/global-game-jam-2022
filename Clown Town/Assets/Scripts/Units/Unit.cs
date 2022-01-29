@@ -3,15 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Health), typeof(SpriteRenderer), typeof(UnitMovement))]
+[RequireComponent(typeof(Health), typeof(SpriteRenderer))]
 public class Unit : MonoBehaviour {
-    public Lane lane;
+    public Lane lane { get; protected set; }
+    //public Unit target { get; protected set; }
     public Unit target;
 
     public bool active;
 
-    public float speed;
-    public float health;
+    [Range(0f, 100f)]
+    public float health = 50f;
+    [Range(0f, 10f)]
+    public float speed = 1f;
+    [Range(0f, 10f)]
+    public float range = 0.5f;
+    [Range(0.01f, 10f)]
+    public float attackSpeed = 0.5f;
+    [Range(0f, 10f)]
+    public float attackDamage = 5f;
+    private float timeSinceLastAttack;
+
+    [Range(0f, 100f)]
     public int cost;
     public List<string> tags;
 
@@ -35,6 +47,7 @@ public class Unit : MonoBehaviour {
         this.lane = lane;
         active = true;
         OnPlace?.Invoke(lane);
+        IdleStart();
     }
 
     #region STATES
@@ -47,11 +60,12 @@ public class Unit : MonoBehaviour {
         Die,
     }
 
-    public State state { get; protected set; }
+    //public State state { get; protected set; }
+    public State state;
 
     public virtual void IdleStart()
     {
-
+        state = State.Idle;
     }
 
     protected virtual void IdleUpdate()
@@ -68,6 +82,20 @@ public class Unit : MonoBehaviour {
     }
 
     protected virtual void AttackUpdate()
+    {
+        if (timeSinceLastAttack > 1 / attackSpeed)
+        {
+            timeSinceLastAttack = 0f;
+            AttackExecute();
+        } 
+        else
+        {
+            timeSinceLastAttack += Time.deltaTime;
+        }
+
+    }
+
+    protected virtual void AttackExecute()
     {
 
     }
@@ -132,6 +160,9 @@ public class Unit : MonoBehaviour {
     {
         switch (state)
         {
+            case State.Idle:
+                IdleUpdate();
+                break;
             case State.Attack:
                 AttackUpdate();
                 break;
@@ -154,6 +185,20 @@ public class Unit : MonoBehaviour {
         active = false;
         GetComponent<Health>().maxHealth = health;
         GetComponent<Health>().SetHealth(health);
+
+        timeSinceLastAttack = 0f;
+        IdleStart();
+    }
+
+    private void OnGUI()
+    {
+#if UNITY_EDITOR
+        GUIContent content = new GUIContent(state.ToString());
+        GUIStyle style = new GUIStyle();
+        style.alignment = TextAnchor.MiddleCenter;
+        UnityEditor.Handles.color = Color.red;
+        UnityEditor.Handles.Label(transform.position, content, style);
+#endif
     }
     #endregion
 }

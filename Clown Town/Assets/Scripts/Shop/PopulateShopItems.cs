@@ -9,7 +9,7 @@ public class PopulateShopItems : UnityEditor.AssetModificationProcessor {
         ShopItemList allItems = (ShopItemList)AssetDatabase.LoadAssetAtPath("Assets/All Shop Items.asset", typeof(ShopItemList));
         allItems.shopItems = new List<ShopItem>();
 
-        string prefabsFolder = Path.Combine(Application.dataPath, "Prefabs", "Units");
+        string prefabsFolder = Path.Combine(Application.dataPath, "Resources", "Prefabs", "Units");
         string[] prefabPaths = Directory.GetFiles(prefabsFolder, "*.prefab", SearchOption.AllDirectories);
         foreach (string path in prefabPaths) {
             string assetPath = "Assets" + path.Replace(Application.dataPath, "").Replace("\\", "/");

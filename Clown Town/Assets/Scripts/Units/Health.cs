@@ -5,7 +5,10 @@ using UnityEngine;
 public class Health : MonoBehaviour {
     [HideInInspector]
     public float maxHealth;
-    private float health { get; set; }
+    //private float health { get; set; }
+    [SerializeField]
+    private float health;
+
     public void SetHealth(float amount) {
         health = amount;
         if (health > maxHealth) {

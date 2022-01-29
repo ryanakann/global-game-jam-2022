@@ -15,4 +15,4 @@ MonoBehaviour:
   playArea:
     m_Center: {x: 1, y: 1, z: 0}
     m_Extent: {x: 4.5, y: 4, z: 0}
-  showDebugArea: 1
+  showDebugArea: 0
