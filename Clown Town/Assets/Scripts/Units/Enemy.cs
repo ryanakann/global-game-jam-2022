@@ -11,8 +11,8 @@ public class Enemy : Unit
         foreach (var ally in lane.allies)
         {
             if (ally.transform.position.x > transform.position.x) continue;
-            float distance = Vector3.Distance(ally.transform.position, transform.position);
-            if (distance < range)
+            float distance = transform.position.x - ally.transform.position.x;
+            if (distance < attackRange)
             {
                 tempTarget = ally;
                 break;

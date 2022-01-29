@@ -12,7 +12,7 @@ public class Monkey : Unit
         foreach (var enemy in lane.enemies)
         {
             if (enemy.transform.position.x < transform.position.x) continue;
-            float distance = Vector3.Distance(enemy.transform.position, transform.position);
+            float distance = enemy.transform.position.x - transform.position.x;
             if (distance < minDist)
             {
                 tempTarget = enemy;
