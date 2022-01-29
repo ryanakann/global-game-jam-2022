@@ -1,0 +1,569 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7989953628669445563
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 603879598225336304, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: targetMethod
+      value: getRandomClownId
+      objectReference: {fileID: 0}
+    - target: {fileID: 603879598225336304, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: saveReturnValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 603879598225336304, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: targetMethodText
+      value: 'getRandomClownId (): Int32'
+      objectReference: {fileID: 0}
+    - target: {fileID: 603879598225336304, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: returnValueVariableKey
+      value: clownId
+      objectReference: {fileID: 0}
+    - target: {fileID: 603879598225336304, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 840717251692048518, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_Name
+      value: RecruitChef
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074093783941514627, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167678661951534936, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: key
+      value: chefName
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: targetMethod
+      value: GenerateClownWithPersonality
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: returnValueType
+      value: System.Int32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: saveReturnValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: targetMethodText
+      value: 'GenerateClownWithPersonality (ClownPersonality): Int32'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: returnValueVariableKey
+      value: chefId
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.data[0].variableKey
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.data[0].objValue.intValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.data[0].objValue.typeFullname
+      value: ClownPersonality
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.data[1].objValue.typeFullname
+      value: ClownPersonality
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.data[0].objValue.typeAssemblyname
+      value: ClownPersonality, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400854858431945993, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.data[1].objValue.typeAssemblyname
+      value: ClownPersonality, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712737306494419673, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: storyText
+      value: Your car is suddenly under fire from a storm of pies, banana peels,
+        and chef's knives
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265100955717633727, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: variables.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265100955717633727, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: variables.Array.data[4]
+      value: 
+      objectReference: {fileID: 6498005090798137660}
+    - target: {fileID: 2265100955717633727, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: selectedBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265100955717633727, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: selectedCommands.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265100955717633727, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: selectedCommands.Array.data[0]
+      value: 
+      objectReference: {fileID: 7011463612765428366}
+    - target: {fileID: 2309592543004920987, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: nodeRect.width
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999429656465557389, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: key
+      value: chefId
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722181536016415528, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: returnValueVariableKey
+      value: clownName
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722181536016415528, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.data[0].variableKey
+      value: clownId
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404739155768555578, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: returnValueVariableKey
+      value: chefName
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404739155768555578, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.data[0].variableKey
+      value: chefId
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: nodeRect.y
+      value: 409
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: nodeRect.width
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 3926656546551991593}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 8729904618479765346}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[6]
+      value: 
+      objectReference: {fileID: 6678396605220231114}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 296101448783234023}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[8]
+      value: 
+      objectReference: {fileID: 779322952915333241}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[9]
+      value: 
+      objectReference: {fileID: 7639287100112296269}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[10]
+      value: 
+      objectReference: {fileID: 7912242624137011959}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[11]
+      value: 
+      objectReference: {fileID: 8171794247333111462}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[12]
+      value: 
+      objectReference: {fileID: 7461942103940130363}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[13]
+      value: 
+      objectReference: {fileID: 7011463612765428366}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[14]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105802261960397706, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: commandList.Array.data[15]
+      value: 
+      objectReference: {fileID: 7011463612765428366}
+    - target: {fileID: 6031358400892938482, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: recruitEvent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326014894147390035, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: methodParameters.Array.data[0].variableKey
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061877760466177925, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: storyText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694571669686890400, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: nodeRect.width
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725923156067074830, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: key
+      value: clownId
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184685452620831010, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+      propertyPath: key
+      value: clownName
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8061877760466177925, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+    - {fileID: 6326014894147390035, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+    - {fileID: 3391154834609467233, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+--- !u!1 &7298320265313400125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 840717251692048518, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+  m_PrefabInstance: {fileID: 7989953628669445563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5222949878139582645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2781431557343313166, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+  m_PrefabInstance: {fileID: 7989953628669445563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7011463612765428366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1130330388055088949, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+  m_PrefabInstance: {fileID: 7989953628669445563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8729904618479765346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1712737306494419673, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+  m_PrefabInstance: {fileID: 7989953628669445563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6678396605220231114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 14
+  indentLevel: 0
+  storyText: The onslaught is coming from a single clown wearing a chef hat
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &3926656546551991593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 15
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 7298320265313400125}
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Dialogue
+  targetMethod: GetQuipForClownForEvent
+  targetMethodText: 'GetQuipForClownForEvent (Int32, EventTypes): String'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: clownId
+  - objValue:
+      typeAssemblyname: EventTypes, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: EventTypes
+      intValue: 2
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 1
+  returnValueVariableKey: quip
+  returnValueType: System.String
+  showInherited: 0
+  callMode: 0
+--- !u!114 &6498005090798137660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: quip
+  value: 
+--- !u!114 &296101448783234023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 16
+  indentLevel: 0
+  storyText: '{$clownName}: {$quip}'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &779322952915333241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 17
+  indentLevel: 0
+  storyText: '{$clownName} flings a pie of his own.  It''s super effective!'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7639287100112296269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 18
+  indentLevel: 0
+  storyText: The mystery clown puts his hands up in surrender
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7912242624137011959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 19
+  indentLevel: 0
+  storyText: '{$chefName}: My name is {$chefName}.  You have bested me in clown-to-clown
+    combat, and my life is now forfeit'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &8171794247333111462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 20
+  indentLevel: 0
+  storyText: '{$chefName}:  I will join your quest, if you''ll have me.  I make a
+    mean banana cream  pie'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7461942103940130363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222949878139582645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 21
+  indentLevel: 0
+  storyText: '{$chefName} has joined your party!'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
