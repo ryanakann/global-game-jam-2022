@@ -88,7 +88,7 @@ MonoBehaviour:
   speed: 0.5
   range: 5
   attackSpeed: 0.5
-  attackDamage: 0
+  attackDamage: 5
   cost: 0
   tags: []
   OnPlace:

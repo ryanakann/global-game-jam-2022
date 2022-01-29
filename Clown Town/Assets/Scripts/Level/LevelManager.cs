@@ -39,12 +39,12 @@ public class LevelManager : PersistentSingleton<LevelManager>
         }
     }
 
-    public void PlaceUnit(GameObject unit, bool isInstance)
+    public bool PlaceUnit(GameObject unit, bool isInstance)
     {
         if (unit.GetComponent<Unit>() == null)
         {
             Debug.LogError($"Provided GameObject ({unit.name}) must have Unit component.");
-            return;
+            return false;
         }
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -53,8 +53,9 @@ public class LevelManager : PersistentSingleton<LevelManager>
         {
             Lane lane = lanes.OrderBy(l => Vector3.Distance(l.transform.position, mousePosition)).First();
             int cellIndex = lane.cells.IndexOf(lane.cells.OrderBy(c => Vector3.Distance(c.transform.position, mousePosition)).First());
-            lane.AddUnit(unit, cellIndex, isInstance);
+            return lane.AddUnit(unit, cellIndex, isInstance);
         }
+        return false;
     }
 
     public void RemoveUnit()
@@ -108,6 +109,7 @@ public class LevelManager : PersistentSingleton<LevelManager>
             {
                 Lane lane = lanes[Random.Range(0, lanes.Count)];
                 lane.AddUnit(enemy, -1, false);
+                yield return new WaitForSeconds(Random.Range(0.1f, 0.2f));
             }
         }
         Debug.Log("Spawning complete!");

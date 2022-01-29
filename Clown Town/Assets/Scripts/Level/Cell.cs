@@ -24,16 +24,16 @@ public class Cell : MonoBehaviour
         spriteRenderer.color = (cellIndex + lane.index % 2) % 2 == 0 ? Color.white : Color.clear;
     }
 
-    public void AddUnit(GameObject unit, bool isInstance)
+    public bool AddUnit(GameObject unit)
     {
         if (this.unit != null)
         {
             Debug.LogError($"Cannot add unit to an already-occupied cell!");
-            return;
+            return false;
         }
 
 
-        Unit instance = isInstance ? unit.GetComponent<Unit>() : Instantiate(unit).GetComponent<Unit>();
+        Unit instance = unit.GetComponent<Unit>();
 
         instance.transform.SetParent(transform);
         instance.transform.position = transform.position;
@@ -41,6 +41,7 @@ public class Cell : MonoBehaviour
 
         instance.Place(lane);
         this.unit = instance;
+        return true;
     }
 
     public void RemoveUnit()

@@ -9,9 +9,9 @@ public class Lane : MonoBehaviour {
     public Vector2 start;
     public Vector2 end;
 
-    float laneLength;
-    float laneWidth;
-    float cellWidth;
+    public float laneLength { get; private set; }
+    public float laneWidth { get; private set; }
+    public float cellWidth { get; private set; }
 
     protected List<GameObject> objects { get; }//indexed by grid position within lane
 
@@ -40,6 +40,9 @@ public class Lane : MonoBehaviour {
         gameObject.name = $"Lane {laneIndex}";
         transform.position = (start + end) / 2f;
 
+        allies = new List<Unit>();
+        enemies = new List<Unit>();
+
         cells = new List<Cell>();
         for (int cellIndex = 0; cellIndex < levelInfo.cellCountPerLane; cellIndex++)
         {
@@ -50,12 +53,12 @@ public class Lane : MonoBehaviour {
         }
     }
 
-    public void AddUnit(GameObject unit, int cellIndex, bool isInstance)
+    public bool AddUnit(GameObject unit, int cellIndex, bool isInstance)
     {
         if (cellIndex >= cells.Count)
         {
             Debug.LogError($"Provided cellIndex ({cellIndex}) must be within range ({0}, {cells.Count})");
-            return;
+            return false;
         }
 
         // Enemy spawn off the screen
@@ -73,14 +76,18 @@ public class Lane : MonoBehaviour {
         else
         {
             Cell cell = cells[cellIndex];
-            cell.AddUnit(unit, isInstance);
 
-            Unit instance = unit.GetComponent<Unit>();
-
+            GameObject ally = isInstance ? unit : Instantiate(unit);
+            if (!cell.AddUnit(ally))
+            {
+                Destroy(ally);
+                return false;
+            }
+            Unit instance = ally.GetComponent<Unit>();
             allies.Add(instance);
             instance.OnDie.AddListener(() => allies.Remove(instance));
         }
-
+        return true;
     }
 
     public void RemoveUnit(int cellIndex)

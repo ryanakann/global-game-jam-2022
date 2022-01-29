@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Health), typeof(SpriteRenderer))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Unit : MonoBehaviour {
     public Lane lane { get; protected set; }
     //public Unit target { get; protected set; }
@@ -13,10 +13,25 @@ public class Unit : MonoBehaviour {
 
     [Range(0f, 100f)]
     public float health = 50f;
+    private float currentHealth;
+
     [Range(0f, 10f)]
     public float speed = 1f;
+    
     [Range(0f, 10f)]
-    public float range = 0.5f;
+    [SerializeField]
+    protected float _attackRange = 0.5f;
+    public float attackRange 
+    {   
+        get
+        {
+            return _attackRange / lane.cellWidth;
+        } 
+        protected set
+        {
+            _attackRange = value;
+        } 
+    }
     [Range(0.01f, 10f)]
     public float attackSpeed = 0.5f;
     [Range(0f, 10f)]
@@ -124,9 +139,8 @@ public class Unit : MonoBehaviour {
     public virtual void DieStart()
     {
         state = State.Die;
-
-        GetComponent<Health>().Die();
         OnDie?.Invoke();
+        Destroy(gameObject);
     }
 
     protected virtual void DieUpdate()
@@ -139,11 +153,11 @@ public class Unit : MonoBehaviour {
     public virtual void TakeDamage(float amount)
     {
         OnTakeDamage?.Invoke(amount);
-        health -= amount;
+        currentHealth -= amount;
 
-        if (health <= 0f)
+        if (currentHealth <= 0f)
         {
-            health = 0f;
+            currentHealth = 0f;
             DieStart();
         }
     }
@@ -183,10 +197,8 @@ public class Unit : MonoBehaviour {
     protected virtual void Start() 
     {
         active = false;
-        GetComponent<Health>().maxHealth = health;
-        GetComponent<Health>().SetHealth(health);
-
         timeSinceLastAttack = 0f;
+        currentHealth = health;
         IdleStart();
     }
 
