@@ -207,7 +207,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1376965328
+--- !u!1001 &838967586
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -217,10 +217,6 @@ PrefabInstance:
     - target: {fileID: 825430333190474920, guid: 61d65f61ebb7e40f1982b3781c35b20d, type: 3}
       propertyPath: m_Name
       value: ShopCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863514808418656308, guid: 61d65f61ebb7e40f1982b3781c35b20d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4345604749636143643, guid: 61d65f61ebb7e40f1982b3781c35b20d, type: 3}
       propertyPath: m_Pivot.x
