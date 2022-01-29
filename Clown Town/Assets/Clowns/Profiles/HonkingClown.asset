@@ -15,10 +15,19 @@ MonoBehaviour:
   health: 7
   personality: 5
   traits: 0300000001000000
-  happyQuips: []
-  sadQuips: []
-  angryQuips: []
-  getHurtQuips: []
-  getKilledQuips: []
-  anotherHurtQuips: []
-  anotherKilledQuips: []
+  clickQuip:
+  - '*Honk!*'
+  happyQuips:
+  - '*Honks gleefully*'
+  sadQuips:
+  - '*Honks somberly*'
+  angryQuips:
+  - '*Honks furiously*'
+  getHurtQuips:
+  - '*Honks in pain*'
+  getKilledQuips:
+  - '*Honkhonkhooooooonk* *silence*'
+  anotherHurtQuips:
+  - '*Honks in a concerned manner*'
+  anotherKilledQuips:
+  - '*Honks Amazing Grace*'
