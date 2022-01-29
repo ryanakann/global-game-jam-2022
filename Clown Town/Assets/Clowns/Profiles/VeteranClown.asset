@@ -15,9 +15,15 @@ MonoBehaviour:
   health: 10
   personality: 1
   traits: 0000000004000000
-  happyQuips: []
-  sadQuips: []
-  angryQuips: []
+  clickQuip:
+  - '"Stay sharp"'
+  - '"Semper Pie"'
+  happyQuips:
+  - '"Maybe we''ll be the ones to end this war"'
+  sadQuips:
+  - '"I don''t know if I can keep fighting"'
+  angryQuips:
+  - 
   getHurtQuips: []
   getKilledQuips: []
   anotherHurtQuips: []

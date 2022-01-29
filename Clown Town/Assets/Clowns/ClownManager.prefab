@@ -57,6 +57,42 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 62be4a1454d87184fa8a341f2d3fb70f, type: 2}
   - {fileID: 11400000, guid: ded852da66cb5ae4aa24976b20d1ead4, type: 2}
   - {fileID: 11400000, guid: 2d19a59f5109c6d4185e49f340c21e40, type: 2}
+  displayPrefab: {fileID: 8396246106463944082, guid: e422d812902a4f941acd34ae0d89051e, type: 3}
+  clownHeads:
+  - {fileID: 21300000, guid: f1367362c92f89241b6175b6beb94ecf, type: 3}
+  - {fileID: 21300000, guid: 7413adb7d0dc2c540b62bcdc2639e6e9, type: 3}
+  - {fileID: 21300000, guid: 2ffb3f9aaed715c43acbdb02af359384, type: 3}
+  - {fileID: 21300000, guid: 83c32654d0b390b4cbfd6619fffc0fc9, type: 3}
+  - {fileID: 21300000, guid: 2328c17a91af9524d9d36ca941a498fa, type: 3}
+  - {fileID: 21300000, guid: a1e4dd3cd17bfac4a864cc9a9ac83fd7, type: 3}
+  - {fileID: 21300000, guid: 991e0db05c080fb4a9c794358d9dfeb5, type: 3}
+  - {fileID: 21300000, guid: 3ff451ca99021e745a94f62fdf19426c, type: 3}
+  - {fileID: 21300000, guid: d0935c21c04edd3448b002c7b7aafde4, type: 3}
+  - {fileID: 21300000, guid: c116a2f8dc2dfda44bf06837bb7b2260, type: 3}
+  - {fileID: 21300000, guid: c5b797310330c2441a4487fd6f309088, type: 3}
+  - {fileID: 21300000, guid: 26c52d1c74479a5489c1d3a662a39d55, type: 3}
+  - {fileID: 21300000, guid: 144bf173a08a003418ecd9b1ccd334f4, type: 3}
+  - {fileID: 21300000, guid: 6e0a46660e905324fb583f1514dd9443, type: 3}
+  - {fileID: 21300000, guid: e3a9395fc1cdc184d8c98ed9f7aacfea, type: 3}
+  - {fileID: 21300000, guid: feaa4d8f824192c4a900bce8e9adae9c, type: 3}
+  - {fileID: 21300000, guid: c11ec3db53838bd4c86da65792bf7599, type: 3}
+  - {fileID: 21300000, guid: 89d740608e541a546a60c518098f3a0e, type: 3}
+  - {fileID: 21300000, guid: bd20289e3946ace4895f2886992e9c40, type: 3}
+  - {fileID: 21300000, guid: 4bfa41aa1af981e42a7288b625215003, type: 3}
+  - {fileID: 21300000, guid: 7536156edcf3c964eaab1dc84f510d51, type: 3}
+  - {fileID: 21300000, guid: fc38ac5c7c6166a41bcb74dd8806a957, type: 3}
+  - {fileID: 21300000, guid: 38c4d7ceeed3f9449bf61957ddb7fc60, type: 3}
+  - {fileID: 21300000, guid: 9c4d1fd83ac9a874ba164f84c9f60a48, type: 3}
+  - {fileID: 21300000, guid: 35608dcef52d12f41b907d3dd9b6ad44, type: 3}
+  - {fileID: 21300000, guid: 5da3e5279b5873c4cb3f5f3868674945, type: 3}
+  - {fileID: 21300000, guid: 1687ed8164e288745b616293b53dd051, type: 3}
+  - {fileID: 21300000, guid: d4c8d50bcf2e4424da2519e8bdf274b7, type: 3}
+  - {fileID: 21300000, guid: 62b6fabe204118b47a005d4d20b8de35, type: 3}
+  - {fileID: 21300000, guid: bbb21356d5b9ef840a0b56fac5eabe01, type: 3}
+  - {fileID: 21300000, guid: 8b50a48760a5b754a8831595331d74b9, type: 3}
+  - {fileID: 21300000, guid: 276bfb094b547364bbee222c7f6f0584, type: 3}
+  clownBodies:
+  - {fileID: 3677691882194777145, guid: df6c1da9683132345977f8f4e4cb8411, type: 3}
   clownFirstNames:
   - Squiggle
   - Squash

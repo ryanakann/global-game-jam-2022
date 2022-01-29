@@ -17,12 +17,16 @@ MonoBehaviour:
   traits: 00000000
   clickQuip:
   - '"Poke me ONE MORE TIME and see what happens, chum"'
+  - '"A nerd tried to touch me!"'
   happyQuips:
   - '"This is almost as great as pantsing a nerd"'
+  - '"I can''t wait to prank someone else"'
   sadQuips:
   - '"It''s gonna take a lot of pie-ing the innocent to cheer me up"'
+  - '"A dweeb like you can''t cheer me up"'
   angryQuips:
   - '"That''s it, now I''m MAD!"'
+  - '"Someone''s about to get it Big Time!"'
   getHurtQuips:
   - '"Sleep with one eye open, chum!"'
   getKilledQuips:

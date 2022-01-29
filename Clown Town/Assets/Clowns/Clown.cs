@@ -21,6 +21,9 @@ public class Clown
     public ClownPersonality Personality { get; private set; }
     public HashSet<ClownTrait> Traits { get; private set; }
 
+    Sprite headSprite;
+    ClownBody body;
+
     public Clown(ClownProfile profile)
     {
         Debug.Log("Creating Clown" + nextId);
@@ -30,6 +33,8 @@ public class Clown
         CurrentHealth = profile.health;
         Personality = profile.personality;
         Traits = new HashSet<ClownTrait>(profile.traits);
+        headSprite = ClownManager.GetClownHead();
+        body = ClownManager.GetClownBody();
 
         Debug.Log("\t Name: " + Name);
         Debug.Log("\t Personality: " + Personality);
@@ -69,5 +74,16 @@ public class Clown
     public bool HasTrait(ClownTrait checkedTrait)
     {
         return Traits.Contains(checkedTrait);
+    }
+
+    public void SpawnDisplayAtPosition(Vector2 pos)
+    {
+        GameObject displayPrefab = ClownManager.instance.displayPrefab;
+        GameObject displayInstance = GameObject.Instantiate(displayPrefab, pos, Quaternion.identity);
+
+        ClownDisplay display = displayInstance.GetComponent<ClownDisplay>();
+        display.SetHead(headSprite);
+        display.SetBody(body);
+
     }
 }

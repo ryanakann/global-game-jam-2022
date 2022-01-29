@@ -12,9 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e525e9ca04def004387b42e14e35bb96, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  difficultyMin: 0
-  difficultyMax: 0
-  locationNames: []
-  locationDescriptions: []
-  eventPrefabs: []
-  locationImages: []
+  difficultyMin: 1
+  difficultyMax: 10
+  locationNames:
+  - Cool Place
+  locationDescriptions:
+  - Wow, this place is so cool!
+  eventPrefabs:
+  - {fileID: 7369408775805760609, guid: b69d710127d646c44a58eb76c9a611ea, type: 3}
+  - {fileID: 840717251692048518, guid: e2c7855f1ae525247936b7f9f21070de, type: 3}
+  - {fileID: 4795351801018582091, guid: d0dea5d1939259f418c38c11e9c93543, type: 3}
+  - {fileID: 7624734156328142186, guid: 5c4c1b95c0c497c46ae2cd2cd60bc16d, type: 3}
+  - {fileID: 145397390233900900, guid: ddc2cd9449500fb44becd6573cb63cfb, type: 3}
+  - {fileID: 7330315654062723700, guid: a457a05fa781f4042adf30fadace69f5, type: 3}
+  - {fileID: 8958280480966668658, guid: 982f6e501c6c8de49bdd61a50e78448b, type: 3}
+  - {fileID: 5511309030003516924, guid: 6dbab4869f6ce334bad5a88d5e15c3ae, type: 3}
+  - {fileID: 1053314269149339998, guid: cbc758d562ab86e43a3554c454908a7c, type: 3}
+  - {fileID: 692262705457539685, guid: a08336eb5d6e0284dab2e0a2e674eb5c, type: 3}
+  - {fileID: 5895375159818085075, guid: 68fe326e175de2348b8851dbedf648c9, type: 3}
+  locationImages:
+  - {fileID: 0}

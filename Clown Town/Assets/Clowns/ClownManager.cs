@@ -11,6 +11,15 @@ public class ClownManager : MonoBehaviour
     List<ClownProfile> clownProfiles;
 
     [SerializeField]
+    public GameObject displayPrefab;
+
+    [SerializeField]
+    Sprite[] clownHeads;
+
+    [SerializeField]
+    ClownBody[] clownBodies;
+
+    [SerializeField]
     string[] clownFirstNames;
     [SerializeField]
     string[] clownLastNames;
@@ -48,6 +57,11 @@ public class ClownManager : MonoBehaviour
                 GenerateClownWithPersonality(profile.personality);
             }
         }
+    }
+
+    public static List<Clown> GetClowns()
+    {
+        return new List<Clown>(clowns.Values);
     }
 
     public static void addClown(Clown newClown)
@@ -177,6 +191,16 @@ public class ClownManager : MonoBehaviour
         string firstName = instance.clownFirstNames[Random.Range(0, instance.clownFirstNames.Length)];
         string lastName = instance.clownLastNames[Random.Range(0, instance.clownLastNames.Length)];
         return firstName + " " + lastName;
+    }
+
+    public static Sprite GetClownHead()
+    {
+        return instance.clownHeads[Random.Range(0, instance.clownHeads.Length)];
+    }
+
+    public static ClownBody GetClownBody()
+    {
+        return instance.clownBodies[Random.Range(0, instance.clownBodies.Length)];
     }
 
     public static void KillClown(int clownId)

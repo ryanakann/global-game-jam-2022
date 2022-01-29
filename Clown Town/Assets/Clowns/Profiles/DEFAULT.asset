@@ -15,6 +15,17 @@ MonoBehaviour:
   health: 5
   personality: 0
   traits: 
+  clickQuip:
+  - '"Yo."'
+  - '"Hallo."'
+  - '"Yeah?"'
+  - '"Mhmm?"'
+  - '"What?"'
+  - '"Mmm?"'
+  - '"Hello!"'
+  - '"..."'
+  - '"Hi!"'
+  - '*HONK*'
   happyQuips:
   - '"This is the greatest day!"'
   - '"I have never been so happy in my life or afterlife!"'
