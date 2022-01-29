@@ -15,8 +15,11 @@ MonoBehaviour:
   health: 4
   personality: 2
   traits: 04000000
+  clickQuip:
+  - '"Howdy partner!"'
   happyQuips:
   - '"Well, ain''t that the finest sight you ever did see..."'
+  - '"Why, I''m pleased as punch!"'
   sadQuips:
   - '"Cowpokes, I gotta admit this is a rough one..."'
   angryQuips:

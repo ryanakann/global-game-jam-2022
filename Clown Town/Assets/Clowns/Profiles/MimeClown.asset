@@ -15,10 +15,22 @@ MonoBehaviour:
   health: 3
   personality: 3
   traits: 020000000500000003000000
-  happyQuips: []
-  sadQuips: []
-  angryQuips: []
-  getHurtQuips: []
-  getKilledQuips: []
-  anotherHurtQuips: []
-  anotherKilledQuips: []
+  clickQuip:
+  - He seems to be reading an unseen book
+  happyQuips:
+  - He draws a big smile on his face
+  sadQuips:
+  - He draws a big frown on his face
+  - He cries and blows his nose with an invisible hankerchief
+  angryQuips:
+  - He is shaprening an invisible knife
+  getHurtQuips:
+  - '*puts invisible bandages on the wound*'
+  - '*screams silently*'
+  getKilledQuips:
+  - '*jumps up in the air, then lands with arms and legs pointing up like a possom,
+    before going limp*'
+  anotherHurtQuips:
+  - '*acts out the injury in an exaggerated fashion*'
+  anotherKilledQuips:
+  - '*does the sign of the cross*'
