@@ -11,9 +11,6 @@ public class ShopDisplay : MonoBehaviour {
     GameObject ShopItemUI;
 
     void Start() {
-        transform.Find("Button").GetComponent<Button>().onClick.AddListener(delegate {
-            //TurnManager.instance.EndTurnBuild();
-        });
         foreach (ShopItem item in items.shopItems) {
             FillUIForShopItem(item);
         }

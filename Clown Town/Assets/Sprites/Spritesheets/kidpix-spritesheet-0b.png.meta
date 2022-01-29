@@ -360,6 +360,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2776,6 +2777,119 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      kidpix-spritesheet-0b_26: -6054016114739001913
+      kidpix-spritesheet-0b_33: 6329143431486369374
+      kidpix-spritesheet-0b_74: 7901490120506522787
+      kidpix-spritesheet-0b_1: 6949029007944701544
+      kidpix-spritesheet-0b_44: -4245718188085386224
+      kidpix-spritesheet-0b_104: -1332397312243490933
+      kidpix-spritesheet-0b_4: -6915391507585588226
+      kidpix-spritesheet-0b_45: 8631124846122310886
+      kidpix-spritesheet-0b_78: -3531112839860675761
+      kidpix-spritesheet-0b_27: -6185030352212953958
+      kidpix-spritesheet-0b_67: 8331680561283207979
+      kidpix-spritesheet-0b_16: 1082889880972379958
+      kidpix-spritesheet-0b_94: 2803361227216316414
+      kidpix-spritesheet-0b_55: -8114042043203903172
+      kidpix-spritesheet-0b_60: 2132080187555761878
+      kidpix-spritesheet-0b_65: 8466906236581205543
+      kidpix-spritesheet-0b_82: -5916429974328412921
+      kidpix-spritesheet-0b_22: -2016090708251123743
+      kidpix-spritesheet-0b_89: -3227365524246113775
+      kidpix-spritesheet-0b_110: -9131867519041486503
+      kidpix-spritesheet-0b_57: -6345328868312544508
+      kidpix-spritesheet-0b_42: 8520462862953140122
+      kidpix-spritesheet-0b_92: 5019089731924040419
+      kidpix-spritesheet-0b_93: 7598090907393478659
+      kidpix-spritesheet-0b_46: 1962208631786473906
+      kidpix-spritesheet-0b_62: 1486635450090834786
+      kidpix-spritesheet-0b_63: -2922990699583068340
+      kidpix-spritesheet-0b_48: 6297008899321343953
+      kidpix-spritesheet-0b_40: -487549722043888361
+      kidpix-spritesheet-0b_95: 5350330267001621346
+      kidpix-spritesheet-0b_50: 4554214218152956645
+      kidpix-spritesheet-0b_34: -7105606965521805987
+      kidpix-spritesheet-0b_29: 4133894852353885058
+      kidpix-spritesheet-0b_47: -2706317812206295035
+      kidpix-spritesheet-0b_19: 2814546277426141989
+      kidpix-spritesheet-0b_84: -5659421712336143683
+      kidpix-spritesheet-0b_85: 5736095800693306508
+      kidpix-spritesheet-0b_70: -33344626138161817
+      kidpix-spritesheet-0b_97: -2175852943348909175
+      kidpix-spritesheet-0b_41: 2913359782711656261
+      kidpix-spritesheet-0b_54: 3050148360650552737
+      kidpix-spritesheet-0b_106: 5071394539048820237
+      kidpix-spritesheet-0b_15: 272259560048156915
+      kidpix-spritesheet-0b_98: -2642074966973903595
+      kidpix-spritesheet-0b_66: 1716624780565678732
+      kidpix-spritesheet-0b_25: 299597662574833691
+      Rhino: -7336773312143359323
+      kidpix-spritesheet-0b_35: -3921005336806064014
+      kidpix-spritesheet-0b_73: -6150030969004679676
+      kidpix-spritesheet-0b_56: -3171978596402479361
+      kidpix-spritesheet-0b_86: 4335020098579250531
+      kidpix-spritesheet-0b_38: 6152282614969038333
+      kidpix-spritesheet-0b_72: -2024430399986774098
+      kidpix-spritesheet-0b_68: -1114171465752139700
+      kidpix-spritesheet-0b_64: -8488785557457535684
+      kidpix-spritesheet-0b_103: -3003627642895619873
+      kidpix-spritesheet-0b_10: -5774939414045286697
+      kidpix-spritesheet-0b_77: -5058522071023357503
+      kidpix-spritesheet-0b_71: -2886620997330981578
+      Elephant: 4758165771492573718
+      kidpix-spritesheet-0b_61: -4717598322875975072
+      kidpix-spritesheet-0b_28: -2702496980166847142
+      kidpix-spritesheet-0b_81: -6922961578807263879
+      kidpix-spritesheet-0b_75: -972279652676465840
+      kidpix-spritesheet-0b_91: -3276014833905598617
+      kidpix-spritesheet-0b_0: 532001220552365639
+      kidpix-spritesheet-0b_12: 1274211209390690979
+      kidpix-spritesheet-0b_17: -6693842516859185522
+      kidpix-spritesheet-0b_88: -1089579688189872878
+      kidpix-spritesheet-0b_96: 4826449279135473335
+      kidpix-spritesheet-0b_100: 2711792580807066271
+      kidpix-spritesheet-0b_31: 4250191415635954665
+      kidpix-spritesheet-0b_79: 1369922346465059550
+      kidpix-spritesheet-0b_5: -1066965233407153634
+      kidpix-spritesheet-0b_80: -9184102029651188150
+      kidpix-spritesheet-0b_43: 9209582464031707029
+      kidpix-spritesheet-0b_32: 4767347910774649057
+      kidpix-spritesheet-0b_18: 8953995776860502841
+      kidpix-spritesheet-0b_36: -1645555133701032677
+      kidpix-spritesheet-0b_51: 7008079926877255396
+      kidpix-spritesheet-0b_30: -5167460058782755801
+      kidpix-spritesheet-0b_24: 8577499346291701469
+      kidpix-spritesheet-0b_87: -4238389221919187711
+      kidpix-spritesheet-0b_99: 2722033525948223276
+      kidpix-spritesheet-0b_9: -2515624731519598451
+      kidpix-spritesheet-0b_90: 3712722636625173950
+      kidpix-spritesheet-0b_7: -7702378419996020607
+      kidpix-spritesheet-0b_101: -2612966555430929728
+      kidpix-spritesheet-0b_21: 1239544758898110950
+      kidpix-spritesheet-0b_6: -6098281617985696508
+      kidpix-spritesheet-0b_13: 2311481168607062234
+      kidpix-spritesheet-0b_83: 2443099173513012044
+      kidpix-spritesheet-0b_52: -1661530977916737526
+      kidpix-spritesheet-0b_108: 4401806334958479543
+      kidpix-spritesheet-0b_39: 6732623550192140373
+      kidpix-spritesheet-0b_20: 2809286709761567937
+      kidpix-spritesheet-0b_109: 8282083104765881728
+      kidpix-spritesheet-0b_59: -3309980542308052017
+      kidpix-spritesheet-0b_111: 7669181793673960658
+      kidpix-spritFries: 2085190522596649249
+      kidpix-spritesheet-0b_23: -3993542890178305729
+      kidpix-spritesheet-0b_102: -3299459851462330329
+      kidpix-spritesheet-0b_105: 4969212655475022707
+      kidpix-spritesheet-0b_76: 7943058546028089809
+      kidpix-spritesheet-0b_37: 96127111598024711
+      Cow: -1826675562819028921
+      kidpix-spritesheet-0b_69: 1677342219381964393
+      kidpix-spritesheet-0b_49: -8593185229405417324
+      kidpix-spritesheet-0b_107: -3502303972958158062
+      kidpix-spritesheet-0b_14: 3475299299727313106
+      kidpix-spritesheet-0b_11: 2402917468265365879
+      kidpix-spritesheet-0b_53: 7518938036858459972
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
