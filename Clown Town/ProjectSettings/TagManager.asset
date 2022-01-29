@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Edge
+  - Location
   - 
   - 
   - 
@@ -43,4 +43,10 @@ TagManager:
     locked: 0
   - name: Units
     uniqueID: 584350883
+    locked: 0
+  - name: Edge
+    uniqueID: 1573550705
+    locked: 0
+  - name: Location
+    uniqueID: 3171599245
     locked: 0

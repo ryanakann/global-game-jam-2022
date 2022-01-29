@@ -7,9 +7,10 @@ using UnityEngine.AI;
 
 
 
+
 public static class ExtensionMethods
 {
-
+   
     public static void SetGlobalScale(this Transform transform, Vector3 globalScale)
     {
         transform.localScale = Vector3.one;
