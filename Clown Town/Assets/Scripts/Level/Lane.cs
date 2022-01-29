@@ -15,6 +15,9 @@ public class Lane : MonoBehaviour {
 
     protected List<GameObject> objects { get; }//indexed by grid position within lane
 
+    public List<Unit> allies;
+    public List<Unit> enemies;
+
     public GameObject cellPrefab;
 
     public List<Cell> cells;
@@ -64,11 +67,19 @@ public class Lane : MonoBehaviour {
             instance.transform.position = end + Vector2.right * cellWidth;
 
             instance.Place(this);
+
+            enemies.Add(instance);
+            instance.OnDie.AddListener(() => enemies.Remove(instance));
         }
         else
         {
             Cell cell = cells[cellIndex];
             cell.AddUnit(unit, isInstance);
+
+            Unit instance = unit.GetComponent<Unit>();
+
+            allies.Add(instance);
+            instance.OnDie.AddListener(() => allies.Remove(instance));
         }
 
     }

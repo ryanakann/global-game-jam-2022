@@ -51,7 +51,7 @@ public class Cell : MonoBehaviour
             return;
         }
 
-        unit.Die();
+        unit.DieStart();
         unit = null;
     }
 }
