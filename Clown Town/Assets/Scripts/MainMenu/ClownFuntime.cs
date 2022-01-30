@@ -8,6 +8,8 @@ public class ClownFuntime : MonoBehaviour
     public int maxClownNum = 50;
     public PhysicsMaterial2D physMat;
 
+    public bool BAD;
+
     List<GameObject> clowns = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -43,6 +45,15 @@ public class ClownFuntime : MonoBehaviour
         {
             col.sharedMaterial = physMat;
         }
+
+        if (BAD)
+        {
+            foreach (var r in go.gameObject.GetComponentsInChildren<SpriteRenderer>())
+            {
+                r.color = new Color(1f, 0.2f, 0.2f);
+            }
+        }
+
     }
 
     // Update is called once per frame

@@ -13,7 +13,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("GAME");
+        SceneManager.LoadScene("LevelSelect");
     }
 
     public void Quit()
