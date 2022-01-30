@@ -39,6 +39,7 @@ public class SelectionController : Singleton<SelectionController>
         }
 
         RaycastHit2D hit = Physics2D.Raycast(UtilsClass.GetMouseWorldPosition(), Vector3.forward);
+        bool result = false;
         if (hit.collider != null)
         {
             var obj = hit.transform.GetComponent<SelectionObject>();
@@ -53,9 +54,10 @@ public class SelectionController : Singleton<SelectionController>
                     currentSelectionObject = obj;
                     obj.Highlight();
                 }
+                result = true;
             }
         }
-        else if (currentSelectionObject != null)
+        else if (result == false && currentSelectionObject != null)
         {
             currentSelectionObject.Unhighlight();
             currentSelectionObject = null;

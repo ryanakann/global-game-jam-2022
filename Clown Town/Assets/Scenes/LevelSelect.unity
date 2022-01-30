@@ -1120,6 +1120,8 @@ MonoBehaviour:
   wiggleRoom: 0.25
   locationPrefab: {fileID: 3267506127881214546, guid: 21b3aa4801f032e4b8c14a7508777d51, type: 3}
   edgePrefab: {fileID: 1758304669732815918, guid: 77df24b73ceffea4ea7e698036d76988, type: 3}
+  locationTypes:
+  - {fileID: 11400000, guid: f10b8d328784e6d47bc9cc4b574a2142, type: 2}
 --- !u!4 &895979446
 Transform:
   m_ObjectHideFlags: 0
