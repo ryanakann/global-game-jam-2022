@@ -45,8 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2efbb7f5238ef3f40bb0527ac80e8e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: 1
   src: {fileID: 0}
   tgt: {fileID: 0}
+  edgeName: 
+  fuelCost: 0
 --- !u!212 &8762614410294839132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -122,5 +125,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.32, y: 0.15}
   m_EdgeRadius: 0

@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class SelectionState
 {
+
     bool _alive;
     public bool alive { set { _alive = value; } get { return _alive; } }
     bool _occupied;
@@ -33,9 +34,17 @@ public class SelectionObject : MonoBehaviour
 
     UnityEvent<SelectionState> selectionEvent;
 
-    private void Awake()
+    [HideInInspector]
+    public bool selectable = true;
+
+    public virtual void Awake()
     {
         selectionState = new SelectionState();
+    }
+
+    public virtual void FillDetailsPanel()
+    {
+
     }
 
     public virtual void Deactivate()
@@ -60,35 +69,24 @@ public class SelectionObject : MonoBehaviour
 
     public virtual void Highlight()
     {
-        if (!selectionState.canHighlight)
-            return;
-        // TODO: up color
         print("VIEW ME!!!");
     }
 
     public virtual void Unhighlight()
     {
-        if (!selectionState.canHighlight)
-            return;
-        // TODO: set color
+        SelectionController.instance.ClearPanels(true);
         print("FORGET ME");
     }
 
     public virtual void Select()
     {
-        if (!selectionState.canSelect)
-            return;
-        if (LevelGenerator.instance.currentSelectedObject != null)
-            LevelGenerator.instance.currentSelectedObject.Deselect();
-        // TODO: add highlight
-        LevelGenerator.instance.currentSelectedObject = this;
         print("SELECT ME"); 
     }
 
-    public virtual void Deselect()
+    public virtual void Deselect(bool clear = true)
     {
-        if (!selectionState.canSelect)
-            return;
+        if (clear)
+            SelectionController.instance.ClearPanels();
         print("DESELECT ME");
         // TODO: remove highlight
     }
@@ -99,20 +97,5 @@ public class SelectionObject : MonoBehaviour
         selectionState.alive = false;
         // TODO: remove highlight
         // TODO: complete fade
-    }
-
-    private void OnMouseUpAsButton()
-    {
-        Select();
-    }
-
-    private void OnMouseEnter()
-    {
-        Highlight();
-    }
-
-    private void OnMouseExit()
-    {
-        Unhighlight();
     }
 }

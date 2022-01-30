@@ -13,17 +13,19 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
     public GameObject locationPrefab, edgePrefab;
 
-    List<Location> locations = new List<Location>();
+    public List<LocationType> locationTypes = new List<LocationType>();
 
-    public SelectionObject currentSelectedObject;
+    List<Location> locations = new List<Location>();
     // DetailsUI locationDetails, edgeDetails, defaultDetails;
 
 
     public void SpawnEdge(Location src, Location tgt)
     {
         var edge = Instantiate(edgePrefab, Vector2.Lerp(src.transform.position, tgt.transform.position, 0.5f), Quaternion.identity).GetComponent<Edge>();
+        edge.edgeName = $"Road to {tgt.locationName}";
         edge.transform.up = (tgt.transform.position - src.transform.position).normalized;
-        edge.GetComponent<SpriteRenderer>().size = new Vector2(0.32f, (tgt.transform.position - src.transform.position).magnitude);
+        var renderer = edge.GetComponent<SpriteRenderer>();
+        renderer.size = new Vector2(0.32f, (tgt.transform.position - src.transform.position).magnitude-0.1f);
         edge.src = src;
         edge.tgt = tgt;
         src.outgoingConnections.Add(edge);
@@ -39,6 +41,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
         // spawn start
         var start_node = Instantiate(locationPrefab, minDepthPivot.position, Quaternion.identity).GetComponent<Location>();
+        start_node.SetLocationType(locationTypes[Random.Range(0, locationTypes.Count)]);
         locations.Add(start_node);
 
         lastLocations.Add(start_node);
@@ -56,6 +59,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
                     locationPrefab, 
                     new Vector2((j + 0.5f) * widthIncrement, i * depthIncrement) + (Random.insideUnitCircle * wiggleRoom) + offset, 
                     Quaternion.identity).GetComponent<Location>();
+                node.SetLocationType(locationTypes[Random.Range(0, locationTypes.Count)]);
                 locations.Add(node);
                 nextLocations.Add(node);
             }
@@ -80,6 +84,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
         // spawn end
         var end_node = Instantiate(locationPrefab, maxDepthPivot.position, Quaternion.identity).GetComponent<Location>();
+        end_node.SetLocationType(locationTypes[Random.Range(0, locationTypes.Count)]);
 
         foreach (var loc in lastLocations)
         {
@@ -90,10 +95,14 @@ public class LevelGenerator : Singleton<LevelGenerator>
         foreach (var loc in locations)
         {
             loc.Deactivate();
+            loc.transform.position += new Vector3(0, 0, 1f);
         }
+        end_node.Deactivate();
+        end_node.transform.position += new Vector3(0, 0, 1f);
 
         start_node.Activate();
         start_node.Occupy();
+        start_node.transform.position += new Vector3(0, 0, 1f);
     }
 
     void Start()

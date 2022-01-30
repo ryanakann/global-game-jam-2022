@@ -11,6 +11,19 @@ public class Location : SelectionObject
     [HideInInspector]
     public List<Edge> ingoingConnections = new List<Edge>();
 
+    public LocationType locationType;
+
+    public string locationName, description;
+    public int difficulty;
+
+    public void SetLocationType(LocationType locType)
+    {
+        locationType = locType;
+        locationName = locType.locationNames[Random.Range(0, locType.locationNames.Length)];
+        description = locType.locationDescriptions[Random.Range(0, locType.locationDescriptions.Length)];
+        GetComponentInChildren<SpriteRenderer>().sprite = locType.locationImages[Random.Range(0, locType.locationImages.Length)];
+    }
+
     public void OccupyNeighbor(Location target_loc)
     {
         foreach (var edge in outgoingConnections)
@@ -53,6 +66,34 @@ public class Location : SelectionObject
         foreach (var edge in ingoingConnections)
         {
             edge.Deactivate();
+        }
+    }
+
+    public override void FillDetailsPanel()
+    {
+        base.FillDetailsPanel();
+        SelectionController.instance.locationPanel.FillText("LocationName", locationName);
+        SelectionController.instance.locationPanel.FillText("LocationDescription", description);
+        SelectionController.instance.locationPanel.FillText("LocationDifficulty", $"Difficulty: {difficulty}");
+    }
+
+    public override void Select()
+    {
+        base.Select();
+        if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: true))
+        {
+            FillDetailsPanel();
+            SelectionController.instance.locationPanel.FillButton("LocationDeselect", true);
+        }
+    }
+
+    public override void Highlight()
+    {
+        base.Highlight();
+        if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: false))
+        {
+            FillDetailsPanel();
+            SelectionController.instance.locationPanel.FillButton("LocationDeselect", false);
         }
     }
 }
