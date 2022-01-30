@@ -42,7 +42,7 @@ public class SelectionController : Singleton<SelectionController>
         bool result = false;
         if (hit.collider != null)
         {
-            var obj = hit.transform.GetComponent<SelectionObject>();
+            var obj = hit.transform.GetComponentInParent<SelectionObject>();
             if (obj != null && obj.selectionState.canHighlight == true)
             {
                 if (obj != currentSelectionObject)

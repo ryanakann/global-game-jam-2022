@@ -212,8 +212,8 @@ public class ClownManager : MonoBehaviour
             {
                 clownsByTrait[trait].Remove(theClown);
             }
-            theClown.Kill();
             clowns.Remove(clownId);
+            theClown.Kill();
         }
     }
 

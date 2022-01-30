@@ -37,9 +37,14 @@ public class SelectionObject : MonoBehaviour
     [HideInInspector]
     public bool selectable = true;
 
+    public SpriteRenderer selectHighlight, highlight;
+
+
     public virtual void Awake()
     {
         selectionState = new SelectionState();
+        selectHighlight = transform.FindDeepChild("SelectHighlight").GetComponent<SpriteRenderer>();
+        highlight = transform.FindDeepChild("Highlight").GetComponent<SpriteRenderer>();
     }
 
     public virtual void FillDetailsPanel()
@@ -51,6 +56,12 @@ public class SelectionObject : MonoBehaviour
     {
         selectionState.canSelect = false;
         // TODO: fade color
+        foreach (var r in GetComponentsInChildren<SpriteRenderer>())
+        {
+            r.color = new Color(r.color.r, r.color.g, r.color.b, 0.33f);
+        }
+        highlight.gameObject.SetActive(false);
+        selectHighlight.gameObject.SetActive(false);
         print("DEACTIVATE ME");
     }
 
@@ -58,6 +69,10 @@ public class SelectionObject : MonoBehaviour
     {
         selectionState.canSelect = true;
         // TODO: set color
+        foreach (var r in GetComponentsInChildren<SpriteRenderer>())
+        {
+            r.color = new Color(r.color.r, r.color.g, r.color.b, 1f);
+        }
         print("ACTIVATE ME");
     }
 
@@ -70,24 +85,33 @@ public class SelectionObject : MonoBehaviour
     public virtual void Highlight()
     {
         print("VIEW ME!!!");
+        highlight.color = new Color(highlight.color.r, highlight.color.g, highlight.color.b, 0.5f);
+        highlight.gameObject.SetActive(true);
+        // add additive highlight
     }
 
     public virtual void Unhighlight()
     {
         SelectionController.instance.ClearPanels(true);
         print("FORGET ME");
+        highlight.gameObject.SetActive(false);
+        // remove additive highlight
     }
 
     public virtual void Select()
     {
-        print("SELECT ME"); 
+        print("SELECT ME");
+        selectHighlight.gameObject.SetActive(true);
     }
 
     public virtual void Deselect(bool clear = true)
     {
+        if (selectionState.occupied == true)
+            return;
         if (clear)
             SelectionController.instance.ClearPanels();
         print("DESELECT ME");
+        selectHighlight.gameObject.SetActive(false);
         // TODO: remove highlight
     }
 
@@ -97,5 +121,9 @@ public class SelectionObject : MonoBehaviour
         selectionState.alive = false;
         // TODO: remove highlight
         // TODO: complete fade
+        foreach (var r in GetComponentsInChildren<SpriteRenderer>())
+        {
+            r.color = new Color(r.color.r, r.color.g, r.color.b, 0.1f);
+        }
     }
 }

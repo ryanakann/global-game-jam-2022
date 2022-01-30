@@ -28,6 +28,8 @@ public class LevelGenerator : Singleton<LevelGenerator>
         var cost = (tgt.transform.position - src.transform.position).magnitude - 0.1f;
         renderer.size = new Vector2(0.32f, cost);
         edge.fuelCost = Mathf.CeilToInt(cost);
+        edge.highlight.size = new Vector2(edge.highlight.size.x, cost);
+        edge.selectHighlight.size = new Vector2(edge.selectHighlight.size.x, cost);
         edge.src = src;
         edge.tgt = tgt;
         src.outgoingConnections.Add(edge);
