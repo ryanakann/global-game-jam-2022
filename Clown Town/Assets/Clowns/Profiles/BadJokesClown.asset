@@ -17,6 +17,8 @@ MonoBehaviour:
   traits: 03000000
   clickQuip:
   - '"Try taking me out to dinner first! Ha-cha-cha!"'
+  - '"You wanna talk? More like squawk, you big chicken!"'
+  - '"My shoes ain''t the only big thing on me! My nose, too! Agagagagagagagagagagagagagagagga."'
   happyQuips:
   - '"I''m so happy I could ~pie~!"'
   sadQuips:

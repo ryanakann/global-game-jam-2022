@@ -109,4 +109,10 @@ public class SelectionController : Singleton<SelectionController>
             p.gameObject.SetActive(false);
         }
     }
+
+    public void Clicko()
+    {
+        int clownId = ((ClownDisplay)selectedObject).clown.Id;
+        ClownManager.SayQuipInFlowchartForClownForEvent(clownId, EventTypes.ClownTalk);
+    }
 }

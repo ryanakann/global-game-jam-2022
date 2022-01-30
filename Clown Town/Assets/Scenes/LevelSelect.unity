@@ -306,7 +306,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 181929079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 895979447}
+        m_TargetAssemblyTypeName: SelectionController, Assembly-CSharp
+        m_MethodName: Clicko
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &181929079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,7 +955,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.95
+  m_fontSize: 40.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1590,7 +1602,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.7
+  m_fontSize: 38.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2878,6 +2890,22 @@ PrefabInstance:
       propertyPath: clownBodies.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 606de0d5ccacadd43a727b9af7202956, type: 2}
+    - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
+      propertyPath: clownProfiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 688fe720ebff20543b656f461b35f69c, type: 2}
+    - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
+      propertyPath: clownProfiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 688fe720ebff20543b656f461b35f69c, type: 2}
+    - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
+      propertyPath: clownProfiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 688fe720ebff20543b656f461b35f69c, type: 2}
+    - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
+      propertyPath: clownProfiles.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 688fe720ebff20543b656f461b35f69c, type: 2}
     - target: {fileID: 8968258754175564043, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3172,7 +3200,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.15
+  m_fontSize: 33.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

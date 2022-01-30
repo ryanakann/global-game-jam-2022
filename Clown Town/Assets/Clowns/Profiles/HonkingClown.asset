@@ -16,7 +16,27 @@ MonoBehaviour:
   personality: 5
   traits: 0300000001000000
   clickQuip:
+  - '*Honk!* *Honk!*'
+  - '*Honk!* *Honk!*'
+  - '*Honk!* *Honk!*'
+  - '*Honk!* *Honk!*'
+  - '*Honk!* *Honk!*'
+  - '*Honk!* *Honk!*'
+  - '*Honk!* *Honk!*'
+  - '*Honk!* *Honk!*'
+  - '*Honk!* *Honk!*'
+  - '*Honk!* *Honk!*'
   - '*Honk!*'
+  - '*Honk!*'
+  - '*Honk!*'
+  - '*Honk!*'
+  - '*Honk!*'
+  - '*Honk!*'
+  - '*Honk!*'
+  - '*Honk!*'
+  - '*Honk!*'
+  - '*Honk!*'
+  - '"Stop fucking talking to me."'
   happyQuips:
   - '*Honks gleefully*'
   sadQuips:
