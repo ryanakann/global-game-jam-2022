@@ -92,7 +92,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8b50a48760a5b754a8831595331d74b9, type: 3}
   - {fileID: 21300000, guid: 276bfb094b547364bbee222c7f6f0584, type: 3}
   clownBodies:
-  - {fileID: 3677691882194777145, guid: df6c1da9683132345977f8f4e4cb8411, type: 3}
+  - {fileID: 11400000, guid: 606de0d5ccacadd43a727b9af7202956, type: 2}
+  - {fileID: 11400000, guid: a4e736698b49fe748860debe3595d037, type: 2}
+  - {fileID: 11400000, guid: 8eae7803cacacb84583fbe5a6c0c8531, type: 2}
+  - {fileID: 11400000, guid: 8f271a4dfa7a39443a649fed5b906f23, type: 2}
+  - {fileID: 11400000, guid: 5f677a29a43c2b94890b0ba6e662fa02, type: 2}
   clownFirstNames:
   - Squiggle
   - Squash

@@ -13,6 +13,12 @@ public class ClownDisplay : SelectionObject
     SpriteRenderer headRenderer;
     SpriteRenderer bodyRenderer;
 
+    bool left = true;
+
+    public GameEvent collisionEvent;
+
+    Vector2 originalBodyOffset;
+
     public override void Awake()
     {
         base.Awake();
@@ -42,6 +48,11 @@ public class ClownDisplay : SelectionObject
     public void SetBody(ClownBody clownBody)
     {
         body = clownBody;
+        bodyRenderer.transform.position = new Vector3(
+            bodyRenderer.transform.position.x + body.offset.x,
+            bodyRenderer.transform.position.y + body.offset.y
+        );
+        originalBodyOffset = bodyRenderer.transform.position - transform.position;
         if (Random.Range(0, 2) == 1)
         {
             Left();
@@ -55,23 +66,39 @@ public class ClownDisplay : SelectionObject
         bodyRenderer.gameObject.AddComponent<BoxCollider2D>();
     }
 
+    public void Flip()
+    {
+        if (left)
+        {
+            Right();
+        }
+        else
+        {
+            Left();
+        }
+    }
+
     public void Left()
     {
+        var offset = ((Vector2)transform.position + originalBodyOffset);
         bodyRenderer.transform.position = new Vector3(
-            bodyRenderer.transform.position.x + body.offset.x,
-            bodyRenderer.transform.position.y + body.offset.y
+            offset.x + body.offset.x,
+            offset.y
         );
         bodyRenderer.sprite = body.leftSprite;
         headRenderer.flipX = true;
+        left = true;
     }
 
     public void Right()
     {
+        var offset = ((Vector2)transform.position + originalBodyOffset);
         bodyRenderer.transform.position = new Vector3(
-            bodyRenderer.transform.position.x - body.offset.x,
-            bodyRenderer.transform.position.y + body.offset.y
+            offset.x - body.offset.x,
+            offset.y
         );
         bodyRenderer.sprite = body.rightSprite;
+        left = false;
     }
 
     public override void FillDetailsPanel()
@@ -103,5 +130,10 @@ public class ClownDisplay : SelectionObject
             SelectionController.instance.clownPanel.FillButton("ClownTalk", false);
             SelectionController.instance.clownPanel.FillButton("ClownDeselect", false);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        collisionEvent?.Invoke();
     }
 }
