@@ -6,7 +6,7 @@ public class ClownDisplay : SelectionObject
 {
 
     [HideInInspector]
-    Clown clown;
+    public Clown clown;
 
     ClownBody body;
 
@@ -68,14 +68,7 @@ public class ClownDisplay : SelectionObject
 
     public void Flip()
     {
-        if (left)
-        {
-            Right();
-        }
-        else
-        {
-            Left();
-        }
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
 
     public void Left()
