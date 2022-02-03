@@ -13,23 +13,36 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
     public GameObject locationPrefab, edgePrefab;
 
-    List<Location> locations = new List<Location>();
+    public List<LocationType> locationTypes = new List<LocationType>();
 
-    public SelectionObject currentSelectedObject;
+    List<Location> locations = new List<Location>();
     // DetailsUI locationDetails, edgeDetails, defaultDetails;
 
 
     public void SpawnEdge(Location src, Location tgt)
     {
         var edge = Instantiate(edgePrefab, Vector2.Lerp(src.transform.position, tgt.transform.position, 0.5f), Quaternion.identity).GetComponent<Edge>();
+        edge.edgeName = $"Road to {tgt.locationName}";
         edge.transform.up = (tgt.transform.position - src.transform.position).normalized;
-        edge.GetComponent<SpriteRenderer>().size = new Vector2(0.32f, (tgt.transform.position - src.transform.position).magnitude);
+        var renderer = edge.GetComponent<SpriteRenderer>();
+        var cost = (tgt.transform.position - src.transform.position).magnitude - 0.1f;
+        renderer.size = new Vector2(0.32f, cost);
+        edge.fuelCost = Mathf.CeilToInt(cost);
+        edge.highlight.size = new Vector2(edge.highlight.size.x, cost);
+        edge.selectHighlight.size = new Vector2(edge.selectHighlight.size.x, cost);
         edge.src = src;
         edge.tgt = tgt;
         src.outgoingConnections.Add(edge);
         tgt.ingoingConnections.Add(edge);
     }
 
+    public Location SpawnLocation(Vector2 location)
+    {
+        var node = Instantiate(locationPrefab, location, Quaternion.identity).GetComponent<Location>();
+        node.SetLocationType(locationTypes[Random.Range(0, locationTypes.Count)]);
+        locations.Add(node);
+        return node;
+    }
 
     public void Generate()
     {
@@ -38,8 +51,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         List<Location> nextLocations = new List<Location>();
 
         // spawn start
-        var start_node = Instantiate(locationPrefab, minDepthPivot.position, Quaternion.identity).GetComponent<Location>();
-        locations.Add(start_node);
+        var start_node = SpawnLocation(minDepthPivot.position);
 
         lastLocations.Add(start_node);
 
@@ -52,11 +64,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
             float widthIncrement = Mathf.Abs(maxWidthPivot.position.x - minWidthPivot.position.x) / width;
             for (int j = 0; j < width; j++)
             {
-                var node = Instantiate(
-                    locationPrefab, 
-                    new Vector2((j + 0.5f) * widthIncrement, i * depthIncrement) + (Random.insideUnitCircle * wiggleRoom) + offset, 
-                    Quaternion.identity).GetComponent<Location>();
-                locations.Add(node);
+                var node = SpawnLocation(new Vector2((j + 0.5f) * widthIncrement, i * depthIncrement) + (Random.insideUnitCircle * wiggleRoom) + offset);
                 nextLocations.Add(node);
             }
 
@@ -79,8 +87,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         }
 
         // spawn end
-        var end_node = Instantiate(locationPrefab, maxDepthPivot.position, Quaternion.identity).GetComponent<Location>();
-
+        var end_node = SpawnLocation(maxDepthPivot.position);
         foreach (var loc in lastLocations)
         {
             SpawnEdge(loc, end_node);
@@ -90,10 +97,21 @@ public class LevelGenerator : Singleton<LevelGenerator>
         foreach (var loc in locations)
         {
             loc.Deactivate();
+            loc.transform.position += new Vector3(0, 0, 1f);
+            loc.difficulty = Mathf.Clamp(Mathf.CeilToInt(loc.outgoingConnections.Count / ((float)maxEdges) * 10), 1, 10);
+
+            foreach (var edge in loc.ingoingConnections)
+            {
+                edge.fuelCost += Mathf.CeilToInt(loc.difficulty / 10.0f) * 3;
+            }
         }
+
+        start_node.difficulty = 1;
+        end_node.difficulty = 10;
 
         start_node.Activate();
         start_node.Occupy();
+        start_node.transform.position += new Vector3(0, 0, 1f);
     }
 
     void Start()

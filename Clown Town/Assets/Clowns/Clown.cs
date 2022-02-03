@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void GameEvent();
+
 public class Clown
 {
     // (Simon): this isn't thread-safe but if you care you can fight me at
@@ -21,8 +23,11 @@ public class Clown
     public ClownPersonality Personality { get; private set; }
     public HashSet<ClownTrait> Traits { get; private set; }
 
+    public GameEvent deathEvent;
+
     Sprite headSprite;
     ClownBody body;
+
 
     public Clown(ClownProfile profile)
     {
@@ -64,6 +69,7 @@ public class Clown
     {
         CurrentHealth = 0;
         alive = false;
+        deathEvent?.Invoke();
     }
 
     public bool IsAlive()
@@ -76,7 +82,7 @@ public class Clown
         return Traits.Contains(checkedTrait);
     }
 
-    public void SpawnDisplayAtPosition(Vector2 pos)
+    public ClownDisplay SpawnDisplayAtPosition(Vector2 pos)
     {
         GameObject displayPrefab = ClownManager.instance.displayPrefab;
         GameObject displayInstance = GameObject.Instantiate(displayPrefab, pos, Quaternion.identity);
@@ -84,6 +90,7 @@ public class Clown
         ClownDisplay display = displayInstance.GetComponent<ClownDisplay>();
         display.SetHead(headSprite);
         display.SetBody(body);
-
+        display.SetClown(this);
+        return display;
     }
 }

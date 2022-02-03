@@ -48,6 +48,7 @@ public class ClownProfile : ScriptableObject
     {
 
         Dictionary<EventTypes, string[]> eventsToQuips = new Dictionary<EventTypes, string[]> {
+            { EventTypes.ClownTalk, clickQuip },
             { EventTypes.ClownHappy, happyQuips },
             { EventTypes.ClownSad, sadQuips },
             { EventTypes.ClownAngry, angryQuips },

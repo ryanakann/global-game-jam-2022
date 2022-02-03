@@ -31,4 +31,4 @@ MonoBehaviour:
   - {fileID: 692262705457539685, guid: a08336eb5d6e0284dab2e0a2e674eb5c, type: 3}
   - {fileID: 5895375159818085075, guid: 68fe326e175de2348b8851dbedf648c9, type: 3}
   locationImages:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 905abb6dd48a34ac6a814581838101f5, type: 3}

@@ -17,6 +17,14 @@ MonoBehaviour:
   traits: 03000000
   clickQuip:
   - '"Try taking me out to dinner first! Ha-cha-cha!"'
+  - '"You wanna talk? More like squawk, you big chicken!"'
+  - '"My shoes ain''t the only big thing on me! My nose, too! Agagagagagagga!"'
+  - '"Hey, if we''re in Clown Hell, then I can''t imagine what my ex-wife''s going
+    through! Har har har!!"'
+  - '"You may be driving this car, but you''re also driving me CRAZY! Agagagag!"'
+  - '"Say, what do you get when you cross a duck with my ex-wife? I don''t know,
+    but they both sure are stupid!! Ahonkahonkahonk!"'
+  - '"A chat, you say? Why no, I don''t want a French feline! Hefhefhefhef!"'
   happyQuips:
   - '"I''m so happy I could ~pie~!"'
   sadQuips:
@@ -27,7 +35,7 @@ MonoBehaviour:
   getHurtQuips:
   - '"That was more painful then sitting through my standup routine!"'
   getKilledQuips:
-  - '"See ya later, aligator" *death rattle*'
+  - '"See ya later, alligator" *death rattle*'
   anotherHurtQuips:
   - '"That''s gonna leave a Mark!  Or maybe it''ll leave a Matt!"'
   anotherKilledQuips:

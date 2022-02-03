@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClownsDisplay : MonoBehaviour
+public class ClownsDisplay : Singleton<ClownsDisplay>
 {
     Transform minWidthPivot, maxWidthPivot;
-    
 
-    void Generate()
+    Transform clownDisplayHolder;
+
+    public void Generate()
     {
         List<Clown> clownsList = ClownManager.GetClowns();
 
@@ -23,18 +24,31 @@ public class ClownsDisplay : MonoBehaviour
         for (int i=0; i<numClowns; i++)
         {
             Clown clown = clownsList[i];
-            float clownX = minX + (clownSpacing * (i+1));
+            float clownX = minX + (clownSpacing * (i+0.5f));
 
             Vector2 pos = new Vector2(clownX, theY);
-            clown.SpawnDisplayAtPosition(pos);
+            var display = clown.SpawnDisplayAtPosition(pos);
+            display.highlight.gameObject.SetActive(false);
+            display.selectHighlight.gameObject.SetActive(false);
+            display.transform.parent = clownDisplayHolder;
 
         }
+    }
+
+    public void ResetDisplay()
+    {
+        foreach (Transform t in clownDisplayHolder)
+        {
+            Destroy(t.gameObject);
+        }
+
+        Generate();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        clownDisplayHolder = transform.FindDeepChild("ClownDisplayHolder");
         minWidthPivot = transform.FindDeepChild("minWidthPivot");
         maxWidthPivot = transform.FindDeepChild("maxWidthPivot");
 

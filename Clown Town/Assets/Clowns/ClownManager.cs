@@ -2,11 +2,16 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class ClownManager : MonoBehaviour
 {
     [SerializeField]
     bool debug;
+
+    [SerializeField]
+    Flowchart quipFlowchart;
+
     [SerializeField]
     List<ClownProfile> clownProfiles;
 
@@ -212,8 +217,8 @@ public class ClownManager : MonoBehaviour
             {
                 clownsByTrait[trait].Remove(theClown);
             }
-            theClown.Kill();
             clowns.Remove(clownId);
+            theClown.Kill();
         }
     }
 
@@ -264,5 +269,14 @@ public class ClownManager : MonoBehaviour
         }
 
         return "*mumbles incoherently*";
+    }
+
+    public static void SayQuipInFlowchartForClownForEvent(int clownId, EventTypes eventType)
+    {
+        string quip = GetQuipForClownForEvent(clownId, eventType);
+        string clownName = getClownWithId(clownId).Name;
+        instance.quipFlowchart.SetStringVariable("quip", quip);
+        instance.quipFlowchart.SetStringVariable("clownName", clownName);
+        instance.quipFlowchart.ExecuteBlock("Quip");
     }
 }

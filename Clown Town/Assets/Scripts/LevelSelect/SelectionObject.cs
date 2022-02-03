@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class SelectionState
 {
+
     bool _alive;
     public bool alive { set { _alive = value; } get { return _alive; } }
     bool _occupied;
@@ -33,15 +34,34 @@ public class SelectionObject : MonoBehaviour
 
     UnityEvent<SelectionState> selectionEvent;
 
-    private void Awake()
+    [HideInInspector]
+    public bool selectable = true;
+
+    public SpriteRenderer selectHighlight, highlight;
+
+
+    public virtual void Awake()
     {
         selectionState = new SelectionState();
+        selectHighlight = transform.FindDeepChild("SelectHighlight").GetComponent<SpriteRenderer>();
+        highlight = transform.FindDeepChild("Highlight").GetComponent<SpriteRenderer>();
+    }
+
+    public virtual void FillDetailsPanel()
+    {
+
     }
 
     public virtual void Deactivate()
     {
         selectionState.canSelect = false;
         // TODO: fade color
+        foreach (var r in GetComponentsInChildren<SpriteRenderer>())
+        {
+            r.color = new Color(r.color.r, r.color.g, r.color.b, 0.33f);
+        }
+        highlight.gameObject.SetActive(false);
+        selectHighlight.gameObject.SetActive(false);
         print("DEACTIVATE ME");
     }
 
@@ -49,6 +69,10 @@ public class SelectionObject : MonoBehaviour
     {
         selectionState.canSelect = true;
         // TODO: set color
+        foreach (var r in GetComponentsInChildren<SpriteRenderer>())
+        {
+            r.color = new Color(r.color.r, r.color.g, r.color.b, 1f);
+        }
         print("ACTIVATE ME");
     }
 
@@ -60,36 +84,34 @@ public class SelectionObject : MonoBehaviour
 
     public virtual void Highlight()
     {
-        if (!selectionState.canHighlight)
-            return;
-        // TODO: up color
         print("VIEW ME!!!");
+        highlight.color = new Color(highlight.color.r, highlight.color.g, highlight.color.b, 0.5f);
+        highlight.gameObject.SetActive(true);
+        // add additive highlight
     }
 
     public virtual void Unhighlight()
     {
-        if (!selectionState.canHighlight)
-            return;
-        // TODO: set color
+        SelectionController.instance.ClearPanels(true);
         print("FORGET ME");
+        highlight.gameObject.SetActive(false);
+        // remove additive highlight
     }
 
     public virtual void Select()
     {
-        if (!selectionState.canSelect)
-            return;
-        if (LevelGenerator.instance.currentSelectedObject != null)
-            LevelGenerator.instance.currentSelectedObject.Deselect();
-        // TODO: add highlight
-        LevelGenerator.instance.currentSelectedObject = this;
-        print("SELECT ME"); 
+        print("SELECT ME");
+        selectHighlight.gameObject.SetActive(true);
     }
 
-    public virtual void Deselect()
+    public virtual void Deselect(bool clear = true)
     {
-        if (!selectionState.canSelect)
+        if (selectionState.occupied == true)
             return;
+        if (clear)
+            SelectionController.instance.ClearPanels();
         print("DESELECT ME");
+        selectHighlight.gameObject.SetActive(false);
         // TODO: remove highlight
     }
 
@@ -99,20 +121,9 @@ public class SelectionObject : MonoBehaviour
         selectionState.alive = false;
         // TODO: remove highlight
         // TODO: complete fade
-    }
-
-    private void OnMouseUpAsButton()
-    {
-        Select();
-    }
-
-    private void OnMouseEnter()
-    {
-        Highlight();
-    }
-
-    private void OnMouseExit()
-    {
-        Unhighlight();
+        foreach (var r in GetComponentsInChildren<SpriteRenderer>())
+        {
+            r.color = new Color(r.color.r, r.color.g, r.color.b, 0.1f);
+        }
     }
 }
