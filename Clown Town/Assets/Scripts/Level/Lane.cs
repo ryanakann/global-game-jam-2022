@@ -4,6 +4,8 @@ using System.IO;
 using UnityEngine;
 
 public class Lane : MonoBehaviour {
+    public LevelInfo levelInfo { get; private set; }
+
     public int index;
 
     public Vector2 start;
@@ -27,6 +29,8 @@ public class Lane : MonoBehaviour {
     public void Init(int laneIndex, LevelInfo levelInfo)
     {
         index = laneIndex;
+
+        this.levelInfo = levelInfo;
 
         laneLength = levelInfo.details.playArea.size.x;
         laneWidth = levelInfo.details.playArea.size.y / levelInfo.laneCount;

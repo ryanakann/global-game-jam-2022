@@ -13,6 +13,8 @@ public class LevelManager : PersistentSingleton<LevelManager>
     #region EVENTS
     public UnityEvent OnLoadLevel;
     public UnityEvent<LevelStatus> OnEndLevel;
+
+    private string debugUnit = "";
     #endregion
 
     private void Start()
@@ -25,19 +27,24 @@ public class LevelManager : PersistentSingleton<LevelManager>
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            debugUnit = "Monkey";
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            debugUnit = "Giraffe";
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            debugUnit = "Elephant";
+        }
+
         if (Constants.debug)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    PlaceUnit(Resources.Load<GameObject>("Prefabs/Units/Giraffe"), false);
-
-                }
-                else
-                {
-                    PlaceUnit(Resources.Load<GameObject>("Prefabs/Units/Monkey"), false);
-                }
+                PlaceUnit(Resources.Load<GameObject>($"Prefabs/Units/{debugUnit}"), false);
             }
             else if (Input.GetMouseButtonDown(1))
             {
