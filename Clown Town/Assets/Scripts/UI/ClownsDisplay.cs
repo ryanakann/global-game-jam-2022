@@ -28,6 +28,7 @@ public class ClownsDisplay : Singleton<ClownsDisplay>
 
             Vector2 pos = new Vector2(clownX, theY);
             var display = clown.SpawnDisplayAtPosition(pos);
+            display.transform.localScale = new Vector3(2, 2, 1);
             display.highlight.gameObject.SetActive(false);
             display.selectHighlight.gameObject.SetActive(false);
             display.transform.parent = clownDisplayHolder;

@@ -83,7 +83,7 @@ public class Location : SelectionObject
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: true))
         {
             FillDetailsPanel();
-            SelectionController.instance.locationPanel.FillButton("LocationDeselect", true);
+            SelectionController.instance.locationPanel.FillButton("LocationOpen", true);
         }
     }
 
@@ -93,7 +93,7 @@ public class Location : SelectionObject
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: false))
         {
             FillDetailsPanel();
-            SelectionController.instance.locationPanel.FillButton("LocationDeselect", false);
+            SelectionController.instance.locationPanel.FillButton("LocationOpen", false);
         }
     }
 }

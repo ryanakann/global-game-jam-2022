@@ -24,6 +24,10 @@ public class ClownDisplay : SelectionObject
         base.Awake();
         headRenderer = transform.FindDeepChild("Head").GetComponent<SpriteRenderer>();
         bodyRenderer = transform.FindDeepChild("Body").GetComponent<SpriteRenderer>();
+        foreach (var rend in GetComponentsInChildren<SpriteRenderer>())
+        {
+            rend.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+        }
     }
 
     public void RemoveClown()
@@ -97,9 +101,9 @@ public class ClownDisplay : SelectionObject
     public override void FillDetailsPanel()
     {
         base.FillDetailsPanel();
-        SelectionController.instance.clownPanel.FillText("ClownName", "Bozo");
-        SelectionController.instance.clownPanel.FillText("ClownTraits", string.Join(", ", "Stinky", "Lazy"));
-        SelectionController.instance.clownPanel.FillText("ClownHealth", $"Health: 0/10");
+        SelectionController.instance.clownPanel.FillText("ClownName", clown.Name);
+        SelectionController.instance.clownPanel.FillText("ClownTraits", clown.Personality.ToString());
+        SelectionController.instance.clownPanel.FillText("ClownHealth", $"Health: {clown.CurrentHealth}/10");
         SelectionController.instance.clownPanel.FillImage("ClownImage", headRenderer.sprite);
     }
 
@@ -109,8 +113,7 @@ public class ClownDisplay : SelectionObject
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.clownPanel, select: true))
         {
             FillDetailsPanel();
-            SelectionController.instance.clownPanel.FillButton("ClownTalk", true);
-            SelectionController.instance.clownPanel.FillButton("ClownDeselect", true);
+            SelectionController.instance.clownPanel.FillButton("TalkOpen", true);
         }
     }
 
@@ -120,8 +123,7 @@ public class ClownDisplay : SelectionObject
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.clownPanel, select: false))
         {
             FillDetailsPanel();
-            SelectionController.instance.clownPanel.FillButton("ClownTalk", false);
-            SelectionController.instance.clownPanel.FillButton("ClownDeselect", false);
+            SelectionController.instance.clownPanel.FillButton("TalkOpen", false);
         }
     }
 

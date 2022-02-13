@@ -13,6 +13,14 @@ public class SelectionController : Singleton<SelectionController>
 
     public DetailsPanel edgePanel, locationPanel, clownPanel;
 
+    public Animator buttonsAnim;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        buttonsAnim = transform.FindDeepChild("LevelSelectUI").GetComponent<Animator>();
+    }
+
     public void Start()
     {
         panels = new List<DetailsPanel>(GetComponentsInChildren<DetailsPanel>());
@@ -65,7 +73,6 @@ public class SelectionController : Singleton<SelectionController>
 
         if (Input.GetMouseButtonDown(0))
         {
-            print(currentSelectionObject);
             if (currentSelectionObject != null && currentSelectionObject.selectionState.canSelect == true && currentSelectionObject.selectable)
             {
                 if (selectedObject != currentSelectionObject)
@@ -99,6 +106,9 @@ public class SelectionController : Singleton<SelectionController>
     {
         if (highlight && selectedObject != null)
             return;
+
+        buttonsAnim.SetBool("LocationOpen", false);
+        buttonsAnim.SetBool("TalkOpen", false);
         if (selectedObject != null)
         {
             selectedObject.Deselect(false);
@@ -108,6 +118,11 @@ public class SelectionController : Singleton<SelectionController>
         {
             p.gameObject.SetActive(false);
         }
+    }
+
+    public void ButtonClose(string button)
+    {
+        buttonsAnim.SetBool(button, false);
     }
 
     public void Clicko()

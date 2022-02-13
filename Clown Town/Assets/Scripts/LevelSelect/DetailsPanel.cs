@@ -38,7 +38,7 @@ public class DetailsPanel : MonoBehaviour
 
     public void FillButton(string elementName, bool value)
     {
-        elementsMap[elementName].SetActive(value);
+        SelectionController.instance.buttonsAnim.SetBool(elementName, value);
     }
 
     public void FillImage(string elementName, Sprite image)
