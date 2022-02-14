@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 248bb5f60b1b72b44867ff14630d8376
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - TentacleSierra
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: baa1b8ea2b902a847a4ddfcb05e864e8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
