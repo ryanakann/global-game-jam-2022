@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class PopulateShopItems : UnityEditor.AssetModificationProcessor {
 
     static string[] OnWillSaveAssets(string[] paths) {
-        ShopItemList allItems = (ShopItemList)AssetDatabase.LoadAssetAtPath("Assets/All Shop Items.asset", typeof(ShopItemList));
+        ShopItemList allItems = (ShopItemList)AssetDatabase.LoadAssetAtPath("Assets/Resources/All Shop Items.asset", typeof(ShopItemList));
         allItems.shopItems = new List<ShopItem>();
 
         string prefabsFolder = Path.Combine(Application.dataPath, "Resources", "Prefabs", "Units");
