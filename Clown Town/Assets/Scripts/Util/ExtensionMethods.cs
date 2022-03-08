@@ -302,30 +302,40 @@ public static class DictionaryExtension
         }
     }
 
-    /*
-    public static T Choose<T>(this IDictionary<float, T> probs)
+    public static T Choose<T>(this Dictionary<T, float> dictProbs, T defaultValue)
     {
-        Dictionary<int, T> = 
+        Dictionary<int, T> indexToKeys = new Dictionary<int, T>();
+        List<float> probs = new List<float>();
+        int index = 0;
+        foreach (T key in dictProbs.Keys)
+        {
+            indexToKeys[index] = key;
+            probs.Add(dictProbs[key]);
+            index++;
+        }
+
         float total = 0;
-        foreach (float elem in probs.Keys)
+
+        foreach (float elem in probs)
         {
             total += elem;
         }
+
         float randomPoint = Random.value * total;
-        for (int i = 0; i < threshProbs.Keys.Count; i++)
+
+        for (int i = 0; i < probs.Count; i++)
         {
-            if (randomPoint < threshProbs[i])
+            if (randomPoint < probs[i])
             {
-                return i;
+                return indexToKeys[i];
             }
             else
             {
                 randomPoint -= probs[i];
             }
         }
-        return probs.Length - 1;
+        return defaultValue;
     }
-    */
 }
 
 

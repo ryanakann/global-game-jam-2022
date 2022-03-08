@@ -30,6 +30,11 @@ public class ClownFuntime : MonoBehaviour
         }
         var go = Instantiate(ClownManager.instance.displayPrefab).GetComponent<ClownDisplay>();
 
+        foreach (var r in go.GetComponentsInChildren<SpriteRenderer>())
+        {
+            r.maskInteraction = SpriteMaskInteraction.None;
+        }
+
         go.SetHead(ClownManager.GetClownHead());
         go.SetBody(ClownManager.GetClownBody());
         go.gameObject.AddComponent<Rigidbody2D>();

@@ -30,7 +30,8 @@ public class Location : SelectionObject
         {
             if (edge.tgt == target_loc)
             {
-                edge.Remove();
+                //edge.Remove();
+                edge.Deactivate();
                 continue;
             }
             edge.tgt.Remove();
@@ -39,6 +40,8 @@ public class Location : SelectionObject
         {
             edge.Remove();
         }
+        selectHighlight.gameObject.SetActive(false);
+        target_loc.Occupy();
     }
 
     public override void Remove()
@@ -58,6 +61,9 @@ public class Location : SelectionObject
         {
             edge.Activate();
         }
+
+        LevelGenerator.instance.UpdateCamera(transform.position);
+        SelectionController.instance.currentLocation = this;
     }
 
     public override void Deactivate()

@@ -9,7 +9,10 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
     public float wiggleRoom;
 
-    Transform minDepthPivot, maxDepthPivot, minWidthPivot, maxWidthPivot;
+    Transform minDepthPivot, maxDepthPivot, minWidthPivot, maxWidthPivot, pivotHolder;
+    
+    [HideInInspector]
+    public Transform cameraPivot;
 
     public GameObject locationPrefab, edgePrefab;
 
@@ -17,6 +20,26 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
     List<Location> locations = new List<Location>();
     // DetailsUI locationDetails, edgeDetails, defaultDetails;
+
+    float lerpTimeLimit = 0.5f;
+
+
+    public void UpdateCamera(Vector3 pos)
+    {
+        StartCoroutine(CoUpdateCamera(new Vector3(pos.x, pos.y, cameraPivot.position.z)));
+    }
+
+    public IEnumerator CoUpdateCamera(Vector3 pos)
+    {
+        float timeLimit = 0;
+        Vector3 originalPos = cameraPivot.position;
+        while (timeLimit < lerpTimeLimit)
+        {
+            cameraPivot.position = Vector3.SlerpUnclamped(originalPos, pos, timeLimit/lerpTimeLimit);
+            timeLimit += Time.deltaTime;
+            yield return null;
+        }
+    }
 
 
     public void SpawnEdge(Location src, Location tgt)
@@ -34,6 +57,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         edge.tgt = tgt;
         src.outgoingConnections.Add(edge);
         tgt.ingoingConnections.Add(edge);
+        edge.transform.parent = pivotHolder;
     }
 
     public Location SpawnLocation(Vector2 location)
@@ -41,6 +65,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         var node = Instantiate(locationPrefab, location, Quaternion.identity).GetComponent<Location>();
         node.SetLocationType(locationTypes[Random.Range(0, locationTypes.Count)]);
         locations.Add(node);
+        node.transform.parent = pivotHolder;
         return node;
     }
 
@@ -120,6 +145,8 @@ public class LevelGenerator : Singleton<LevelGenerator>
         maxDepthPivot = transform.FindDeepChild("maxDepthPivot");
         minWidthPivot = transform.FindDeepChild("minWidthPivot");
         maxWidthPivot = transform.FindDeepChild("maxWidthPivot");
+        pivotHolder = transform.FindDeepChild("PivotHolder");
+        cameraPivot = Camera.main.transform;
 
         Generate();
     }

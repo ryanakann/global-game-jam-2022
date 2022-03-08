@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
-public class LevelManager : PersistentSingleton<LevelManager>
+public class LevelManager : Singleton<LevelManager>
 {
     public LevelInfo currentLevelInfo;
     public List<Lane> lanes;
@@ -145,6 +145,7 @@ public class LevelManager : PersistentSingleton<LevelManager>
             lanes.Add(lane);
             lane.transform.SetParent(parent);
         }
+        parent.localScale = new Vector3(0.75f, 0.75f, 1f);
     }
 
     public enum LevelStatus

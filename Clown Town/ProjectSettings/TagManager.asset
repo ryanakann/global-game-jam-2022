@@ -50,3 +50,6 @@ TagManager:
   - name: Location
     uniqueID: 3171599245
     locked: 0
+  - name: Mirror
+    uniqueID: 2204267417
+    locked: 0

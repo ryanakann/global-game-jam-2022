@@ -3,22 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class SelectionController : Singleton<SelectionController>
 {
     public SelectionObject currentSelectionObject, selectedObject;
 
+    [HideInInspector]
+    public Location currentLocation;
+
     public List<DetailsPanel> panels = new List<DetailsPanel>();
 
     public DetailsPanel edgePanel, locationPanel, clownPanel;
 
-    public Animator buttonsAnim;
+    public Animator buttonsAnim, levelSelectAnim;
+
+    bool fueling;
+    Vector3 originalCameraPos;
+    Transform levelGeneration;
 
     protected override void Awake()
     {
         base.Awake();
+        levelSelectAnim = GetComponent<Animator>();
         buttonsAnim = transform.FindDeepChild("LevelSelectUI").GetComponent<Animator>();
+        levelGeneration = transform.FindDeepChild("LevelGeneration");
     }
 
     public void Start()
@@ -86,6 +96,12 @@ public class SelectionController : Singleton<SelectionController>
         }
     }
 
+    public void DRIVE()
+    {
+        print("DRIIIIIVE");
+        currentLocation.OccupyNeighbor((Location)selectedObject);
+    }
+
     public bool ActivatePanel(DetailsPanel panel, bool select=false)
     {
         if (select || selectedObject == null)
@@ -129,5 +145,43 @@ public class SelectionController : Singleton<SelectionController>
     {
         int clownId = ((ClownDisplay)selectedObject).clown.Id;
         ClownManager.SayQuipInFlowchartForClownForEvent(clownId, EventTypes.ClownTalk);
+    }
+
+    public void FuelUp()
+    {
+        if (fueling)
+            return;
+        fueling = true;
+        levelSelectAnim.SetBool("LevelSelect", false);
+        StartCoroutine(CoFuelUp());
+    }
+
+    IEnumerator CoFuelUp()
+    {
+        var op = SceneManager.LoadSceneAsync("LevelTest", LoadSceneMode.Additive);
+        while (!op.isDone)
+        { yield return null; }
+        originalCameraPos = LevelGenerator.instance.cameraPivot.position;
+        LevelGenerator.instance.cameraPivot.position = GameObject.Find("CameraPivot").transform.position;
+        levelGeneration.gameObject.SetActive(false);
+    }
+
+    public void Scram()
+    {
+        if (!fueling)
+            return;
+        fueling = false;
+        Destroy(GameObject.Find("Lanes"));
+        StartCoroutine(CoScram());
+    }
+
+    IEnumerator CoScram()
+    {
+        var op = SceneManager.UnloadSceneAsync("LevelTest");
+        while (!op.isDone)
+        { yield return null; }
+        levelSelectAnim.SetBool("LevelSelect", true);
+        levelGeneration.gameObject.SetActive(true);
+        LevelGenerator.instance.cameraPivot.position = originalCameraPos;
     }
 }

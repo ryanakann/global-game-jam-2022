@@ -317,8 +317,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 23be7f71396f9924bbaa3ade4c7e6508, type: 2}
+  m_sharedMaterial: {fileID: -2940275534625897031, guid: 23be7f71396f9924bbaa3ade4c7e6508, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -883,8 +883,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Clown Hell Psychopomp
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 23be7f71396f9924bbaa3ade4c7e6508, type: 2}
+  m_sharedMaterial: {fileID: -2940275534625897031, guid: 23be7f71396f9924bbaa3ade4c7e6508, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1236,8 +1236,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 23be7f71396f9924bbaa3ade4c7e6508, type: 2}
+  m_sharedMaterial: {fileID: -2940275534625897031, guid: 23be7f71396f9924bbaa3ade4c7e6508, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1321,6 +1321,10 @@ PrefabInstance:
     - target: {fileID: 8968258754175564041, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
       propertyPath: m_Name
       value: ClownManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
+      propertyPath: debug
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8968258754175564043, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
       propertyPath: m_RootOrder
