@@ -11,7 +11,9 @@ namespace Encounters
 
         [SerializeField]
         private float _currentHealth;
+        [HideInInspector]
         public UnityEvent<float> OnHealthChanged;
+        [HideInInspector]
         public UnityEvent OnAttack;
 
         private float _attackCooldown;
