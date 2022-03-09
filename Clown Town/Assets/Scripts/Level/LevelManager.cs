@@ -27,6 +27,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             debugUnit = "Monkey";
@@ -51,6 +52,7 @@ public class LevelManager : Singleton<LevelManager>
                 RemoveUnit();
             }
         }
+        */
     }
 
     public bool PlaceUnit(GameObject unit, bool isInstance)
