@@ -4,21 +4,21 @@ using UnityEngine;
 
 namespace Encounters
 {
-    public class UnitAnimation : MonoBehaviour
+    public class UnitAnimation : MonoBehaviour, IInitializable<UnitInfo>
     {
         private UnitInfo _unitInfo;
 
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
 
-        protected virtual void Init(UnitInfo unitInfo)
+        public virtual void Init(UnitInfo unitInfo)
         {
             _unitInfo = unitInfo;
 
             _animator = GetComponentInChildren<Animator>();
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-            _unitInfo.unitBehavior.OnHealthChanged?.AddListener(HitEffect);
+            _unitInfo.GetComponent<UnitBehavior>().OnHealthChanged?.AddListener(HitEffect);
         }
 
         #region HIT HANDLING
@@ -31,7 +31,7 @@ namespace Encounters
         private readonly Color _hitColor = Color.red;
         private float colorFn(float x) => 0.5f * (Mathf.Sin(2f * Mathf.PI * _hitFrequency * x - Mathf.PI / 2f) + 1);
 
-        private void HitEffect(float health)
+        public void HitEffect(float health)
         {
             _hitT = 0f;
             if (!_hitInProgress)
@@ -45,6 +45,7 @@ namespace Encounters
         {
             while (_hitT < _hitDuration)
             {
+                print($"{_hitT}");
                 _spriteRenderer.color = Color.Lerp(_normalColor, _hitColor, colorFn(_hitT));
                 _hitT += Time.deltaTime;
                 yield return new WaitForEndOfFrame();

@@ -29,16 +29,21 @@ namespace Encounters
         private float _attackRange = 1f;
         public float AttackRange { get => _attackRange; }
 
-        public UnitBehavior unitBehavior;
-        public UnitAnimation unitAnimation;
-        public UnitUI unitUI;
+        private Dictionary<System.Type, IInitializable<UnitInfo>> components;
 
         private void Start()
         {
-            unitBehavior = gameObject.AddComponent<UnitBehavior>();
-            unitAnimation = gameObject.AddComponent<UnitAnimation>();
-            unitUI = gameObject.AddComponent<UnitUI>();
+            components = new Dictionary<System.Type, IInitializable<UnitInfo>>();
+            foreach (var component in GetComponents<IInitializable<UnitInfo>>())
+            {
+                components.Add(component.GetType(), component);
+                component.Init(this);
+            }
+        }
 
+        public new T GetComponent<T>()
+        {
+            return (T)components.GetValueOrDefault(typeof(T), null);
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace Encounters
 {
-    public class UnitBehavior : MonoBehaviour
+    public class UnitBehavior : MonoBehaviour, IInitializable<UnitInfo>
     {
         private UnitInfo _unitInfo;
 
@@ -16,7 +16,7 @@ namespace Encounters
 
         private float _attackCooldown;
 
-        protected virtual void Init(UnitInfo unitInfo)
+        public virtual void Init(UnitInfo unitInfo)
         {
             _unitInfo = unitInfo;
 
@@ -29,7 +29,7 @@ namespace Encounters
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                TakeDamage(5f);
+                TakeDamage(Random.Range(10f, 20f));
             }
         }
 
