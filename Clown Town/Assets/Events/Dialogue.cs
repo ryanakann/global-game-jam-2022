@@ -21,10 +21,27 @@ public class Dialogue : MonoBehaviour
     [SerializeField]
     ClownTrait[] requiredTraits;
 
+    public float priority;
+
     public DialogueReturn Return;
 
     Block lastBlock;
     int lastCommandIndex;
+
+    bool playing = false;
+
+    public void Play()
+    {
+        playing = true;
+        if (lastBlock == null)
+        {
+            Begin();
+        }
+        else
+        {
+            Resume();
+        }
+    }
 
     public void Begin()
     {
@@ -32,17 +49,19 @@ public class Dialogue : MonoBehaviour
         {
             throw new System.Exception("Trying to Begin Dialogue without all trait or personality requirements being met");
         }
+        Return += EventManager.instance.FinishDialogue;
         flowchart.ExecuteBlock("Begin");
     }
 
     public void Finish()
     {
         Return?.Invoke(this);
+        Destroy(gameObject);
     }
 
     public void TestInterrupt()
     {
-        EventManager.TestDialogueInterrupt(this);
+        //EventManager.TestDialogueInterrupt(this);
     }
 
     public bool IsExecutable()
@@ -69,6 +88,9 @@ public class Dialogue : MonoBehaviour
 
     public void Pause()
     {
+        if (!playing)
+            return;
+        playing = false;
         lastBlock = flowchart.GetExecutingBlocks()[0];
         lastCommandIndex = lastBlock.ActiveCommand.CommandIndex;
         flowchart.StopAllBlocks();

@@ -19,7 +19,7 @@ public enum EventTypes {
     MusicClose,
 }
 
-public class EventManager : MonoBehaviour
+public class EventManager : Singleton<EventManager>
 {
     [SerializeField]
     bool debug;
@@ -28,17 +28,9 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     GameObject debugInterruptDialoguePrefab;
 
-    static Dialogue interruptedDialogue;
+    float currentPriority;
 
-    public static EventManager instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
-    }
+    Stack<Dialogue> dialogueStack = new Stack<Dialogue>();
 
     private void Start()
     {
@@ -46,37 +38,37 @@ public class EventManager : MonoBehaviour
         {
             GameObject debugDialogueObj = Instantiate(debugDialoguePrefab);
             Dialogue debugDialogue = debugDialogueObj.GetComponent<Dialogue>();
-            BeginDialogue(debugDialogue);
+            PushDialogue(debugDialogue);
         }
     }
 
-    void BeginDialogue(Dialogue dialogueToBegin)
+    public void PushDialogue(params Dialogue[] dialogues)
     {
-        dialogueToBegin.Return += FinishDialogue;
-        dialogueToBegin.Begin();
+        if (dialogueStack.Count > 0)
+            dialogueStack.Peek().Pause();
+
+        foreach (var dialogue in dialogues)
+            dialogueStack.Push(dialogue);
+
+        dialogueStack.Peek().Play();
+        currentPriority = dialogueStack.Peek().priority;
     }
 
-    void FinishDialogue(Dialogue dialogueFinished)
+
+    public void FinishDialogue(Dialogue dialogueFinished)
     {
         Debug.Log("Finished Dialogue: " + dialogueFinished.Name);
+        dialogueStack.Pop();
+        if (dialogueStack.Count > 0)
+        {
+            dialogueStack.Peek().Play();
+        }
     }
 
-    public static void TestDialogueInterrupt(Dialogue dialogueToInterrupt)
+    public void RaiseSignal()
     {
-        interruptedDialogue = dialogueToInterrupt;
-        interruptedDialogue.Pause();
-        interruptedDialogue.gameObject.SetActive(false);
-
-        GameObject interruptingDialogueObj = Instantiate(instance.debugInterruptDialoguePrefab);
-        Dialogue interruptingDialogue = interruptingDialogueObj.GetComponent<Dialogue>();
-        interruptingDialogue.Return += FinishInterruptingDialogue;
-        interruptingDialogue.Begin();
-    }
-
-    static void FinishInterruptingDialogue(Dialogue dialogueFinished)
-    {
-        Debug.Log("Finished Dialogue: " + dialogueFinished.Name);
-        interruptedDialogue.gameObject.SetActive(true);
-        interruptedDialogue.Resume();
+        // poll all the event listeners
+        // signals have a default protocol for how to pick an event listener
+        // they pick some responders, and get the Dialogues and push them on the stack 
     }
 }
