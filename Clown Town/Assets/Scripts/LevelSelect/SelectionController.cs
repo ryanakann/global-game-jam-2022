@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class SelectionController : Singleton<SelectionController>
 {
+    [HideInInspector]
+    public Camera mainCamera;
+
     public SelectionObject currentSelectionObject, selectedObject;
 
     [HideInInspector]
@@ -15,26 +18,40 @@ public class SelectionController : Singleton<SelectionController>
 
     public List<DetailsPanel> panels = new List<DetailsPanel>();
 
-    public DetailsPanel edgePanel, locationPanel, clownPanel;
+    public DetailsPanel locationPanel, clownPanel;
 
-    public Animator buttonsAnim, levelSelectAnim;
+    public Animator buttonsAnim, levelSelectAnim, wheelAnim;
 
     bool fueling;
     Vector3 originalCameraPos;
     Transform levelGeneration;
 
+    TextMeshProUGUI waxCount;
+    RectTransform waxBar;
+
+    bool waxFlashing;
+
+    [HideInInspector]
+    public int wax;
+
+    int maxWax = 12;
+
     protected override void Awake()
     {
         base.Awake();
+        mainCamera = Camera.main;
         levelSelectAnim = GetComponent<Animator>();
         buttonsAnim = transform.FindDeepChild("LevelSelectUI").GetComponent<Animator>();
         levelGeneration = transform.FindDeepChild("LevelGeneration");
+        waxCount = transform.FindDeepChild("WaxText").GetComponent<TextMeshProUGUI>();
+        waxBar = transform.FindDeepChild("CurrentWax").GetComponent<RectTransform>();
+        wheelAnim = transform.FindDeepChild("Wheel").GetComponent<Animator>();
+        UpdateWax(0);
     }
 
     public void Start()
     {
         panels = new List<DetailsPanel>(GetComponentsInChildren<DetailsPanel>());
-        edgePanel = transform.FindDeepChild("EdgePanel").GetComponent<DetailsPanel>();
         locationPanel = transform.FindDeepChild("LocationPanel").GetComponent<DetailsPanel>();
         clownPanel = transform.FindDeepChild("ClownPanel").GetComponent<DetailsPanel>();
         foreach (var p in panels)
@@ -43,10 +60,36 @@ public class SelectionController : Singleton<SelectionController>
         }
     }
 
+    public void UpdateWax(int _wax)
+    {
+        wax = Mathf.Clamp(wax + _wax, 0, maxWax);
+        waxCount.text = $"WAX: {wax}";
+        waxBar.anchorMax = new Vector2(wax / (float)maxWax, 1f);
+        waxBar.offsetMax = new Vector2(0, waxBar.offsetMax.y); ;
+        if (wax == 0)
+            waxCount.color = Color.red;
+        else if (wax == maxWax)
+            waxCount.color = Color.green;
+        else
+            waxCount.color = Color.white;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            UpdateWax(1);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            ClownManager.DamageClowns(10);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ClownManager.DamageClowns(1);
+        }
+
         if (currentSelectionObject != null)
         {
             if (currentSelectionObject.selectionState.canHighlight == false)
@@ -60,7 +103,15 @@ public class SelectionController : Singleton<SelectionController>
         bool result = false;
         if (hit.collider != null)
         {
-            var obj = hit.transform.GetComponentInParent<SelectionObject>();
+            SelectionObject obj;
+            if (hit.transform.GetComponentInParent<Edge>())
+            {
+                obj = hit.transform.GetComponentInParent<Edge>().tgt;
+            }
+            else
+            {
+                obj = hit.transform.GetComponentInParent<SelectionObject>();
+            }
             if (obj != null && obj.selectionState.canHighlight == true)
             {
                 if (obj != currentSelectionObject)
@@ -75,7 +126,7 @@ public class SelectionController : Singleton<SelectionController>
                 result = true;
             }
         }
-        else if (result == false && currentSelectionObject != null)
+        if (result == false && currentSelectionObject != null)
         {
             currentSelectionObject.Unhighlight();
             currentSelectionObject = null;
@@ -99,7 +150,34 @@ public class SelectionController : Singleton<SelectionController>
     public void DRIVE()
     {
         print("DRIIIIIVE");
+        int cost = ((Location)selectedObject).activeEdge.fuelCost;
+        if (wax - cost < 0 && !waxFlashing)
+        {
+            // flash edge panel
+            StartCoroutine(CoWaxFlash());
+            return;
+        }
+        else
+        {
+            UpdateWax(-cost);
+        }
+        wheelAnim.SetTrigger("Spin");
         currentLocation.OccupyNeighbor((Location)selectedObject);
+        ClearPanels();
+    }
+
+    IEnumerator CoWaxFlash()
+    {
+        waxFlashing = true;
+        float t = 0, max = 0.75f;
+        TextMeshProUGUI text = locationPanel.elementsMap["EdgeCost"].GetComponent<TextMeshProUGUI>();
+        while (t < max)
+        {
+            t += Time.deltaTime;
+            text.color = Color.Lerp(Color.white, Color.red, Mathf.Sin(t/max * Mathf.PI));
+            yield return null;
+        }
+        waxFlashing = false;
     }
 
     public bool ActivatePanel(DetailsPanel panel, bool select=false)
@@ -158,12 +236,18 @@ public class SelectionController : Singleton<SelectionController>
 
     IEnumerator CoFuelUp()
     {
+        Wall.instance.Switch(false);
+        while (Wall.instance.moving)
+        { yield return null; }
         var op = SceneManager.LoadSceneAsync("LevelTest", LoadSceneMode.Additive);
         while (!op.isDone)
         { yield return null; }
         originalCameraPos = LevelGenerator.instance.cameraPivot.position;
         LevelGenerator.instance.cameraPivot.position = GameObject.Find("CameraPivot").transform.position;
         levelGeneration.gameObject.SetActive(false);
+        Wall.instance.Switch(true);
+        while (Wall.instance.moving)
+        { yield return null; }
     }
 
     public void Scram()
@@ -171,17 +255,23 @@ public class SelectionController : Singleton<SelectionController>
         if (!fueling)
             return;
         fueling = false;
-        Destroy(GameObject.Find("Lanes"));
+        levelSelectAnim.SetBool("LevelSelect", true);
         StartCoroutine(CoScram());
     }
 
     IEnumerator CoScram()
     {
+        Wall.instance.Switch(false);
+        while (Wall.instance.moving)
+        { yield return null; }
+        Destroy(GameObject.Find("Lanes"));
         var op = SceneManager.UnloadSceneAsync("LevelTest");
         while (!op.isDone)
         { yield return null; }
-        levelSelectAnim.SetBool("LevelSelect", true);
         levelGeneration.gameObject.SetActive(true);
         LevelGenerator.instance.cameraPivot.position = originalCameraPos;
+        Wall.instance.Switch(true);
+        while (Wall.instance.moving)
+        { yield return null; }
     }
 }

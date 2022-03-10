@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
+using UnityEngine.SceneManagement;
 
 public class ClownManager : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class ClownManager : MonoBehaviour
     private static Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>> eventQuips = new Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>>();
     private static Dictionary<ClownPersonality, ClownProfile> clownProfilesByPersonality = new Dictionary<ClownPersonality, ClownProfile>();
 
+
     private void Awake()
     {
         if (instance == null)
@@ -62,6 +64,31 @@ public class ClownManager : MonoBehaviour
                 GenerateClownWithPersonality(profile.personality);
             }
         }
+    }
+
+    public static void DamageClowns(int damage)
+    {
+        Clown clown = getClownWithId(getRandomClownId());
+        clown.Harm(damage);
+        // if alive, clown or another clown quip
+        if (clown.alive)
+        {
+            SayQuipInFlowchartForClownForEvent(clown.Id, EventTypes.ClownGetHurt);
+            if (Random.value < 0.5f)
+            {
+                SayQuipInFlowchartForClownForEvent(getRandomClownId(), EventTypes.AnotherClownHurt);
+            }
+        }
+        else
+        {
+            SayQuipInFlowchartForClownForEvent(clown.Id, EventTypes.ClownGetKilled);
+            if (Random.value < 0.5f)
+            {
+                SayQuipInFlowchartForClownForEvent(clown.Id, EventTypes.AnotherClownKilled);
+            }
+            KillClown(clown.Id);
+        }
+        // if dead, clown quip
     }
 
     public static List<Clown> GetClowns()
@@ -219,6 +246,12 @@ public class ClownManager : MonoBehaviour
             }
             clowns.Remove(clownId);
             theClown.Kill();
+        }
+
+        if (clowns.Count == 0)
+        {
+            // gameover
+            SceneManager.LoadScene("GameOver");
         }
     }
 
