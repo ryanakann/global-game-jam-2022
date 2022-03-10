@@ -27,6 +27,7 @@ public class ClownDisplay : SelectionObject
         foreach (var rend in GetComponentsInChildren<SpriteRenderer>())
         {
             rend.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+            rend.sortingLayerName = "Mirror";
         }
     }
 
@@ -103,8 +104,8 @@ public class ClownDisplay : SelectionObject
         base.FillDetailsPanel();
         SelectionController.instance.clownPanel.FillText("ClownName", clown.Name);
         SelectionController.instance.clownPanel.FillText("ClownTraits", clown.Personality.ToString());
-        SelectionController.instance.clownPanel.FillText("ClownHealth", $"Health: {clown.CurrentHealth}/10");
-        SelectionController.instance.clownPanel.FillImage("ClownImage", headRenderer.sprite);
+        SelectionController.instance.clownPanel.FillText("ClownHealth", $"Health: {clown.CurrentHealth} outta 10");
+        SelectionController.instance.clownPanel.FillImage("ClownImage", headRenderer.sprite, true);
     }
 
     public override void Select()

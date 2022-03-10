@@ -41,8 +41,10 @@ public class DetailsPanel : MonoBehaviour
         SelectionController.instance.buttonsAnim.SetBool(elementName, value);
     }
 
-    public void FillImage(string elementName, Sprite image)
+    public void FillImage(string elementName, Sprite image, bool preserveAspect=false)
     {
         elementsMap[elementName].GetComponent<Image>().sprite = image;
+        if (preserveAspect)
+            elementsMap[elementName].GetComponent<Image>().preserveAspect = true;
     }
 }

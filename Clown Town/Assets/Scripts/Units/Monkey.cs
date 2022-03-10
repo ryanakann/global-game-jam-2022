@@ -45,6 +45,7 @@ public class Monkey : Unit
         if (projectile != null)
         {
             GameObject poop = Instantiate(projectile);
+            poop.transform.parent = transform; 
             poop.GetComponent<Projectile>().Throw(transform.position, true, target.transform, attackDamage);
         }
     }

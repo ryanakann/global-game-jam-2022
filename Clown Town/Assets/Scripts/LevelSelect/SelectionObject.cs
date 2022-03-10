@@ -34,6 +34,9 @@ public class SelectionObject : MonoBehaviour
 
     UnityEvent<SelectionState> selectionEvent;
 
+    
+
+
     [HideInInspector]
     public bool selectable = true;
 
@@ -62,7 +65,6 @@ public class SelectionObject : MonoBehaviour
         }
         highlight.gameObject.SetActive(false);
         selectHighlight.gameObject.SetActive(false);
-        print("DEACTIVATE ME");
     }
 
     public virtual void Activate()
@@ -73,7 +75,6 @@ public class SelectionObject : MonoBehaviour
         {
             r.color = new Color(r.color.r, r.color.g, r.color.b, 1f);
         }
-        print("ACTIVATE ME");
     }
 
     public virtual void Occupy()
@@ -84,7 +85,6 @@ public class SelectionObject : MonoBehaviour
 
     public virtual void Highlight()
     {
-        print("VIEW ME!!!");
         highlight.color = new Color(highlight.color.r, highlight.color.g, highlight.color.b, 0.5f);
         highlight.gameObject.SetActive(true);
         // add additive highlight
@@ -93,14 +93,12 @@ public class SelectionObject : MonoBehaviour
     public virtual void Unhighlight()
     {
         SelectionController.instance.ClearPanels(true);
-        print("FORGET ME");
         highlight.gameObject.SetActive(false);
         // remove additive highlight
     }
 
     public virtual void Select()
     {
-        print("SELECT ME");
         selectHighlight.gameObject.SetActive(true);
     }
 
@@ -110,14 +108,12 @@ public class SelectionObject : MonoBehaviour
             return;
         if (clear)
             SelectionController.instance.ClearPanels();
-        print("DESELECT ME");
         selectHighlight.gameObject.SetActive(false);
         // TODO: remove highlight
     }
 
     public virtual void Remove()
     {
-        print("KILL ME");
         selectionState.alive = false;
         // TODO: remove highlight
         // TODO: complete fade

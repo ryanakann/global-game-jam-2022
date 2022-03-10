@@ -15,7 +15,8 @@ public class Clown
 
     public string Name { get; private set; }
 
-    bool alive = true;
+    [HideInInspector]
+    public bool alive = true;
 
     float maxHealth;
     public float CurrentHealth { get; private set; }

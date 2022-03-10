@@ -11,6 +11,9 @@ public class Location : SelectionObject
     [HideInInspector]
     public List<Edge> ingoingConnections = new List<Edge>();
 
+    [HideInInspector]
+    public Edge activeEdge;
+
     public LocationType locationType;
 
     public string locationName, description;
@@ -30,7 +33,8 @@ public class Location : SelectionObject
         {
             if (edge.tgt == target_loc)
             {
-                edge.Remove();
+                //edge.Remove();
+                edge.Deactivate();
                 continue;
             }
             edge.tgt.Remove();
@@ -39,6 +43,8 @@ public class Location : SelectionObject
         {
             edge.Remove();
         }
+        selectHighlight.gameObject.SetActive(false);
+        target_loc.Occupy();
     }
 
     public override void Remove()
@@ -56,8 +62,12 @@ public class Location : SelectionObject
         base.Occupy();
         foreach (var edge in outgoingConnections)
         {
+            edge.tgt.activeEdge = edge;
             edge.Activate();
         }
+        activeEdge = null;
+        LevelGenerator.instance.UpdateCamera(transform.position);
+        SelectionController.instance.currentLocation = this;
     }
 
     public override void Deactivate()
@@ -69,17 +79,36 @@ public class Location : SelectionObject
         }
     }
 
+    public override void Deselect(bool clear = true)
+    {
+        base.Deselect(clear);
+        if (activeEdge)
+            activeEdge.Deselect(clear);
+    }
+
+    public override void Unhighlight()
+    {
+        base.Unhighlight();
+        if (activeEdge)
+            activeEdge.Unhighlight();
+    }
+
     public override void FillDetailsPanel()
     {
         base.FillDetailsPanel();
         SelectionController.instance.locationPanel.FillText("LocationName", locationName);
         SelectionController.instance.locationPanel.FillText("LocationDescription", description);
         SelectionController.instance.locationPanel.FillText("LocationDifficulty", $"Difficulty: {difficulty}");
+        if (activeEdge)
+            SelectionController.instance.locationPanel.FillText("EdgeCost", $"Fuel Cost: {activeEdge.fuelCost}");
     }
 
     public override void Select()
     {
         base.Select();
+        print("feerrm");
+        if (activeEdge)
+            activeEdge.Select();
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: true))
         {
             FillDetailsPanel();
@@ -90,6 +119,8 @@ public class Location : SelectionObject
     public override void Highlight()
     {
         base.Highlight();
+        if (activeEdge)
+            activeEdge.Highlight();
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: false))
         {
             FillDetailsPanel();
