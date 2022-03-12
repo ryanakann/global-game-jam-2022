@@ -1,0 +1,2784 @@
+fileFormatVersion: 2
+guid: 138dea39362f1e4449d870b42fa45544
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 608689555278089382
+    second: kidpix-spritesheet-8_0
+  - first:
+      213: 4172156423030091144
+    second: kidpix-spritesheet-8_1
+  - first:
+      213: 5107201087306598238
+    second: kidpix-spritesheet-8_2
+  - first:
+      213: -3053827530898969006
+    second: kidpix-spritesheet-8_3
+  - first:
+      213: -785358757136091215
+    second: kidpix-spritesheet-8_4
+  - first:
+      213: -1769818786195673809
+    second: kidpix-spritesheet-8_5
+  - first:
+      213: 7414616004264639556
+    second: kidpix-spritesheet-8_6
+  - first:
+      213: 2429048085639922035
+    second: kidpix-spritesheet-8_7
+  - first:
+      213: -8600306969395729872
+    second: kidpix-spritesheet-8_8
+  - first:
+      213: -2176936550768541701
+    second: kidpix-spritesheet-8_9
+  - first:
+      213: -2204037674664804340
+    second: kidpix-spritesheet-8_10
+  - first:
+      213: -2288252626135789384
+    second: kidpix-spritesheet-8_11
+  - first:
+      213: 757473509140921069
+    second: kidpix-spritesheet-8_12
+  - first:
+      213: -8983736702549800127
+    second: kidpix-spritesheet-8_13
+  - first:
+      213: 771176005073423565
+    second: kidpix-spritesheet-8_14
+  - first:
+      213: -1840395532982193550
+    second: kidpix-spritesheet-8_15
+  - first:
+      213: 2733781286108563337
+    second: kidpix-spritesheet-8_16
+  - first:
+      213: 2785795868245029342
+    second: kidpix-spritesheet-8_17
+  - first:
+      213: -3831294406355669930
+    second: kidpix-spritesheet-8_18
+  - first:
+      213: -1713595015587213428
+    second: kidpix-spritesheet-8_19
+  - first:
+      213: 2481296173052008703
+    second: kidpix-spritesheet-8_20
+  - first:
+      213: -8736155791800905327
+    second: kidpix-spritesheet-8_21
+  - first:
+      213: 6681670790813498252
+    second: kidpix-spritesheet-8_22
+  - first:
+      213: 2395207482375863989
+    second: kidpix-spritesheet-8_23
+  - first:
+      213: -3470912965506563743
+    second: kidpix-spritesheet-8_24
+  - first:
+      213: 5058354326977649649
+    second: kidpix-spritesheet-8_25
+  - first:
+      213: -7526434858458813252
+    second: kidpix-spritesheet-8_26
+  - first:
+      213: 7008936899182056058
+    second: kidpix-spritesheet-8_27
+  - first:
+      213: 8918316804715653642
+    second: kidpix-spritesheet-8_28
+  - first:
+      213: -3814979487394831363
+    second: kidpix-spritesheet-8_29
+  - first:
+      213: 6076458975265796219
+    second: kidpix-spritesheet-8_30
+  - first:
+      213: 3447387261614346777
+    second: kidpix-spritesheet-8_31
+  - first:
+      213: 8098610700601819586
+    second: kidpix-spritesheet-8_32
+  - first:
+      213: -6206591377636840969
+    second: kidpix-spritesheet-8_33
+  - first:
+      213: -1365866192331977199
+    second: kidpix-spritesheet-8_34
+  - first:
+      213: -6576042345294324476
+    second: kidpix-spritesheet-8_35
+  - first:
+      213: 3904916084417084461
+    second: kidpix-spritesheet-8_36
+  - first:
+      213: 133109712581321591
+    second: kidpix-spritesheet-8_37
+  - first:
+      213: 294082860815870741
+    second: kidpix-spritesheet-8_38
+  - first:
+      213: 4720111303325662146
+    second: kidpix-spritesheet-8_39
+  - first:
+      213: -1840375866588880502
+    second: kidpix-spritesheet-8_40
+  - first:
+      213: -1647190967232104012
+    second: kidpix-spritesheet-8_41
+  - first:
+      213: 1220024717610657490
+    second: kidpix-spritesheet-8_42
+  - first:
+      213: -75835946167507114
+    second: kidpix-spritesheet-8_43
+  - first:
+      213: 2094180956092463607
+    second: kidpix-spritesheet-8_44
+  - first:
+      213: -4133263694720628896
+    second: kidpix-spritesheet-8_45
+  - first:
+      213: -7595720010261128276
+    second: kidpix-spritesheet-8_46
+  - first:
+      213: 4977872428114757543
+    second: kidpix-spritesheet-8_47
+  - first:
+      213: 6261436029849998147
+    second: kidpix-spritesheet-8_48
+  - first:
+      213: -5066260814910946603
+    second: kidpix-spritesheet-8_49
+  - first:
+      213: 963357624378630100
+    second: kidpix-spritesheet-8_50
+  - first:
+      213: -1061317357401081728
+    second: kidpix-spritesheet-8_51
+  - first:
+      213: 6587601873622627893
+    second: kidpix-spritesheet-8_52
+  - first:
+      213: 524010529337474410
+    second: kidpix-spritesheet-8_53
+  - first:
+      213: 1539064685182704383
+    second: kidpix-spritesheet-8_54
+  - first:
+      213: 2682178453350924020
+    second: kidpix-spritesheet-8_55
+  - first:
+      213: -5683290672308195729
+    second: kidpix-spritesheet-8_56
+  - first:
+      213: -6702158420666531730
+    second: kidpix-spritesheet-8_57
+  - first:
+      213: 5094805991874585004
+    second: kidpix-spritesheet-8_58
+  - first:
+      213: 4315151357050939679
+    second: kidpix-spritesheet-8_59
+  - first:
+      213: -5678763950728691911
+    second: kidpix-spritesheet-8_60
+  - first:
+      213: 8013575415664320888
+    second: kidpix-spritesheet-8_61
+  - first:
+      213: -451580909933660431
+    second: kidpix-spritesheet-8_62
+  - first:
+      213: 6604166954213130728
+    second: kidpix-spritesheet-8_63
+  - first:
+      213: 407914552244882678
+    second: kidpix-spritesheet-8_64
+  - first:
+      213: -6760885239900023159
+    second: kidpix-spritesheet-8_65
+  - first:
+      213: -1964676781092989733
+    second: kidpix-spritesheet-8_66
+  - first:
+      213: 3979235670317079121
+    second: kidpix-spritesheet-8_67
+  - first:
+      213: -6291137774758362893
+    second: kidpix-spritesheet-8_68
+  - first:
+      213: -5180839386742324495
+    second: kidpix-spritesheet-8_69
+  - first:
+      213: -4497091207025124098
+    second: kidpix-spritesheet-8_70
+  - first:
+      213: 3470558714659680784
+    second: kidpix-spritesheet-8_71
+  - first:
+      213: 2781864891905946163
+    second: kidpix-spritesheet-8_72
+  - first:
+      213: -2448998741074626493
+    second: kidpix-spritesheet-8_73
+  - first:
+      213: 6013583189023230990
+    second: kidpix-spritesheet-8_74
+  - first:
+      213: 4445459178604066627
+    second: kidpix-spritesheet-8_75
+  - first:
+      213: 8653788854289655639
+    second: kidpix-spritesheet-8_76
+  - first:
+      213: -7951833041654602731
+    second: kidpix-spritesheet-8_77
+  - first:
+      213: -1609667902783752796
+    second: kidpix-spritesheet-8_78
+  - first:
+      213: -3268637249584077451
+    second: kidpix-spritesheet-8_79
+  - first:
+      213: -288361550537023697
+    second: kidpix-spritesheet-8_80
+  - first:
+      213: 6609207814440429222
+    second: kidpix-spritesheet-8_81
+  - first:
+      213: 3993031810193126955
+    second: kidpix-spritesheet-8_82
+  - first:
+      213: 680647785245786432
+    second: kidpix-spritesheet-8_83
+  - first:
+      213: 1317642976519629123
+    second: kidpix-spritesheet-8_84
+  - first:
+      213: 4845794268974070508
+    second: kidpix-spritesheet-8_85
+  - first:
+      213: 4807549551326589391
+    second: kidpix-spritesheet-8_86
+  - first:
+      213: -2893811359630314705
+    second: kidpix-spritesheet-8_87
+  - first:
+      213: 8671038809779734548
+    second: kidpix-spritesheet-8_88
+  - first:
+      213: 605388892913505642
+    second: kidpix-spritesheet-8_89
+  - first:
+      213: -822421323387155308
+    second: kidpix-spritesheet-8_90
+  - first:
+      213: 8810880862863101216
+    second: kidpix-spritesheet-8_91
+  - first:
+      213: -1305927793154191129
+    second: kidpix-spritesheet-8_92
+  - first:
+      213: 6989837905228301435
+    second: kidpix-spritesheet-8_93
+  - first:
+      213: -3733729881184352325
+    second: kidpix-spritesheet-8_94
+  - first:
+      213: 1389012872150662153
+    second: kidpix-spritesheet-8_95
+  - first:
+      213: 3454528408177203793
+    second: kidpix-spritesheet-8_96
+  - first:
+      213: -6806269177644323609
+    second: kidpix-spritesheet-8_97
+  - first:
+      213: -4012013462088863040
+    second: kidpix-spritesheet-8_98
+  - first:
+      213: -990734466683807147
+    second: kidpix-spritesheet-8_99
+  - first:
+      213: 621759611785966918
+    second: kidpix-spritesheet-8_100
+  - first:
+      213: 8531717876164397749
+    second: kidpix-spritesheet-8_101
+  - first:
+      213: 3266272577154092481
+    second: kidpix-spritesheet-8_102
+  - first:
+      213: -740082435870627202
+    second: kidpix-spritesheet-8_103
+  - first:
+      213: 3582379993978703019
+    second: kidpix-spritesheet-8_104
+  - first:
+      213: -6294942312927304804
+    second: kidpix-spritesheet-8_105
+  - first:
+      213: 4740125943207851835
+    second: kidpix-spritesheet-8_106
+  - first:
+      213: -1979788715212458576
+    second: kidpix-spritesheet-8_107
+  - first:
+      213: -7782834160749396083
+    second: kidpix-spritesheet-8_108
+  - first:
+      213: 5965921508002173770
+    second: kidpix-spritesheet-8_109
+  - first:
+      213: 1394335118919463054
+    second: kidpix-spritesheet-8_110
+  - first:
+      213: 8300932251890163057
+    second: kidpix-spritesheet-8_111
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac47d0fcef727800800000000000000
+      internalID: 608689555278089382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88da216692a76e930800000000000000
+      internalID: 4172156423030091144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57066d645c60e640800000000000000
+      internalID: 5107201087306598238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e657f5a00ae95d0800000000000000
+      internalID: -3053827530898969006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b739a31f58d915f0800000000000000
+      internalID: -785358757136091215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d6efbd0375077e0800000000000000
+      internalID: -1769818786195673809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44cbe18b8f106e660800000000000000
+      internalID: 7414616004264639556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37109ee3d56b5b120800000000000000
+      internalID: 2429048085639922035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ae9d1b06295a880800000000000000
+      internalID: -8600306969395729872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff70e0bdb7f9c1e0800000000000000
+      internalID: -2176936550768541701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00c602996fa961e0800000000000000
+      internalID: -2204037674664804340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b052d63c5e7e30e0800000000000000
+      internalID: -2288252626135789384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deafc1fa426138a00800000000000000
+      internalID: 757473509140921069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 224.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b41e0211b535380800000000000000
+      internalID: -8983736702549800127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dccc4b1ad74c3ba00800000000000000
+      internalID: 771176005073423565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_15
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 272716a730a9576e0800000000000000
+      internalID: -1840395532982193550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9878c14789750f520800000000000000
+      internalID: 2733781286108563337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed1fe77159229a620800000000000000
+      internalID: 2785795868245029342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65caa37590284dac0800000000000000
+      internalID: -3831294406355669930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_19
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f4b0f89661838e0800000000000000
+      internalID: -1713595015587213428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff81d4119b55f6220800000000000000
+      internalID: 2481296173052008703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_21
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1915c3fe790f2c680800000000000000
+      internalID: -8736155791800905327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8bba88ee201abc50800000000000000
+      internalID: 6681670790813498252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_23
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5befe5ec38c7d3120800000000000000
+      internalID: 2395207482375863989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_24
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1610fac2c07d4dfc0800000000000000
+      internalID: -3470912965506563743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_25
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb1097c572e23640800000000000000
+      internalID: 5058354326977649649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_26
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbce17c7f5bbc8790800000000000000
+      internalID: -7526434858458813252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_27
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 192.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72dfd099feb44160800000000000000
+      internalID: 7008936899182056058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a2973f1e934cb70800000000000000
+      internalID: 8918316804715653642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_29
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df3ed6c6e587e0bc0800000000000000
+      internalID: -3814979487394831363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_30
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70b3f85e3be35450800000000000000
+      internalID: 6076458975265796219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_31
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912dabb037497df20800000000000000
+      internalID: 3447387261614346777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_32
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c18c8f168b046070800000000000000
+      internalID: 8098610700601819586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_33
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f924f5a602cdd9a0800000000000000
+      internalID: -6206591377636840969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e465b4fe77b0de0800000000000000
+      internalID: -1365866192331977199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_35
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d1ecc04543db4a0800000000000000
+      internalID: -6576042345294324476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2cb3695d7c013630800000000000000
+      internalID: 3904916084417084461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_37
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773609e0496e8d100800000000000000
+      internalID: 133109712581321591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_38
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51be575cdcac41400800000000000000
+      internalID: 294082860815870741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_39
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb380fd834318140800000000000000
+      internalID: 4720111303325662146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_40
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81a4ca66eba576e0800000000000000
+      internalID: -1840375866588880502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_41
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 160.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9f5e0ea800429e0800000000000000
+      internalID: -1647190967232104012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6216644066ee010800000000000000
+      internalID: 1220024717610657490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_43
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657ea77db9392fef0800000000000000
+      internalID: -75835946167507114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_44
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9774feb76001d10800000000000000
+      internalID: 2094180956092463607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06788219192b3a6c0800000000000000
+      internalID: -4133263694720628896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab1f0ff4e4969690800000000000000
+      internalID: -7595720010261128276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_47
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7cdf67994f41540800000000000000
+      internalID: 4977872428114757543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_48
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3439a0705e615e650800000000000000
+      internalID: 6261436029849998147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_49
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d280cb81a601b9b0800000000000000
+      internalID: -5066260814910946603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df90c0c7a88e5d00800000000000000
+      internalID: 963357624378630100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_51
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088f62e8c717541f0800000000000000
+      internalID: -1061317357401081728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_52
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53679fe500ddb6b50800000000000000
+      internalID: 6587601873622627893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_53
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d79b3dcc8a54700800000000000000
+      internalID: 524010529337474410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_54
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffad9a64d2bdb5510800000000000000
+      internalID: 1539064685182704383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_55
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 128.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe3030b713093520800000000000000
+      internalID: 2682178453350924020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e67c1be35e021b0800000000000000
+      internalID: -5683290672308195729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_57
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6047cb0d662df2a0800000000000000
+      internalID: -6702158420666531730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_58
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca167316e0364b640800000000000000
+      internalID: 5094805991874585004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_59
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19e01deb4f72eb30800000000000000
+      internalID: 4315151357050939679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_60
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fb581364af031b0800000000000000
+      internalID: -5678763950728691911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_61
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 871a97ff160f53f60800000000000000
+      internalID: 8013575415664320888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_62
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f67e041e89abb9f0800000000000000
+      internalID: -451580909933660431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_63
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e14f3fbad6b6ab50800000000000000
+      internalID: 6604166954213130728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_64
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fcc441cf1439a500800000000000000
+      internalID: 407914552244882678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_65
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986d39ce1b28c22a0800000000000000
+      internalID: -6760885239900023159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_66
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd49e7c70e01cb4e0800000000000000
+      internalID: -1964676781092989733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_67
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a10de52c5193730800000000000000
+      internalID: 3979235670317079121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_68
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f08c76968361b8a0800000000000000
+      internalID: -6291137774758362893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_69
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 96.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f20fdae606f918b0800000000000000
+      internalID: -5180839386742324495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc1cb2bf5f1791c0800000000000000
+      internalID: -4497091207025124098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_71
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0123d6f53c6e92030800000000000000
+      internalID: 3470558714659680784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_72
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3323f27516b2b9620800000000000000
+      internalID: 2781864891905946163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_73
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3483edece98630ed0800000000000000
+      internalID: -2448998741074626493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_74
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c8df09c0a847350800000000000000
+      internalID: 6013583189023230990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_75
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347f134e19171bd30800000000000000
+      internalID: 4445459178604066627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_76
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7576b2dfc1f681870800000000000000
+      internalID: 8653788854289655639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_77
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514a6feaaf965a190800000000000000
+      internalID: -7951833041654602731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_78
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5f930229f49a9e0800000000000000
+      internalID: -1609667902783752796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_79
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5756eee4db773a2d0800000000000000
+      internalID: -3268637249584077451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_80
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f1c5592b88ffbf0800000000000000
+      internalID: -288361550537023697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_81
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6257a7d7f98bb50800000000000000
+      internalID: 6609207814440429222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_82
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b26756f76491a6730800000000000000
+      internalID: 3993031810193126955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_83
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 64.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0414bb0fd85227900800000000000000
+      internalID: 680647785245786432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349ad345e45394210800000000000000
+      internalID: 1317642976519629123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_85
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceab2d8a638bf3340800000000000000
+      internalID: 4845794268974070508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_86
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1f8ee68d8d7b240800000000000000
+      internalID: 4807549551326589391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_87
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23be3686ed17d7d0800000000000000
+      internalID: -2893811359630314705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_88
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4180c8a3bd7b55870800000000000000
+      internalID: 8671038809779734548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_89
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6593199df5c66800800000000000000
+      internalID: 605388892913505642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_90
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c4dcbe92c2694f0800000000000000
+      internalID: -822421323387155308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_91
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d0e357679864a70800000000000000
+      internalID: 8810880862863101216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_92
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e01cba579960ede0800000000000000
+      internalID: -1305927793154191129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_93
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7481b28a84e00160800000000000000
+      internalID: 6989837905228301435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_94
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7ceb884702f2cc0800000000000000
+      internalID: -3733729881184352325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_95
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c3cf019d3c64310800000000000000
+      internalID: 1389012872150662153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_96
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ad5ebc843f0ff20800000000000000
+      internalID: 3454528408177203793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_97
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 32.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ece1dc7e364b81a0800000000000000
+      internalID: -6806269177644323609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_98
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2bb1643077258c0800000000000000
+      internalID: -4012013462088863040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_99
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a539e60443042f0800000000000000
+      internalID: -990734466683807147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_100
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645ff2c921fe0a800800000000000000
+      internalID: 621759611785966918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_101
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba01a49430c66670800000000000000
+      internalID: 8531717876164397749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_102
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd8edc7a91245d20800000000000000
+      internalID: 3266272577154092481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_103
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7aec6912f2bab5f0800000000000000
+      internalID: -740082435870627202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_104
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac019fcf9b27b130800000000000000
+      internalID: 3582379993978703019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_105
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c936464815fd3a8a0800000000000000
+      internalID: -6294942312927304804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_106
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37748b5e6f48c140800000000000000
+      internalID: 4740125943207851835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_107
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b53f6327a06684e0800000000000000
+      internalID: -1979788715212458576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_108
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8fb1c6e091ddf390800000000000000
+      internalID: -7782834160749396083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_109
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a431552b0063bc250800000000000000
+      internalID: 5965921508002173770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_110
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80fb05376ca95310800000000000000
+      internalID: 1394335118919463054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kidpix-spritesheet-8_111
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0.875
+        width: 32.07143
+        height: 32.125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d1f7227e5d23370800000000000000
+      internalID: 8300932251890163057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
