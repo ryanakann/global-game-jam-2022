@@ -29,6 +29,12 @@ namespace Encounters
         private float _attackRange = 1f;
         public float AttackRange { get => _attackRange; }
 
+        [SerializeField]
+        [Range(0f, 20f)]
+        [Tooltip("Width of attack, measured in tiles.")]
+        private float _attackWidth = 1f;
+        public float AttackWidth { get => _attackWidth; }
+
         private Dictionary<System.Type, IInitializable<UnitInfo>> components;
 
         private void Start()
