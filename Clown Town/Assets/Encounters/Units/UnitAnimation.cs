@@ -18,7 +18,20 @@ namespace Encounters
             _animator = GetComponentInChildren<Animator>();
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
+            _unitInfo.GetComponent<UnitBehavior>().OnAttack?.AddListener(AttackAnimation);
+            _unitInfo.GetComponent<UnitBehavior>().OnDie?.AddListener(DeathAnimation);
             _unitInfo.GetComponent<UnitBehavior>().OnHealthChanged?.AddListener(HitEffect);
+        }
+
+        private void AttackAnimation(float attackSpeed)
+        {
+            _animator?.SetFloat("attackSpeed", attackSpeed);
+            _animator?.SetTrigger("attack");
+        }
+
+        private void DeathAnimation()
+        {
+            _animator?.SetTrigger("die");
         }
 
         #region HIT HANDLING

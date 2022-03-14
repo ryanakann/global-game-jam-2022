@@ -72,6 +72,7 @@ namespace Encounters
                 yield return new WaitForEndOfFrame();
             }
 
+
             if (!_hitInProgress)
             {
                 _canvas.enabled = false;
