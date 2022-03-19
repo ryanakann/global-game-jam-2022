@@ -34,5 +34,15 @@ namespace Encounters
         [Tooltip("Width of attack, measured in tiles.")]
         private float _attackWidth = 1f;
         public float AttackWidth { get => _attackWidth; }
+
+        public Vector2 GetGridPosition(EncounterInfo encounterInfo)
+        {
+            return encounterInfo.WorldToGridPosition(transform.position);
+        }
+
+        public void SetGridPosition(EncounterInfo encounterInfo, Vector2Int gridPosition)
+        {
+            transform.position = encounterInfo.GridToWorldPosition(gridPosition);
+        }
     }
 }

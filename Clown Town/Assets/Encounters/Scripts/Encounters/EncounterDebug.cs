@@ -16,6 +16,11 @@ namespace Encounters
         public void Init(EncounterInfo info)
         {
             _info = info;
+
+            foreach (var unit in FindObjectsOfType<UnitInfo>())
+            {
+                unit.SetGridPosition(_info, _info.gridCells / 2);
+            }
         }
 
         private void OnDrawGizmos()
@@ -26,7 +31,7 @@ namespace Encounters
                 Init(GetComponent<EncounterInfo>());
             }
             DrawBounds();
-            DrawCellCenters();
+            DrawCells();
         }
 
         private void DrawBounds()
@@ -35,7 +40,7 @@ namespace Encounters
             Gizmos.DrawCube(_info.gridPosition, _info.gridSize);
         }
 
-        private void DrawCellCenters()
+        private void DrawCells()
         {
             Gizmos.color = Color.yellow;
             List<Vector2> worldPositions = new List<Vector2>();
