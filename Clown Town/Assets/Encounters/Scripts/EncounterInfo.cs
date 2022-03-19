@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Encounters
 {
-    public class PVZEncounter : Encounter
+    public class EncounterInfo : Info<EncounterInfo>
     {
 
     }

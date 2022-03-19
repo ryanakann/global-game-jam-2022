@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Encounters
 {
-    public class UnitInfo : MonoBehaviour
+    public class UnitInfo : Info<UnitInfo>
     {
         [Range(0f, 200f)]
         [SerializeField]
@@ -34,22 +34,5 @@ namespace Encounters
         [Tooltip("Width of attack, measured in tiles.")]
         private float _attackWidth = 1f;
         public float AttackWidth { get => _attackWidth; }
-
-        private Dictionary<System.Type, IInitializable<UnitInfo>> components;
-
-        private void Start()
-        {
-            components = new Dictionary<System.Type, IInitializable<UnitInfo>>();
-            foreach (var component in GetComponents<IInitializable<UnitInfo>>())
-            {
-                components.Add(component.GetType(), component);
-                component.Init(this);
-            }
-        }
-
-        public new T GetComponent<T>()
-        {
-            return (T)components.GetValueOrDefault(typeof(T), null);
-        }
     }
 }
