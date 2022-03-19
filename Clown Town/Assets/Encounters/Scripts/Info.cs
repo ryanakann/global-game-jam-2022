@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Encounters
 {
@@ -10,7 +11,7 @@ namespace Encounters
 
         protected virtual void Start()
         {
-            var self = GetComponent<T1>(); // Easiest way to cast this to its subclass.
+            var self = gameObject.GetComponent<T1>(); // Easiest way to cast this to its subclass.
             components = new Dictionary<System.Type, IInitializable<T1>>();
             foreach (var component in GetComponents<IInitializable<T1>>())
             {
@@ -21,7 +22,14 @@ namespace Encounters
 
         public new T2 GetComponent<T2>()
         {
-            return (T2)components.GetValueOrDefault(typeof(T2), null);
+            if (false == components.TryGetValue(typeof(T2), out var component))
+            {
+                return default(T2);
+            } 
+            else
+            {
+                return (T2)component;
+            }
         }
     }
 }

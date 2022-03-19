@@ -58,7 +58,6 @@ namespace Encounters
         {
             while (_hitT < _hitDuration)
             {
-                print($"{_hitT}");
                 _spriteRenderer.color = Color.Lerp(_normalColor, _hitColor, colorFn(_hitT));
                 _hitT += Time.deltaTime;
                 yield return new WaitForEndOfFrame();

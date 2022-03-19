@@ -50,6 +50,7 @@ namespace Encounters
 
         protected virtual void Attack()
         {
+            if (!_alive) return;
             if (_attackCooldown > 0f) return;
             StartCoroutine(AttackCR());
         }
@@ -96,6 +97,7 @@ namespace Encounters
 
         protected virtual void Die()
         {
+            if (!_alive) return;
             _alive = false;
             Debug.Log($"{name} is DEAD");
             OnDie?.Invoke();
