@@ -4,8 +4,21 @@ using UnityEngine;
 
 namespace Encounters
 {
+    public enum UnitType
+    {
+        Friend,
+        Foe,
+    }
+
     public class UnitInfo : Info<UnitInfo>
     {
+        private UnitType _unitType;
+        public UnitType UnitType
+        {
+            get => _unitType;
+            set => _unitType = value;
+        }
+
         [Range(0f, 200f)]
         [SerializeField]
         private float _maxHealth = 100f;
@@ -40,7 +53,7 @@ namespace Encounters
             return encounterInfo.WorldToGridPosition(transform.position);
         }
 
-        public void SetGridPosition(EncounterInfo encounterInfo, Vector2Int gridPosition)
+        public void SetGridPosition(EncounterInfo encounterInfo, Vector2 gridPosition)
         {
             transform.position = encounterInfo.GridToWorldPosition(gridPosition);
         }

@@ -6,7 +6,7 @@ namespace Encounters
 {
     public class EncounterInfo : Info<EncounterInfo>
     {
-        public Vector2Int gridCells;
+        public Vector2Int gridDimensions;
         public Vector2 gridPosition;
         public Vector2 gridSize;
 
@@ -30,17 +30,17 @@ namespace Encounters
         {
             get
             {
-                if (_cellSize == null) return new Vector2(gridSize.x / gridCells.x, gridSize.y / gridCells.y);
+                if (_cellSize == null) return new Vector2(gridSize.x / gridDimensions.x, gridSize.y / gridDimensions.y);
                 else
                 {
-                    _cellSize.x = gridSize.x / gridCells.x;
-                    _cellSize.y = gridSize.y / gridCells.y;
+                    _cellSize.x = gridSize.x / gridDimensions.x;
+                    _cellSize.y = gridSize.y / gridDimensions.y;
                     return _cellSize;
                 }
             }
         }
 
-        public Vector2 GridToWorldPosition(Vector2Int gridPosition)
+        public Vector2 GridToWorldPosition(Vector2 gridPosition)
         {
             return (Vector2)Bounds.min + CellSize / 2f + Vector2.Scale(CellSize, gridPosition);
         }

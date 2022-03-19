@@ -16,7 +16,12 @@ namespace Encounters
             foreach (var component in GetComponents<IInitializable<T1>>())
             {
                 components.Add(component.GetType(), component);
-                component.Init(self);
+                
+            }
+
+            foreach (var item in components)
+            {
+                item.Value.Init(self);
             }
         }
 

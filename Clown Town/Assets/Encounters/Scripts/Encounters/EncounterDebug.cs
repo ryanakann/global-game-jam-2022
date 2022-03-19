@@ -13,13 +13,21 @@ namespace Encounters
         private EncounterInfo _info;
         public new bool enabled;
 
+        public UnitInfo testUnit;
+
         public void Init(EncounterInfo info)
         {
             _info = info;
 
-            foreach (var unit in FindObjectsOfType<UnitInfo>())
+            if (!Application.isPlaying) return;
+            
+            
+
+            for (int i = 0; i < 4; i++)
             {
-                unit.SetGridPosition(_info, _info.gridCells / 2);
+                int x = Random.Range(0, _info.gridDimensions.x);
+                int y = Random.Range(0, _info.gridDimensions.y);
+                _info.GetComponent<EncounterUnits>().AddUnit(testUnit, false, new Vector2(x, y), UnitType.Friend);
             }
         }
 
@@ -44,9 +52,9 @@ namespace Encounters
         {
             Gizmos.color = Color.yellow;
             List<Vector2> worldPositions = new List<Vector2>();
-            for (int y = 0; y < _info.gridCells.y; y++)
+            for (int y = 0; y < _info.gridDimensions.y; y++)
             {
-                for (int x = 0; x < _info.gridCells.x; x++)
+                for (int x = 0; x < _info.gridDimensions.x; x++)
                 {
                     var position = _info.GridToWorldPosition(new Vector2Int(x, y));
                     worldPositions.Add(position);
