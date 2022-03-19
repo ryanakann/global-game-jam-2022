@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace Encounters
 {
-    public class EncounterBehavior : IInitializable<EncounterInfo>
+    public class EncounterBehavior : MonoBehaviour, IInitializable<EncounterInfo>
     {
+        private EncounterInfo _info;
         public void Init(EncounterInfo info)
         {
 
