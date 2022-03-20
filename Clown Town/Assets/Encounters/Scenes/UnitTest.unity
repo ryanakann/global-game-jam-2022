@@ -182,46 +182,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unit
       objectReference: {fileID: 0}
-    - target: {fileID: 962316974742089330, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6308641252918716024, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: _attackSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096292316684183154, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096292316684183154, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096292316684183154, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096292316684183154, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096292316684183154, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096292316684183154, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096292316684183154, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8801079822877585752, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-      propertyPath: _attackEffect
-      value: 
-      objectReference: {fileID: 6195715002303179739, guid: 64a26cb2af4f1054ca3a671bf969b19b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
 --- !u!1 &754692314
@@ -338,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817fa3cbedf3d7a458e551c9ee983846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initOnAwake: 1
   gridDimensions: {x: 5, y: 5}
   gridPosition: {x: 2, y: 0.5}
   gridSize: {x: 8, y: 8}
@@ -381,30 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8b1dbff3588c340993f8431c088ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1070486670 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4450827814615271387, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
-  m_PrefabInstance: {fileID: 358917553}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1070486671
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070486670}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ac61c2c2c47ab384eb2e9af526b21f0d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1320900883
 GameObject:
   m_ObjectHideFlags: 0

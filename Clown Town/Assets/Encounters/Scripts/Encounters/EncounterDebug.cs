@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,10 +19,15 @@ namespace Encounters
             _info = info;
 
             if (!Application.isPlaying) return;
-            
-            
 
-            for (int i = 0; i < 4; i++)
+            foreach (var unit in FindObjectsOfType<UnitInfo>())
+            {
+                int x = Random.Range(0, _info.gridDimensions.x);
+                int y = Random.Range(0, _info.gridDimensions.y);
+                _info.GetComponent<EncounterUnits>().AddUnit(unit, true, new Vector2(x, y), UnitType.Friend);
+            }
+
+            for (int i = 0; i < 1; i++)
             {
                 int x = Random.Range(0, _info.gridDimensions.x);
                 int y = Random.Range(0, _info.gridDimensions.y);

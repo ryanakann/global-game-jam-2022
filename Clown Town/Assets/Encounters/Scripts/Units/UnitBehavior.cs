@@ -56,6 +56,7 @@ namespace Encounters
 
         protected virtual IEnumerator AttackCR()
         {
+            print($"{gameObject.name} is attacking");
             var maxCoolddown = 1 / _unitInfo.AttackSpeed;
             _attackCooldown = maxCoolddown;
             
@@ -67,11 +68,13 @@ namespace Encounters
                 yield return new WaitForEndOfFrame();
             }
 
-            var effect = Instantiate(_attackEffect, transform);
-            effect.transform.localPosition = Vector3.right;
-            effect.transform.localScale = new Vector3(effect.transform.localScale.x, _unitInfo.AttackWidth, effect.transform.localScale.z);
-
-            Destroy(effect, 1f);
+            if (_attackEffect)
+            {
+                var effect = Instantiate(_attackEffect, transform);
+                effect.transform.localPosition = Vector3.right;
+                effect.transform.localScale = new Vector3(effect.transform.localScale.x, _unitInfo.AttackWidth, effect.transform.localScale.z);
+                Destroy(effect, 1f);
+            }
 
             while (_attackCooldown > 0f)
             {
