@@ -53,5 +53,7 @@ namespace Encounters
             var gridPosition = WorldToGridPosition(worldPosition);
             return new Vector2Int(Mathf.RoundToInt(gridPosition.x), Mathf.RoundToInt(gridPosition.y));
         }
+
+        public bool IsPointWithinGrid(Vector2 point) => Bounds.Contains(point);
     }
 }
