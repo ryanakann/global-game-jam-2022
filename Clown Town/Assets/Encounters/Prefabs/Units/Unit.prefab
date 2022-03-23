@@ -368,10 +368,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initOnAwake: 0
   _maxHealth: 100
-  _attackSpeed: 4
+  _currentHealth: 0
+  _attackSpeed: 1
+  _attackCooldown: 1
   _attackDamage: 10
   _attackRange: 1
   _attackWidth: 1
+  _attackEffect: {fileID: 6195715002303179739, guid: 64a26cb2af4f1054ca3a671bf969b19b, type: 3}
 --- !u!114 &8801079822877585752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,9 +387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b85e9f076fb81a44ada2ce7b08a364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 0
-  _alive: 0
-  _attackEffect: {fileID: 6195715002303179739, guid: 64a26cb2af4f1054ca3a671bf969b19b, type: 3}
   OnAttack:
     m_PersistentCalls:
       m_Calls: []

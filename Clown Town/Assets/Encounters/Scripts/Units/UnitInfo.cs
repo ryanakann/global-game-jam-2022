@@ -10,6 +10,7 @@ namespace Encounters
 
     public class UnitInfo : Info<UnitInfo>
     {
+        [Header("General")]
         private UnitType _unitType;
         public UnitType UnitType
         {
@@ -23,10 +24,24 @@ namespace Encounters
         public float MaxHealth { get => _maxHealth; }
 
         [SerializeField]
+        private float _currentHealth;
+        public float CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
+
+        [SerializeField]
+        public bool Alive { get => CurrentHealth > 0f; }
+
+        [Header("Attacks")]
+        [SerializeField]
         [Range(0f, 10f)]
         [Tooltip("Attacks per second.")]
         private float _attackSpeed = 1f;
         public float AttackSpeed { get => _attackSpeed; }
+
+        [SerializeField]
+        [Range(0f, 10f)]
+        [Tooltip("Wait time between attacks.")]
+        private float _attackCooldown = 1f;
+        public float AttackCooldown { get => _attackCooldown; }
 
         [SerializeField]
         [Range(0f, 100f)]
@@ -45,6 +60,11 @@ namespace Encounters
         [Tooltip("Width of attack, measured in tiles.")]
         private float _attackWidth = 1f;
         public float AttackWidth { get => _attackWidth; }
+
+        [SerializeField]
+        private GameObject _attackEffect;
+        public GameObject AttackEffect { get => _attackEffect; }
+
 
         public Vector2 GetGridPosition(EncounterInfo encounterInfo)
         {
