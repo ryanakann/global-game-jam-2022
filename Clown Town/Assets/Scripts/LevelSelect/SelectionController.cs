@@ -4,6 +4,7 @@ using UnityEngine;
 using CodeMonkey.Utils;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class SelectionController : Singleton<SelectionController>
@@ -22,9 +23,11 @@ public class SelectionController : Singleton<SelectionController>
 
     public Animator buttonsAnim, levelSelectAnim, wheelAnim;
 
-    bool fueling;
+    bool fueling, scramming;
     Vector3 originalCameraPos;
     Transform levelGeneration;
+
+    Button refuelButton;
 
     TextMeshProUGUI waxCount;
     RectTransform waxBar;
@@ -47,6 +50,8 @@ public class SelectionController : Singleton<SelectionController>
         waxBar = transform.FindDeepChild("CurrentWax").GetComponent<RectTransform>();
         wheelAnim = transform.FindDeepChild("Wheel").GetComponent<Animator>();
         UpdateWax(0);
+        refuelButton = transform.FindDeepChild("LeverHandle").GetComponent<Button>();
+        print(refuelButton);
     }
 
     public void Start()
@@ -149,7 +154,6 @@ public class SelectionController : Singleton<SelectionController>
 
     public void DRIVE()
     {
-        print("DRIIIIIVE");
         int cost = ((Location)selectedObject).activeEdge.fuelCost;
         if (wax - cost < 0 && !waxFlashing)
         {
@@ -227,8 +231,10 @@ public class SelectionController : Singleton<SelectionController>
 
     public void FuelUp()
     {
-        if (fueling)
+        if (fueling || scramming)
             return;
+        refuelButton.interactable = false;
+        print(refuelButton.IsInteractable());
         fueling = true;
         levelSelectAnim.SetBool("LevelSelect", false);
         StartCoroutine(CoFuelUp());
@@ -248,12 +254,14 @@ public class SelectionController : Singleton<SelectionController>
         Wall.instance.Switch(true);
         while (Wall.instance.moving)
         { yield return null; }
+
     }
 
     public void Scram()
     {
         if (!fueling)
             return;
+        scramming = true;
         fueling = false;
         levelSelectAnim.SetBool("LevelSelect", true);
         StartCoroutine(CoScram());
@@ -273,5 +281,7 @@ public class SelectionController : Singleton<SelectionController>
         Wall.instance.Switch(true);
         while (Wall.instance.moving)
         { yield return null; }
+        scramming = false;
+        refuelButton.interactable = true;
     }
 }

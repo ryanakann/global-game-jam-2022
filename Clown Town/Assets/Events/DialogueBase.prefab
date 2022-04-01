@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: DialogueBase
+  recruitEvent: 0
   flowchart: {fileID: 1757529505774536944}
+  requiredPersonalities: 
+  requiredTraits: 
+  priority: 0
 --- !u!1 &2419875372901692225
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: -444.9051, y: -174.74577}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -104,10 +108,8 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks:
-  - {fileID: 2810787922737103572}
-  selectedCommands:
-  - {fileID: 872003966159600688}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0

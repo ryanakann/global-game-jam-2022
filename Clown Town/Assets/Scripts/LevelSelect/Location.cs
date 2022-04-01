@@ -106,7 +106,6 @@ public class Location : SelectionObject
     public override void Select()
     {
         base.Select();
-        print("feerrm");
         if (activeEdge)
             activeEdge.Select();
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: true))
