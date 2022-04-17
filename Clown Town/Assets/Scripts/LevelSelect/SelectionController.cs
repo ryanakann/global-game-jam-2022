@@ -29,14 +29,14 @@ public class SelectionController : Singleton<SelectionController>
 
     Button refuelButton;
 
+    TextMeshProUGUI peanutCount;
+    public int peanuts;
+
     TextMeshProUGUI waxCount;
     RectTransform waxBar;
-
     bool waxFlashing;
-
     [HideInInspector]
     public int wax;
-
     int maxWax = 12;
 
     protected override void Awake()
@@ -51,6 +51,7 @@ public class SelectionController : Singleton<SelectionController>
         wheelAnim = transform.FindDeepChild("Wheel").GetComponent<Animator>();
         UpdateWax(0);
         refuelButton = transform.FindDeepChild("LeverHandle").GetComponent<Button>();
+        peanutCount = transform.FindDeepChild("PeanutCount").GetComponent<TextMeshProUGUI>();
         print(refuelButton);
     }
 
@@ -64,6 +65,28 @@ public class SelectionController : Singleton<SelectionController>
             p.gameObject.SetActive(false);
         }
     }
+
+    public void AddCurrency(CurrencyDropType currencyDropType)
+    {
+        switch (currencyDropType)
+        {
+            case CurrencyDropType.Peanut:
+                UpdatePeanuts(1);
+                break;
+            case CurrencyDropType.Wax:
+                UpdateWax(1);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void UpdatePeanuts(int _peanuts)
+    {
+        peanuts += _peanuts;
+        peanutCount.text = $"{peanuts}";
+    }
+
 
     public void UpdateWax(int _wax)
     {

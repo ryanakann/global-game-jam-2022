@@ -39,7 +39,6 @@ public class ClownManager : MonoBehaviour
     private static Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>> eventQuips = new Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>>();
     private static Dictionary<ClownPersonality, ClownProfile> clownProfilesByPersonality = new Dictionary<ClownPersonality, ClownProfile>();
 
-
     private void Awake()
     {
         if (instance == null)
