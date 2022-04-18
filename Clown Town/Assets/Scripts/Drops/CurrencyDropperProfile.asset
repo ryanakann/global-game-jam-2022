@@ -24,4 +24,6 @@ MonoBehaviour:
   - drops:
     - CurrencyDropType: 1
       drop: {fileID: 3916508270973963884, guid: 7d639555abda02148bfa13ff0be7b5e0, type: 3}
-    prob: 0.8
+    prob: 0.6
+  - drops: []
+    prob: 0.2

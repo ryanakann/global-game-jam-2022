@@ -8,6 +8,6 @@ public class GoToMenu : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        FaderCanvas.instance.GoAway("MainMenu");
     }
 }

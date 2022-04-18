@@ -13,7 +13,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("LevelSelect");
+        FaderCanvas.instance.GoAway("LevelSelect");
     }
 
     public void Quit()

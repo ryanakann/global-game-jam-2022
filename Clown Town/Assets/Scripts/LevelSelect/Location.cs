@@ -19,6 +19,9 @@ public class Location : SelectionObject
     public string locationName, description;
     public int difficulty;
 
+    [HideInInspector]
+    public bool finalLocation;
+
     public void SetLocationType(LocationType locType)
     {
         locationType = locType;
@@ -68,6 +71,9 @@ public class Location : SelectionObject
         activeEdge = null;
         LevelGenerator.instance.UpdateCamera(transform.position);
         SelectionController.instance.currentLocation = this;
+
+        if (finalLocation)
+            FaderCanvas.instance.GoAway("Win");
     }
 
     public override void Deactivate()

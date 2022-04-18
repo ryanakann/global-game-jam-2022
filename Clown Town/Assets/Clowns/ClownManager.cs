@@ -250,7 +250,7 @@ public class ClownManager : MonoBehaviour
         if (clowns.Count == 0)
         {
             // gameover
-            SceneManager.LoadScene("GameOver");
+            FaderCanvas.instance.GoAway("GameOver");
         }
     }
 

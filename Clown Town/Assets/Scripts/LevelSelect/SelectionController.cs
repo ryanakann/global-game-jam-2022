@@ -39,6 +39,8 @@ public class SelectionController : Singleton<SelectionController>
     public int wax;
     int maxWax = 12;
 
+    public bool canSelect = true;
+
     protected override void Awake()
     {
         base.Awake();
@@ -52,7 +54,6 @@ public class SelectionController : Singleton<SelectionController>
         UpdateWax(0);
         refuelButton = transform.FindDeepChild("LeverHandle").GetComponent<Button>();
         peanutCount = transform.FindDeepChild("PeanutCount").GetComponent<TextMeshProUGUI>();
-        print(refuelButton);
     }
 
     public void Start()
@@ -117,6 +118,9 @@ public class SelectionController : Singleton<SelectionController>
         {
             ClownManager.DamageClowns(1);
         }
+
+        if (!canSelect)
+            return;
 
         if (currentSelectionObject != null)
         {
@@ -188,10 +192,12 @@ public class SelectionController : Singleton<SelectionController>
         {
             UpdateWax(-cost);
         }
+        MusicoManager.instance.AdvancePlayer();
         wheelAnim.SetTrigger("Spin");
         currentLocation.OccupyNeighbor((Location)selectedObject);
         ClearPanels();
     }
+
 
     IEnumerator CoWaxFlash()
     {
@@ -254,6 +260,8 @@ public class SelectionController : Singleton<SelectionController>
 
     public void FuelUp()
     {
+        UpdatePeanuts(-peanuts);
+        UpdatePeanuts(10);
         if (fueling || scramming)
             return;
         refuelButton.interactable = false;
@@ -306,5 +314,6 @@ public class SelectionController : Singleton<SelectionController>
         { yield return null; }
         scramming = false;
         refuelButton.interactable = true;
+        MusicoManager.instance.UpdateMusic();
     }
 }

@@ -113,6 +113,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
         // spawn end
         var end_node = SpawnLocation(maxDepthPivot.position);
+        end_node.finalLocation = true;
         foreach (var loc in lastLocations)
         {
             SpawnEdge(loc, end_node);
