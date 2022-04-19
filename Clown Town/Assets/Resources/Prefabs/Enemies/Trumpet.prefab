@@ -85,10 +85,13 @@ MonoBehaviour:
   target: {fileID: 0}
   active: 0
   health: 100
+  currentHealth: 0
   speed: 0.5
-  range: 5
+  _attackRange: 0.5
   attackSpeed: 0.5
   attackDamage: 5
+  attackType: 0
+  projectile: {fileID: 0}
   cost: 0
   tags: []
   OnPlace:

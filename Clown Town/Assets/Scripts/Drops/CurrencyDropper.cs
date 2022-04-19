@@ -21,7 +21,7 @@ public class CurrencyDropper : MonoBehaviour
         }
     }
 
-    void Drop()
+    public void Drop()
     {
         List<CurrencyTuple> drops = profile.GetDrop();
         foreach (var drop in drops)

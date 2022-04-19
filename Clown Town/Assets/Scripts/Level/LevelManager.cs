@@ -27,7 +27,6 @@ public class LevelManager : Singleton<LevelManager>
 
     private void Update()
     {
-        /*
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             debugUnit = "Monkey";
@@ -43,7 +42,7 @@ public class LevelManager : Singleton<LevelManager>
 
         if (Constants.debug)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && debugUnit != "")
             {
                 PlaceUnit(Resources.Load<GameObject>($"Prefabs/Units/{debugUnit}"), false);
             }
@@ -52,7 +51,6 @@ public class LevelManager : Singleton<LevelManager>
                 RemoveUnit();
             }
         }
-        */
     }
 
     public bool PlaceUnit(GameObject unit, bool isInstance)
