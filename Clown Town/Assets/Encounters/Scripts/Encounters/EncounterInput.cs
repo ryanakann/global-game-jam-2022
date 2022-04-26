@@ -38,7 +38,7 @@ namespace Encounters
                     var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     if (_info.IsPointWithinGrid(mousePosition))
                     {
-                        _info.GetComponent<EncounterUnits>().AddUnit(primedUnit, false, _info.WorldToGridPosition(mousePosition), UnitType.Friend);
+                        _info.GetComponent<EncounterUnits>().AddAllyUnit(primedUnit, false, _info.WorldToGridPosition(mousePosition));
                     }
                     SetState(InputState.None);
                 }

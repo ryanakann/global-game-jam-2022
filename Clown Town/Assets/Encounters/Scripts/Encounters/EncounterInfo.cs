@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Encounters
 {
     public class EncounterInfo : Info<EncounterInfo>
     {
+        [Header("Grid")]
         public Vector2Int gridDimensions;
         public Vector2 gridPosition;
         public Vector2 gridSize;
@@ -37,6 +39,9 @@ namespace Encounters
                 }
             }
         }
+
+        [Header("Waves")]
+        public List<EncounterWave> waves;
 
         public Vector2 GridToWorldPosition(Vector2 gridPosition)
         {

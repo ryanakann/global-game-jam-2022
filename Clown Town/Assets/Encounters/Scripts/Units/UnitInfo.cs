@@ -11,6 +11,10 @@ namespace Encounters
     public class UnitInfo : Info<UnitInfo>
     {
         [Header("General")]
+        private EncounterInfo _encounter;
+        public EncounterInfo Encounter { get => _encounter; set => _encounter = value; }
+
+        [SerializeField]
         private UnitType _unitType;
         public UnitType UnitType
         {
@@ -32,7 +36,7 @@ namespace Encounters
 
         [Header("Attacks")]
         [SerializeField]
-        [Range(0f, 10f)]
+        [Range(0.1f, 3f)]
         [Tooltip("Attacks per second.")]
         private float _attackSpeed = 1f;
         public float AttackSpeed { get => _attackSpeed; }
