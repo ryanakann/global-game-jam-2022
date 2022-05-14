@@ -67,6 +67,7 @@ public class ClownManager : MonoBehaviour
 
     public static void DamageClowns(int damage)
     {
+        CameraShake.Shake(0.25f, 0.25f);
         Clown clown = getClownWithId(getRandomClownId());
         clown.Harm(damage);
         // if alive, clown or another clown quip

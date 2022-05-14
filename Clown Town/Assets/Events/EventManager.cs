@@ -44,6 +44,8 @@ public class EventManager : Singleton<EventManager>
 
     public void PushDialogue(params Dialogue[] dialogues)
     {
+        SelectionController.instance.ClearPanels();
+        SelectionController.instance.canSelect = false;
         if (dialogueStack.Count > 0)
             dialogueStack.Peek().Pause();
 
@@ -62,6 +64,10 @@ public class EventManager : Singleton<EventManager>
         if (dialogueStack.Count > 0)
         {
             dialogueStack.Peek().Play();
+        }
+        else
+        {
+            SelectionController.instance.canSelect = true;
         }
     }
 

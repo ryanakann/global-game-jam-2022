@@ -48,6 +48,13 @@ public class Location : SelectionObject
         }
         selectHighlight.gameObject.SetActive(false);
         target_loc.Occupy();
+
+        if (!target_loc.finalLocation && target_loc.locationType.eventPrefabs.Length > 0)
+        {
+            Dialogue d = Instantiate(target_loc.locationType.eventPrefabs[Random.Range(0, target_loc.locationType.eventPrefabs.Length)]).GetComponent<Dialogue>();
+            EventManager.instance.PushDialogue(d);
+        }
+
     }
 
     public override void Remove()
