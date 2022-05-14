@@ -88,13 +88,13 @@ namespace Encounters
             if (deleteUnit) Destroy(unitInfo.gameObject);
         }
 
-        public void AddAllyUnit(UnitInfo unitInfo, bool isInstance, Vector2 gridPosition)
+        public bool AddAllyUnit(UnitInfo unitInfo, bool isInstance, Vector2 gridPosition)
         {
             var roundedGridPosition = (Mathf.RoundToInt(gridPosition.x), Mathf.RoundToInt(gridPosition.y));
             if (alliesByGridPosition.ContainsKey(roundedGridPosition))
             {
                 Debug.LogError($"Cannot add unit to {gridPosition}. Space already occupied!");
-                return;
+                return false;
             }
 
             var unit = isInstance ? unitInfo.gameObject : Instantiate(unitInfo.gameObject);
@@ -114,6 +114,7 @@ namespace Encounters
             {
                 RemoveAllyUnit(unitInfo, false);
             });
+            return true;
         }
 
         public void RemoveAllyUnit(UnitInfo unitInfo, bool deleteUnit)

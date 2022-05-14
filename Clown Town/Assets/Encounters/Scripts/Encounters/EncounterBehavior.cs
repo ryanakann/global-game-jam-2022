@@ -4,15 +4,20 @@ using UnityEngine;
 
 namespace Encounters
 {
-    public class EncounterBehavior : MonoBehaviour, IInitializable<EncounterInfo>
+    public class EncounterBehavior : Singleton<EncounterBehavior>, IInitializable<EncounterInfo>
     {
-        private EncounterInfo _info;
+        [HideInInspector]
+        public EncounterInfo _info;
+
+        [HideInInspector]
+        public EncounterUnits encounterUnits;
 
         public bool Active { get; private set; }
 
         public void Init(EncounterInfo info)
         {
             _info = info;
+            encounterUnits = GetComponent<EncounterUnits>();
 
             Active = false;
             StartEncounter();

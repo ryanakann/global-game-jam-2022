@@ -106,7 +106,7 @@ public class Location : SelectionObject
         SelectionController.instance.locationPanel.FillText("LocationDescription", description);
         SelectionController.instance.locationPanel.FillText("LocationDifficulty", $"Difficulty: {difficulty}");
         if (activeEdge)
-            SelectionController.instance.locationPanel.FillText("EdgeCost", $"Fuel Cost: {activeEdge.fuelCost}");
+            SelectionController.instance.locationPanel.FillText("EdgeCost", $"Wax Cost: {activeEdge.fuelCost}");
     }
 
     public override void Select()

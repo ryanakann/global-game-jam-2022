@@ -5,7 +5,7 @@ using CodeMonkey.Utils;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using Encounters;
 
 public class SelectionController : Singleton<SelectionController>
 {
@@ -39,6 +39,10 @@ public class SelectionController : Singleton<SelectionController>
     public int wax;
     int maxWax = 12;
 
+    Image unitIcon;
+    UnitCell unitCell;
+
+
     public bool canSelect = true;
 
     protected override void Awake()
@@ -54,6 +58,7 @@ public class SelectionController : Singleton<SelectionController>
         UpdateWax(0);
         refuelButton = transform.FindDeepChild("LeverHandle").GetComponent<Button>();
         peanutCount = transform.FindDeepChild("PeanutCount").GetComponent<TextMeshProUGUI>();
+        unitIcon = transform.FindDeepChild("UnitIcon").GetComponent<Image>();
     }
 
     public void Start()
@@ -106,6 +111,8 @@ public class SelectionController : Singleton<SelectionController>
     // Update is called once per frame
     void Update()
     {
+        unitIcon.transform.position = Input.mousePosition;
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             UpdateWax(1);
@@ -164,8 +171,40 @@ public class SelectionController : Singleton<SelectionController>
             currentSelectionObject = null;
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (fueling && unitCell != null)
+            {
+                unitCell = null;
+                unitIcon.gameObject.SetActive(false);
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
+            if (fueling && unitCell != null)
+            {
+                Vector2 pos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                if (EncounterBehavior.instance._info.IsPointWithinGrid(pos))
+                {
+                    // check cost and placement
+                    if (unitCell.cost <= peanuts)
+                    {
+                        if (EncounterBehavior.instance.encounterUnits.AddAllyUnit(unitCell.unitInfo, false, EncounterBehavior.instance._info.WorldToRoundedGridPosition(pos)))
+                        {
+                            UpdatePeanuts(-unitCell.cost);
+                            unitCell = null;
+                            unitIcon.gameObject.SetActive(false);
+                        }
+                    }
+                    else if(!waxFlashing)
+                    { 
+                        // flash edge panel
+                        StartCoroutine(CoWaxFlash(peanutCount));
+                    }
+                }
+            }
+
             if (currentSelectionObject != null && currentSelectionObject.selectionState.canSelect == true && currentSelectionObject.selectable)
             {
                 if (selectedObject != currentSelectionObject)
@@ -179,13 +218,20 @@ public class SelectionController : Singleton<SelectionController>
         }
     }
 
+    public void SelectUnit(UnitCell cell)
+    {
+        unitCell = cell;
+        unitIcon.gameObject.SetActive(true);
+        unitIcon.sprite = cell.icon;
+    }
+
     public void DRIVE()
     {
         int cost = ((Location)selectedObject).activeEdge.fuelCost;
         if (wax - cost < 0 && !waxFlashing)
         {
             // flash edge panel
-            StartCoroutine(CoWaxFlash());
+            StartCoroutine(CoWaxFlash(locationPanel.elementsMap["EdgeCost"].GetComponent<TextMeshProUGUI>()));
             return;
         }
         else
@@ -199,11 +245,10 @@ public class SelectionController : Singleton<SelectionController>
     }
 
 
-    IEnumerator CoWaxFlash()
+    IEnumerator CoWaxFlash(TextMeshProUGUI text)
     {
         waxFlashing = true;
         float t = 0, max = 0.75f;
-        TextMeshProUGUI text = locationPanel.elementsMap["EdgeCost"].GetComponent<TextMeshProUGUI>();
         while (t < max)
         {
             t += Time.deltaTime;
@@ -292,9 +337,13 @@ public class SelectionController : Singleton<SelectionController>
     {
         if (!fueling)
             return;
+        unitCell = null;
+        unitIcon.sprite = null;
+        unitIcon.gameObject.SetActive(false);
         scramming = true;
         fueling = false;
         levelSelectAnim.SetBool("LevelSelect", true);
+        ClearPanels();
         StartCoroutine(CoScram());
     }
 
