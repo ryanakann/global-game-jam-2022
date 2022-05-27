@@ -10,6 +10,8 @@ namespace Encounters
         public Vector2 gridPosition;
         public Vector2 gridSize;
 
+        private GameObject gridObject;
+
         private Bounds _bounds;
         public Bounds Bounds 
         { 
@@ -60,5 +62,40 @@ namespace Encounters
         }
 
         public bool IsPointWithinGrid(Vector2 point) => Bounds.Contains(point);
+
+        private void UpdateGridObjectTransform()
+        {
+            if (!gridObject)
+            {
+                foreach (Transform child in transform)
+                {
+                    if (child.name.Contains("CheckerboardGrid"))
+                    {
+                        gridObject = child.gameObject;
+                        return;
+                    }
+                }
+
+                try
+                {
+                    gridObject = Instantiate(Resources.Load<GameObject>("Prefabs/CheckerboardGrid"), transform);
+                    gridObject.name = gridObject.name.Replace("(Clone)", "");
+                }
+                catch (System.NullReferenceException e)
+                {
+                    Debug.LogError("Prefabs/CheckerboardGrid not found. Has it been moved?");
+                }
+            }
+
+            gridObject.transform.SetPositionAndRotation(gridPosition, Quaternion.identity);
+            gridObject.transform.SetGlobalScale(gridSize);
+            gridObject.GetComponent<Renderer>()?.material?.SetFloat("_CellCountX", gridDimensions.x);
+            gridObject.GetComponent<Renderer>()?.material?.SetFloat("_CellCountY", gridDimensions.y);
+        }
+
+        private void OnValidate()
+        {
+            UpdateGridObjectTransform();
+        }
     }
 }

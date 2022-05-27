@@ -27,15 +27,6 @@ namespace Encounters
                 int y = Random.Range(0, _info.gridDimensions.y);
                 _info.GetComponent<EncounterUnits>().AddAllyUnit(unit, true, new Vector2(x, y));
             }
-
-            /*
-            for (int i = 0; i < 1; i++)
-            {
-                int x = Random.Range(0, _info.gridDimensions.x);
-                int y = Random.Range(0, _info.gridDimensions.y);
-                _info.GetComponent<EncounterUnits>().AddAllyUnit(testUnit, false, new Vector2(x, y));
-            }
-            */
         }
 
         private void OnDrawGizmos()
@@ -45,7 +36,7 @@ namespace Encounters
             {
                 Init(GetComponent<EncounterInfo>());
             }
-            DrawBounds();
+            //DrawBounds();
             DrawCells();
         }
 
