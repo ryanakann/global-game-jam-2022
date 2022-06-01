@@ -83,9 +83,11 @@ namespace Encounters
                 }
                 catch (System.NullReferenceException e)
                 {
-                    Debug.LogError("Prefabs/CheckerboardGrid not found. Has it been moved?");
+                    Debug.LogError("Prefabs/CheckerboardGrid not found. Has it been moved?\t" + e);
                 }
             }
+
+            if (gridObject.scene.rootCount == 0) return; // This is a prefab!
 
             gridObject.transform.SetPositionAndRotation(gridPosition, Quaternion.identity);
             gridObject.transform.SetGlobalScale(gridSize);

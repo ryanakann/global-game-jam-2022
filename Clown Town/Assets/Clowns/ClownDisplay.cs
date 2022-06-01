@@ -13,8 +13,6 @@ public class ClownDisplay : SelectionObject
     SpriteRenderer headRenderer;
     SpriteRenderer bodyRenderer;
 
-    bool left = true;
-
     public GameEvent collisionEvent;
 
     Vector2 originalBodyOffset;
@@ -85,7 +83,6 @@ public class ClownDisplay : SelectionObject
         );
         bodyRenderer.sprite = body.leftSprite;
         headRenderer.flipX = true;
-        left = true;
     }
 
     public void Right()
@@ -96,7 +93,6 @@ public class ClownDisplay : SelectionObject
             offset.y
         );
         bodyRenderer.sprite = body.rightSprite;
-        left = false;
     }
 
     public override void FillDetailsPanel()
