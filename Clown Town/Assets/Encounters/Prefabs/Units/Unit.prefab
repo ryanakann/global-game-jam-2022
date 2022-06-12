@@ -367,10 +367,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ddb7c40d2731a41b760007afd2bf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initOnAwake: 0
+  initOnAwake: 1
   _unitType: 0
-  _maxHealth: 100
-  _currentHealth: 0
+  _maxHealth: 20
+  _currentHealth: 20
   _attackSpeed: 1
   _attackCooldown: 1
   _attackDamage: 10

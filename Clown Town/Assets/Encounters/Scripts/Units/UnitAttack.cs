@@ -12,7 +12,7 @@ namespace Encounters
         {
             _info = info;
 
-            GetComponent<Animator>().speed = _info.AttackSpeed;
+            GetComponentInChildren<Animator>().speed = _info.AttackSpeed;
 
             gameObject.SetActive(false);
             transform.localPosition = Vector3.right * _info.AttackRange / 2f;

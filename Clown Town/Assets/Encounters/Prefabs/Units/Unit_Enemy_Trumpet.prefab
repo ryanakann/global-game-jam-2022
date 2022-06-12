@@ -332,6 +332,8 @@ GameObject:
   - component: {fileID: 4385816020640557679}
   - component: {fileID: 1280696415920656238}
   - component: {fileID: 1826891842}
+  - component: {fileID: -7233006679051605461}
+  - component: {fileID: 8156230102704183122}
   m_Layer: 0
   m_Name: Unit_Enemy_Trumpet
   m_TagString: Untagged
@@ -369,8 +371,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initOnAwake: 1
   _unitType: 1
-  _maxHealth: 100
-  _currentHealth: 0
+  _maxHealth: 50
+  _currentHealth: 50
   _attackSpeed: 1
   _attackCooldown: 1
   _attackDamage: 10
@@ -452,6 +454,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-7233006679051605461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962316974742089330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa785a9137c82f54cbc4e14036132888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: ac7f166b64ce9e3498d83ba2e424f948, type: 2}
+--- !u!114 &8156230102704183122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962316974742089330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803c9eb9dbb1c5443b8df41d30c6370f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetingMode: 0
 --- !u!1 &4450827814615271387
 GameObject:
   m_ObjectHideFlags: 0

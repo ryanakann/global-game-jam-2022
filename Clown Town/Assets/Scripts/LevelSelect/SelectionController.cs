@@ -310,7 +310,6 @@ public class SelectionController : Singleton<SelectionController>
         if (fueling || scramming)
             return;
         refuelButton.interactable = false;
-        print(refuelButton.IsInteractable());
         fueling = true;
         levelSelectAnim.SetBool("LevelSelect", false);
         StartCoroutine(CoFuelUp());
