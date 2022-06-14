@@ -22,7 +22,7 @@ namespace Encounters
         {
             _unitInfo = unitInfo;
 
-            _unitInfo.GetComponent<UnitBehavior>().OnHealthChanged?.AddListener(UpdateHealth);
+            _unitInfo.gameObject.GetComponent<UnitBehavior>().OnHealthChanged?.AddListener(UpdateHealth);
             SetHealth(_unitInfo.MaxHealth);
         }
 

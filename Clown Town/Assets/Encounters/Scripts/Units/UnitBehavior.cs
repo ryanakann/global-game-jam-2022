@@ -6,7 +6,8 @@ namespace Encounters
 {
     public class UnitBehavior : MonoBehaviour, IInitializable<UnitInfo>
     {
-        private UnitInfo _info;
+        [HideInInspector]
+        public UnitInfo _info;
 
         [HideInInspector]
         public UnityEvent<float> OnAttack;
@@ -14,6 +15,10 @@ namespace Encounters
         public UnityEvent<float> OnHealthChanged;
         [HideInInspector]
         public UnityEvent OnDie;
+
+        bool attacking;
+
+        protected bool flip = false;
 
         public virtual void Init(UnitInfo unitInfo)
         {
@@ -39,12 +44,13 @@ namespace Encounters
 
         protected virtual void Attack()
         {
-            if (!_info.Alive) return;
+            if (!_info.Alive || attacking) return;
             StartCoroutine(AttackCR());
         }
 
         protected virtual IEnumerator AttackCR()
         {
+            attacking = true;
             print($"{gameObject.name} is attacking");
             var maxCoolddown = 1 / _info.AttackSpeed;
             
@@ -59,13 +65,14 @@ namespace Encounters
 
                 effect.gameObject.SetActive(false);
                 effect.Init(_info);
-                effect.transform.localPosition = Vector3.right * _info.AttackRange / 2f; 
+                effect.transform.localPosition = ((flip) ? Vector3.left : Vector3.right) * _info.AttackRange / 2f; 
                 effect.transform.localScale = new Vector3(_info.AttackRange, _info.AttackWidth, effect.transform.localScale.z);
                 effect.gameObject.SetActive(true);
                 Destroy(effect.gameObject, 1 / _info.AttackSpeed + 0.1f);
             }
 
             yield return new WaitForSeconds(_info.AttackCooldown);
+            attacking = false;
         }
 
         public virtual void TakeDamage(float damage)

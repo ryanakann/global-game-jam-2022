@@ -18,9 +18,10 @@ namespace Encounters
             _animator = GetComponentInChildren<Animator>();
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-            _unitInfo.GetComponent<UnitBehavior>().OnAttack?.AddListener(AttackAnimation);
-            _unitInfo.GetComponent<UnitBehavior>().OnDie?.AddListener(DeathAnimation);
-            _unitInfo.GetComponent<UnitBehavior>().OnHealthChanged?.AddListener(HitEffect);
+
+            _unitInfo.gameObject.GetComponent<UnitBehavior>().OnAttack?.AddListener(AttackAnimation);
+            _unitInfo.gameObject.GetComponent<UnitBehavior>().OnDie?.AddListener(DeathAnimation);
+            _unitInfo.gameObject.GetComponent<UnitBehavior>().OnHealthChanged?.AddListener(HitEffect);
         }
 
         private void AttackAnimation(float attackSpeed)

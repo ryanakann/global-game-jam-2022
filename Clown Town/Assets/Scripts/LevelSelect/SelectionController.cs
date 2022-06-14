@@ -138,11 +138,20 @@ public class SelectionController : Singleton<SelectionController>
             }
         }
 
+        Gift giftHit = null;
         RaycastHit2D hit = Physics2D.Raycast(UtilsClass.GetMouseWorldPosition(), Vector3.forward);
         bool result = false;
         if (hit.collider != null)
         {
             SelectionObject obj;
+            Gift tempGiftHit = hit.transform.GetComponent<Gift>();
+            print(hit);
+            print(tempGiftHit);
+            if (tempGiftHit != null && tempGiftHit.clicked == false)
+            {
+                giftHit = tempGiftHit;
+            }
+
             if (hit.transform.GetComponentInParent<Edge>())
             {
                 obj = hit.transform.GetComponentInParent<Edge>().tgt;
@@ -182,25 +191,32 @@ public class SelectionController : Singleton<SelectionController>
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (fueling && unitCell != null)
+            if (fueling)
             {
-                Vector2 pos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                if (EncounterBehavior.instance._info.IsPointWithinGrid(pos))
+                if (giftHit != null)
                 {
-                    // check cost and placement
-                    if (unitCell.cost <= peanuts)
+                    giftHit.Click();
+                }
+                else if (unitCell != null)
+                {
+                    Vector2 pos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                    if (EncounterBehavior.instance._info.IsPointWithinGrid(pos))
                     {
-                        if (EncounterBehavior.instance.encounterUnits.AddAllyUnit(unitCell.unitInfo, false, EncounterBehavior.instance._info.WorldToRoundedGridPosition(pos)))
+                        // check cost and placement
+                        if (unitCell.cost <= peanuts)
                         {
-                            UpdatePeanuts(-unitCell.cost);
-                            unitCell = null;
-                            unitIcon.gameObject.SetActive(false);
+                            if (EncounterBehavior.instance.encounterUnits.AddAllyUnit(unitCell.unitInfo, false, EncounterBehavior.instance._info.WorldToRoundedGridPosition(pos)))
+                            {
+                                UpdatePeanuts(-unitCell.cost);
+                                unitCell = null;
+                                unitIcon.gameObject.SetActive(false);
+                            }
                         }
-                    }
-                    else if(!waxFlashing)
-                    { 
-                        // flash edge panel
-                        StartCoroutine(CoWaxFlash(peanutCount));
+                        else if (!waxFlashing)
+                        {
+                            // flash edge panel
+                            StartCoroutine(CoWaxFlash(peanutCount));
+                        }
                     }
                 }
             }

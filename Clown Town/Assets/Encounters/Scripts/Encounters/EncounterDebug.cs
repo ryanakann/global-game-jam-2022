@@ -25,7 +25,7 @@ namespace Encounters
                 if (unit.UnitType == UnitType.Foe) continue;
                 int x = Random.Range(0, _info.gridDimensions.x);
                 int y = Random.Range(0, _info.gridDimensions.y);
-                _info.GetComponent<EncounterUnits>().AddAllyUnit(unit, true, new Vector2(x, y));
+                _info.gameObject.GetComponent<EncounterUnits>().AddAllyUnit(unit, true, new Vector2(x, y));
             }
         }
 

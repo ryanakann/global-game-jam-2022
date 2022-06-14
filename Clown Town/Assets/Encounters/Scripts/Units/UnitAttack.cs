@@ -27,7 +27,7 @@ namespace Encounters
             var enemyInfo = collision.GetComponent<UnitInfo>();
             if (enemyInfo && enemyInfo.UnitType != _info.UnitType)
             {
-                enemyInfo.GetComponent<UnitBehavior>().TakeDamage(_info.AttackDamage);
+                enemyInfo.gameObject.GetComponent<UnitBehavior>().TakeDamage(_info.AttackDamage);
             }
         }
     }

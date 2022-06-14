@@ -91,8 +91,8 @@ namespace Encounters
 
             gridObject.transform.SetPositionAndRotation(gridPosition, Quaternion.identity);
             gridObject.transform.SetGlobalScale(gridSize);
-            gridObject.GetComponent<Renderer>()?.material?.SetFloat("_CellCountX", gridDimensions.x);
-            gridObject.GetComponent<Renderer>()?.material?.SetFloat("_CellCountY", gridDimensions.y);
+            gridObject.GetComponent<Renderer>()?.sharedMaterial?.SetFloat("_CellCountX", gridDimensions.x);
+            gridObject.GetComponent<Renderer>()?.sharedMaterial?.SetFloat("_CellCountY", gridDimensions.y);
         }
 
         private void OnValidate()

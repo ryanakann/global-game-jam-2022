@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Encounters;
 
-public class ClownZone : MonoBehaviour
+public class ClownZone : Singleton<ClownZone>
 {
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,7 +16,7 @@ public class ClownZone : MonoBehaviour
         }
     }
 
-    IEnumerator FadeEnemy(GameObject enemy)
+    public IEnumerator FadeEnemy(GameObject enemy)
     {
         SpriteRenderer r = enemy.GetComponentInChildren<SpriteRenderer>();
         var startAlpha = new Color(r.color.r, r.color.g, r.color.b, r.color.a);

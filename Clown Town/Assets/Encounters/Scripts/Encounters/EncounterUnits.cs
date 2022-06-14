@@ -110,7 +110,7 @@ namespace Encounters
             gridPositionsByAlly.Add(unitInfo, roundedGridPosition);
 
             // Unit should remove itself from all lists when it dies
-            unitInfo.GetComponent<UnitBehavior>().OnDie.AddListener(() =>
+            unitInfo.gameObject.GetComponent<UnitBehavior>().OnDie.AddListener(() =>
             {
                 RemoveAllyUnit(unitInfo, false);
             });
