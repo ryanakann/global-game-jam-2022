@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseManager : Singleton<PauseManager>
 {
     public AudioMixer audioMixer;
-    bool paused;
+    bool paused = false;
     Animator anim;
 
     public void Start()
@@ -29,12 +29,25 @@ public class PauseManager : Singleton<PauseManager>
 
     public void Pause()
     {
-        if (!(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0)))
-            return;
+        StopAllCoroutines();
+        StartCoroutine(CoPause());
+    }
+
+    IEnumerator CoPause()
+    {
+        PauseTime(1);
         paused = !paused;
         SelectionController.instance.canSelect = !paused;
         anim.SetBool("Pause", paused);
         audioMixer.SetFloat("MasterLowpass", (paused) ? 500f : 22000f);
+        if (paused)
+        {
+            while (!anim.GetCurrentAnimatorStateInfo(0).IsName("Pause_Pause") || (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1 && !anim.IsInTransition(0)))
+            {
+                yield return null;
+            }
+            PauseTime(0);
+        }
     }
 
     public void PauseTime(int pause)

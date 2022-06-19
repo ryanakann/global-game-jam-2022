@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 815583509}
   - component: {fileID: 815583511}
   - component: {fileID: 815583510}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 941103274}
   - component: {fileID: 941103273}
   - component: {fileID: 941103272}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1283237363}
   - component: {fileID: 1283237365}
   - component: {fileID: 1283237364}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 1301934511}
   - component: {fileID: 1301934513}
   - component: {fileID: 1301934512}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 1280696415920656238}
   - component: {fileID: 1826891842}
   - component: {fileID: 1987836204387358173}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,8 +375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initOnAwake: 1
   _unitType: 0
-  _maxHealth: 20
-  _currentHealth: 20
+  _maxHealth: 50
+  _currentHealth: 50
   _attackSpeed: 1
   _attackCooldown: 1
   _attackDamage: 10
@@ -468,7 +468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4964092018997902590}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: target_point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 7096292316684183154}
   - component: {fileID: 1605557905125861130}
   - component: {fileID: 1070486671}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

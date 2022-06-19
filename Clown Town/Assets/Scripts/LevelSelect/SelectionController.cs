@@ -41,7 +41,7 @@ public class SelectionController : Singleton<SelectionController>
 
     Image unitIcon;
     UnitCell unitCell;
-
+    int mask;
 
     public bool canSelect = true;
 
@@ -59,6 +59,7 @@ public class SelectionController : Singleton<SelectionController>
         refuelButton = transform.FindDeepChild("LeverHandle").GetComponent<Button>();
         peanutCount = transform.FindDeepChild("PeanutCount").GetComponent<TextMeshProUGUI>();
         unitIcon = transform.FindDeepChild("UnitIcon").GetComponent<Image>();
+        mask = ~LayerMask.GetMask("Unit");
     }
 
     public void Start()
@@ -139,7 +140,7 @@ public class SelectionController : Singleton<SelectionController>
         }
 
         Gift giftHit = null;
-        RaycastHit2D hit = Physics2D.Raycast(UtilsClass.GetMouseWorldPosition(), Vector3.forward);
+        RaycastHit2D hit = Physics2D.Raycast(UtilsClass.GetMouseWorldPosition(), Vector3.forward, 10, mask);
         bool result = false;
         if (hit.collider != null)
         {

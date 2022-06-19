@@ -9,7 +9,7 @@ public class Gift : MonoBehaviour
     public bool clicked;
 
     float timer;
-    Vector2 timerRange = new Vector2(3f, 10f);
+    Vector2 timerRange = new Vector2(2f, 5f);
 
     [HideInInspector]
     public CurrencyDropper dropper;
