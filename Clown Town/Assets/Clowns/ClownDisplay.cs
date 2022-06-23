@@ -17,9 +17,16 @@ public class ClownDisplay : SelectionObject
 
     Vector2 originalBodyOffset;
 
+    Animator anim;
+
+    bool flashing;
+
+    int incomingDamage;
+
     public override void Awake()
     {
         base.Awake();
+        anim = GetComponent<Animator>();
         headRenderer = transform.FindDeepChild("Head").GetComponent<SpriteRenderer>();
         bodyRenderer = transform.FindDeepChild("Body").GetComponent<SpriteRenderer>();
         foreach (var rend in GetComponentsInChildren<SpriteRenderer>())
@@ -27,6 +34,54 @@ public class ClownDisplay : SelectionObject
             rend.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
             rend.sortingLayerName = "Mirror";
         }
+    }
+
+    public void Kill()
+    {
+        // add thing to head
+        // deparent, launch
+    }
+
+    public void Harm(int damage)
+    {
+        incomingDamage += damage;
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Harm"))
+        {
+            SpawnNumber();
+        }
+        else
+        {
+            anim.SetTrigger("Harm");
+        }
+    }
+
+    public void Flash()
+    {
+        if (flashing)
+            return;
+        StartCoroutine(CoFlash());
+    }
+
+    IEnumerator CoFlash()
+    {
+        flashing = true;
+        float t = 0, max = 0.75f;
+        while (t < max)
+        {
+            t += Time.deltaTime;
+            foreach (var rend in GetComponentsInChildren<SpriteRenderer>())
+            {
+                rend.color = Color.Lerp(Color.white, Color.red, Mathf.Sin(t / max * Mathf.PI));
+            }
+            yield return null;
+        }
+        flashing = false;
+    }
+
+    public void SpawnNumber()
+    {
+        if (incomingDamage == 0)
+            return;
     }
 
     public void RemoveClown()

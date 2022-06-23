@@ -35,6 +35,7 @@ public class CurrencyDrop : MonoBehaviour
     Vector3 startScale;
     float rotationSpeed;
     float startRotation;
+    float size = 0.025f;
 
     // Update is called once per frame
     void Update()
@@ -100,6 +101,17 @@ public class CurrencyDrop : MonoBehaviour
     /// <param name="objectTransformPosition"></param>
     public void MoveToPoint(Vector3 objectTransformPosition)
     {
+        this.rectTransform = GetComponent<RectTransform>();
+        Vector2 viewportPoint = Camera.main.WorldToViewportPoint(objectTransformPosition);  //convert game object position to VievportPoint
+
+        // set MIN and MAX Anchor values(positions) to the same position (ViewportPoint)
+        rectTransform.anchorMin = viewportPoint - Vector2.one * size;
+        rectTransform.anchorMax = viewportPoint + Vector2.one * size;
+        rectTransform.offsetMin = Vector2.zero;
+        rectTransform.offsetMax = Vector2.zero;
+        
+
+        /*
         // Get the rect transform
         this.rectTransform = GetComponent<RectTransform>();
 
@@ -108,17 +120,16 @@ public class CurrencyDrop : MonoBehaviour
 
         // Get the position on the canvas
         Vector2 viewportPoint = DropManager.instance.cam.WorldToViewportPoint(objectTransformPosition);
-        /*
         print(viewportPoint);
 
         rectTransform.anchorMin = viewportPoint;
         rectTransform.anchorMax = viewportPoint;
-        */
         
         Vector2 proportionalPosition = new Vector2(viewportPoint.x * DropManager.instance.canvas.sizeDelta.x, viewportPoint.y * DropManager.instance.canvas.sizeDelta.y);
 
         // Set the position and remove the screen offset
         this.rectTransform.localPosition = proportionalPosition - uiOffset;
+        */
     }
 
 }

@@ -12,6 +12,9 @@ namespace Encounters
         [HideInInspector]
         public EncounterUnits encounterUnits;
 
+        //Dictionary<Vector2, Animator>
+        List<EnemySpawner> spawners = new List<EnemySpawner>();
+
         public bool Active { get; private set; }
 
         public void Init(EncounterInfo info)
@@ -20,6 +23,14 @@ namespace Encounters
             encounterUnits = GetComponent<EncounterUnits>();
 
             Active = false;
+
+            foreach (EnemySpawner spawner in GetComponentsInChildren<EnemySpawner>())
+            {
+                spawner.enemyParent = transform;
+                spawner._info = _info;
+                spawners.Add(spawner);
+            }
+
             StartEncounter();
         }
 
@@ -40,9 +51,7 @@ namespace Encounters
 
                 foreach (var enemy in wave.enemies)
                 {
-                    var instance = Instantiate(enemy, transform);
-                    Vector2 point = _info.GridToWorldPosition(new Vector2(_info.gridDimensions.x, Random.Range(0, _info.gridDimensions.y)));
-                    instance.transform.position = point;
+                    spawners[Random.Range(0, spawners.Count)].AddEnemy(enemy);
                     yield return new WaitForSeconds(wave.timeBetweenEnemiesMean + Random.Range(-wave.timeBetweenEnemiesVariance / 2f, wave.timeBetweenEnemiesVariance / 2f));
                 }
             }

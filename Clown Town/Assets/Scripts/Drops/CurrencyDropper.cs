@@ -30,6 +30,7 @@ public class CurrencyDropper : MonoBehaviour
             if (target != null)
             {
                 var dropObj = Instantiate(drop.drop).GetComponent<CurrencyDrop>();
+                //dropObj.transform.position = transform.position;
                 dropObj.transform.parent = DropManager.instance.canvas;
                 dropObj.MoveToPoint(transform.position);
                 dropObj.UpdateTarget(target);

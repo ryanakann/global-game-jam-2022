@@ -23,7 +23,9 @@ public class SelectionController : Singleton<SelectionController>
 
     public Animator buttonsAnim, levelSelectAnim, wheelAnim;
 
-    bool fueling, scramming;
+    [HideInInspector]
+    public bool fueling; 
+    bool scramming;
     Vector3 originalCameraPos;
     Transform levelGeneration;
 
@@ -43,6 +45,8 @@ public class SelectionController : Singleton<SelectionController>
     UnitCell unitCell;
     int mask;
 
+    Transform clownHolder, lowClownPoint;
+
     public bool canSelect = true;
 
     protected override void Awake()
@@ -59,6 +63,8 @@ public class SelectionController : Singleton<SelectionController>
         refuelButton = transform.FindDeepChild("LeverHandle").GetComponent<Button>();
         peanutCount = transform.FindDeepChild("PeanutCount").GetComponent<TextMeshProUGUI>();
         unitIcon = transform.FindDeepChild("UnitIcon").GetComponent<Image>();
+        clownHolder = transform.FindDeepChild("ClownDisplayHolder");
+        lowClownPoint = transform.FindDeepChild("LowClownPoint");
         mask = ~LayerMask.GetMask("Unit");
     }
 
@@ -337,12 +343,14 @@ public class SelectionController : Singleton<SelectionController>
         Wall.instance.Switch(false);
         while (Wall.instance.moving)
         { yield return null; }
-        var op = SceneManager.LoadSceneAsync("LevelTest", LoadSceneMode.Additive);
+        var op = SceneManager.LoadSceneAsync("BattleZone", LoadSceneMode.Additive);
         while (!op.isDone)
         { yield return null; }
         originalCameraPos = LevelGenerator.instance.cameraPivot.position;
         LevelGenerator.instance.cameraPivot.position = GameObject.Find("CameraPivot").transform.position;
         levelGeneration.gameObject.SetActive(false);
+        clownHolder.parent = lowClownPoint;
+        clownHolder.localPosition = Vector3.zero;
         Wall.instance.Switch(true);
         while (Wall.instance.moving)
         { yield return null; }
@@ -369,11 +377,13 @@ public class SelectionController : Singleton<SelectionController>
         while (Wall.instance.moving)
         { yield return null; }
         Destroy(GameObject.Find("Lanes"));
-        var op = SceneManager.UnloadSceneAsync("LevelTest");
+        var op = SceneManager.UnloadSceneAsync("BattleZone");
         while (!op.isDone)
         { yield return null; }
         levelGeneration.gameObject.SetActive(true);
         LevelGenerator.instance.cameraPivot.position = originalCameraPos;
+        clownHolder.parent = ClownsDisplay.instance.transform;
+        clownHolder.localPosition = Vector3.zero;
         Wall.instance.Switch(true);
         while (Wall.instance.moving)
         { yield return null; }

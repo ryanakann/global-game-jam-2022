@@ -29,6 +29,9 @@ public class Clown
     Sprite headSprite;
     ClownBody body;
 
+    [HideInInspector]
+    public ClownDisplay display;
+
 
     public Clown(ClownProfile profile)
     {
@@ -63,11 +66,14 @@ public class Clown
             CurrentHealth = 0.0f;
             alive = false;
         }
+        if (SelectionController.instance.fueling && display != null && CurrentHealth > 0)
+            display.Harm((int)harm_amount);
         Debug.Log("Clown " + Name + " has " + CurrentHealth + " health");
     }
 
     public void Kill()
     {
+        display.Kill();
         CurrentHealth = 0;
         alive = false;
         deathEvent?.Invoke();

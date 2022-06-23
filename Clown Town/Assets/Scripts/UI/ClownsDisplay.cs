@@ -5,7 +5,6 @@ using UnityEngine;
 public class ClownsDisplay : Singleton<ClownsDisplay>
 {
     Transform minWidthPivot, maxWidthPivot;
-
     Transform clownDisplayHolder;
 
     public void Generate()
@@ -28,6 +27,7 @@ public class ClownsDisplay : Singleton<ClownsDisplay>
 
             Vector2 pos = new Vector2(clownX, theY);
             var display = clown.SpawnDisplayAtPosition(pos);
+            clown.display = display;
             display.transform.localScale = new Vector3(2, 2, 1);
             display.highlight.gameObject.SetActive(false);
             display.selectHighlight.gameObject.SetActive(false);
@@ -40,7 +40,8 @@ public class ClownsDisplay : Singleton<ClownsDisplay>
     {
         foreach (Transform t in clownDisplayHolder)
         {
-            Destroy(t.gameObject);
+            if (t.GetComponent<ClownDisplay>() != null)
+                Destroy(t.gameObject);
         }
 
         Generate();
