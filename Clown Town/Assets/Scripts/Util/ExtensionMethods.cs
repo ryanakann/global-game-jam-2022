@@ -341,6 +341,17 @@ public static class DictionaryExtension
 
 public static class Helper
 {
+
+    public static Vector2 DegreeToVector2(float degree)
+    {
+        return RadianToVector2(degree * Mathf.Deg2Rad);
+    }
+
+    public static Vector2 RadianToVector2(float radian)
+    {
+        return new Vector2(Mathf.Cos(radian), Mathf.Sin(radian));
+    }
+
     public static T[] FindComponentsInChildrenWithTag<T>(this GameObject parent, string tag, bool forceActive = false) where T : Component
     {
         if (parent == null) { throw new System.ArgumentNullException(); }

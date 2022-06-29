@@ -66,8 +66,17 @@ public class Clown
             CurrentHealth = 0.0f;
             alive = false;
         }
-        if (SelectionController.instance.fueling && display != null && CurrentHealth > 0)
-            display.Harm((int)harm_amount);
+        if (display != null && CurrentHealth > 0)
+        {
+            if (SelectionController.instance.fueling)
+            {
+                display.Harm((int)harm_amount);
+            }
+            else
+            {
+                display.Harm((int)harm_amount, false);
+            }
+        }
         Debug.Log("Clown " + Name + " has " + CurrentHealth + " health");
     }
 

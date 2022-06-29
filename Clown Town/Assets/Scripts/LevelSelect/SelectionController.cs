@@ -152,8 +152,6 @@ public class SelectionController : Singleton<SelectionController>
         {
             SelectionObject obj;
             Gift tempGiftHit = hit.transform.GetComponent<Gift>();
-            print(hit);
-            print(tempGiftHit);
             if (tempGiftHit != null && tempGiftHit.clicked == false)
             {
                 giftHit = tempGiftHit;

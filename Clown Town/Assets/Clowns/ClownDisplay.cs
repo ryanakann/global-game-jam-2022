@@ -22,6 +22,7 @@ public class ClownDisplay : SelectionObject
     bool flashing;
 
     int incomingDamage;
+    public GameObject numberPrefab;
 
     public override void Awake()
     {
@@ -42,10 +43,10 @@ public class ClownDisplay : SelectionObject
         // deparent, launch
     }
 
-    public void Harm(int damage)
+    public void Harm(int damage, bool jump = true)
     {
         incomingDamage += damage;
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Harm"))
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Harm") || jump == false)
         {
             SpawnNumber();
         }
@@ -53,6 +54,7 @@ public class ClownDisplay : SelectionObject
         {
             anim.SetTrigger("Harm");
         }
+        Flash();
     }
 
     public void Flash()
@@ -80,8 +82,14 @@ public class ClownDisplay : SelectionObject
 
     public void SpawnNumber()
     {
-        if (incomingDamage == 0)
+        if (incomingDamage == 0 || incomingDamage > 99 || numberPrefab == null)
             return;
+
+        // convert numbers to one or two
+        // instantiate number and set numbers
+        var num = Instantiate(numberPrefab).GetComponent<NumberEffect>();
+        num.transform.position = transform.position;
+        num.SetNumber(incomingDamage);
     }
 
     public void RemoveClown()

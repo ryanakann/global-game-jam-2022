@@ -303,6 +303,7 @@ MonoBehaviour:
   selectable: 1
   selectHighlight: {fileID: 0}
   highlight: {fileID: 0}
+  numberPrefab: {fileID: 6526873385442151039, guid: aac5168f92ddd2d4ea107d1f658171a3, type: 3}
 --- !u!95 &3111269879117595539
 Animator:
   serializedVersion: 4
