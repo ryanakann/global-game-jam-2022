@@ -68,21 +68,15 @@ public class Clown
         }
         if (display != null && CurrentHealth > 0)
         {
-            if (SelectionController.instance.fueling)
-            {
-                display.Harm((int)harm_amount);
-            }
-            else
-            {
-                display.Harm((int)harm_amount, false);
-            }
+            display.Harm((int)harm_amount, SelectionController.instance.fueling);
         }
         Debug.Log("Clown " + Name + " has " + CurrentHealth + " health");
     }
 
     public void Kill()
     {
-        display.Kill();
+        if (display != null)
+            display.Kill(SelectionController.instance.fueling);
         CurrentHealth = 0;
         alive = false;
         deathEvent?.Invoke();

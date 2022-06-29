@@ -15,7 +15,7 @@ public class NumberEffect : MonoBehaviour
     public static Vector2 minAngle = Helper.DegreeToVector2(45);
     public static Vector2 maxAngle = Helper.DegreeToVector2(135);
 
-    float torque = 50f;
+    float torque = 2f;
 
     public void Launch(float force)
     {
@@ -27,13 +27,14 @@ public class NumberEffect : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
 
         Vector2 dir = Quaternion.Euler(0, Random.Range(-45, 45), 0) * Vector2.up;
-        rb.AddForce(dir * force);
-        rb.AddTorque(Random.Range(-torque, torque));
+        dir.Normalize();
+        rb.AddForce(dir * force, ForceMode2D.Impulse);
+        rb.AddTorque(Random.Range(-torque, torque), ForceMode2D.Impulse);
 
         StartCoroutine(Fade());
     }
 
-    public void SetNumber(int number, float force = 160f)
+    public void SetNumber(int number, float force = 8f)
     {
         rb = GetComponent<Rigidbody2D>();
         num1 = transform.FindDeepChild("Num1").GetComponent<SpriteRenderer>();

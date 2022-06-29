@@ -23,6 +23,7 @@ public class PauseManager : Singleton<PauseManager>
 
     public void MainMenu()
     {
+        PauseTime(1);
         FaderCanvas.instance.GoAway("MainMenu");
     }
 

@@ -341,14 +341,14 @@ public class SelectionController : Singleton<SelectionController>
         Wall.instance.Switch(false);
         while (Wall.instance.moving)
         { yield return null; }
+        clownHolder.parent = lowClownPoint;
+        clownHolder.localPosition = Vector3.zero;
         var op = SceneManager.LoadSceneAsync("BattleZone", LoadSceneMode.Additive);
         while (!op.isDone)
         { yield return null; }
         originalCameraPos = LevelGenerator.instance.cameraPivot.position;
         LevelGenerator.instance.cameraPivot.position = GameObject.Find("CameraPivot").transform.position;
         levelGeneration.gameObject.SetActive(false);
-        clownHolder.parent = lowClownPoint;
-        clownHolder.localPosition = Vector3.zero;
         Wall.instance.Switch(true);
         while (Wall.instance.moving)
         { yield return null; }

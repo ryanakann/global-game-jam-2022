@@ -37,10 +37,18 @@ public class ClownDisplay : SelectionObject
         }
     }
 
-    public void Kill()
+    public void Kill(bool jumpy=true)
     {
         // add thing to head
         // deparent, launch
+        headRenderer.transform.parent = null;
+        Rigidbody2D rb = headRenderer.gameObject.AddComponent<Rigidbody2D>();
+        Vector2 dir = Quaternion.Euler(0, Random.Range(-45, 45), 0) * Vector2.up;
+        dir.Normalize();
+        rb.AddForce(dir * ((jumpy) ? 10f : 5f), ForceMode2D.Impulse);
+        rb.AddTorque(Random.Range(-2, 2), ForceMode2D.Impulse);
+        headRenderer.color = Color.red;
+        headRenderer.gameObject.AddComponent<FaderDestroyer>();
     }
 
     public void Harm(int damage, bool jump = true)
@@ -64,17 +72,16 @@ public class ClownDisplay : SelectionObject
         StartCoroutine(CoFlash());
     }
 
-    IEnumerator CoFlash()
+    IEnumerator CoFlash(bool justHead=false)
     {
         flashing = true;
         float t = 0, max = 0.75f;
         while (t < max)
         {
             t += Time.deltaTime;
-            foreach (var rend in GetComponentsInChildren<SpriteRenderer>())
-            {
-                rend.color = Color.Lerp(Color.white, Color.red, Mathf.Sin(t / max * Mathf.PI));
-            }
+            headRenderer.color = Color.Lerp(Color.white, Color.red, Mathf.Sin(t / max * Mathf.PI));
+            if (!justHead)
+                bodyRenderer.color = Color.Lerp(Color.white, Color.red, Mathf.Sin(t / max * Mathf.PI));
             yield return null;
         }
         flashing = false;
