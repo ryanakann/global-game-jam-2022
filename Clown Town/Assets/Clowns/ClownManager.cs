@@ -11,7 +11,7 @@ public class ClownManager : MonoBehaviour
     bool debug;
 
     [SerializeField]
-    Flowchart quipFlowchart;
+    public Flowchart quipFlowchart;
 
     [SerializeField]
     List<ClownProfile> clownProfiles;
@@ -36,7 +36,7 @@ public class ClownManager : MonoBehaviour
     private static Dictionary<ClownTrait, List<Clown>> clownsByTrait = new Dictionary<ClownTrait, List<Clown>>();
     private static Dictionary<ClownPersonality, List<Clown>> clownsByPersonality = new Dictionary<ClownPersonality, List<Clown>>();
 
-    private static Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>> eventQuips = new Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>>();
+    public static Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>> eventQuips = new Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>>();
     private static Dictionary<ClownPersonality, ClownProfile> clownProfilesByPersonality = new Dictionary<ClownPersonality, ClownProfile>();
 
     private void Awake()
@@ -309,6 +309,14 @@ public class ClownManager : MonoBehaviour
         string quip = GetQuipForClownForEvent(clownId, eventType);
         string clownName = getClownWithId(clownId).Name;
         instance.quipFlowchart.SetStringVariable("quip", quip);
+        instance.quipFlowchart.SetStringVariable("clownName", clownName);
+        instance.quipFlowchart.ExecuteBlock("Quip");
+    }
+
+    public static void SayLineInFlowchartForClown(int clownId, string line)
+    {
+        string clownName = getClownWithId(clownId).Name;
+        instance.quipFlowchart.SetStringVariable("quip", line);
         instance.quipFlowchart.SetStringVariable("clownName", clownName);
         instance.quipFlowchart.ExecuteBlock("Quip");
     }

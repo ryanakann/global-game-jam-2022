@@ -17,6 +17,9 @@ public enum EventTypes {
     InTransit,
     CarStop,
     MusicClose,
+    ClownIntro,
+    ClownIntroMid,
+    ClownIntroExit,
 }
 
 public class EventManager : Singleton<EventManager>

@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4326587640715849227}
   m_Father: {fileID: 0}
@@ -44,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698e0952c4c568047a5df2b48ad63d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   quipFlowchart: {fileID: 7681830479745350444}
   clownProfiles:
   - {fileID: 11400000, guid: e8d98af6b1534a34e950bac72be94602, type: 2}
@@ -53,12 +54,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 788cd75445b9adc42a263824ddc5f070, type: 2}
   - {fileID: 11400000, guid: cdafed035063c2447adf81e75b3394eb, type: 2}
   - {fileID: 11400000, guid: 688fe720ebff20543b656f461b35f69c, type: 2}
-  - {fileID: 11400000, guid: bb147ea106f27b041ba7ab357b3f3f64, type: 2}
-  - {fileID: 11400000, guid: bc93c69ff8d782b47982cd5545500d86, type: 2}
-  - {fileID: 11400000, guid: 65a55127827875641ac3b552e69723f0, type: 2}
-  - {fileID: 11400000, guid: 62be4a1454d87184fa8a341f2d3fb70f, type: 2}
-  - {fileID: 11400000, guid: ded852da66cb5ae4aa24976b20d1ead4, type: 2}
-  - {fileID: 11400000, guid: 2d19a59f5109c6d4185e49f340c21e40, type: 2}
   displayPrefab: {fileID: 8396246106463944082, guid: e422d812902a4f941acd34ae0d89051e, type: 3}
   clownHeads:
   - {fileID: 21300000, guid: f1367362c92f89241b6175b6beb94ecf, type: 3}
@@ -215,6 +210,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8968258754175564043}
   m_RootOrder: 0

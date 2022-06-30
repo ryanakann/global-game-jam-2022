@@ -26,6 +26,13 @@ public enum ClownTrait {
     Anxious,
 }
 
+[System.Serializable]
+public class QuipTuple
+{
+    public EventTypes eventType;
+    public string quips;
+}
+
 [CreateAssetMenu(menuName = "CLOWN/ClownProfile", fileName = "new ClownProfile")]
 public class ClownProfile : ScriptableObject
 {
@@ -44,9 +51,14 @@ public class ClownProfile : ScriptableObject
     public string[] anotherHurtQuips;
     public string[] anotherKilledQuips;
 
+    public List<QuipTuple> quipTuples = new List<QuipTuple>();
+
+
+
     public void loadQuips(Dictionary<EventTypes, List<string>> quipDict)
     {
 
+        /*
         Dictionary<EventTypes, string[]> eventsToQuips = new Dictionary<EventTypes, string[]> {
             { EventTypes.ClownTalk, clickQuip },
             { EventTypes.ClownHappy, happyQuips },
@@ -57,16 +69,15 @@ public class ClownProfile : ScriptableObject
             { EventTypes.AnotherClownHurt, anotherHurtQuips },
             { EventTypes.AnotherClownKilled, anotherKilledQuips }
         };
+        */
 
-        foreach (KeyValuePair<EventTypes, string[]> quipsPair in eventsToQuips)
+        foreach (var quipsPair in quipTuples)
         {
-            if (!quipDict.ContainsKey(quipsPair.Key))
-                quipDict[quipsPair.Key] = new List<string>();
+            if (!quipDict.ContainsKey(quipsPair.eventType))
+                quipDict[quipsPair.eventType] = new List<string>();
             
-            foreach (string quip in quipsPair.Value)
-            {
-                quipDict[quipsPair.Key].Add(quip);
-            }
+            quipDict[quipsPair.eventType].Add(quipsPair.quips);
+            quipDict[quipsPair.eventType].Shuffle();
         }
 
     }

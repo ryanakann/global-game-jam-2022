@@ -13,7 +13,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
-        FaderCanvas.instance.GoAway("LevelSelect");
+        FaderCanvas.instance.GoAway("ClownIntro");
     }
 
     public void Quit()

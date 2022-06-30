@@ -16549,7 +16549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 1345006787}
 --- !u!4 &1120573870
 Transform:
   m_ObjectHideFlags: 1
@@ -19892,14 +19892,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClownManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
-      propertyPath: debug
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8968258754175564042, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
-      propertyPath: clownProfiles.Array.size
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 8968258754175564043, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -19946,6 +19938,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
+--- !u!114 &1345006787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7681830479745350444, guid: 4ec58acbde3d37249bb8f95eabad5d2b, type: 3}
+  m_PrefabInstance: {fileID: 1345006786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1353728634
 GameObject:
   m_ObjectHideFlags: 0
@@ -32300,7 +32303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3184847759494739678, guid: f7b866dfb2aeda842855f80fd30c4638, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.9480591
+      value: 0.9476929
       objectReference: {fileID: 0}
     - target: {fileID: 3184847759730554085, guid: f7b866dfb2aeda842855f80fd30c4638, type: 3}
       propertyPath: m_AnchoredPosition.x
