@@ -11,6 +11,8 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
     Dictionary<ClownPersonality, Dictionary<EventTypes, int>> lineCounter = new Dictionary<ClownPersonality, Dictionary<EventTypes, int>>();
     Transform clownHolder, startClownPoint;
 
+    ClownDisplay display;
+
     Animator anim;
 
     public bool ready;
@@ -31,14 +33,17 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
     // Update is called once per frame
     void Update()
     {
-        if (ready && ClownManager.instance.quipFlowchart.GetExecutingBlocks().Count == 0 && lineQueue.Count > 0)
+        if (ClownManager.instance.quipFlowchart.GetExecutingBlocks().Count == 0 && ready)
         {
-            ClownManager.SayLineInFlowchartForClown(clownQueue[0].Id, lineQueue[0]);
-            lineQueue.RemoveAt(0);
-        }
-        else if (lineQueue.Count == 0)
-        {
-            anim.SetTrigger("Exit");
+            if (lineQueue.Count > 0)
+            {
+                ClownManager.SayLineInFlowchartForClown(clownQueue[0].Id, lineQueue[0]);
+                lineQueue.RemoveAt(0);
+            }
+            else if (lineQueue.Count == 0)
+            {
+                anim.SetTrigger("Exit");
+            }
         }
     }
 
@@ -73,8 +78,10 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
     void Play()
     {
         clownHolder.position = startClownPoint.position;
-        var display = clownQueue[0].SpawnDisplayAtPosition(clownHolder.position);
+        display = clownQueue[0].SpawnDisplayAtPosition(clownHolder.position);
         display.transform.parent = clownHolder;
+        display.transform.position += new Vector3(0, 0.5f, 0);
+        display.SetVisibility(SpriteMaskInteraction.None);
         // get clown type, event type
         // if counter contains clown type and event type and the value equals the number of quips, delete that event type entry
         if (!ClownManager.eventQuips[clownQueue[0].Personality].ContainsKey(EventTypes.ClownIntro))
@@ -92,6 +99,7 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
 
     public void NextClown()
     {
+        display.SetVisibility(SpriteMaskInteraction.VisibleInsideMask);
         clownQueue.RemoveAt(0);
         ready = false;
         if (clownQueue.Count == 0)

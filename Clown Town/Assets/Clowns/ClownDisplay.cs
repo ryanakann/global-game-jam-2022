@@ -37,6 +37,12 @@ public class ClownDisplay : SelectionObject
         }
     }
 
+    public void SetVisibility(SpriteMaskInteraction interaction)
+    {
+        headRenderer.maskInteraction = interaction;
+        bodyRenderer.maskInteraction = interaction;
+    }
+
     public void Kill(bool jumpy=true)
     {
         // add thing to head

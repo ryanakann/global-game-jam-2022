@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Encounters/Scenes/UnitTest.unity
     guid: cf768d14d608cbf4e80d8c65157baf6b
+  - enabled: 1
+    path: Assets/Scenes/ClownIntro.unity
+    guid: f7c5aac41883ec2459083b4b941f00fd
   m_configObjects: {}
