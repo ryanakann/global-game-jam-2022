@@ -8,6 +8,8 @@ public class PauseManager : Singleton<PauseManager>
 {
     public AudioMixer audioMixer;
     bool paused = false;
+    [HideInInspector]
+    public bool megaPaused;
     Animator anim;
 
     public void Start()
@@ -17,6 +19,8 @@ public class PauseManager : Singleton<PauseManager>
 
     public void Update()
     {
+        if (megaPaused)
+            return;
         if (Input.GetButtonDown("Pause"))
             Pause();
     }
