@@ -99,5 +99,13 @@ namespace Encounters
         {
             UpdateGridObjectTransform();
         }
+
+        private void Start()
+        {
+            if (gameObject.GetComponent<EncounterWavePopulator>())
+            {
+                gameObject.GetComponent<EncounterWavePopulator>().GetWave();
+            }
+        }
     }
 }

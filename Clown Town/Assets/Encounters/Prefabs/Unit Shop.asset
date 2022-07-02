@@ -15,3 +15,5 @@ MonoBehaviour:
   items:
   - item: {fileID: 962316974742089330, guid: c5a8e795bbdfdcc4b85718007d49404b, type: 3}
     price: 5
+  - item: {fileID: 962316974742089330, guid: d9bba7696687e42ca8977c326c94cba9, type: 3}
+    price: 5

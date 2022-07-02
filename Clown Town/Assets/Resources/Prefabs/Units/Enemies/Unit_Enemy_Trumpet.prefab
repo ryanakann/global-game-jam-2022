@@ -377,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initOnAwake: 1
   _unitType: 1
-  _maxHealth: 50
+  _maxHealth: 25
   _currentHealth: 50
   _attackSpeed: 1
   _attackCooldown: 1

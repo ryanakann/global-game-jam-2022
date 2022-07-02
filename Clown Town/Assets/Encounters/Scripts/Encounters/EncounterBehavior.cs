@@ -41,14 +41,19 @@ namespace Encounters
             StartCoroutine(StartEncounterCR());
         }
 
+        public void EndEncounter()
+        {
+            Active = false;
+        }
+
         private IEnumerator StartEncounterCR()
         {
-            var waves = _info.waves;
 
-            foreach (var wave in waves)
+            while (Active)
             {
-                yield return new WaitForSeconds(wave.timeBeforeFirstSpawn);
+                var wave = gameObject.GetComponent<EncounterWavePopulator>().GetWave();
 
+                yield return new WaitForSeconds(wave.timeBeforeFirstSpawn);
                 foreach (var enemy in wave.enemies)
                 {
                     spawners[Random.Range(0, spawners.Count)].AddEnemy(enemy);
