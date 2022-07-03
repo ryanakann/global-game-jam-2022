@@ -28,6 +28,8 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
         clownQueue = ClownManager.GetClowns();
         Play();
         // queue em up
+
+        ExplainerManager.instance.Explain("StartGame");
     }
 
     // Update is called once per frame

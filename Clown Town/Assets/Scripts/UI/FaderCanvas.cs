@@ -8,6 +8,9 @@ public class FaderCanvas : PersistentSingleton<FaderCanvas>
 {
     Animator anim;
     public AudioMixer audioMixer;
+    [HideInInspector]
+    public bool fading;
+    public GameEvent finishedFading;
 
     public void Start()
     {
@@ -49,6 +52,8 @@ public class FaderCanvas : PersistentSingleton<FaderCanvas>
             vol += Time.deltaTime;
             yield return null;
         }
+        fading = false;
+        finishedFading?.Invoke();
     }
 
     public void GoAway(string scene)
@@ -58,9 +63,11 @@ public class FaderCanvas : PersistentSingleton<FaderCanvas>
 
     IEnumerator CoGoAway(string scene)
     {
+        fading = true;
         Fade();
-        { yield return new WaitForSeconds(3f); }
+        yield return new WaitForSeconds(3f);
         var op = SceneManager.LoadSceneAsync(scene);
+        while (!op.isDone) yield return null;
         Unfade();
     }
 }

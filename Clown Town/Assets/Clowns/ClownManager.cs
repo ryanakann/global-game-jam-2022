@@ -5,7 +5,7 @@ using UnityEngine;
 using Fungus;
 using UnityEngine.SceneManagement;
 
-public class ClownManager : MonoBehaviour
+public class ClownManager : PersistentSingleton<ClownManager>
 {
     [SerializeField]
     bool debug;
@@ -30,7 +30,7 @@ public class ClownManager : MonoBehaviour
     [SerializeField]
     string[] clownLastNames;
 
-    public static ClownManager instance;
+    //public static ClownManager instance;
 
     private static Dictionary<int, Clown> clowns = new Dictionary<int, Clown>();
     private static Dictionary<ClownTrait, List<Clown>> clownsByTrait = new Dictionary<ClownTrait, List<Clown>>();
@@ -39,12 +39,10 @@ public class ClownManager : MonoBehaviour
     public static Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>> eventQuips = new Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>>();
     private static Dictionary<ClownPersonality, ClownProfile> clownProfilesByPersonality = new Dictionary<ClownPersonality, ClownProfile>();
 
-    private void Awake()
+    private void Start()
     {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
+        //if (IntroDialogueManager.instance != null)
+            
 
         foreach (ClownProfile profile in clownProfiles)
         {
@@ -63,6 +61,11 @@ public class ClownManager : MonoBehaviour
                 GenerateClownWithPersonality(profile.personality);
             }
         }
+    }
+
+    public void Generate()
+    {
+
     }
 
     public static void DamageClowns(int damage)

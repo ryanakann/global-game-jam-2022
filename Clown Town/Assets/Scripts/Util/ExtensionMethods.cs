@@ -342,6 +342,16 @@ public static class DictionaryExtension
 public static class Helper
 {
 
+    public static Vector3 ScreenToWorld(RectTransform rectTransform)
+    {
+         return Camera.main.ScreenToWorldPoint(rectTransform.transform.position);
+    }
+
+    public static Vector2 WorldToScreen(Transform transform)
+    {
+        return RectTransformUtility.WorldToScreenPoint(Camera.main, transform.position);
+    }
+
     public static Vector2 DegreeToVector2(float degree)
     {
         return RadianToVector2(degree * Mathf.Deg2Rad);

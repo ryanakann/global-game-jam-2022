@@ -12,6 +12,10 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        if (ClownManager.instance != null)
+            Destroy(ClownManager.instance.gameObject);
+
     }
 
     public void Play()
