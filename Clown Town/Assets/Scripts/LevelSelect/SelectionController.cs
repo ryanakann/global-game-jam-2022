@@ -249,10 +249,11 @@ public class SelectionController : Singleton<SelectionController>
     public void DRIVE()
     {
         int cost = ((Location)selectedObject).activeEdge.fuelCost;
-        if (wax - cost < 0 && !waxFlashing)
+        if (wax - cost < 0)
         {
             // flash edge panel
-            StartCoroutine(CoWaxFlash(locationPanel.elementsMap["EdgeCost"].GetComponent<TextMeshProUGUI>()));
+            if (!waxFlashing)
+                StartCoroutine(CoWaxFlash(locationPanel.elementsMap["EdgeCost"].GetComponent<TextMeshProUGUI>()));
             return;
         }
         else

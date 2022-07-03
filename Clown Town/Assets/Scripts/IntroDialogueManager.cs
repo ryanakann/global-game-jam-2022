@@ -26,10 +26,10 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
         anim = GetComponent<Animator>();
         // get the clowns
         clownQueue = ClownManager.GetClowns();
-        Play();
+        Invoke("Play", 3f);
         // queue em up
-
-        ExplainerManager.instance.Explain("StartGame");
+        if (ExplainerManager.instance != null)
+            ExplainerManager.instance.Explain("StartGame");
     }
 
     // Update is called once per frame
