@@ -35,7 +35,7 @@ public class Clown
 
     public Clown(ClownProfile profile)
     {
-        Debug.Log("Creating Clown" + nextId);
+        //Debug.Log("Creating Clown" + nextId);
         Id = nextId++;
         Name = ClownManager.getClownName();
         maxHealth = profile.health;
@@ -45,8 +45,8 @@ public class Clown
         headSprite = ClownManager.GetClownHead();
         body = ClownManager.GetClownBody();
 
-        Debug.Log("\t Name: " + Name);
-        Debug.Log("\t Personality: " + Personality);
+        //Debug.Log("\t Name: " + Name);
+        //Debug.Log("\t Personality: " + Personality);
     }
 
     public void Heal(float healAmount)

@@ -163,20 +163,17 @@ public class Dialogue : MonoBehaviour
 
     public void GainPeanuts(int peanutsAmount)
     {
-        print("You gain " + peanutsAmount + " peanuts");
-        print("WE HAVE NOT IMPLEMENTED PEANUTS YOU FOOL");
+        SelectionController.instance.basePeanuts += peanutsAmount;
     }
 
     public void GainEarwax(int waxAmount)
     {
-        print("You gain " + waxAmount + " wax");
-        print("WE HAVE NOT IMPLEMENTED WAX YOU FOOL");
+        SelectionController.instance.UpdateWax(waxAmount);
     }
 
     public void LoseEarwax(int waxAmount)
     {
-        print("You lose " + waxAmount + " wax");
-        print("WE HAVE NOT IMPLEMENTED WAX YOU FOOL");
+        SelectionController.instance.UpdateWax(-waxAmount);
     }
 
     public void KillClown(int clownId)
@@ -186,14 +183,12 @@ public class Dialogue : MonoBehaviour
 
     public int GetCurrentWax()
     {
-        print("WE HAVE NOT IMPLEMENTED WAX YOU FOOL");
-        return 100;
+        return SelectionController.instance.wax;
     }
 
     public int GetCurrentPeanuts()
     {
-        print("WE HAVE NOT IMPLEMENTED PEANUTS YOU FOOL");
-        return 1000;
+        return SelectionController.instance.basePeanuts;
     }
 
     public string GetQuipForClownForEvent(int id, EventTypes eventType)

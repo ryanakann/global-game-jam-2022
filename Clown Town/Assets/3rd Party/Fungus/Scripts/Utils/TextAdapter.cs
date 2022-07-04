@@ -240,6 +240,10 @@ namespace Fungus
 #if UNITY_2018_1_OR_NEWER
                 if(tmpro != null)
                 {
+                    if (tmpro.textInfo.characterInfo.Length <= tmpro.maxVisibleCharacters)
+                    {
+                        return tmpro.textInfo.characterInfo[tmpro.textInfo.characterInfo.Length - 1].character;
+                    }
                     return tmpro.textInfo.characterInfo[tmpro.maxVisibleCharacters].character;
                 }
 #endif

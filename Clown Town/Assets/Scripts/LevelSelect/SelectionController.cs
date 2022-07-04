@@ -33,6 +33,8 @@ public class SelectionController : Singleton<SelectionController>
 
     TextMeshProUGUI peanutCount;
     public int peanuts;
+    [HideInInspector]
+    public int basePeanuts = 10;
 
     TextMeshProUGUI waxCount;
     RectTransform waxBar;
@@ -328,7 +330,7 @@ public class SelectionController : Singleton<SelectionController>
     public void FuelUp()
     {
         UpdatePeanuts(-peanuts);
-        UpdatePeanuts(10);
+        UpdatePeanuts(basePeanuts);
         if (fueling || scramming)
             return;
         refuelButton.interactable = false;
