@@ -16,6 +16,7 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
     Animator anim;
 
     public bool ready;
+    bool triggered;
 
 
     // Start is called before the first frame update
@@ -32,9 +33,16 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
             ExplainerManager.instance.Explain("StartGame");
     }
 
+    //just to expose the stupid animator
+    public void SetReady(int ready)
+    {
+        this.ready = ready != 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
+
         if (ClownManager.instance.quipFlowchart.GetExecutingBlocks().Count == 0 && ready)
         {
             if (lineQueue.Count > 0)
@@ -42,11 +50,20 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
                 ClownManager.SayLineInFlowchartForClown(clownQueue[0].Id, lineQueue[0]);
                 lineQueue.RemoveAt(0);
             }
-            else if (lineQueue.Count == 0)
+            else if (lineQueue.Count == 0 && !triggered)
             {
+                triggered = true;
                 anim.SetTrigger("Exit");
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        /*
+        if (ClownManager.instance.quipFlowchart.GetExecutingBlocks().Count > 0)
+            Gizmos.DrawSphere(transform.position, 1);
+        */
     }
 
     void PushQuips(ClownPersonality trait, EventTypes eventType, int num = 1)
@@ -91,12 +108,14 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
             lineQueue.Add("Placeholder line~");
             lineQueue.Add("Goodbye");
             anim.SetTrigger("Play");
+            triggered = false;
             return;
         }
         PushQuips(clownQueue[0].Personality, EventTypes.ClownIntro);
         PushQuips(clownQueue[0].Personality, EventTypes.ClownIntroMid, Random.Range(0, 3));
         PushQuips(clownQueue[0].Personality, EventTypes.ClownIntroExit);
         anim.SetTrigger("Play");
+        triggered = false;
     }
 
     public void NextClown()

@@ -23,6 +23,9 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
     float lerpTimeLimit = 0.5f;
 
+    public static int maxDifficulty = 10;
+    public static int minDifficulty = 1;
+
 
     public void UpdateCamera(Vector3 pos)
     {
@@ -124,7 +127,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         {
             loc.Deactivate();
             loc.transform.position += new Vector3(0, 0, 1f);
-            loc.difficulty = Mathf.Clamp(Mathf.CeilToInt(loc.outgoingConnections.Count / ((float)maxEdges) * 10), 1, 10);
+            loc.difficulty = Mathf.Clamp(Mathf.CeilToInt(loc.outgoingConnections.Count / ((float)maxEdges) * maxDifficulty), minDifficulty, maxDifficulty);
 
             foreach (var edge in loc.ingoingConnections)
             {

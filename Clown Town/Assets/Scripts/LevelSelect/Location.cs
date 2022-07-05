@@ -75,6 +75,7 @@ public class Location : SelectionObject
             edge.tgt.activeEdge = edge;
             edge.Activate();
         }
+        base.Select();
         activeEdge = null;
         LevelGenerator.instance.UpdateCamera(transform.position);
         SelectionController.instance.currentLocation = this;

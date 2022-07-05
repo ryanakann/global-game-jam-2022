@@ -26,6 +26,7 @@ public class GiftSpawner : Singleton<GiftSpawner>
         if (timer <= 0)
         {
             var gift = Instantiate(giftPrefab).transform;
+            gift.parent = transform;
             gift.position = new Vector2(Random.Range(info.Bounds.min.x+padding, info.Bounds.max.x-padding), Random.Range(info.Bounds.min.y+padding, info.Bounds.max.y-padding));
             timer = Random.Range(timerRange[0], timerRange[1]);
         }

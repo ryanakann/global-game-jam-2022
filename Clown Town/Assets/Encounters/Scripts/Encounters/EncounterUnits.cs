@@ -98,6 +98,7 @@ namespace Encounters
             }
 
             var unit = isInstance ? unitInfo.gameObject : Instantiate(unitInfo.gameObject);
+            unit.transform.parent = transform;
             unitInfo = unit.GetComponent<UnitInfo>();
 
             unitInfo.Init();

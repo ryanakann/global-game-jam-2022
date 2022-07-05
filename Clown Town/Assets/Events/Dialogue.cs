@@ -88,7 +88,7 @@ public class Dialogue : MonoBehaviour
 
     public void Pause()
     {
-        if (!playing)
+        if (!playing || flowchart.GetExecutingBlocks().Count == 0)
             return;
         playing = false;
         lastBlock = flowchart.GetExecutingBlocks()[0];

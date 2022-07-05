@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acea510d4d7daa345ac842843f9a2a06, type: 3}
-  m_Name: CurrencyDropperProfile
+  m_Name: DropProfile_Enemy
   m_EditorClassIdentifier: 
   probsList:
   - drops:
@@ -20,10 +20,20 @@ MonoBehaviour:
       drop: {fileID: 3916508270973963884, guid: 7d639555abda02148bfa13ff0be7b5e0, type: 3}
     - CurrencyDropType: 2
       drop: {fileID: 6694409361649811344, guid: 2a2b03393e81b9e40a03fdd25781fc40, type: 3}
-    prob: 0.2
+    prob: 0.3
   - drops:
     - CurrencyDropType: 1
       drop: {fileID: 3916508270973963884, guid: 7d639555abda02148bfa13ff0be7b5e0, type: 3}
-    prob: 0.7
-  - drops: []
+    - CurrencyDropType: 1
+      drop: {fileID: 3916508270973963884, guid: 7d639555abda02148bfa13ff0be7b5e0, type: 3}
+    prob: 0.5
+  - drops:
+    - CurrencyDropType: 1
+      drop: {fileID: 3916508270973963884, guid: 7d639555abda02148bfa13ff0be7b5e0, type: 3}
+    - CurrencyDropType: 2
+      drop: {fileID: 6694409361649811344, guid: 2a2b03393e81b9e40a03fdd25781fc40, type: 3}
+    prob: 0.1
+  - drops:
+    - CurrencyDropType: 1
+      drop: {fileID: 3916508270973963884, guid: 7d639555abda02148bfa13ff0be7b5e0, type: 3}
     prob: 0.1

@@ -36,6 +36,7 @@ public class Gift : MonoBehaviour
         if (drop)
             dropper.Drop();
         clicked = true;
-        StartCoroutine(ClownZone.instance.FadeEnemy(gameObject));
+        if (ClownZone.instance != null)
+            StartCoroutine(ClownZone.instance.FadeEnemy(gameObject));
     }
 }

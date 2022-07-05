@@ -9,6 +9,10 @@ namespace Encounters
     {
         [Range(0f, 100f)]
         public float baseDifficulty = 1f;
+
+        float minDifficulty = 40; // I've just found this to be pretty ez
+        float maxDifficulty = 100;
+
         [Range(0f, 10f)]
         public float difficultyIncreasePerWave = 0f;
         [Range(-1, 999999)]
@@ -29,6 +33,16 @@ namespace Encounters
 
             allies = Resources.LoadAll<GameObject>("Prefabs/Units/Allies");
             enemies = Resources.LoadAll<GameObject>("Prefabs/Units/Enemies");
+
+            // get SelectionController.instance.currentLocation.difficulty... feed it into a function that sets the base difficulty
+            // range from 40 to 100
+            SetDifficulty();
+        }
+
+        void SetDifficulty()
+        {
+            float range = maxDifficulty - minDifficulty;
+            baseDifficulty = minDifficulty + (SelectionController.instance.currentLocation.difficulty / (float)LevelGenerator.maxDifficulty * range);
         }
 
         public EncounterWave GetWave()

@@ -5,6 +5,7 @@ using System.IO;
 using System.Collections.Generic;
 public class PopulateShopItems : UnityEditor.AssetModificationProcessor {
 
+    /*
     static string[] OnWillSaveAssets(string[] paths) {
         ShopItemList allItems = (ShopItemList)AssetDatabase.LoadAssetAtPath("Assets/Resources/All Shop Items.asset", typeof(ShopItemList));
         allItems.shopItems = new List<ShopItem>();
@@ -19,6 +20,8 @@ public class PopulateShopItems : UnityEditor.AssetModificationProcessor {
         Debug.Log("populated shop items");
         return paths;
     }
+    */
+
     static ShopItem ShopItemFor(GameObject prefab) {
         return new ShopItem
         {
