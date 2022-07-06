@@ -22,6 +22,9 @@ public class Location : SelectionObject
     [HideInInspector]
     public bool finalLocation;
 
+    [HideInInspector]
+    public int distance;
+
     public void SetLocationType(LocationType locType)
     {
         locationType = locType;

@@ -26,6 +26,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
     Transform[] uiPivots = new Transform[9];
     Vector2[] lrPivots = new Vector2[9];
     LineRenderer lr;
+    Transform arrowHead;
 
 
     GameObject blockerCanvas;
@@ -46,6 +47,8 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
     protected override void Awake()
     {
         base.Awake();
+
+        arrowHead = transform.FindDeepChild("arrow_head");
 
         // initialize pivots
         lr = GetComponent<LineRenderer>();
@@ -118,6 +121,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
         explain = false;
         explaining = false;
         lr.enabled = false;
+        arrowHead.gameObject.SetActive(false);
         if (explainerQueue.Count > 0)
         {
             explainerQueue[0].dialogueBox.SetActive(false);
@@ -135,8 +139,10 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
         explainerQueue.RemoveAt(0);
         if (explainerQueue.Count == 0)
         {
+            explaining = false;
             blockerCanvas.SetActive(false);
             lr.enabled = false;
+            arrowHead.gameObject.SetActive(false);
             Time.timeScale = 1;
             if (PauseManager.instance != null)
                 PauseManager.instance.megaPaused = false;
@@ -153,11 +159,14 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
         explaining = true;
 
         lr.enabled = explainerQueue[0].usePointer;
+        arrowHead.gameObject.SetActive(explainerQueue[0].usePointer);
 
         if (explainerQueue[0].usePointer)
         {
             lr.SetPosition(0, explainerQueue[0].lrStartPosition);
             lr.SetPosition(1, explainerQueue[0].lrEndPosition);
+            arrowHead.position = lr.GetPosition(1);
+            arrowHead.up = (lr.GetPosition(1) - lr.GetPosition(0)).normalized;
         }
 
         explainerQueue[0].dialogueBox.SetActive(true);

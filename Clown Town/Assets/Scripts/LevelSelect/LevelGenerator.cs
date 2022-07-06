@@ -26,6 +26,13 @@ public class LevelGenerator : Singleton<LevelGenerator>
     public static int maxDifficulty = 10;
     public static int minDifficulty = 1;
 
+    float minEdgeDifficulty = 1;
+    float maxEdgeDifficulty = 8;
+
+    float minDistDifficulty = 0;
+    float maxDistDifficulty = 6;
+
+
 
     public void UpdateCamera(Vector3 pos)
     {
@@ -93,6 +100,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
             for (int j = 0; j < width; j++)
             {
                 var node = SpawnLocation(new Vector2((j + 0.5f) * widthIncrement, i * depthIncrement) + (Random.insideUnitCircle * wiggleRoom) + offset);
+                node.distance = i;
                 nextLocations.Add(node);
             }
 
@@ -127,11 +135,21 @@ public class LevelGenerator : Singleton<LevelGenerator>
         {
             loc.Deactivate();
             loc.transform.position += new Vector3(0, 0, 1f);
-            loc.difficulty = Mathf.Clamp(Mathf.CeilToInt(loc.outgoingConnections.Count / ((float)maxEdges) * maxDifficulty), minDifficulty, maxDifficulty);
+
+            // distance points of difficulty, minDistDifficulty-maxDistDifficulty
+            // optional location difficulty points, +locationDifficulty
+            // random points? this will be slight, 
+            // edge points, midEdgeDifficulty-maxEdgeDifficulty
+            // wax cost is more expensive for harder locations
+            float edgeRange = maxEdgeDifficulty - minEdgeDifficulty;
+            loc.difficulty += (int)Mathf.Clamp(Mathf.CeilToInt(minEdgeDifficulty + (loc.outgoingConnections.Count / ((float)maxEdges) * edgeRange)), minEdgeDifficulty, maxEdgeDifficulty);
+            float distRange = maxDistDifficulty - minDistDifficulty;
+            loc.difficulty += (int)Mathf.Clamp(minDistDifficulty + (loc.distance / depth * distRange), minDistDifficulty, maxDistDifficulty);
+            loc.difficulty += loc.locationType.difficultyMod;
 
             foreach (var edge in loc.ingoingConnections)
             {
-                edge.fuelCost += Mathf.CeilToInt(loc.difficulty / 10.0f) * 3;
+                edge.fuelCost += Mathf.CeilToInt(loc.difficulty / 10.0f * 3);
             }
         }
 

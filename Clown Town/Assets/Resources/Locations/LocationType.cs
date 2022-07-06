@@ -13,4 +13,6 @@ public class LocationType : ScriptableObject
 
     public GameObject[] eventPrefabs;
     public Sprite[] locationImages;
+
+    public int difficultyMod;
 }
