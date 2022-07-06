@@ -302,6 +302,27 @@ public static class DictionaryExtension
         }
     }
 
+    public static IEnumerator CoShuffle<T>(this IList<T> list, int blockSize = 100)
+    {
+        System.Random rng = new System.Random();
+        int n = list.Count;
+        int currentBlock = 0;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+            currentBlock++;
+            if (currentBlock == blockSize)
+            {
+                currentBlock = 0;
+                yield return null;
+            }
+        }
+    }
+
     public static T Choose<T>(this Dictionary<T, float> dictProbs, T defaultValue)
     {
         Dictionary<int, T> indexToKeys = new Dictionary<int, T>();
