@@ -79,7 +79,7 @@ public class Clown
             ClownManager.SayQuipInFlowchartForClownForEvent(Id, EventTypes.ClownGetHurt);
             if (Random.value < 0.5f)
             {
-                ClownManager.SayQuipInFlowchartForClownForEvent(ClownManager.getRandomClownId(), EventTypes.AnotherClownHurt);
+                ClownManager.SayQuipInFlowchartForClownForEvent(ClownManager.getRandomClownIdExcludingAnother(Id), EventTypes.AnotherClownHurt);
             }
         }
         else
@@ -87,7 +87,7 @@ public class Clown
             ClownManager.SayQuipInFlowchartForClownForEvent(Id, EventTypes.ClownGetKilled);
             if (Random.value < 0.5f)
             {
-                ClownManager.SayQuipInFlowchartForClownForEvent(Id, EventTypes.AnotherClownKilled);
+                ClownManager.SayQuipInFlowchartForClownForEvent(ClownManager.getRandomClownIdExcludingAnother(Id), EventTypes.AnotherClownKilled);
             }
             ClownManager.KillClown(Id);
         }

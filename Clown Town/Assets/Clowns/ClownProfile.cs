@@ -58,26 +58,37 @@ public class ClownProfile : ScriptableObject
     public void loadQuips(Dictionary<EventTypes, List<string>> quipDict)
     {
 
-        /*
-        Dictionary<EventTypes, string[]> eventsToQuips = new Dictionary<EventTypes, string[]> {
-            { EventTypes.ClownTalk, clickQuip },
-            { EventTypes.ClownHappy, happyQuips },
-            { EventTypes.ClownSad, sadQuips },
-            { EventTypes.ClownAngry, angryQuips },
-            { EventTypes.ClownGetHurt, getHurtQuips },
-            { EventTypes.ClownGetKilled, getKilledQuips },
-            { EventTypes.AnotherClownHurt, anotherHurtQuips },
-            { EventTypes.AnotherClownKilled, anotherKilledQuips }
-        };
-        */
-
-        foreach (var quipsPair in quipTuples)
+        if (quipTuples.Count > 0)
         {
-            if (!quipDict.ContainsKey(quipsPair.eventType))
-                quipDict[quipsPair.eventType] = new List<string>();
-            
-            quipDict[quipsPair.eventType].Add(quipsPair.quips);
-            quipDict[quipsPair.eventType].Shuffle();
+            foreach (var quipsPair in quipTuples)
+            {
+                if (!quipDict.ContainsKey(quipsPair.eventType))
+                    quipDict[quipsPair.eventType] = new List<string>();
+
+                quipDict[quipsPair.eventType].Add(quipsPair.quips);
+                quipDict[quipsPair.eventType].Shuffle();
+            }
+        }
+        else
+        {
+            Dictionary<EventTypes, string[]> eventsToQuips = new Dictionary<EventTypes, string[]> {
+                { EventTypes.ClownTalk, clickQuip },
+                { EventTypes.ClownHappy, happyQuips },
+                { EventTypes.ClownSad, sadQuips },
+                { EventTypes.ClownAngry, angryQuips },
+                { EventTypes.ClownGetHurt, getHurtQuips },
+                { EventTypes.ClownGetKilled, getKilledQuips },
+                { EventTypes.AnotherClownHurt, anotherHurtQuips },
+                { EventTypes.AnotherClownKilled, anotherKilledQuips }
+            };
+            foreach (var quipsPair in eventsToQuips)
+            {
+                if (!quipDict.ContainsKey(quipsPair.Key))
+                    quipDict[quipsPair.Key] = new List<string>();
+
+                quipDict[quipsPair.Key].AddRange(quipsPair.Value);
+                quipDict[quipsPair.Key].Shuffle();
+            }
         }
 
     }

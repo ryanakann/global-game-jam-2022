@@ -10,8 +10,10 @@ public class ClownDisplay : SelectionObject
 
     ClownBody body;
 
-    SpriteRenderer headRenderer;
-    SpriteRenderer bodyRenderer;
+    [HideInInspector]
+    public SpriteRenderer headRenderer;
+    [HideInInspector]
+    public SpriteRenderer bodyRenderer;
 
     public GameEvent collisionEvent;
 

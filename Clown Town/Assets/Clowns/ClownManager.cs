@@ -288,16 +288,22 @@ public class ClownManager : PersistentSingleton<ClownManager>
         // spawn prefab... set stuff of flowchart, push
         string quip = GetQuipForClownForEvent(clownId, eventType);
         string clownName = getClownWithId(clownId).Name;
+        QuipManager.instance.SpawnQuip(clowns[clownId].display.headRenderer.sprite, clownName, quip);
+        /*
         instance.quipFlowchart.SetStringVariable("quip", quip);
         instance.quipFlowchart.SetStringVariable("clownName", clownName);
         instance.quipFlowchart.ExecuteBlock("Quip");
+        */
     }
 
     public static void SayLineInFlowchartForClown(int clownId, string line)
     {
         string clownName = getClownWithId(clownId).Name;
+        QuipManager.instance.SpawnQuip(clowns[clownId].display.headRenderer.sprite, clownName, line);
+        /*
         instance.quipFlowchart.SetStringVariable("quip", line);
         instance.quipFlowchart.SetStringVariable("clownName", clownName);
         instance.quipFlowchart.ExecuteBlock("Quip");
+        */
     }
 }
