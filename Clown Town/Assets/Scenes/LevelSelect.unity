@@ -298,6 +298,18 @@ PrefabInstance:
       propertyPath: m_CellSize.x
       value: -5.8333335
       objectReference: {fileID: 0}
+    - target: {fileID: 4691959012885575058, guid: 4b481e820173a4f8c871d2a82da86761, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691959012885575058, guid: 4b481e820173a4f8c871d2a82da86761, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691959012885575058, guid: 4b481e820173a4f8c871d2a82da86761, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4691959012918115231, guid: 4b481e820173a4f8c871d2a82da86761, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
