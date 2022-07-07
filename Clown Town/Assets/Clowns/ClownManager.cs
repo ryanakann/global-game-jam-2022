@@ -39,10 +39,10 @@ public class ClownManager : PersistentSingleton<ClownManager>
     public static Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>> eventQuips = new Dictionary<ClownPersonality, Dictionary<EventTypes, List<string>>>();
     private static Dictionary<ClownPersonality, ClownProfile> clownProfilesByPersonality = new Dictionary<ClownPersonality, ClownProfile>();
 
-    private void Start()
+    protected override void Awake()
     {
         //if (IntroDialogueManager.instance != null)
-            
+        base.Awake();
 
         foreach (ClownProfile profile in clownProfiles)
         {
@@ -61,11 +61,6 @@ public class ClownManager : PersistentSingleton<ClownManager>
                 GenerateClownWithPersonality(profile.personality);
             }
         }
-    }
-
-    public void Generate()
-    {
-
     }
 
     public static void DamageClowns(int damage)
@@ -290,6 +285,7 @@ public class ClownManager : PersistentSingleton<ClownManager>
 
     public static void SayQuipInFlowchartForClownForEvent(int clownId, EventTypes eventType)
     {
+        // spawn prefab... set stuff of flowchart, push
         string quip = GetQuipForClownForEvent(clownId, eventType);
         string clownName = getClownWithId(clownId).Name;
         instance.quipFlowchart.SetStringVariable("quip", quip);
