@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
@@ -82,14 +82,14 @@ PrefabInstance:
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 8868054370823953499}
+      objectReference: {fileID: 7660775137189356978}
     - target: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 60
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 60
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: commandList.Array.size
@@ -101,27 +101,11 @@ PrefabInstance:
       objectReference: {fileID: 3629862851041455684}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
---- !u!1 &7330315654062723700 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 911536326881492681, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
-  m_PrefabInstance: {fileID: 7574190676406332605}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5226974507654389756 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2419875372901692225, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
   m_PrefabInstance: {fileID: 7574190676406332605}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5628658353626574441 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
-  m_PrefabInstance: {fileID: 7574190676406332605}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5226974507654389756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2693254553832833224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +191,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 728
     y: 408
-    width: 60
+    width: 79
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -221,6 +205,7 @@ MonoBehaviour:
   - {fileID: 9178113936092953026}
   - {fileID: 6149977745381590430}
   - {fileID: 5313707189493550320}
+  - {fileID: 7660775137189356978}
   - {fileID: 7683462751643085354}
   - {fileID: 4614828908174614946}
   - {fileID: 2693254553832833224}
@@ -457,3 +442,64 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &7660775137189356978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5226974507654389756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 13
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 7330315654062723700}
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Dialogue
+  targetMethod: KillClown
+  targetMethodText: 'KillClown (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: clownId
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &5628658353626574441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+  m_PrefabInstance: {fileID: 7574190676406332605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5226974507654389756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7330315654062723700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 911536326881492681, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+  m_PrefabInstance: {fileID: 7574190676406332605}
+  m_PrefabAsset: {fileID: 0}
