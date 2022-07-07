@@ -51,7 +51,6 @@ public class Radio : Singleton<Radio>
 
     public List<AudioClip> clips;
     private int clipIndex;
-    private float clipTime;
 
     GameObject bar1, bar2, bar3;
 
@@ -67,7 +66,6 @@ public class Radio : Singleton<Radio>
         //if (!audioSource.isPlaying) audioSource.Play();
 
         clipIndex = 0;
-        clipTime = 0f;
 
         if (radioChannels.Count > 0)
             currentChannel = radioChannels[channelIndex];
@@ -187,25 +185,6 @@ public class Radio : Singleton<Radio>
             channelIndex = 0;
         }
         currentChannel = radioChannels[channelIndex];
-        //audioSource.clip = clips[clipIndex];
-        //audioSource.time = Mathf.Min(clipTime % audioSource.clip.length, audioSource.clip.length - 0.01f);
-        //if (!audioSource.isPlaying) audioSource.Play();
         coroutine = null;
     }
-
-
-    /*
-    private void ShuffleClips()
-    {
-        clips = new List<AudioClip>();
-        musicClips.ForEach(clip => clips.Add(clip));
-        advertClips.ForEach(clip => clips.Add(clip));
-        clips.Shuffle();
-    }
-    
-    private void Update()
-    {
-        clipTime += Time.deltaTime;
-    }
-    */
 }

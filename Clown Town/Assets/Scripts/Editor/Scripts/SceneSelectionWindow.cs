@@ -79,6 +79,7 @@ public class SceneSelectionWindow : EditorWindow
 
     void OnGUI()
     {
+        if (window == null) Init();
         float minHeight = EditorGUIUtility.singleLineHeight;
 
         GUILayout.BeginArea(new Rect(0f, 0f, window.position.width, minHeight), EditorStyles.toolbar);
