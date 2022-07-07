@@ -345,8 +345,6 @@ public class SelectionController : Singleton<SelectionController>
         Wall.instance.Switch(false);
         while (Wall.instance.moving)
         { yield return null; }
-        clownHolder.parent = lowClownPoint;
-        clownHolder.localPosition = Vector3.zero;
         var op = SceneManager.LoadSceneAsync("BattleZone", LoadSceneMode.Additive);
         while (!op.isDone)
         { yield return null; }
@@ -373,6 +371,18 @@ public class SelectionController : Singleton<SelectionController>
         StartCoroutine(CoScram());
     }
 
+    public void ManPutThoseClownsDownThere()
+    {
+        clownHolder.parent = lowClownPoint;
+        clownHolder.localPosition = Vector3.zero;
+    }
+
+    public void PutTheDamnClownsBack()
+    {
+        clownHolder.parent = ClownsDisplay.instance.transform;
+        clownHolder.localPosition = Vector3.zero;
+    }
+
     IEnumerator CoScram()
     {
         Wall.instance.Switch(false);
@@ -384,8 +394,6 @@ public class SelectionController : Singleton<SelectionController>
         { yield return null; }
         levelGeneration.gameObject.SetActive(true);
         LevelGenerator.instance.cameraPivot.position = originalCameraPos;
-        clownHolder.parent = ClownsDisplay.instance.transform;
-        clownHolder.localPosition = Vector3.zero;
         Wall.instance.Switch(true);
         while (Wall.instance.moving)
         { yield return null; }
