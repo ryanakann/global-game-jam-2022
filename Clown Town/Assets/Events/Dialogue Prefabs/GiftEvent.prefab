@@ -56,8 +56,16 @@ PrefabInstance:
       value: GiftEvent
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: zoom
+      value: 0.52000046
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: scrollPos.x
+      value: -35.018173
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: scrollPos.y
-      value: -1
+      value: 286.63397
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: blockViewHeight
@@ -85,12 +93,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 7483746250174863841}
+      objectReference: {fileID: 4098015045200997971}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[1]
       value: 
@@ -102,7 +110,7 @@ PrefabInstance:
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 5604700585608693599}
+      objectReference: {fileID: 913192143579698545}
     - target: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.x
       value: 870
@@ -113,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 83
+      value: 86.53843
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.x
@@ -125,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 82
+      value: 84.61536
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: commandList.Array.size
@@ -147,17 +155,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2419875372901692225, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
   m_PrefabInstance: {fileID: 4673178583062125365}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7483746250174863841 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
-  m_PrefabInstance: {fileID: 4673178583062125365}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7011938583995279476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &104603995953349915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,10 +200,10 @@ MonoBehaviour:
   variable: {fileID: 4554575585366404267}
   minValue:
     integerRef: {fileID: 0}
-    integerVal: 10
+    integerVal: 2
   maxValue:
     integerRef: {fileID: 0}
-    integerVal: 100
+    integerVal: 5
 --- !u!114 &3127036553539687272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +308,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 748
     y: 403
-    width: 79
+    width: 80.7692
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -490,3 +487,14 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &7483746250174863841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+  m_PrefabInstance: {fileID: 4673178583062125365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011938583995279476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

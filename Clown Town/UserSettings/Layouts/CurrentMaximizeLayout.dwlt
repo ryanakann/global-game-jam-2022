@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 56681
+  controlID: 57376
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 8697f9ff
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: bacef9fff655fcff6462fdff1aadfeff16b2feff4419ffffec2ffffff62ffffff82fffff363bffff6e7affff7a7affff807affff8a7affff4a85ffff4c85fffff099ffffe09affffea9afffff0a1fffffea1ffffd6bbffff1abfffffa0bfffff14c0ffffb6c0ffff3cc4ffffbec4ffff78d1ffffe6dcffff16efffff26fbffff2cfbfffff4ffffffa45b0000e0d300006cd40000
+      m_ExpandedIDs: 6656f9ff1470f9ffbacef9ff6462fdff1aadfeff16b2feff4419fffffc2effffec2ffffff62ffffff82fffff363bffff6e7affff7a7affff807affff8a7affff4a85ffff4c85fffff099ffffe09affffea9afffff0a1fffffea1ffffd6bbffff1abfffffa0bfffff14c0ffffb6c0ffff3cc4ffffbec4ffff78d1ffffe6dcffff16efffff26fbffff2cfbffffa45b0000e0d300006cd40000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 416.25775, y: 156.97961, z: -1.1862612}
+    m_Target: {x: 73.95016, y: 265.20752, z: -0.69886947}
     speed: 2
-    m_Value: {x: 416.25775, y: 156.97961, z: -1.1862612}
+    m_Value: {x: 73.95016, y: 265.20752, z: -0.69886947}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 140.02739
+    m_Target: 142.23438
     speed: 2
-    m_Value: 140.02739
+    m_Value: 142.23438
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1009,13 +1009,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Clowns
+    - Assets/Events/Dialogue Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Clowns
+  - Assets/Events/Dialogue Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Wyot\Stuff\Unity Stuff\Projects\Clown Town\ggj-2022\Clown
     Town
@@ -1023,9 +1023,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 67}
-    m_SelectedIDs: d89a0000
-    m_LastClickedID: 39640
-    m_ExpandedIDs: 00000000c49a0000c69a0000c89a000000ca9a3b
+    m_SelectedIDs: 009b0000
+    m_LastClickedID: 39680
+    m_ExpandedIDs: 00000000c49a0000c69a0000c89a0000dc9a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1078,9 +1078,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 8697f9ff
-    m_LastClickedInstanceID: -419962
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300007e700100ac6c0000ae590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1167,7 +1167,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -240138
+  m_LastSelectedObjectID: -53534
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52

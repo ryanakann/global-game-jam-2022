@@ -56,12 +56,16 @@ PrefabInstance:
       value: UggaBuggaEvent
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: zoom
+      value: 0.8200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: scrollPos.x
-      value: -138
+      value: -336.6099
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: scrollPos.y
-      value: -31
+      value: -54.170776
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: blockViewHeight
@@ -97,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
@@ -117,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 60
+      value: 82.92682
       objectReference: {fileID: 0}
     - target: {fileID: 6106615107159959229, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: requiredPersonalities.Array.size
@@ -129,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 60
+      value: 82.92682
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: commandList.Array.size
@@ -151,17 +155,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2419875372901692225, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
   m_PrefabInstance: {fileID: 4882668152778414843}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7260739838424143919 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
-  m_PrefabInstance: {fileID: 4882668152778414843}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7086316175939676602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &530279892138688964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +291,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 778
     y: 410
-    width: 60
+    width: 80.4878
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -576,6 +569,34 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &6165410028936643775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086316175939676602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 15
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 5720932333223863346}
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Dialogue
+  targetMethod: TestInterrupt
+  targetMethodText: 'TestInterrupt (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &8529224446102982565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,31 +722,14 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &6165410028936643775
+--- !u!114 &7260739838424143919 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+  m_PrefabInstance: {fileID: 4882668152778414843}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7086316175939676602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 15
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 5720932333223863346}
-  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Dialogue
-  targetMethod: TestInterrupt
-  targetMethodText: 'TestInterrupt (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0

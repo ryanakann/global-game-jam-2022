@@ -53,11 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 872003966159600688, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: targetMethod
-      value: 
+      value: Finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 872003966159600688, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: showInherited
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 872003966159600688, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: targetMethodText
-      value: 
+      value: 'Finish (): Void'
       objectReference: {fileID: 0}
     - target: {fileID: 872003966159600688, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: targetComponentText
@@ -72,12 +76,16 @@ PrefabInstance:
       value: Gambling
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: zoom
+      value: 0.73000026
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: scrollPos.x
-      value: -352.5
+      value: -706.5091
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: scrollPos.y
-      value: -98
+      value: -35.543396
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: blockViewHeight
@@ -113,12 +121,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 4240795308505400113}
+      objectReference: {fileID: 6338171538407411055}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
@@ -133,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 60
+      value: 81.506836
       objectReference: {fileID: 0}
     - target: {fileID: 6106615107159959229, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: Name
@@ -141,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: nodeRect.width
-      value: 60
+      value: 81.506836
       objectReference: {fileID: 0}
     - target: {fileID: 9198017613355786735, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: commandList.Array.size
@@ -154,65 +162,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6106615107159959229, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
---- !u!1 &8958280480966668658 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 911536326881492681, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
-  m_PrefabInstance: {fileID: 8139229210175066043}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5864045170583059706 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2419875372901692225, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
   m_PrefabInstance: {fileID: 8139229210175066043}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7536675096728061771 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
-  m_PrefabInstance: {fileID: 8139229210175066043}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5864045170583059706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6338171538407411055 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
-  m_PrefabInstance: {fileID: 8139229210175066043}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5864045170583059706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &9002030637080343435 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 872003966159600688, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
-  m_PrefabInstance: {fileID: 8139229210175066043}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5864045170583059706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3597434939212346086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8958280480966668658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b2c347d4cf6800499e24e0ed8f829a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Gambling Den
-  flowchart: {fileID: 7536675096728061771}
-  requiredPersonalities: 
-  requiredTraits: 
 --- !u!114 &254316813320027516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +261,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 738
     y: 410
-    width: 60
+    width: 74.657524
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -472,7 +426,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 867
     y: 412
-    width: 63
+    width: 102.05478
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1758,3 +1712,59 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &6338171538407411055 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2810787922737103572, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+  m_PrefabInstance: {fileID: 8139229210175066043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864045170583059706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7536675096728061771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+  m_PrefabInstance: {fileID: 8139229210175066043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864045170583059706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8958280480966668658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 911536326881492681, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+  m_PrefabInstance: {fileID: 8139229210175066043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3597434939212346086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8958280480966668658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b2c347d4cf6800499e24e0ed8f829a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Gambling Den
+  recruitEvent: 0
+  flowchart: {fileID: 7536675096728061771}
+  requiredPersonalities: 
+  requiredTraits: 
+  priority: 0
+--- !u!114 &9002030637080343435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 872003966159600688, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+  m_PrefabInstance: {fileID: 8139229210175066043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864045170583059706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

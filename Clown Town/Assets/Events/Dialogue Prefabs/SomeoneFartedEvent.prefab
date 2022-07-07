@@ -56,6 +56,18 @@ PrefabInstance:
       value: SomeoneFartedEvent
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: zoom
+      value: 0.8200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: scrollPos.x
+      value: -389.68234
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
+      propertyPath: scrollPos.y
+      value: -112.34801
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: variables.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -77,16 +89,16 @@ PrefabInstance:
       objectReference: {fileID: 6662388394423397502}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 2951961337218942262}
+      objectReference: {fileID: 6919759532719421004}
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedBlocks.Array.data[1]
       value: 
@@ -98,7 +110,7 @@ PrefabInstance:
     - target: {fileID: 1757529505774536944, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 5198744120659678085}
+      objectReference: {fileID: 1266560747065500062}
     - target: {fileID: 6106615107159959229, guid: 8ec042bf6328fe54a92f7dcc06305724, type: 3}
       propertyPath: requiredTraits.Array.size
       value: 1
@@ -223,10 +235,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 5895375159818085075}
-  targetComponentAssemblyName: Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: Dialogue, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Event
+  targetComponentText: Dialogue
   targetMethod: Finish
   targetMethodText: 'Finish (): Void'
   methodParameters: []
@@ -311,7 +323,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 619.25
     y: 478
-    width: 60
+    width: 80.4878
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -566,7 +578,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 812.25
     y: 478
-    width: 60
+    width: 82.92682
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -710,7 +722,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 415.25
     y: 480
-    width: 60
+    width: 82.92682
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
