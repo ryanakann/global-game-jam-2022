@@ -66,11 +66,31 @@ public class Clown
             CurrentHealth = 0.0f;
             alive = false;
         }
+        // if dead, clown quip
+        Debug.Log("Clown " + Name + " has " + CurrentHealth + " health");
+
         if (display != null && CurrentHealth > 0)
         {
             display.Harm((int)harm_amount, SelectionController.instance.fueling);
         }
-        Debug.Log("Clown " + Name + " has " + CurrentHealth + " health");
+        // if alive, clown or another clown quip
+        if (alive)
+        {
+            ClownManager.SayQuipInFlowchartForClownForEvent(Id, EventTypes.ClownGetHurt);
+            if (Random.value < 0.5f)
+            {
+                ClownManager.SayQuipInFlowchartForClownForEvent(ClownManager.getRandomClownId(), EventTypes.AnotherClownHurt);
+            }
+        }
+        else
+        {
+            ClownManager.SayQuipInFlowchartForClownForEvent(Id, EventTypes.ClownGetKilled);
+            if (Random.value < 0.5f)
+            {
+                ClownManager.SayQuipInFlowchartForClownForEvent(Id, EventTypes.AnotherClownKilled);
+            }
+            ClownManager.KillClown(Id);
+        }
     }
 
     public void Kill()

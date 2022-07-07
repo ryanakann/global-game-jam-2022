@@ -55,6 +55,7 @@ public class Dialogue : MonoBehaviour
 
     public void Finish()
     {
+        print("WHAT TEH FUCJK!!>");
         Return?.Invoke(this);
         Destroy(gameObject);
     }
@@ -88,7 +89,7 @@ public class Dialogue : MonoBehaviour
 
     public void Pause()
     {
-        if (!playing || flowchart.GetExecutingBlocks().Count == 0)
+        if (!playing)
             return;
         playing = false;
         lastBlock = flowchart.GetExecutingBlocks()[0];

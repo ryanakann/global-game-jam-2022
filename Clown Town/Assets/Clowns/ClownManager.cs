@@ -73,25 +73,6 @@ public class ClownManager : PersistentSingleton<ClownManager>
         CameraShake.Shake(0.25f, 0.25f);
         Clown clown = getClownWithId(getRandomClownId());
         clown.Harm(damage);
-        // if alive, clown or another clown quip
-        if (clown.alive)
-        {
-            SayQuipInFlowchartForClownForEvent(clown.Id, EventTypes.ClownGetHurt);
-            if (Random.value < 0.5f)
-            {
-                SayQuipInFlowchartForClownForEvent(getRandomClownId(), EventTypes.AnotherClownHurt);
-            }
-        }
-        else
-        {
-            SayQuipInFlowchartForClownForEvent(clown.Id, EventTypes.ClownGetKilled);
-            if (Random.value < 0.5f)
-            {
-                SayQuipInFlowchartForClownForEvent(clown.Id, EventTypes.AnotherClownKilled);
-            }
-            KillClown(clown.Id);
-        }
-        // if dead, clown quip
     }
 
     public static List<Clown> GetClowns()

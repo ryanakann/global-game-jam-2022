@@ -58,14 +58,6 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        /*
-        if (ClownManager.instance.quipFlowchart.GetExecutingBlocks().Count > 0)
-            Gizmos.DrawSphere(transform.position, 1);
-        */
-    }
-
     void PushQuips(ClownPersonality trait, EventTypes eventType, int num = 1)
     {
         if (!lineCounter.ContainsKey(trait))

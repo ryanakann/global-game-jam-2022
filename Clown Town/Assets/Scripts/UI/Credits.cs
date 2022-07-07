@@ -15,7 +15,7 @@ public class Credits : MonoBehaviour
             "megaclown - Ryclown Clownann",
             "event clownmaster - Siclown Clownle",
             "junior clownman - Edclown Clownsi-Clownson",
-            "baby clownster - Jaclown Clownivan",
+            "baby clownster - Clownerv Phoclown",
             "the big clown on top - Clownby Dyclown",
             "clownlet - Gilclown Clownke",
             "background clown - Ticlown Clownyan",
