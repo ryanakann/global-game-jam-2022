@@ -10,7 +10,6 @@ public class VolumetricAudio : MonoBehaviour
     public bool occlude;
     public float occlude_dist;
 
-    float range = 10000;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +21,6 @@ public class VolumetricAudio : MonoBehaviour
     void Update()
     {
         if (!aud) return;
-        /*
-        aud.transform.position = GetClosestPoint(DillowController.instance.body.transform.position);
-        if (occlude && Physics.Raycast(aud.transform.position, (DillowController.instance.body.transform.position - aud.transform.position).normalized,
-            out RaycastHit hit, range, LayerMask.GetMask("Ground"), queryTriggerInteraction: QueryTriggerInteraction.Ignore))
-            if (Vector3.Distance(DillowController.instance.body.transform.position, hit.point) > occlude_dist)
-            {
-                aud.SetActive(false);
-                return;
-            }
-        */
         aud.SetActive(true);
     }
 
