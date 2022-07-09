@@ -7,7 +7,6 @@ namespace Encounters
     public class UnitBehavior_Ally : UnitBehavior
     {
         Transform targetPoint;
-        float targetRadius = 0.1f;
 
         protected virtual void Start()
         {
@@ -19,7 +18,8 @@ namespace Encounters
         protected override void Update()
         {
             base.Update();
-            foreach (RaycastHit2D hit in Physics2D.CircleCastAll(targetPoint.position, targetRadius, Vector2.zero))
+
+            foreach (var hit in Physics2D.OverlapBoxAll(targetPoint.position, new Vector2(_info.AttackRange, _info.AttackWidth), 0f))
             {
                 var unit = hit.transform.GetComponent<UnitBehavior>();
                 if (unit != null && unit._info != null && unit._info.UnitType == UnitType.Foe)
