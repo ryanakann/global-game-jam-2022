@@ -47,7 +47,7 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
         {
             if (lineQueue.Count > 0)
             {
-                ClownManager.SayLineInFlowchartForClown(clownQueue[0].Id, lineQueue[0]);
+                ClownManager.SayLine(clownQueue[0].Id, lineQueue[0]);
                 lineQueue.RemoveAt(0);
             }
             else if (lineQueue.Count == 0 && !triggered)

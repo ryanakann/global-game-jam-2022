@@ -306,4 +306,12 @@ public class ClownManager : PersistentSingleton<ClownManager>
         instance.quipFlowchart.ExecuteBlock("Quip");
         */
     }
+
+    public static void SayLine(int clownId, string line)
+    {
+        string clownName = getClownWithId(clownId).Name;
+        instance.quipFlowchart.SetStringVariable("quip", line);
+        instance.quipFlowchart.SetStringVariable("clownName", clownName);
+        instance.quipFlowchart.ExecuteBlock("Quip");
+    }
 }
