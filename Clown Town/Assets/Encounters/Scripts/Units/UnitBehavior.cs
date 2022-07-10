@@ -60,15 +60,30 @@ namespace Encounters
 
             if (_info.AttackEffect)
             {
-                var effect = Instantiate(_info.AttackEffect, transform).GetComponent<UnitAttack>();
-                effect.GetComponent<Animator>().speed = _info.AttackSpeed;
+                var effect = Instantiate(_info.AttackEffect, transform);
+                var attack = effect.GetComponent<UnitAttack>();
 
-                effect.gameObject.SetActive(false);
-                effect.Init(_info);
-                effect.transform.localPosition = ((flip) ? Vector3.left : Vector3.right) * _info.AttackRange / 2f; 
-                effect.transform.localScale = new Vector3(_info.AttackRange, _info.AttackWidth, effect.transform.localScale.z);
-                effect.gameObject.SetActive(true);
-                Destroy(effect.gameObject, 1 / _info.AttackSpeed + 0.1f);
+                // Poop doesnt have animation ;)
+                if (effect.GetComponent<Animator>())
+                {
+                    effect.GetComponent<Animator>().speed = _info.AttackSpeed;
+                }
+
+                effect.GetComponent<Projectile>()?.Throw(transform.position, true, _info.AttackDamage);
+
+                // Non projectile effects. this is what you call jank city
+                if (attack)
+                {
+                    effect.gameObject.SetActive(false);
+
+                    attack?.Init(_info);
+                    effect.transform.localPosition = ((flip) ? Vector3.left : Vector3.right) * _info.AttackRange / 2f;
+                    effect.transform.localScale = new Vector3(_info.AttackRange, _info.AttackWidth, effect.transform.localScale.z);
+                    Destroy(effect.gameObject, 1 / _info.AttackSpeed + 0.1f);
+
+                    effect.gameObject.SetActive(true);
+                }
+
             }
 
             yield return new WaitForSeconds(_info.AttackCooldown);
