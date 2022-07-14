@@ -6,33 +6,32 @@ using UnityEngine.Audio;
 public enum FXType
 {
     Default,
-    Poof,
-    HooAdultIdle,
-    HooBabyIdle,
-    Click,
-    Fire,
-    CyberDeath,
+    MenuClick,
+    RadioClick,
+    DogSelect,
+    ElephantSelect,
+    MonkeySelect,
 }
 
 public class FX_Spawner : MonoBehaviour
 {
     [System.Serializable]
-    public struct SerializedDict
+    public class FX_Tuple
     {
         public FXType key;
-        public UnityEngine.GameObject value;
-        public bool onesie;
+        public UnityEngine.GameObject fx;
+        public int limit = -1;
     }
 
     public AudioMixerGroup mixer;
     private UnityEngine.GameObject holder;
 
-    public List<SerializedDict> Serialized_FX_Dict = new List<SerializedDict>();
-    public Dictionary<FXType, UnityEngine.GameObject> FX_Dict = new Dictionary<FXType, UnityEngine.GameObject>();
-    Dictionary<FXType, bool> onesieChecker = new Dictionary<FXType, bool>();
-    Dictionary<FXType, GameObject> onesieTracker = new Dictionary<FXType, GameObject>();
+    public List<FX_Tuple> Serialized_FX_Dict = new List<FX_Tuple>();
+    public Dictionary<FXType, FX_Tuple> FX_Dict = new Dictionary<FXType, FX_Tuple>();
 
-    public GameObject fx_default;
+    public Dictionary<FXType, int> FX_Counter = new Dictionary<FXType, int>();
+
+    public FX_Tuple fx_default;
 
     // Singleton code
     public static FX_Spawner instance;
@@ -48,31 +47,32 @@ public class FX_Spawner : MonoBehaviour
 
         foreach (var entry in Serialized_FX_Dict)
         {
-            FX_Dict[entry.key] = entry.value;
-            onesieChecker[entry.key] = entry.onesie;
+            FX_Dict[entry.key] = entry;
+            if (entry.limit > -1)
+            {
+                FX_Counter[entry.key] = 0;
+            }
         }
         if (FX_Dict.ContainsKey(FXType.Default))
         {
             FX_Dict[FXType.Default] = null;
-            onesieChecker[FXType.Default] = false;
         }
         holder = new UnityEngine.GameObject("FX Objects");
     }
 
 
-    public UnityEngine.GameObject SpawnFX(UnityEngine.GameObject fx, Vector3 position, Vector3 rotation, float vol = -1, Transform parent = null, FXType effectName=FXType.Default) {
+    public UnityEngine.GameObject SpawnFX(GameObject fx, Vector3 position, Vector3 rotation, float vol = -1, Transform parent = null, FXType effectName=FXType.Default) {
         if (fx == null) return null;
 
-        if (onesieTracker.ContainsKey(effectName))
+        if (FX_Counter.ContainsKey(effectName) && FX_Counter[effectName] >= FX_Dict[effectName].limit)
         {
-            if (onesieTracker[effectName])
-                return null;
+            return null;
         }
 
         UnityEngine.GameObject spawned_fx = Instantiate(fx, position, Quaternion.identity);
-        if (onesieChecker.ContainsKey(effectName) && onesieChecker[effectName])
+        if (FX_Counter.ContainsKey(effectName))
         {
-            onesieTracker[effectName] = spawned_fx;
+            FX_Counter[effectName]++;
         }
 
 
@@ -89,17 +89,17 @@ public class FX_Spawner : MonoBehaviour
         return spawned_fx;
     }
 
-    public UnityEngine.GameObject SpawnFX(FXType effectName, Vector3 position, Vector3 rotation, float vol = -1, Transform parent = null, bool onesie=false) {
+    public UnityEngine.GameObject SpawnFX(FXType effectName, Vector3 position, Vector3 rotation, float vol = -1, Transform parent = null) {
         if (!FX_Dict.ContainsKey(effectName))
-            return SpawnFX(fx_default, position, rotation, vol, parent, FXType.Default);
-        return SpawnFX(FX_Dict[effectName], position, rotation, vol, parent, effectName);
+            return SpawnFX(fx_default.fx, position, rotation, vol, parent, FXType.Default);
+        return SpawnFX(FX_Dict[effectName].fx, position, rotation, vol, parent, effectName);
         //return SpawnFX(FX_Dict.GetValueOrDefault(effectName, FX_Dict[FXType.Default]), position, rotation, vol, parent);
     }
 
-    public UnityEngine.GameObject SpawnFX(FXType effectName, Vector3 position, Quaternion rotation, float vol = -1, Transform parent = null, bool onesie=false)
+    public UnityEngine.GameObject SpawnFX(FXType effectName, Vector3 position, Quaternion rotation, float vol = -1, Transform parent = null)
     {
         if (!FX_Dict.ContainsKey(effectName))
-            return SpawnFX(fx_default, position, rotation.eulerAngles, vol, parent, FXType.Default);
-        return SpawnFX(FX_Dict[effectName], position, rotation.eulerAngles, vol, parent, effectName);
+            return SpawnFX(fx_default.fx, position, rotation.eulerAngles, vol, parent, FXType.Default);
+        return SpawnFX(FX_Dict[effectName].fx, position, rotation.eulerAngles, vol, parent, effectName);
     }
 }
