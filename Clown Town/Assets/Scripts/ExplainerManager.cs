@@ -385,7 +385,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
             lr.SetPosition(0, pos + explainerQueue[0].lrStartPosition);
             lr.SetPosition(1, endPos);
             arrowHead.position = lr.GetPosition(1);
-            arrowHead.up = (lr.GetPosition(1) - lr.GetPosition(0)).normalized;
+            arrowHead.up = (lr.GetPosition(1) - lr.GetPosition(0)).normalized * 5f;
         }
 
         explainerQueue[0].dialogueBox.SetActive(true);
