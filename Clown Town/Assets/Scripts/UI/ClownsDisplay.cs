@@ -5,6 +5,7 @@ using UnityEngine;
 public class ClownsDisplay : Singleton<ClownsDisplay>
 {
     Transform minWidthPivot, maxWidthPivot;
+
     Transform clownDisplayHolder;
 
     public void Generate()
@@ -34,6 +35,11 @@ public class ClownsDisplay : Singleton<ClownsDisplay>
             display.transform.parent = clownDisplayHolder;
 
         }
+    }
+
+    static public Vector3 GetClownsDisplayPos()
+    {
+        return instance.clownDisplayHolder.position;
     }
 
     public void ResetDisplay()

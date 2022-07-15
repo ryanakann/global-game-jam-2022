@@ -71,6 +71,9 @@ public class Clown
 
         if (display != null && CurrentHealth > 0)
         {
+            // TODO: different clown voices
+            FX_Spawner.instance.SpawnFX(FXType.ClownHarm, Vector3.zero, Quaternion.identity);
+            ExplainerManager.Explain(Cue.ClownHarm);
             display.Harm((int)harm_amount, SelectionController.instance.fueling);
         }
         // if alive, clown or another clown quip
@@ -89,6 +92,8 @@ public class Clown
             {
                 ClownManager.SayQuipInFlowchartForClownForEvent(ClownManager.getRandomClownIdExcludingAnother(Id), EventTypes.AnotherClownKilled);
             }
+            FX_Spawner.instance.SpawnFX(FXType.ClownDie, Vector3.zero, Quaternion.identity);
+            ExplainerManager.Explain(Cue.ClownDie);
             ClownManager.KillClown(Id);
         }
     }

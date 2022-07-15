@@ -182,11 +182,20 @@ public class ClownDisplay : SelectionObject
         SelectionController.instance.clownPanel.FillImage("ClownImage", headRenderer.sprite, true);
     }
 
+    public override void Deselect(bool clear = true)
+    {
+        base.Deselect(clear);
+        FX_Spawner.instance.SpawnFX(FXType.ClownDeselect, Vector3.zero, Quaternion.identity);
+    }
+
     public override void Select()
     {
         base.Select();
+        
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.clownPanel, select: true))
         {
+            FX_Spawner.instance.SpawnFX(FXType.ClownSelect, Vector3.zero, Quaternion.identity);
+            ExplainerManager.Explain(Cue.ClownSelect);
             FillDetailsPanel();
             SelectionController.instance.clownPanel.FillButton("TalkOpen", true);
         }
@@ -197,6 +206,8 @@ public class ClownDisplay : SelectionObject
         base.Highlight();
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.clownPanel, select: false))
         {
+            FX_Spawner.instance.SpawnFX(FXType.ClownHighlight, Vector3.zero, Quaternion.identity);
+            ExplainerManager.Explain(Cue.MouseOverClown);
             FillDetailsPanel();
             SelectionController.instance.clownPanel.FillButton("TalkOpen", false);
         }

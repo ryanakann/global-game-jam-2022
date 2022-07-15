@@ -49,6 +49,8 @@ public class QuipBubble : MonoBehaviour
         currentPoint++;
         if (currentPoint >= sequence.Count)
         {
+            if (--QuipManager.instance.quipCount == 0)
+                FX_Spawner.instance.SpawnFX(FXType.LastQuip, Vector3.zero, Quaternion.identity);
             StartCoroutine(CoFade());
             return;
         }

@@ -34,6 +34,11 @@ namespace Encounters
             StartEncounter();
         }
 
+        static public Vector3 GetSpawnerPos()
+        {
+            return instance.spawners[2].transform.position;
+        }
+
         public void StartEncounter()
         {
             if (Active) return;

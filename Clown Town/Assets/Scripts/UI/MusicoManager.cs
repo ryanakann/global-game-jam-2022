@@ -30,8 +30,14 @@ public class MusicoManager : Singleton<MusicoManager>
         }
     }
 
+    static public Vector3 GetPos()
+    {
+        return instance.musicHolder.position;
+    }
+
     public void AdvancePlayer()
     {
+        FX_Spawner.instance.SpawnFX(FXType.MusicAdvance, Vector3.zero, Quaternion.identity);
         playerLevel++;
     }
 

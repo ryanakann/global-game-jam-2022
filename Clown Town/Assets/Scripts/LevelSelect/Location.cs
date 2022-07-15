@@ -99,6 +99,7 @@ public class Location : SelectionObject
     public override void Deselect(bool clear = true)
     {
         base.Deselect(clear);
+        FX_Spawner.instance.SpawnFX(FXType.LocationDeselect, Vector3.zero, Quaternion.identity);
         if (activeEdge)
             activeEdge.Deselect(clear);
     }
@@ -127,6 +128,8 @@ public class Location : SelectionObject
             activeEdge.Select();
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: true))
         {
+            ExplainerManager.Explain(Cue.LocationSelect);
+            FX_Spawner.instance.SpawnFX(FXType.LocationSelect, Vector3.zero, Quaternion.identity);
             FillDetailsPanel();
             SelectionController.instance.locationPanel.FillButton("LocationOpen", true);
         }
@@ -135,10 +138,13 @@ public class Location : SelectionObject
     public override void Highlight()
     {
         base.Highlight();
+        
         if (activeEdge)
             activeEdge.Highlight();
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: false))
         {
+            FX_Spawner.instance.SpawnFX(FXType.LocationHighlight, Vector3.zero, Quaternion.identity);
+            ExplainerManager.Explain(Cue.MouseOverLocation);
             FillDetailsPanel();
             SelectionController.instance.locationPanel.FillButton("LocationOpen", false);
         }

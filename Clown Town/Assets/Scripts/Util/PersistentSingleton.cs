@@ -9,5 +9,7 @@ public class PersistentSingleton<T> : Singleton<T> where T : Singleton<T>
 		base.Awake();
 		if (persistRoot)
 			DontDestroyOnLoad(transform.root.gameObject);
+		else
+			DontDestroyOnLoad(gameObject);
 	}
 }

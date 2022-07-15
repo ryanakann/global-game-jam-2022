@@ -20,11 +20,15 @@ namespace Encounters
 
         protected bool flip = false;
 
+        public FXType spawnFX, attackFX, harmFX, dieFX;
+
+
         public virtual void Init(UnitInfo unitInfo)
         {
             _info = unitInfo;
 
             _info.CurrentHealth = _info.MaxHealth;
+            FX_Spawner.instance.SpawnFX(spawnFX, Vector3.zero, Quaternion.identity);
         }
 
         // Update is called once per frame
@@ -51,6 +55,7 @@ namespace Encounters
         protected virtual IEnumerator AttackCR()
         {
             attacking = true;
+            FX_Spawner.instance.SpawnFX(attackFX, Vector3.zero, Quaternion.identity);
             print($"{gameObject.name} is attacking");
             var maxCoolddown = 1 / _info.AttackSpeed;
             
@@ -93,7 +98,7 @@ namespace Encounters
         public virtual void TakeDamage(float damage)
         {
             if (!_info.Alive) return;
-            
+
             _info.CurrentHealth = Mathf.Max(0f, _info.CurrentHealth - damage);
             
             if (!_info.Alive)
@@ -101,12 +106,15 @@ namespace Encounters
                 Die();
             }
 
+            FX_Spawner.instance.SpawnFX(harmFX, Vector3.zero, Quaternion.identity);
+
             OnHealthChanged?.Invoke(_info.CurrentHealth);
         }
 
         protected virtual void Die()
         {
             Debug.Log($"{name} is DEAD");
+            FX_Spawner.instance.SpawnFX(dieFX, Vector3.zero, Quaternion.identity);
             OnDie?.Invoke();
             Destroy(gameObject, 1f);
         }

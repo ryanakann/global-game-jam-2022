@@ -12,8 +12,14 @@ public class ClownZone : Singleton<ClownZone>
         if (info != null && info.UnitType == UnitType.Foe)
         {
             ClownManager.DamageClowns(1);
+            FX_Spawner.instance.SpawnFX(FXType.TentAttack, Vector3.zero, Quaternion.identity);
             StartCoroutine(FadeEnemy(info.gameObject));
         }
+    }
+
+    static public Vector3 GetTentPos()
+    {
+        return instance.transform.position;
     }
 
     public IEnumerator FadeEnemy(GameObject enemy)

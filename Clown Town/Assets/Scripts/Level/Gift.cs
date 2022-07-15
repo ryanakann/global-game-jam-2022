@@ -35,6 +35,7 @@ public class Gift : MonoBehaviour
             return;
         if (drop)
             dropper.Drop();
+        FX_Spawner.instance.SpawnFX(FXType.ClickGift, Vector3.zero, Quaternion.identity);
         clicked = true;
         if (ClownZone.instance != null)
             StartCoroutine(ClownZone.instance.FadeEnemy(gameObject));

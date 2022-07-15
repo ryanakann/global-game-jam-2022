@@ -459,6 +459,10 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls: []
+  spawnFX: 32
+  attackFX: 33
+  harmFX: 34
+  dieFX: 35
 --- !u!1 &2693653213688663862
 GameObject:
   m_ObjectHideFlags: 0

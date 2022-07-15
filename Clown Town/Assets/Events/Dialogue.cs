@@ -164,7 +164,7 @@ public class Dialogue : MonoBehaviour
 
     public void GainPeanuts(int peanutsAmount)
     {
-        SelectionController.instance.basePeanuts += peanutsAmount;
+        SelectionController.instance.UpdateBasePeanuts(peanutsAmount);
     }
 
     public void GainEarwax(int waxAmount)

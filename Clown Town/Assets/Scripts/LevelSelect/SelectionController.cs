@@ -29,7 +29,8 @@ public class SelectionController : Singleton<SelectionController>
     Vector3 originalCameraPos;
     Transform levelGeneration;
 
-    Button refuelButton;
+    [HideInInspector]
+    public Button refuelButton;
 
     TextMeshProUGUI peanutCount;
     public int peanuts;
@@ -47,7 +48,7 @@ public class SelectionController : Singleton<SelectionController>
     UnitCell unitCell;
     int mask;
 
-    Transform clownHolder, lowClownPoint;
+    Transform clownHolder, lowClownPoint, clownTalk, locationDeselect, scramButton, animalPanimal, clownClock;
 
     public bool canSelect = true;
 
@@ -61,12 +62,19 @@ public class SelectionController : Singleton<SelectionController>
         waxCount = transform.FindDeepChild("WaxText").GetComponent<TextMeshProUGUI>();
         waxBar = transform.FindDeepChild("CurrentWax").GetComponent<RectTransform>();
         wheelAnim = transform.FindDeepChild("Wheel").GetComponent<Animator>();
-        UpdateWax(0);
+        UpdateWax(0, start:true);
         refuelButton = transform.FindDeepChild("LeverHandle").GetComponent<Button>();
         peanutCount = transform.FindDeepChild("PeanutCount").GetComponent<TextMeshProUGUI>();
         unitIcon = transform.FindDeepChild("UnitIcon").GetComponent<Image>();
         clownHolder = transform.FindDeepChild("ClownDisplayHolder");
         lowClownPoint = transform.FindDeepChild("LowClownPoint");
+
+        clownTalk = transform.FindDeepChild("ClownTalkButton");
+        locationDeselect = transform.FindDeepChild("LocationDeselectButton");
+        scramButton = transform.FindDeepChild("ScramButton");
+        animalPanimal = transform.FindDeepChild("AnimalPanimal");
+        clownClock = transform.FindDeepChild("ClownClock");
+
         mask = ~LayerMask.GetMask("Unit");
     }
 
@@ -96,19 +104,38 @@ public class SelectionController : Singleton<SelectionController>
         }
     }
 
+    public void UpdateBasePeanuts(int _peanuts)
+    {
+        instance.basePeanuts += _peanuts;
+        FX_Spawner.instance.SpawnFX((Mathf.Sign(_peanuts) > -1) ? FXType.PeanutGain : FXType.PeanutLoss, Vector3.zero, Quaternion.identity);
+        if (_peanuts > 0)
+            ExplainerManager.Explain(Cue.BasePeanutGain);
+    }
+
     public void UpdatePeanuts(int _peanuts)
     {
         peanuts += _peanuts;
         peanutCount.text = $"{peanuts}";
+        FX_Spawner.instance.SpawnFX((Mathf.Sign(_peanuts) > -1) ? FXType.PeanutGain : FXType.PeanutLoss, Vector3.zero, Quaternion.identity);
     }
 
 
-    public void UpdateWax(int _wax)
+    public void UpdateWax(int _wax, bool start=false)
     {
         wax = Mathf.Clamp(wax + _wax, 0, maxWax);
         waxCount.text = $"WAX: {wax}";
         waxBar.anchorMax = new Vector2(wax / (float)maxWax, 1f);
-        waxBar.offsetMax = new Vector2(0, waxBar.offsetMax.y); ;
+        waxBar.offsetMax = new Vector2(0, waxBar.offsetMax.y);
+        FX_Spawner.instance.SpawnFX((Mathf.Sign(_wax) > -1) ? FXType.WaxGain : FXType.WaxLoss, Vector3.zero, Quaternion.identity);
+
+        if (!start)
+        {
+            if (_wax == maxWax)
+                ExplainerManager.Explain(Cue.FullWax);
+            else if (_wax > 0)
+                ExplainerManager.Explain(Cue.GainWax);
+        }
+
         if (wax == 0)
             waxCount.color = Color.red;
         else if (wax == maxWax)
@@ -120,6 +147,9 @@ public class SelectionController : Singleton<SelectionController>
     // Update is called once per frame
     void Update()
     {
+        if (ExplainerManager.instance != null && ExplainerManager.instance.explaining)
+            return;
+
         unitIcon.transform.position = Input.mousePosition;
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -142,6 +172,7 @@ public class SelectionController : Singleton<SelectionController>
         {
             if (currentSelectionObject.selectionState.canHighlight == false)
             {
+                FX_Spawner.instance.SpawnFX(FXType.MouseOvernt, Vector3.zero, Quaternion.identity);
                 currentSelectionObject.Unhighlight();
                 currentSelectionObject = null;
             }
@@ -183,6 +214,7 @@ public class SelectionController : Singleton<SelectionController>
         }
         if (result == false && currentSelectionObject != null)
         {
+            FX_Spawner.instance.SpawnFX(FXType.MouseOvernt, Vector3.zero, Quaternion.identity);
             currentSelectionObject.Unhighlight();
             currentSelectionObject = null;
         }
@@ -222,6 +254,7 @@ public class SelectionController : Singleton<SelectionController>
                         else if (!waxFlashing)
                         {
                             // flash edge panel
+                            FX_Spawner.instance.SpawnFX(FXType.FailSpawn, Vector3.zero, Quaternion.identity);
                             StartCoroutine(CoWaxFlash(peanutCount));
                         }
                     }
@@ -233,7 +266,9 @@ public class SelectionController : Singleton<SelectionController>
                 if (selectedObject != currentSelectionObject)
                 {
                     if (selectedObject != null)
+                    {
                         selectedObject.Deselect();
+                    }
                     selectedObject = currentSelectionObject;
                     currentSelectionObject.Select();
                 }
@@ -246,6 +281,7 @@ public class SelectionController : Singleton<SelectionController>
         unitCell = cell;
         unitIcon.gameObject.SetActive(true);
         unitIcon.sprite = cell.icon;
+        ExplainerManager.Explain(Cue.UnitSelect);
     }
 
     public void DRIVE()
@@ -254,6 +290,8 @@ public class SelectionController : Singleton<SelectionController>
         if (wax - cost < 0)
         {
             // flash edge panel
+            FX_Spawner.instance.SpawnFX(FXType.FailDrive, Vector3.zero, Quaternion.identity);
+            ExplainerManager.Explain(Cue.FailDrive);
             if (!waxFlashing)
                 StartCoroutine(CoWaxFlash(locationPanel.elementsMap["EdgeCost"].GetComponent<TextMeshProUGUI>()));
             return;
@@ -262,6 +300,8 @@ public class SelectionController : Singleton<SelectionController>
         {
             UpdateWax(-cost);
         }
+        ExplainerManager.Explain(Cue.DRIVE);
+        FX_Spawner.instance.SpawnFX(FXType.DRIVE, Vector3.zero, Quaternion.identity);
         MusicoManager.instance.AdvancePlayer();
         wheelAnim.SetTrigger("Spin");
         currentLocation.OccupyNeighbor((Location)selectedObject);
@@ -334,6 +374,8 @@ public class SelectionController : Singleton<SelectionController>
         UpdatePeanuts(basePeanuts);
         if (fueling || scramming)
             return;
+        FX_Spawner.instance.SpawnFX(FXType.FuelUp, Vector3.zero, Quaternion.identity);
+        ExplainerManager.Explain(Cue.EnterBattlezone);
         refuelButton.interactable = false;
         fueling = true;
         levelSelectAnim.SetBool("LevelSelect", false);
@@ -361,6 +403,7 @@ public class SelectionController : Singleton<SelectionController>
     {
         if (!fueling)
             return;
+        FX_Spawner.instance.SpawnFX(FXType.Scram, Vector3.zero, Quaternion.identity);
         unitCell = null;
         unitIcon.sprite = null;
         unitIcon.gameObject.SetActive(false);
@@ -369,6 +412,12 @@ public class SelectionController : Singleton<SelectionController>
         levelSelectAnim.SetBool("LevelSelect", true);
         ClearPanels();
         StartCoroutine(CoScram());
+    }
+
+    public void YouCanLeave()
+    {
+        FX_Spawner.instance.SpawnFX(FXType.TimerFinish, Vector3.zero, Quaternion.identity);
+        ExplainerManager.Explain(Cue.BattlezoneTimerFinish);
     }
 
     public void ManPutThoseClownsDownThere()
@@ -400,5 +449,75 @@ public class SelectionController : Singleton<SelectionController>
         scramming = false;
         refuelButton.interactable = true;
         MusicoManager.instance.UpdateMusic();
+    }
+
+    static public Vector3 GetWaxCountPos()
+    {
+        return Helper.ScreenToWorld(instance.waxCount.rectTransform);
+    }
+
+    static public Vector3 GetRefuelLeverPos()
+    {
+        return Helper.ScreenToWorld(instance.refuelButton.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetClownPanelPos()
+    {
+        return Helper.ScreenToWorld(instance.clownPanel.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetClownTalkPos()
+    {
+        return Helper.ScreenToWorld(instance.clownTalk.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetLocationDeselectPos()
+    {
+        return Helper.ScreenToWorld(instance.locationDeselect.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetLocationWaxCostPos()
+    {
+        return Helper.ScreenToWorld(instance.locationPanel.elementsMap["EdgeCost"].GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetLocationDifficultyPos()
+    {
+        return Helper.ScreenToWorld(instance.locationPanel.elementsMap["LocationDifficulty"].GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetLocationDescriptionPos()
+    {
+        return Helper.ScreenToWorld(instance.locationPanel.elementsMap["LocationDescription"].GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetWheelPos()
+    {
+        return Helper.ScreenToWorld(instance.wheelAnim.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetScramPos()
+    {
+        return Helper.ScreenToWorld(instance.scramButton.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetPeanutScreenPos()
+    {
+        return Helper.ScreenToWorld(instance.peanutCount.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetAnimalPanimalPos()
+    {
+        return Helper.ScreenToWorld(instance.animalPanimal.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetTimerPos()
+    {
+        return Helper.ScreenToWorld(instance.clownClock.GetComponent<RectTransform>());
+    }
+
+    static public bool GetFueling()
+    {
+        return instance.fueling;
     }
 }

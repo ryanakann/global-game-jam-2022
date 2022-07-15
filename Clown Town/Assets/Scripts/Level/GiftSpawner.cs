@@ -9,7 +9,7 @@ public class GiftSpawner : Singleton<GiftSpawner>
     float timer = 0, padding = 1.5f;
     Vector2 timerRange = new Vector2(3f, 6f);
 
-    public GameObject giftPrefab;
+    public GameObject giftPrefab, lastGift;
 
     EncounterInfo info;
 
@@ -26,10 +26,17 @@ public class GiftSpawner : Singleton<GiftSpawner>
         if (timer <= 0)
         {
             var gift = Instantiate(giftPrefab).transform;
+            lastGift = gift.gameObject;
             gift.parent = transform;
             gift.position = new Vector2(Random.Range(info.Bounds.min.x+padding, info.Bounds.max.x-padding), Random.Range(info.Bounds.min.y+padding, info.Bounds.max.y-padding));
             timer = Random.Range(timerRange[0], timerRange[1]);
+            ExplainerManager.Explain(Cue.GiftSpawn);
         }
         timer -= Time.deltaTime;
+    }
+
+    static public Vector3 GetLastGift()
+    {
+        return instance.lastGift.transform.position;
     }
 }

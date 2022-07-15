@@ -52,7 +52,7 @@ public class Radio : Singleton<Radio>
     public List<AudioClip> clips;
     private int clipIndex;
 
-    GameObject bar1, bar2, bar3;
+    GameObject bar1, bar2, bar3, play, skip;
 
     bool notfuckingreadyyet = true;
 
@@ -61,6 +61,8 @@ public class Radio : Singleton<Radio>
         bar1 = transform.FindDeepChild("Bar1").gameObject;
         bar2 = transform.FindDeepChild("Bar2").gameObject;
         bar3 = transform.FindDeepChild("Bar3").gameObject;
+        play = transform.FindDeepChild("Play").gameObject;
+        skip = transform.FindDeepChild("Skip").gameObject;
         audioSource = GetComponent<AudioSource>();
         //audioSource.loop = true;
         //if (!audioSource.isPlaying) audioSource.Play();
@@ -75,6 +77,21 @@ public class Radio : Singleton<Radio>
         ChangeChannel();
         */
         SetVolume(1);
+    }
+
+    static public Vector3 GetPos()
+    {
+        return Helper.ScreenToWorld(instance.play.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetVolumePos()
+    {
+        return Helper.ScreenToWorld(instance.bar2.GetComponent<RectTransform>());
+    }
+
+    static public Vector3 GetSkipPos()
+    {
+        return Helper.ScreenToWorld(instance.skip.GetComponent<RectTransform>());
     }
     
 

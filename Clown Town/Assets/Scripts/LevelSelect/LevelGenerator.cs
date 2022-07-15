@@ -32,6 +32,9 @@ public class LevelGenerator : Singleton<LevelGenerator>
     float minDistDifficulty = 0;
     float maxDistDifficulty = 6;
 
+    [HideInInspector]
+    public Transform startLocation;
+
 
 
     public void UpdateCamera(Vector3 pos)
@@ -159,6 +162,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         start_node.Activate();
         start_node.Occupy();
         start_node.transform.position += new Vector3(0, 0, 1f);
+        startLocation = start_node.transform;
     }
 
     void Start()
@@ -171,5 +175,11 @@ public class LevelGenerator : Singleton<LevelGenerator>
         cameraPivot = Camera.main.transform;
 
         Generate();
+        ExplainerManager.Explain(Cue.StartGame);
+    }
+
+    static public Vector3 GetStartLocationPos()
+    {
+        return instance.startLocation.position;
     }
 }

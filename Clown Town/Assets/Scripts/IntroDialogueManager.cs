@@ -29,8 +29,7 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
         clownQueue = ClownManager.GetClowns();
         Invoke("Play", 3f);
         // queue em up
-        if (ExplainerManager.instance != null)
-            ExplainerManager.instance.Explain("StartGame");
+        ExplainerManager.Explain(Cue.ClownIntro);
     }
 
     //just to expose the stupid animator
@@ -53,6 +52,7 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
             else if (lineQueue.Count == 0 && !triggered)
             {
                 triggered = true;
+                FX_Spawner.instance.SpawnFX(FXType.ClownOut, Vector3.zero, Quaternion.identity);
                 anim.SetTrigger("Exit");
             }
         }
@@ -93,6 +93,7 @@ public class IntroDialogueManager : Singleton<IntroDialogueManager>
         display.transform.parent = clownHolder;
         display.transform.position += new Vector3(0, 0.5f, 0);
         display.SetVisibility(SpriteMaskInteraction.None);
+        // FX_Spawner.instance.Spawn_FX(FXType.ClownIn, Vector3.zero, Quaternion.Identity);
         // get clown type, event type
         // if counter contains clown type and event type and the value equals the number of quips, delete that event type entry
         if (!ClownManager.eventQuips[clownQueue[0].Personality].ContainsKey(EventTypes.ClownIntro))
