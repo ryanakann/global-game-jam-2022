@@ -67,7 +67,6 @@ public class Clown
             alive = false;
         }
         // if dead, clown quip
-        Debug.Log("Clown " + Name + " has " + CurrentHealth + " health");
 
         if (display != null && CurrentHealth > 0)
         {

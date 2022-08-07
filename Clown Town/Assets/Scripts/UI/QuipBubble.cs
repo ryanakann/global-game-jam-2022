@@ -49,8 +49,6 @@ public class QuipBubble : MonoBehaviour
         currentPoint++;
         if (currentPoint >= sequence.Count)
         {
-            if (--QuipManager.instance.quipCount == 0)
-                FX_Spawner.instance.SpawnFX(FXType.LastQuip, Vector3.zero, Quaternion.identity);
             StartCoroutine(CoFade());
             return;
         }
@@ -72,6 +70,11 @@ public class QuipBubble : MonoBehaviour
         float endAlpha = 0;
         float t = 0f;
         float duration = 0.25f;
+        QuipManager.instance.quipCount--;
+        if (QuipManager.instance.quipCount == 0)
+        {
+            FX_Spawner.instance.SpawnFX(FXType.LastQuip, Vector3.zero, Quaternion.identity);
+        }
         while (t < duration)
         {
             canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, t / duration);

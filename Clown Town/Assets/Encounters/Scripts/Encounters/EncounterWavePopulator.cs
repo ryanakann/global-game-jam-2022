@@ -13,7 +13,7 @@ namespace Encounters
         float minDifficulty = 40; // I've just found this to be pretty ez
         float maxDifficulty = 100;
 
-        [Range(0f, 10f)]
+        [Range(0f, 20f)]
         public float difficultyIncreasePerWave = 0f;
         [Range(-1, 999999)]
         public int seed;

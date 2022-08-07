@@ -54,7 +54,7 @@ public class QuipManager : Singleton<QuipManager>
         if (quipQueue.Count > 0 && timer <= 0)
         {
             // TODO: different clown voices and clown moods
-            FX_Spawner.instance.SpawnFX(FXType.Quip, Vector3.zero, Quaternion.identity);
+            //FX_Spawner.instance.SpawnFX(FXType.Quip, Vector3.zero, Quaternion.identity);
             SpawnQuip(quipQueue[0]);
             quipQueue.RemoveAt(0);
         }
@@ -70,12 +70,13 @@ public class QuipManager : Singleton<QuipManager>
             quipQueue.Add(item);
             return;
         }
+        FX_Spawner.instance.SpawnFX(FXType.Quip, Vector3.zero, Quaternion.identity);
         timer = maxTimer;
         var bubble = Instantiate(bubblePrefab).GetComponent<QuipBubble>();
         bubble.transform.parent = transform;
         bubble.GetComponent<RectTransform>().offsetMin = Vector2.zero;
         bubble.GetComponent<RectTransform>().offsetMax = Vector2.one;
-        bubble.Setup(item.face, name, item.text);
+        bubble.Setup(item.face, item.speakerName, item.text);
         bubble.transform.position = p0.position;
         // instantiate bubble
         bubble.sequence = points;
