@@ -30,6 +30,7 @@ public class Wall : Singleton<Wall>
             return;
         else
             open = _open;
+        FX_Spawner.instance.SpawnFX(FXType.WallMove, Vector3.zero, Quaternion.identity);
         StartCoroutine(CoSwitch());
     }
 

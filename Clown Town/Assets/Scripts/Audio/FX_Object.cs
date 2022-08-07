@@ -13,12 +13,16 @@ public class FX_Object : MonoBehaviour
     public bool live_forever;
     public float lifetime = 0;
 
-    public bool onesie;
+    protected bool init;
+
+    [HideInInspector]
+    public FXType fx_type = FXType.Default;
 
     public AudioMixerGroup mixerGroup;
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
+
         LookAtConstraint lac = GetComponent<LookAtConstraint>();
         if (lac)
         {
@@ -53,5 +57,10 @@ public class FX_Object : MonoBehaviour
             lifetime = Mathf.Max(lifetime, max_part_len);
             Destroy(gameObject, lifetime);
         }
+    }
+
+    public void OnDestroy()
+    {
+        FX_Spawner.instance.Despawn(fx_type);
     }
 }

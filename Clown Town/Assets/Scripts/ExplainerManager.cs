@@ -16,8 +16,11 @@ public class Explanation
     public bool usePointer;
     public Pred predicate;
     public PosGetter lrEndPosGetter;
+    public bool uiHighlight;
 
-    public Explanation(string text, GameObject dialogueBox, Vector3 lrStartPosition, PosGetter posGetter, bool usePointer=true, Pred predicate=null)
+    public float delay;
+
+    public Explanation(string text, GameObject dialogueBox, Vector3 lrStartPosition, PosGetter posGetter, bool usePointer=true, Pred predicate=null, float delay=0)
     {
         this.text = text;
         this.dialogueBox = dialogueBox;
@@ -25,13 +28,25 @@ public class Explanation
         this.lrEndPosGetter = posGetter;
         this.usePointer = usePointer;
         this.predicate = predicate;
+        this.delay = delay;
     }
 
-    public Explanation(string text, GameObject dialogueBox, Pred predicate=null)
+    public Explanation(string text, GameObject dialogueBox, Pred predicate=null, float delay=0)
     {
         this.text = text;
         this.dialogueBox = dialogueBox;
         this.predicate = predicate;
+        this.delay = delay;
+    }
+
+    public Explanation(string text, GameObject dialogueBox, PosGetter posGetter, Pred predicate = null, float delay=0)
+    {
+        this.text = text;
+        this.dialogueBox = dialogueBox;
+        this.predicate = predicate;
+        uiHighlight = true;
+        this.lrEndPosGetter = posGetter;
+        this.delay = delay;
     }
 }
 
@@ -84,13 +99,21 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
     [HideInInspector]
     public bool explain;
 
+    RectTransform eyeHighlight;
+
     bool added;
+    RectTransform canvasRect;
+
+    float currentDelay = 0;
+    bool EXPLAINIT;
 
     protected override void Awake()
     {
         base.Awake();
-
+        canvasRect = transform.FindDeepChild("BlockerCanvas").GetComponent<RectTransform>();
         arrowHead = transform.FindDeepChild("arrow_head");
+
+        eyeHighlight = transform.FindDeepChild("HighlightEye").GetComponent<RectTransform>();
 
         // initialize pivots
         lr = GetComponent<LineRenderer>();
@@ -131,25 +154,25 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                     {
                         new Explanation("This is your CLOWN CAR. The hub of all your actions.", uiPivots[1].gameObject),
                         new Explanation("These are your clowns. You can mouse over them to view information about them on the computer.", 
-                            uiPivots[7].gameObject, lrPivots[7], ClownsDisplay.GetClownsDisplayPos),
+                            uiPivots[7].gameObject, ClownsDisplay.GetClownsDisplayPos), //lrPivots[7], 
                         new Explanation("This is the map. Locations are represented by those little icons. Edges indicate whether one location can be visited from another.", 
-                            uiPivots[8].gameObject, lrPivots[8], LevelGenerator.GetStartLocationPos),
+                            uiPivots[8].gameObject, LevelGenerator.GetStartLocationPos), //lrPivots[8], 
                         new Explanation("If you mouse over a location or an edge, useful information will appear on the computer.", 
                             uiPivots[8].gameObject),
                         new Explanation("This is your WAX METER. Like most clown cars, it is fueled by wax.", 
-                            uiPivots[5].gameObject, lrPivots[5], SelectionController.GetWaxCountPos),
+                            uiPivots[5].gameObject, SelectionController.GetWaxCountPos), // lrPivots[5],
                         new Explanation("You can collect wax by pulling this lever to enter the BATTLEZONE... More will be explained once you click on that.", 
-                            uiPivots[5].gameObject, lrPivots[5], SelectionController.GetRefuelLeverPos),
+                            uiPivots[5].gameObject, SelectionController.GetRefuelLeverPos), // lrPivots[5], 
                         new Explanation("The amount of wax required to traverse to a location can be viewed on the computer, but be warned! Each location has some degree of difficulty associated with it.", 
                             uiPivots[4].gameObject),
                         new Explanation("This is the radio. You can play/pause by clicking on this button.", 
-                            uiPivots[4].gameObject, lrPivots[4], Radio.GetPos),
+                            uiPivots[4].gameObject, Radio.GetPos), // lrPivots[4],
                         new Explanation("These buttons control the volume.", 
-                            uiPivots[4].gameObject, lrPivots[4], Radio.GetVolumePos),
+                            uiPivots[4].gameObject, Radio.GetVolumePos), // lrPivots[4], 
                         new Explanation("This button allows you change the channel.", 
-                            uiPivots[4].gameObject, lrPivots[4], Radio.GetSkipPos),
+                            uiPivots[4].gameObject, Radio.GetSkipPos), // lrPivots[4], 
                         new Explanation("Speaking of music... You are being pursued by a wave of demonic instruments. THE MUSIC. Every time you choose to collect wax, the MUSIC will incrementally advance. If it overtakes you, YOU LOSE.", 
-                            uiPivots[2].gameObject, lrPivots[2], MusicoManager.GetPos),
+                            uiPivots[2].gameObject, MusicoManager.GetPos), // lrPivots[2], 
                         new Explanation("Your goal is to traverse to the very end with at least one 'living' clown, where a mighty fine SURPRISE awaits you.", uiPivots[1].gameObject),
                         new Explanation("By the way, press P to pause.", uiPivots[1].gameObject),
                         new Explanation("GOOD LUCK!", uiPivots[1].gameObject),
@@ -158,20 +181,20 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                 {Cue.MouseOverClown, new List<Explanation>()
                     {
                         new Explanation("Here you can see your clown's name, health, and personality.", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetClownPanelPos),
+                            uiPivots[4].gameObject, SelectionController.GetClownPanelPos), // lrPivots[4], 
                         new Explanation("Try clicking the clown to SELECT the clown.", uiPivots[4].gameObject),
                     }
                 },
                 {Cue.ClownSelect, new List<Explanation>()
                     {
                         new Explanation("In addition to locking the computer screen, you now have the option to talk to or deselect the clown.", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetClownTalkPos),
+                            uiPivots[4].gameObject, SelectionController.GetClownTalkPos, delay:0.75f), // lrPivots[4], 
                     }
                 },
                 {Cue.MouseOverLocation, new List<Explanation>()
                     {
                         new Explanation("Here you can see the location name, description, difficulty, and wax cost.", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetClownPanelPos),
+                            uiPivots[4].gameObject, SelectionController.GetClownPanelPos), // lrPivots[4], 
                         new Explanation("Try clicking the location to select it.", 
                             uiPivots[4].gameObject),
                     }
@@ -179,20 +202,20 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                 {Cue.LocationSelect, new List<Explanation>()
                     {
                         new Explanation("The wax cost indicates how much wax you will need to consume to traverse to that location.", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetLocationWaxCostPos),
+                            uiPivots[4].gameObject, SelectionController.GetLocationWaxCostPos, delay:0.75f), // lrPivots[4],
                         new Explanation("The difficulty indicates how hard it will be to collect wax in this zone.", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetLocationDifficultyPos),
+                            uiPivots[4].gameObject, SelectionController.GetLocationDifficultyPos), // lrPivots[4],
                         new Explanation("And, finally, the description gives you some notion of what events you can expect at that location.", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetLocationDescriptionPos),
+                            uiPivots[4].gameObject, SelectionController.GetLocationDescriptionPos), // lrPivots[4],
                         new Explanation("If you have enough wax, click on the wheel to DRIVE!", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetWheelPos),
+                            uiPivots[4].gameObject, SelectionController.GetWheelPos), // lrPivots[4],
                         new Explanation("Otherwise, click the SCRAM button to deselect.", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetLocationDeselectPos),
+                            uiPivots[4].gameObject, SelectionController.GetLocationDeselectPos), // lrPivots[4],
                     }
                 },
                 {Cue.DRIVE, new List<Explanation>()
                     {
-                        new Explanation("VROOM VROOM! You've taken your first clown steps. Brace for an event.", uiPivots[4].gameObject),
+                        new Explanation("VROOM VROOM! You've taken your first clown steps. Brace for an event.", uiPivots[4].gameObject, delay:0.5f),
                     }
                 },
                 {Cue.EnterBattlezone, new List<Explanation>()
@@ -200,37 +223,37 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                         // peanuts
                         new Explanation("Welcome to the Battlezone!", uiPivots[4].gameObject),
                         new Explanation("These are your PEANUTS. Like most CLOWN HELL PSYCHOPOMPS, you use peanuts to summon your units. (Peanuts regenerate at the start of every Battlezone encounter)", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetPeanutScreenPos),
+                            uiPivots[4].gameObject, SelectionController.GetPeanutScreenPos), // lrPivots[4],
                         // units
                         new Explanation("Your units, of course, are circus animals, like dogs, elephants, and monkeys. Click on them to select a unit and then click on the grid to place the unit.", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetAnimalPanimalPos),
+                            uiPivots[4].gameObject, SelectionController.GetAnimalPanimalPos), // lrPivots[4],
                         // spawners
                         new Explanation("These are evil spawners of demonic instruments.", 
-                            uiPivots[4].gameObject, lrPivots[4], EncounterBehavior.GetSpawnerPos),
+                            uiPivots[4].gameObject, EncounterBehavior.GetSpawnerPos), // lrPivots[4],
                         // tents
                         new Explanation("The instruments will move from right to left to damage your precious clowns. Every instrument that reaches these tents will deliver some damage.", 
-                            uiPivots[4].gameObject, lrPivots[4], ClownZone.GetTentPos),
+                            uiPivots[4].gameObject, ClownZone.GetTentPos), // lrPivots[4],
                         // drops
                         new Explanation("Killing enemies and clicking gifts (more on that later) will drop peanuts and wax.", uiPivots[4].gameObject),
                         // timer
                         new Explanation("Once you have enough wax and this timer has expired...", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetTimerPos),
+                            uiPivots[4].gameObject, SelectionController.GetTimerPos), // lrPivots[4],
                         new Explanation("You can click the SCRAM button to skeedaddle.", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetScramPos),
+                            uiPivots[4].gameObject, SelectionController.GetScramPos), // lrPivots[4],
                     }
                 },
                 {Cue.BattlezoneTimerFinish, new List<Explanation>()
                     {
                         new Explanation("You've lasted long enough. You can exit whenever by clicking the SCRAM button", 
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetScramPos),
+                            uiPivots[4].gameObject, SelectionController.GetScramPos), // lrPivots[4],
                     }
                 },
                 {Cue.BasePeanutGain, new List<Explanation>()
                     {
                         new Explanation("Your base peanut count has increased! Next time you're in the Battlezone, you'll have more peanuts at the start.",
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetScramPos, predicate:delegate{ return instance.explainedSet.Contains(Cue.EnterBattlezone); }),
+                            uiPivots[4].gameObject, SelectionController.GetScramPos, predicate:delegate{ return instance.explainedSet.Contains(Cue.EnterBattlezone); }), // lrPivots[4],
                         new Explanation("You just got some extra peanuts! When you enter the Battlezone, this will become important.",
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetScramPos, predicate:delegate{ return !instance.explainedSet.Contains(Cue.EnterBattlezone); }),
+                            uiPivots[4].gameObject, SelectionController.GetScramPos, predicate:delegate{ return !instance.explainedSet.Contains(Cue.EnterBattlezone); }), // lrPivots[4],
                     }
                 },
                 {Cue.ClownHarm, new List<Explanation>()
@@ -238,8 +261,8 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                         new Explanation("Youch! A clown has been hurt. Too much damage and a clown will die!",
                             uiPivots[4].gameObject, predicate:delegate{ return !instance.explainedSet.Contains(Cue.ClownDie) && SelectionController.GetFueling(); }),
                         new Explanation("Oof. A clown just took some damage. Too much damage and they shall perish.",
-                            uiPivots[4].gameObject, lrPivots[4], ClownsDisplay.GetClownsDisplayPos, 
-                                predicate:delegate{ return !instance.explainedSet.Contains(Cue.ClownDie) && !SelectionController.GetFueling(); }),
+                            uiPivots[4].gameObject, ClownsDisplay.GetClownsDisplayPos, 
+                                predicate:delegate{ return !instance.explainedSet.Contains(Cue.ClownDie) && !SelectionController.GetFueling(); }), // lrPivots[4],
                     }
                 },
                 {Cue.ClownDie, new List<Explanation>()
@@ -247,26 +270,26 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                         new Explanation("Oh no! A clown has been obliterated. (There is no world beyond Clown Hell, unfortunately.)",
                             uiPivots[4].gameObject, predicate:delegate{ return SelectionController.GetFueling(); }),
                         new Explanation("Yikes! There is nothing sadder than a dead clown. Except maybe two dead clowns. Be careful.",
-                            uiPivots[4].gameObject, lrPivots[4], ClownsDisplay.GetClownsDisplayPos,
-                                predicate:delegate{ return !SelectionController.GetFueling(); }),
+                            uiPivots[4].gameObject, ClownsDisplay.GetClownsDisplayPos,
+                                predicate:delegate{ return !SelectionController.GetFueling(); }), // lrPivots[4],
                     }
                 },
                 {Cue.GainWax, new List<Explanation>()
                     {
                         new Explanation("Huzzah! You've gained some wax! You'll need that to travel to the next location.",
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetWaxCountPos),
+                            uiPivots[4].gameObject, SelectionController.GetWaxCountPos), // lrPivots[4],
                     }
                 },
                 {Cue.FullWax, new List<Explanation>()
                     {
                         new Explanation("You've got maximum waximum!",
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetWaxCountPos),
+                            uiPivots[4].gameObject, SelectionController.GetWaxCountPos), // lrPivots[4],
                     }
                 },
                 {Cue.GiftSpawn, new List<Explanation>()
                     {
                         new Explanation("Ah, lookie there. A gift! Click on it before it disappears to get a random drop!",
-                            uiPivots[7].gameObject, lrPivots[7], GiftSpawner.GetLastGift),
+                            uiPivots[7].gameObject, GiftSpawner.GetLastGift), // lrPivots[7],
                     }
                 },
                 {Cue.UnitSelect, new List<Explanation>()
@@ -278,14 +301,32 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                 {Cue.FailDrive, new List<Explanation>()
                     {
                         new Explanation("Looks like you don't have enough wax to travel. Womp womp. You can always enter the Battlezone to collect some more.",
-                            uiPivots[4].gameObject, lrPivots[4], SelectionController.GetLocationWaxCostPos),
+                            uiPivots[4].gameObject, SelectionController.GetLocationWaxCostPos), // lrPivots[4],
                     }
                 },
             };
     }
 
+    void SetHighlightPosition(Vector3 pos)
+    {
+        Vector2 ViewportPosition = Camera.main.WorldToViewportPoint(pos);
+        Vector2 highlightWidth = (eyeHighlight.anchorMax - eyeHighlight.anchorMin) / 2.0f;
+        eyeHighlight.anchorMin = ViewportPosition - highlightWidth;
+        eyeHighlight.anchorMax = ViewportPosition + highlightWidth;
+        /*
+        Vector2 WorldObject_ScreenPosition = new Vector2(
+        ((ViewportPosition.x * canvasRect.sizeDelta.x) - (canvasRect.sizeDelta.x * 0.5f)),
+        ((ViewportPosition.y * canvasRect.sizeDelta.y) - (canvasRect.sizeDelta.y * 0.5f)));
+
+        //now you can set the position of the ui element
+        eyeHighlight.anchoredPosition = WorldObject_ScreenPosition;
+        */
+    }
+
     private void Update()
     {
+        if (SelectionController.instance != null)
+            SelectionController.instance.canSelect = explainerQueue.Count == 0;
         if (explaining && Input.GetMouseButtonDown(0))
         {
             Nextplanation();
@@ -301,7 +342,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
 
     public void Explainst(Cue cue)
     {
-        if (!explain)
+        if (!explain || explainedSet.Contains(cue))
             return;
         if (explainerMap.ContainsKey(cue) && !explainedSet.Contains(cue))
         {
@@ -311,6 +352,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
 
         if (!explaining && !added)
         {
+            currentDelay = explainerQueue[0].delay;
             if (FaderCanvas.instance.fading)
             {
                 FaderCanvas.instance.finishedFading += Execute;
@@ -346,6 +388,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
     {
         explainerQueue[0].dialogueBox.SetActive(false);
         lr.enabled = false;
+        eyeHighlight.gameObject.SetActive(false);
         arrowHead.gameObject.SetActive(false);
 
         explainerQueue.RemoveAt(0);
@@ -358,14 +401,22 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                 PauseManager.instance.megaPaused = false;
             return;
         }
+        currentDelay = 0;
         Execute();
     }
 
     void Execute()
     {
-        print(explainerQueue[0]);
+        StartCoroutine(CoExecute());
+    }
+
+    IEnumerator CoExecute()
+    {
         if (explainerQueue[0].predicate != null && explainerQueue[0].predicate() == false)
-            return;
+            yield break;
+
+
+        yield return new WaitForSeconds(currentDelay);
 
         blockerCanvas.SetActive(true);
         FaderCanvas.instance.finishedFading -= Execute;
@@ -386,6 +437,12 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
             lr.SetPosition(1, endPos);
             arrowHead.position = lr.GetPosition(1);
             arrowHead.up = (lr.GetPosition(1) - lr.GetPosition(0)).normalized * 5f;
+        }
+        else if (explainerQueue[0].uiHighlight)
+        {
+            eyeHighlight.gameObject.SetActive(true);
+            SetHighlightPosition(explainerQueue[0].lrEndPosGetter());
+            //eyeHighlight.position = explainerQueue[0].lrStartPosition;
         }
 
         explainerQueue[0].dialogueBox.SetActive(true);

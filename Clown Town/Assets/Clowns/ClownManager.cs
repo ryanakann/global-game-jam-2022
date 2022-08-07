@@ -43,6 +43,8 @@ public class ClownManager : PersistentSingleton<ClownManager>
     {
         //if (IntroDialogueManager.instance != null)
         base.Awake();
+        if (destroyed)
+            return;
 
         foreach (ClownProfile profile in clownProfiles)
         {

@@ -4,6 +4,7 @@
 public class PersistentSingleton<T> : Singleton<T> where T : Singleton<T>
 {
 	public bool persistRoot;
+
 	protected override void Awake()
 	{
 		base.Awake();

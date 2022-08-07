@@ -14,6 +14,6 @@ public class FX_Button : MonoBehaviour
 
     public void Click()
     {
-        // fx spawner spawn menu cick
+        FX_Spawner.instance.SpawnFX(buttonSound, Vector3.zero, Quaternion.identity);
     }
 }

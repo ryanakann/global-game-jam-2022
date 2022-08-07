@@ -31,10 +31,10 @@ public class QuipBubble : MonoBehaviour
         StartCoroutine(CoFade());
     }
 
-    public void Setup(Sprite face, string name, string text)
+    public void Setup(Sprite face, string speakerName, string text)
     {
         transform.FindDeepChild("Face").GetComponent<Image>().sprite = face;
-        transform.FindDeepChild("Name").GetComponent<TextMeshProUGUI>().text = name;
+        transform.FindDeepChild("Name").GetComponent<TextMeshProUGUI>().text = speakerName;
         transform.FindDeepChild("Text").GetComponent<TextMeshProUGUI>().text = text;
         canvasGroup = GetComponent<CanvasGroup>();
     }

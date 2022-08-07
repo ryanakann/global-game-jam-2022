@@ -46,6 +46,7 @@ public class FaderCanvas : PersistentSingleton<FaderCanvas>
 
     IEnumerator Unquiet()
     {
+        FX_Spawner.instance.ResetCounter();
         // FX_Spawner.instance.SpawnFX(FXType.ScreenIn);
         float vol = 0f; // 0 : -40
         while (vol < 1.5f)

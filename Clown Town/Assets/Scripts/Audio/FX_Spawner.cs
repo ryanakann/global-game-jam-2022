@@ -58,6 +58,11 @@ public enum FXType
     Scram,
     MusicAdvance,
     TimerFinish,
+    CancelPlace,
+    Select,
+    WallMove,
+    Zoop,
+    Warmup,
 }
 
 public class FX_Spawner : MonoBehaviour
@@ -79,6 +84,7 @@ public class FX_Spawner : MonoBehaviour
     public Dictionary<FXType, int> FX_Counter = new Dictionary<FXType, int>();
 
     public FX_Tuple fx_default;
+    HashSet<FXType> counterTypes = new HashSet<FXType>();
 
     // Singleton code
     public static FX_Spawner instance;
@@ -95,9 +101,10 @@ public class FX_Spawner : MonoBehaviour
         foreach (var entry in Serialized_FX_Dict)
         {
             FX_Dict[entry.key] = entry;
-            if (entry.limit > -1)
+            if (entry.limit > 0)
             {
                 FX_Counter[entry.key] = 0;
+                counterTypes.Add(entry.key);
             }
         }
         if (FX_Dict.ContainsKey(FXType.Default))
@@ -105,6 +112,15 @@ public class FX_Spawner : MonoBehaviour
             FX_Dict[FXType.Default] = null;
         }
         holder = new UnityEngine.GameObject("FX Objects");
+        holder.transform.parent = transform;
+    }
+
+    public void ResetCounter()
+    {
+        foreach (var key in counterTypes)
+        {
+            FX_Counter[key] = 0;
+        }
     }
 
 
@@ -119,6 +135,10 @@ public class FX_Spawner : MonoBehaviour
         UnityEngine.GameObject spawned_fx = Instantiate(fx, position, Quaternion.identity);
         if (FX_Counter.ContainsKey(effectName))
         {
+            foreach (var spawn_fx in spawned_fx.GetComponentsInChildren<FX_Object>())
+            {
+                spawn_fx.fx_type = effectName;
+            }
             FX_Counter[effectName]++;
         }
 
@@ -148,5 +168,13 @@ public class FX_Spawner : MonoBehaviour
         if (!FX_Dict.ContainsKey(effectName))
             return SpawnFX(fx_default.fx, position, rotation.eulerAngles, vol, parent, FXType.Default);
         return SpawnFX(FX_Dict[effectName].fx, position, rotation.eulerAngles, vol, parent, effectName);
+    }
+
+    public void Despawn(FXType fx_type)
+    {
+        if (FX_Counter.ContainsKey(fx_type))
+        {
+            FX_Counter[fx_type]--;
+        }
     }
 }

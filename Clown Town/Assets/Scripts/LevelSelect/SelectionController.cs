@@ -62,7 +62,6 @@ public class SelectionController : Singleton<SelectionController>
         waxCount = transform.FindDeepChild("WaxText").GetComponent<TextMeshProUGUI>();
         waxBar = transform.FindDeepChild("CurrentWax").GetComponent<RectTransform>();
         wheelAnim = transform.FindDeepChild("Wheel").GetComponent<Animator>();
-        UpdateWax(0, start:true);
         refuelButton = transform.FindDeepChild("LeverHandle").GetComponent<Button>();
         peanutCount = transform.FindDeepChild("PeanutCount").GetComponent<TextMeshProUGUI>();
         unitIcon = transform.FindDeepChild("UnitIcon").GetComponent<Image>();
@@ -80,6 +79,7 @@ public class SelectionController : Singleton<SelectionController>
 
     public void Start()
     {
+        UpdateWax(0, start: true);
         panels = new List<DetailsPanel>(GetComponentsInChildren<DetailsPanel>());
         locationPanel = transform.FindDeepChild("LocationPanel").GetComponent<DetailsPanel>();
         clownPanel = transform.FindDeepChild("ClownPanel").GetComponent<DetailsPanel>();
@@ -207,6 +207,7 @@ public class SelectionController : Singleton<SelectionController>
                         currentSelectionObject.Unhighlight();
                     }
                     currentSelectionObject = obj;
+                    FX_Spawner.instance.SpawnFX(FXType.MouseOver, Vector3.zero, Quaternion.identity);
                     obj.Highlight();
                 }
                 result = true;
@@ -223,6 +224,7 @@ public class SelectionController : Singleton<SelectionController>
         {
             if (fueling && unitCell != null)
             {
+                FX_Spawner.instance.SpawnFX(FXType.CancelPlace, Vector3.zero, Quaternion.identity);
                 unitCell = null;
                 unitIcon.gameObject.SetActive(false);
             }
@@ -270,6 +272,7 @@ public class SelectionController : Singleton<SelectionController>
                         selectedObject.Deselect();
                     }
                     selectedObject = currentSelectionObject;
+                    FX_Spawner.instance.SpawnFX(FXType.Select, Vector3.zero, Quaternion.identity);
                     currentSelectionObject.Select();
                 }
             }
@@ -380,6 +383,16 @@ public class SelectionController : Singleton<SelectionController>
         fueling = true;
         levelSelectAnim.SetBool("LevelSelect", false);
         StartCoroutine(CoFuelUp());
+    }
+
+    public void Zoop()
+    {
+        FX_Spawner.instance.SpawnFX(FXType.Zoop, Vector3.zero, Quaternion.identity);
+    }
+
+    public void Warmup()
+    {
+        FX_Spawner.instance.SpawnFX(FXType.Warmup, Vector3.zero, Quaternion.identity);
     }
 
     IEnumerator CoFuelUp()

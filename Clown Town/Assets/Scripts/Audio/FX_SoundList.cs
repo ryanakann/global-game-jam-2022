@@ -12,6 +12,9 @@ public class FX_SoundList : FX_Object
     AudioSource aud;
     int index;
 
+    public int playCount = 1;
+    public bool shuffle;
+
     // Start is called before the first frame update
     void Start() {
         aud = GetComponent<AudioSource>();
@@ -29,23 +32,49 @@ public class FX_SoundList : FX_Object
                 soundListIndices.Add(objName, 0);
                 index = 0;
             }
-            aud.clip = clips[index % clips.Count];
+            //aud.clip = clips[index % clips.Count];
         } else {
-            aud.clip = clips[Random.Range(0, clips.Count)];
+            index = Random.Range(0, clips.Count);
+            //aud.clip = clips[Random.Range(0, clips.Count)];
         }
 
+        if (playCount > 1)
+        {
+            if (shuffle)
+                clips.Shuffle();
+            int count = 0;
+            foreach (Transform child in transform)
+            {
+                if (child.name == "src")
+                {
+                    lifetime = Mathf.Max(lifetime, SetClip(child.GetComponent<AudioSource>(), index));
+                    index++;
+                    count++;
+                    if (count >= playCount)
+                        break;
+                }
+            }
+        }
+        else
+        {
+            lifetime = Mathf.Max(lifetime, SetClip(aud, index));
+        }
 
-        aud.Play();
+        Destroy(gameObject, lifetime);
+    }
+
+    float SetClip(AudioSource src, int index)
+    {
+        src.clip = clips[index % clips.Count];
+        src.Play();
 
         if (vol != -1)
         {
-            aud.volume = vol;
+            src.volume = vol;
         }
 
-        aud.pitch += Random.Range(-pitch_range, pitch_range);
-        aud.volume += Random.Range(-amp_range, 0);
-
-
-        Destroy(gameObject, Mathf.Max(lifetime, aud.clip.length));
+        src.pitch += Random.Range(-pitch_range, pitch_range);
+        src.volume += Random.Range(-amp_range, 0);
+        return src.clip.length;
     }
 }

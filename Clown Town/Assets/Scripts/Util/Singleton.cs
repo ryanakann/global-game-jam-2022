@@ -19,6 +19,8 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
 		get { return instance != null; }
 	}
 
+	protected bool destroyed;
+
 	/// <summary>
 	/// Awake method to associate singleton with instance
 	/// </summary>
@@ -27,6 +29,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
 		if (instanceExists)
 		{
 			Destroy(gameObject);
+			destroyed = true;
 		}
 		else
 		{

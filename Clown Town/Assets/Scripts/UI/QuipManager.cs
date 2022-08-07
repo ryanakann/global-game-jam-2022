@@ -6,13 +6,13 @@ using UnityEngine;
 public class QuipItem
 {
     public Sprite face;
-    public string name;
+    public string speakerName;
     public string text;
 
-    public QuipItem(Sprite face, string name, string text)
+    public QuipItem(Sprite face, string speakerName, string text)
     {
         this.face = face;
-        this.name = name;
+        this.speakerName = speakerName;
         this.text = text;
     }
 }
