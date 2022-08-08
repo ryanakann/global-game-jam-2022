@@ -47,9 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitch_range: 0.2
   amp_range: 0.02
-  vol: -1
+  vol: 0.75
   live_forever: 0
   lifetime: 0
+  fx_type: 0
   mixerGroup: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: 18573f754fc5377459b1619e88be91ca, type: 3}

@@ -44,7 +44,7 @@ public class PauseManager : Singleton<PauseManager>
         paused = !paused;
         SelectionController.instance.canSelect = !paused;
         // TODO SLIDE IN
-        // FX_Spawner.instance.SpawnFX((paused) ? FXType.PauseIn : FXType.PauseOut, Vector3.zero, Quaternion.identity);
+        FX_Spawner.instance.SpawnFX((paused) ? FXType.PauseIn : FXType.PauseOut, Vector3.zero, Quaternion.identity);
         anim.SetBool("Pause", paused);
         audioMixer.SetFloat("MasterLowpass", (paused) ? 500f : 22000f);
         if (paused)

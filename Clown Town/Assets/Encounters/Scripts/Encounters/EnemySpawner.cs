@@ -32,6 +32,10 @@ public class EnemySpawner : MonoBehaviour
         {
             var enemy = queue[0];
             var instance = Instantiate(enemy, enemyParent);
+            instance.MaxHealth *= EncounterWavePopulator.instance.difficultyMultiplier;
+            instance.CurrentHealth *= EncounterWavePopulator.instance.difficultyMultiplier;
+            instance.AttackSpeed *= EncounterWavePopulator.instance.difficultyMultiplier;
+            instance.AttackDamage *= EncounterWavePopulator.instance.difficultyMultiplier;
             Vector2 point = _info.WorldToGridPosition(transform.position);
             instance.transform.position = _info.GridToWorldPosition(point);
             queue.RemoveAt(0);

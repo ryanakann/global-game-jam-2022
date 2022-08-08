@@ -232,6 +232,7 @@ public class ClownManager : PersistentSingleton<ClownManager>
         if (clowns.Count == 0)
         {
             // gameover
+            SelectionController.instance.StopMusic();
             FaderCanvas.instance.GoAway("GameOver");
         }
     }

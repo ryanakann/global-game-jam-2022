@@ -106,6 +106,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
 
     float currentDelay = 0;
     bool EXPLAINIT;
+    bool skippy;
 
     protected override void Awake()
     {
@@ -188,7 +189,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                 {Cue.ClownSelect, new List<Explanation>()
                     {
                         new Explanation("In addition to locking the computer screen, you now have the option to talk to or deselect the clown.", 
-                            uiPivots[4].gameObject, SelectionController.GetClownTalkPos, delay:0.75f), // lrPivots[4], 
+                            uiPivots[4].gameObject, SelectionController.GetClownTalkPos), // lrPivots[4], 
                     }
                 },
                 {Cue.MouseOverLocation, new List<Explanation>()
@@ -202,7 +203,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                 {Cue.LocationSelect, new List<Explanation>()
                     {
                         new Explanation("The wax cost indicates how much wax you will need to consume to traverse to that location.", 
-                            uiPivots[4].gameObject, SelectionController.GetLocationWaxCostPos, delay:0.75f), // lrPivots[4],
+                            uiPivots[4].gameObject, SelectionController.GetLocationWaxCostPos), // lrPivots[4],
                         new Explanation("The difficulty indicates how hard it will be to collect wax in this zone.", 
                             uiPivots[4].gameObject, SelectionController.GetLocationDifficultyPos), // lrPivots[4],
                         new Explanation("And, finally, the description gives you some notion of what events you can expect at that location.", 
@@ -259,18 +260,18 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                 {Cue.ClownHarm, new List<Explanation>()
                     {
                         new Explanation("Youch! A clown has been hurt. Too much damage and a clown will die!",
-                            uiPivots[4].gameObject, predicate:delegate{ return !instance.explainedSet.Contains(Cue.ClownDie) && SelectionController.GetFueling(); }),
+                            uiPivots[4].gameObject, delay:0.5f, predicate:delegate{ return !instance.explainedSet.Contains(Cue.ClownDie) && SelectionController.GetFueling(); }),
                         new Explanation("Oof. A clown just took some damage. Too much damage and they shall perish.",
-                            uiPivots[4].gameObject, ClownsDisplay.GetClownsDisplayPos, 
+                            uiPivots[4].gameObject, ClownsDisplay.GetClownsDisplayPos, delay:0.5f,
                                 predicate:delegate{ return !instance.explainedSet.Contains(Cue.ClownDie) && !SelectionController.GetFueling(); }), // lrPivots[4],
                     }
                 },
                 {Cue.ClownDie, new List<Explanation>()
                     {
                         new Explanation("Oh no! A clown has been obliterated. (There is no world beyond Clown Hell, unfortunately.)",
-                            uiPivots[4].gameObject, predicate:delegate{ return SelectionController.GetFueling(); }),
+                            uiPivots[4].gameObject, delay:0.5f, predicate:delegate{ return SelectionController.GetFueling(); }),
                         new Explanation("Yikes! There is nothing sadder than a dead clown. Except maybe two dead clowns. Be careful.",
-                            uiPivots[4].gameObject, ClownsDisplay.GetClownsDisplayPos,
+                            uiPivots[4].gameObject, ClownsDisplay.GetClownsDisplayPos, delay:0.5f,
                                 predicate:delegate{ return !SelectionController.GetFueling(); }), // lrPivots[4],
                     }
                 },
@@ -295,7 +296,7 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
                 {Cue.UnitSelect, new List<Explanation>()
                     {
                         new Explanation("Great! You've just selected your first unit. I hope you can afford it. Click anywhere on the grid to place it.",
-                            uiPivots[1].gameObject),
+                            uiPivots[1].gameObject, delay:0.2f),
                     }
                 },
                 {Cue.FailDrive, new List<Explanation>()
@@ -327,8 +328,9 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
     {
         if (SelectionController.instance != null)
             SelectionController.instance.canSelect = explainerQueue.Count == 0;
-        if (explaining && Input.GetMouseButtonDown(0))
+        if ((explaining && Input.GetMouseButtonDown(0)) || skippy)
         {
+            skippy = false;
             Nextplanation();
         }
     }
@@ -413,7 +415,10 @@ public class ExplainerManager : PersistentSingleton<ExplainerManager>
     IEnumerator CoExecute()
     {
         if (explainerQueue[0].predicate != null && explainerQueue[0].predicate() == false)
+        {
+            skippy = true;
             yield break;
+        }
 
 
         yield return new WaitForSeconds(currentDelay);

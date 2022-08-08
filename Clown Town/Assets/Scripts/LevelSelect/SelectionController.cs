@@ -52,6 +52,8 @@ public class SelectionController : Singleton<SelectionController>
 
     public bool canSelect = true;
 
+    AudioSource battleMusic;
+
     protected override void Awake()
     {
         base.Awake();
@@ -73,6 +75,8 @@ public class SelectionController : Singleton<SelectionController>
         scramButton = transform.FindDeepChild("ScramButton");
         animalPanimal = transform.FindDeepChild("AnimalPanimal");
         clownClock = transform.FindDeepChild("ClownClock");
+
+        battleMusic = transform.FindDeepChild("SceneMusic").GetComponent<AudioSource>();
 
         mask = ~LayerMask.GetMask("Unit");
     }
@@ -378,7 +382,6 @@ public class SelectionController : Singleton<SelectionController>
         if (fueling || scramming)
             return;
         FX_Spawner.instance.SpawnFX(FXType.FuelUp, Vector3.zero, Quaternion.identity);
-        ExplainerManager.Explain(Cue.EnterBattlezone);
         refuelButton.interactable = false;
         fueling = true;
         levelSelectAnim.SetBool("LevelSelect", false);
@@ -395,6 +398,21 @@ public class SelectionController : Singleton<SelectionController>
         FX_Spawner.instance.SpawnFX(FXType.Warmup, Vector3.zero, Quaternion.identity);
     }
 
+    public void StopMusic()
+    {
+        StartCoroutine(CoStopMusic());
+    }
+
+    IEnumerator CoStopMusic()
+    {
+        while (battleMusic.volume > 0f)
+        {
+            battleMusic.volume -= Time.deltaTime;
+            yield return null;
+        }
+        battleMusic.Stop();
+    }
+
     IEnumerator CoFuelUp()
     {
         Wall.instance.Switch(false);
@@ -407,9 +425,15 @@ public class SelectionController : Singleton<SelectionController>
         LevelGenerator.instance.cameraPivot.position = GameObject.Find("CameraPivot").transform.position;
         levelGeneration.gameObject.SetActive(false);
         Wall.instance.Switch(true);
-        while (Wall.instance.moving)
-        { yield return null; }
-
+        battleMusic.volume = 0f;
+        battleMusic.Play();
+        battleMusic.time = 0;
+        while (Wall.instance.moving && battleMusic.volume < 1f)
+        {
+            battleMusic.volume = Wall.instance.progress;
+            yield return null; 
+        }
+        ExplainerManager.Explain(Cue.EnterBattlezone);
     }
 
     public void Scram()
@@ -449,7 +473,13 @@ public class SelectionController : Singleton<SelectionController>
     {
         Wall.instance.Switch(false);
         while (Wall.instance.moving)
-        { yield return null; }
+        {
+            battleMusic.volume = 1.0f - Wall.instance.progress;
+            yield return null; 
+        }
+        battleMusic.volume = 0f;
+        battleMusic.Stop();
+        battleMusic.time = 0;
         Destroy(GameObject.Find("Lanes"));
         var op = SceneManager.UnloadSceneAsync("BattleZone");
         while (!op.isDone)

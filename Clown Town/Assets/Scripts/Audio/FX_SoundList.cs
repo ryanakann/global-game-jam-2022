@@ -47,7 +47,10 @@ public class FX_SoundList : FX_Object
             {
                 if (child.name == "src")
                 {
-                    lifetime = Mathf.Max(lifetime, SetClip(child.GetComponent<AudioSource>(), index));
+                    var child_aud = child.GetComponent<AudioSource>();
+                    child_aud.volume = aud.volume;
+                    child_aud.pitch = aud.pitch;
+                    lifetime = Mathf.Max(lifetime, SetClip(child_aud, index));
                     index++;
                     count++;
                     if (count >= playCount)

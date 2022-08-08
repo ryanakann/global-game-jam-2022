@@ -25,7 +25,7 @@ namespace Encounters
         [Range(0f, 200f)]
         [SerializeField]
         private float _maxHealth = 100f;
-        public float MaxHealth { get => _maxHealth; }
+        public float MaxHealth { get => _maxHealth; set => _maxHealth = value; }
 
         [SerializeField]
         private float _currentHealth;
@@ -39,7 +39,7 @@ namespace Encounters
         [Range(0.1f, 3f)]
         [Tooltip("Attacks per second.")]
         private float _attackSpeed = 1f;
-        public float AttackSpeed { get => _attackSpeed; }
+        public float AttackSpeed { get => _attackSpeed; set => _attackSpeed = value; }
 
         [SerializeField]
         [Range(0f, 10f)]
@@ -51,7 +51,7 @@ namespace Encounters
         [Range(0f, 100f)]
         [Tooltip("How much health is taken away from enemies per attack.")]
         private float _attackDamage = 10f;
-        public float AttackDamage { get => _attackDamage; }
+        public float AttackDamage { get => _attackDamage; set => _attackDamage = value; }
 
         [SerializeField]
         [Range(0f, 20f)]

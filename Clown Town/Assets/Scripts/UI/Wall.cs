@@ -11,6 +11,9 @@ public class Wall : Singleton<Wall>
 
     float switchTimer = 1.5f;
 
+    [HideInInspector]
+    public float progress;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +52,7 @@ public class Wall : Singleton<Wall>
         while (timer < switchTimer)
         {
             transform.position = Vector3.Lerp(pos, target, timer / switchTimer);
+            progress = timer / switchTimer;
             timer += Time.deltaTime;
             yield return null;
         }

@@ -56,7 +56,7 @@ namespace Encounters
         {
             attacking = true;
             FX_Spawner.instance.SpawnFX(attackFX, Vector3.zero, Quaternion.identity);
-            print($"{gameObject.name} is attacking");
+            //print($"{gameObject.name} is attacking");
             var maxCoolddown = 1 / _info.AttackSpeed;
             
             OnAttack?.Invoke(_info.AttackSpeed);
@@ -113,7 +113,7 @@ namespace Encounters
 
         protected virtual void Die()
         {
-            Debug.Log($"{name} is DEAD");
+            //Debug.Log($"{name} is DEAD");
             FX_Spawner.instance.SpawnFX(dieFX, Vector3.zero, Quaternion.identity);
             OnDie?.Invoke();
             Destroy(gameObject, 1f);

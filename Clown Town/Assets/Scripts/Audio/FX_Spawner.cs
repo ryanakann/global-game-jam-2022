@@ -63,6 +63,10 @@ public enum FXType
     WallMove,
     Zoop,
     Warmup,
+    MusicDrum, 
+    MusicString, 
+    MusicPluck, 
+    MusicTrumpet,
 }
 
 public class FX_Spawner : MonoBehaviour
@@ -79,7 +83,7 @@ public class FX_Spawner : MonoBehaviour
     private UnityEngine.GameObject holder;
 
     public List<FX_Tuple> Serialized_FX_Dict = new List<FX_Tuple>();
-    public Dictionary<FXType, FX_Tuple> FX_Dict = new Dictionary<FXType, FX_Tuple>();
+    public Dictionary<FXType, List<FX_Tuple>> FX_Dict = new Dictionary<FXType, List<FX_Tuple>>();
 
     public Dictionary<FXType, int> FX_Counter = new Dictionary<FXType, int>();
 
@@ -100,7 +104,11 @@ public class FX_Spawner : MonoBehaviour
 
         foreach (var entry in Serialized_FX_Dict)
         {
-            FX_Dict[entry.key] = entry;
+            if (!FX_Dict.ContainsKey(entry.key))
+            {
+                FX_Dict[entry.key] = new List<FX_Tuple>();
+            }
+            FX_Dict[entry.key].Add(entry);
             if (entry.limit > 0)
             {
                 FX_Counter[entry.key] = 0;
@@ -127,7 +135,7 @@ public class FX_Spawner : MonoBehaviour
     public UnityEngine.GameObject SpawnFX(GameObject fx, Vector3 position, Vector3 rotation, float vol = -1, Transform parent = null, FXType effectName=FXType.Default) {
         if (fx == null) return null;
 
-        if (FX_Counter.ContainsKey(effectName) && FX_Counter[effectName] >= FX_Dict[effectName].limit)
+        if (FX_Counter.ContainsKey(effectName) && FX_Counter[effectName] >= FX_Dict[effectName][0].limit)
         {
             return null;
         }
@@ -159,7 +167,20 @@ public class FX_Spawner : MonoBehaviour
     public UnityEngine.GameObject SpawnFX(FXType effectName, Vector3 position, Vector3 rotation, float vol = -1, Transform parent = null) {
         if (!FX_Dict.ContainsKey(effectName))
             return SpawnFX(fx_default.fx, position, rotation, vol, parent, FXType.Default);
-        return SpawnFX(FX_Dict[effectName].fx, position, rotation, vol, parent, effectName);
+        if (FX_Dict[effectName].Count > 1)
+        {
+            var temp_holder = new GameObject("fx").transform;
+            foreach (var entry in FX_Dict[effectName])
+            {
+                SpawnFX(entry.fx, position, rotation, vol, parent, effectName).transform.parent = temp_holder;
+            }
+            temp_holder.transform.parent = (parent != null ? parent : holder.transform);
+            return temp_holder.gameObject;
+        }
+        else
+        {
+            return SpawnFX(FX_Dict[effectName][0].fx, position, rotation, vol, parent, effectName);
+        }
         //return SpawnFX(FX_Dict.GetValueOrDefault(effectName, FX_Dict[FXType.Default]), position, rotation, vol, parent);
     }
 
@@ -167,7 +188,8 @@ public class FX_Spawner : MonoBehaviour
     {
         if (!FX_Dict.ContainsKey(effectName))
             return SpawnFX(fx_default.fx, position, rotation.eulerAngles, vol, parent, FXType.Default);
-        return SpawnFX(FX_Dict[effectName].fx, position, rotation.eulerAngles, vol, parent, effectName);
+
+        return SpawnFX(effectName, position, rotation.eulerAngles, vol:vol, parent:parent);
     }
 
     public void Despawn(FXType fx_type)

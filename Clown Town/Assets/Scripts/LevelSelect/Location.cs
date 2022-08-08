@@ -128,8 +128,6 @@ public class Location : SelectionObject
             activeEdge.Select();
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.locationPanel, select: true))
         {
-            ExplainerManager.Explain(Cue.LocationSelect);
-            FX_Spawner.instance.SpawnFX(FXType.LocationSelect, Vector3.zero, Quaternion.identity);
             FillDetailsPanel();
             SelectionController.instance.locationPanel.FillButton("LocationOpen", true);
         }

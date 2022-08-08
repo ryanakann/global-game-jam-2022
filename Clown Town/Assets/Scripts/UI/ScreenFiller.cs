@@ -17,6 +17,9 @@ public class ScreenFiller : Singleton<ScreenFiller>
     float numSamples=10f, totalTime=1.5f, timeNormalizer=0;
     List<GameObject> fillers = new List<GameObject>();
 
+    List<FXType> musicSounds = new List<FXType>() { FXType.MusicDrum, FXType.MusicString, FXType.MusicPluck, FXType.MusicTrumpet};
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,7 @@ public class ScreenFiller : Singleton<ScreenFiller>
         int j = 0;
         int sampleSize = Mathf.CeilToInt(fillers.Count / numSamples);
         float delay;
+        int musicIndex = 0;
 
         while (revealedIcons < fillers.Count)
         {
@@ -51,6 +55,12 @@ public class ScreenFiller : Singleton<ScreenFiller>
                 if (i >= fillers.Count)
                     break;
                 fillers[i].gameObject.SetActive(fill);
+            }
+            if (fill)
+            {
+                FX_Spawner.instance.SpawnFX(musicSounds[musicIndex], Vector3.zero, Quaternion.identity);
+                musicIndex = (musicIndex + 1) % musicSounds.Count;
+                // print(musicIndex % musicSounds.Count);
             }
             revealedIcons += Mathf.Max(sampleSize, 1);
 

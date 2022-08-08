@@ -37,7 +37,6 @@ public class MusicoManager : Singleton<MusicoManager>
 
     public void AdvancePlayer()
     {
-        FX_Spawner.instance.SpawnFX(FXType.MusicAdvance, Vector3.zero, Quaternion.identity);
         playerLevel++;
     }
 
@@ -52,6 +51,7 @@ public class MusicoManager : Singleton<MusicoManager>
         float progress = 0;
         Vector3 startPos = musicHolder.position;
         Vector3 endPos = startPos + Vector3.up * interval;
+        FX_Spawner.instance.SpawnFX(FXType.MusicAdvance, Vector3.zero, Quaternion.identity);
         while (progress < 1f)
         {
             musicHolder.position = Vector3.Lerp(startPos, endPos, progress);

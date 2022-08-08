@@ -375,11 +375,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initOnAwake: 1
   _unitType: 0
-  _maxHealth: 40
-  _currentHealth: 40
+  _maxHealth: 30
+  _currentHealth: 30
   _attackSpeed: 1
   _attackCooldown: 1
-  _attackDamage: 15
+  _attackDamage: 5
   _attackRange: 2
   _attackWidth: 1
   _attackEffect: {fileID: 6195715002303179739, guid: 64a26cb2af4f1054ca3a671bf969b19b, type: 3}

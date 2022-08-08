@@ -377,9 +377,9 @@ MonoBehaviour:
   _unitType: 0
   _maxHealth: 20
   _currentHealth: 100
-  _attackSpeed: 2
-  _attackCooldown: 0.5
-  _attackDamage: 5
+  _attackSpeed: 1
+  _attackCooldown: 1
+  _attackDamage: 4
   _attackRange: 10
   _attackWidth: 1
   _attackEffect: {fileID: 8092034810002743473, guid: e1f695080f7cf5746980fc3d0244d38b, type: 3}

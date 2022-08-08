@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDifficulty: 60
-  difficultyIncreasePerWave: 20
+  difficultyIncreasePerWave: 10
   seed: -1
 --- !u!1 &323260158
 GameObject:

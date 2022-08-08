@@ -194,8 +194,6 @@ public class ClownDisplay : SelectionObject
         
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.clownPanel, select: true))
         {
-            FX_Spawner.instance.SpawnFX(FXType.ClownSelect, Vector3.zero, Quaternion.identity);
-            ExplainerManager.Explain(Cue.ClownSelect);
             FillDetailsPanel();
             SelectionController.instance.clownPanel.FillButton("TalkOpen", true);
         }
@@ -203,6 +201,8 @@ public class ClownDisplay : SelectionObject
 
     public override void Highlight()
     {
+        if (SelectionController.instance.fueling)
+            return;
         base.Highlight();
         if (SelectionController.instance.ActivatePanel(SelectionController.instance.clownPanel, select: false))
         {

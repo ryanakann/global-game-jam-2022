@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Encounters
 {
 
-    public class EncounterWavePopulator : MonoBehaviour
+    public class EncounterWavePopulator : Singleton<EncounterWavePopulator>
     {
         [Range(0f, 100f)]
         public float baseDifficulty = 1f;
@@ -13,18 +13,26 @@ namespace Encounters
         float minDifficulty = 40; // I've just found this to be pretty ez
         float maxDifficulty = 100;
 
+        float maxTime = 10f;
+        float minTime = 0.2f;
+
         [Range(0f, 20f)]
         public float difficultyIncreasePerWave = 0f;
         [Range(-1, 999999)]
         public int seed;
+
+        [HideInInspector]
+        public float difficultyMultiplier { get { return Mathf.Lerp(1.0f, 1.5f, (Mathf.Clamp(baseDifficulty + difficultyIncreasePerWave * waves, 0f, 100f) - minDifficulty) / maxDifficulty); } }
 
         private int waves;
 
         private GameObject[] allies;
         private GameObject[] enemies;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             waves = 0;
             if (seed >= 0)
             {
@@ -95,13 +103,13 @@ namespace Encounters
                 
             }
 
-
             List<UnitInfo> enemyList = new List<UnitInfo>();
             int enemyCount = Mathf.RoundToInt(Mathf.Lerp(5f, 20f, difficulty / 100f));
             for (int i = 0; i < enemyCount; i++)
             {
                 var indexOfEnemyToAdd = indicesList[Random.Range(0, indicesList.Count)];
                 var enemyToAdd = enemies[indexOfEnemyToAdd];
+                var unitInfo = enemyToAdd.GetComponent<UnitInfo>();
                 enemyList.Add(enemyToAdd.GetComponent<UnitInfo>());
             }
             return enemyList;
@@ -109,12 +117,12 @@ namespace Encounters
 
         private float GetTimeBeforeFirstSpawn(float difficulty)
         {
-            return Mathf.Lerp(10f, 1f, difficulty / 100f);
+            return Mathf.Lerp(maxTime, minTime, (difficulty - minDifficulty) / maxDifficulty);
         }
 
         private float GetTimeBetweenEnemiesMean(float difficulty)
         {
-            return Mathf.Lerp(10f, 1f, difficulty / 100f);
+            return Mathf.Lerp(maxTime, minTime, (difficulty - minDifficulty) / maxDifficulty);
         }
 
         private float GetTimeBetweenEnemiesVariance(float difficulty)

@@ -152,8 +152,12 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
             foreach (var edge in loc.ingoingConnections)
             {
-                edge.fuelCost += Mathf.CeilToInt(loc.difficulty / 10.0f * 3);
+                edge.fuelCost += Mathf.CeilToInt(loc.difficulty / maxDifficulty * 3);
+                //print("\t" + edge.fuelCost);
             }
+
+            //print(loc.difficulty);
+
         }
 
         start_node.difficulty = 1;
