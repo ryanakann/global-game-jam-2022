@@ -6,6 +6,8 @@ public class Selecty : MonoBehaviour
 {
     public void SELECTY()
     {
+        if (SelectionController.instance.currentSelectionObject == null)
+            return;
         if (SelectionController.instance.currentSelectionObject.GetType() == typeof(ClownDisplay))
         {
             FX_Spawner.instance.SpawnFX(FXType.ClownSelect, Vector3.zero, Quaternion.identity);

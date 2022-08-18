@@ -40,6 +40,4 @@ MonoBehaviour:
   - '"That''s gonna leave a Mark!  Or maybe it''ll leave a Matt!"'
   anotherKilledQuips:
   - '"He''s gone to a better place -- Miami, baby!"'
-  quipTuples:
-  - eventType: 0
-    quips: 
+  quipTuples: []

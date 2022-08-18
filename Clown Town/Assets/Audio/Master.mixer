@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!243 &-5218081776628572401
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Music
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 17310e5b7f37229418cd9dc8a567ebed
+  m_Children: []
+  m_Volume: a4ce16905aaf7a040b8e1bb7c3e1b455
+  m_Pitch: 865a226ff5342524f8d2b23c11fae7ca
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -649965005744232299}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-3342175732249092989
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -19,6 +38,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-649965005744232299
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 3e38b494d0021594883cabc9462941b4
+  m_EffectName: Attenuation
+  m_MixLevel: 9ecf00f8eb300924caa4f0528e014308
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -43,6 +76,7 @@ AudioMixerController:
   - guids:
     - be62ebede36a73b4387d4074cd7a42e6
     - a82e56e7b62e72c45af2d2bfb268666b
+    - 17310e5b7f37229418cd9dc8a567ebed
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -57,6 +91,7 @@ AudioMixerGroupController:
   m_GroupID: be62ebede36a73b4387d4074cd7a42e6
   m_Children:
   - {fileID: -3342175732249092989}
+  - {fileID: -5218081776628572401}
   m_Volume: 303e72a3be479974eb9da2836f40c61c
   m_Pitch: 3bdbaee811bda3a41a190545c118e540
   m_Send: 00000000000000000000000000000000
@@ -91,6 +126,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: d3b62cc6bbde10a49ac12f1ed96275f2
   m_FloatValues:
+    a4ce16905aaf7a040b8e1bb7c3e1b455: -18.592384
     d773f2f404d619249be8d7ae26b2df6f: 22000
   m_TransitionOverrides: {}
 --- !u!244 &67278128720517221
